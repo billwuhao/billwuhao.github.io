@@ -6,11 +6,11 @@
     <content><![CDATA[<p><a href="https://billwuhao.com/2020/08/08/zhuye/#more" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
 <br>
 
-<h1 id="9899"><a href="#9899" class="headerlink" title="&#9899; "></a>&#9899; <a href="/data/data-432d96069dc0/" title="&lt;font color&#x3D;#AE6011 &gt;数据分析基础工具，方法与实践&lt;&#x2F;font&gt;"><font color=#AE6011 >数据分析基础工具，方法与实践</font></a></h1><hr>
-<h1 id="9899-1"><a href="#9899-1" class="headerlink" title="&#9899; "></a>&#9899; <a href="/poetry/poetry-272f7965d2fe/" title="&lt;font color&#x3D;#AE6011 &gt;野诗三百首&lt;&#x2F;font&gt;"><font color=#AE6011 >野诗三百首</font></a></h1><hr>
-<h1 id="9899-2"><a href="#9899-2" class="headerlink" title="&#9899; "></a>&#9899; <a href="/principle/principle-f0e37204b1fa/" title="&lt;font color&#x3D;#AE6011 &gt;自然原理，社会原则和心理知识汇编&lt;&#x2F;font&gt;"><font color=#AE6011 >自然原理，社会原则和心理知识汇编</font></a></h1><hr>
-<h1 id="9899-3"><a href="#9899-3" class="headerlink" title="&#9899; "></a>&#9899; <a href="/Markdown-d39685381dd6/" title="&lt;font color&#x3D;#AE6011 &gt;实用 Markdown 语法汇总&lt;&#x2F;font&gt;"><font color=#AE6011 >实用 Markdown 语法汇总</font></a></h1><hr>
-<h1 id="9899-4"><a href="#9899-4" class="headerlink" title="&#9899; "></a>&#9899; <a href="/other/other-a63373b9752b/" title="&lt;font color&#x3D;#AE6011 &gt;其他文章&lt;&#x2F;font&gt;"><font color=#AE6011 >其他文章</font></a></h1>]]></content>
+<h1 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/data/data-432d96069dc0/" title="&lt;font color&#x3D;#AE6011 &gt;数据分析基础工具，方法与实践&lt;&#x2F;font&gt;"><font color=#AE6011 >数据分析基础工具，方法与实践</font></a></h1><hr>
+<h1 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry-272f7965d2fe/" title="&lt;font color&#x3D;#AE6011 &gt;野诗三百首&lt;&#x2F;font&gt;"><font color=#AE6011 >野诗三百首</font></a></h1><hr>
+<h1 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/principle/principle-f0e37204b1fa/" title="&lt;font color&#x3D;#AE6011 &gt;自然原理，社会原则和心理知识汇编&lt;&#x2F;font&gt;"><font color=#AE6011 >自然原理，社会原则和心理知识汇编</font></a></h1><hr>
+<h1 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/Markdown-d39685381dd6/" title="&lt;font color&#x3D;#AE6011 &gt;实用 Markdown 语法汇总&lt;&#x2F;font&gt;"><font color=#AE6011 >实用 Markdown 语法汇总</font></a></h1><hr>
+<h1 id="⚫-4"><a href="#⚫-4" class="headerlink" title="⚫ "></a>⚫ <a href="/other/other-a63373b9752b/" title="&lt;font color&#x3D;#AE6011 &gt;其他文章&lt;&#x2F;font&gt;"><font color=#AE6011 >其他文章</font></a></h1>]]></content>
   </entry>
   <entry>
     <title>数据分析基础工具，方法与实践</title>
@@ -21,129 +21,26 @@
 <blockquote>
 <p>该笔记主要内容是数据分析工具应用层面的基础知识，基础的统计学方法以及综合实践练习。</p>
 </blockquote>
-<h2 id="Python-及其科学计算库"><a href="#Python-及其科学计算库" class="headerlink" title="Python 及其科学计算库"></a>Python 及其科学计算库</h2><ul>
-<li><p>Python</p>
-<ul>
-<li><a href="/data/python1-8843db772140/" title="&lt;font color&#x3D;#AE6011 &gt;认识 python&lt;&#x2F;font&gt;"><font color=#AE6011 >认识 python</font></a>
-</li>
-<li><a href="/data/python2-264a8e0ab5f1/" title="&lt;font color&#x3D;#AE6011 &gt;数据容器&lt;&#x2F;font&gt;"><font color=#AE6011 >数据容器</font></a>
-</li>
-<li><a href="/data/python3-2dee073565c6/" title="&lt;font color&#x3D;#AE6011 &gt;函数和面向对象&lt;&#x2F;font&gt;"><font color=#AE6011 >函数和面向对象</font></a>
-</li>
-<li><a href="/data/python4-8e8770a6503f/" title="&lt;font color&#x3D;#AE6011 &gt;异常, 模块和包, 以及文件读写&lt;&#x2F;font&gt;"><font color=#AE6011 >异常, 模块和包, 以及文件读写</font></a>
-</li>
-<li><a href="/data/regex-95e69c7b339c/" title="&lt;font color&#x3D;#AE6011 &gt;通俗易懂正则表达式&lt;&#x2F;font&gt;"><font color=#AE6011 >通俗易懂正则表达式</font></a>
-</li>
-</ul>
-</li>
-<li><a href="/data/matplotlib-bfa2528613f9/" title="&lt;font color&#x3D;#AE6011 &gt;Matplotlib&lt;&#x2F;font&gt;"><font color=#AE6011 >Matplotlib</font></a>
-</li>
-<li><p>Numpy</p>
-<ul>
-<li><a href="/data/numpy1-caa388146ce1/" title="&lt;font color&#x3D;#AE6011 &gt;ndarray 对象介绍及切片操作&lt;&#x2F;font&gt;"><font color=#AE6011 >ndarray 对象介绍及切片操作</font></a>
-</li>
-<li><a href="/data/numpy2-e9e4c18c3431/" title="&lt;font color&#x3D;#AE6011 &gt;ndarray 对象的运算，方法及创建&lt;&#x2F;font&gt;"><font color=#AE6011 >ndarray 对象的运算，方法及创建</font></a>
-</li>
-<li><a href="/data/numpy3-2300149490ed/" title="&lt;font color&#x3D;#AE6011 &gt;常用的通函数及 API&lt;&#x2F;font&gt;"><font color=#AE6011 >常用的通函数及 API</font></a>
-</li>
-</ul>
-</li>
-<li><p>Pandas</p>
-<ul>
-<li><a href="/data/pandas1-4798b1c5fd91/" title="&lt;font color&#x3D;#AE6011 &gt;数据结构的操作，处理与计算&lt;&#x2F;font&gt;"><font color=#AE6011 >数据结构的操作，处理与计算</font></a>
-</li>
-<li><a href="/data/pandas2-467dbcb23e38/" title="&lt;font color&#x3D;#AE6011 &gt;处理和计算函数&lt;&#x2F;font&gt;"><font color=#AE6011 >处理和计算函数</font></a>
-</li>
-<li><a href="/data/pandas3-bd0cfff75a2b/" title="&lt;font color&#x3D;#AE6011 &gt;时间序列，导入导出与可视化&lt;&#x2F;font&gt;"><font color=#AE6011 >时间序列，导入导出与可视化</font></a>
-
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
-<li><a href="/data/mysql1-a1e1ed8d89a7/" title="&lt;font color&#x3D;#AE6011 &gt;基本介绍和单表操作&lt;&#x2F;font&gt;"><font color=#AE6011 >基本介绍和单表操作</font></a>
-</li>
-<li><a href="/data/mysql2-8fd5fec702bb/" title="&lt;font color&#x3D;#AE6011 &gt;多表基础操作&lt;&#x2F;font&gt;"><font color=#AE6011 >多表基础操作</font></a>
-</li>
-<li><a href="/data/mysql3-8dca988d8207/" title="&lt;font color&#x3D;#AE6011 &gt;常用函数&lt;&#x2F;font&gt;"><font color=#AE6011 >常用函数</font></a>
-</li>
-<li><a href="/data/mysql4-95ef69379b8e/" title="&lt;font color&#x3D;#AE6011 &gt;索引，视图和三范式&lt;&#x2F;font&gt;"><font color=#AE6011 >索引，视图和三范式</font></a>
-
-</li>
-</ul>
-<h3 id="HiveQL"><a href="#HiveQL" class="headerlink" title="HiveQL"></a>HiveQL</h3><ul>
-<li><a href="/data/hadoop1-ce4bb28dd03c/" title="&lt;font color&#x3D;#AE6011 &gt;Hive 介绍和 HiveQL 库和表初探&lt;&#x2F;font&gt;"><font color=#AE6011 >Hive 介绍和 HiveQL 库和表初探</font></a>
-</li>
-<li><a href="/data/hadoop2-8198ce8f5fce/" title="&lt;font color&#x3D;#AE6011 &gt;HiveQL 表查询&lt;&#x2F;font&gt;"><font color=#AE6011 >HiveQL 表查询</font></a>
-</li>
-<li><a href="/data/hadoop3-743e8abb1c1c/" title="&lt;font color&#x3D;#AE6011 &gt;HiveQL 窗口函数和常用优化技巧&lt;&#x2F;font&gt;"><font color=#AE6011 >HiveQL 窗口函数和常用优化技巧</font></a>
-
-</li>
-</ul>
-<h2 id="统计学方法"><a href="#统计学方法" class="headerlink" title="统计学方法"></a>统计学方法</h2><ul>
-<li><a href="/data/statistics1-24ca6e122f33/" title="&lt;font color&#x3D;#AE6011 &gt;描述统计&lt;&#x2F;font&gt;"><font color=#AE6011 >描述统计</font></a>
-</li>
-<li><a href="/data/statistics2-136ca00916f8/" title="&lt;font color&#x3D;#AE6011 &gt;推断统计&lt;&#x2F;font&gt;"><font color=#AE6011 >推断统计</font></a>
-</li>
-<li><a href="/data/statistics3-1967a7845ced/" title="&lt;font color&#x3D;#AE6011 &gt;线性回归&lt;&#x2F;font&gt;"><font color=#AE6011 >线性回归</font></a>
-</li>
-<li><a href="/data/statistics4-344a69d01fea/" title="&lt;font color&#x3D;#AE6011 &gt;逻辑回归&lt;&#x2F;font&gt;"><font color=#AE6011 >逻辑回归</font></a>
-</li>
-<li><a href="/data/statistics5-2abb7ab7c911/" title="&lt;font color&#x3D;#AE6011 &gt;分类模型评估&lt;&#x2F;font&gt;"><font color=#AE6011 >分类模型评估</font></a>
-</li>
-<li><a href="/data/statistics6-a328029dd5af/" title="&lt;font color&#x3D;#AE6011 &gt;KNN 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >KNN 算法</font></a>
-</li>
-<li><a href="/data/statistics7-09facbbd1b27/" title="&lt;font color&#x3D;#AE6011 &gt;朴素贝叶斯&lt;&#x2F;font&gt;"><font color=#AE6011 >朴素贝叶斯</font></a>
-</li>
-<li><a href="/data/statistics8-32b3a23ba9e8/" title="&lt;font color&#x3D;#AE6011 &gt;决策树&lt;&#x2F;font&gt;"><font color=#AE6011 >决策树</font></a>
-</li>
-<li><a href="/data/statistics9-37ff3fbe9723/" title="&lt;font color&#x3D;#AE6011 &gt;K-Means 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >K-Means 算法</font></a>
-
-
-</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a href="/data/case-ede78215895b/" title="&lt;font color&#x3D;#AE6011 &gt;综合实践练习&lt;&#x2F;font&gt;"><font color=#AE6011 >综合实践练习</font></a></h2>]]></content>
+<h1 id="一，Python-及其科学计算库"><a href="#一，Python-及其科学计算库" class="headerlink" title="一，Python 及其科学计算库"></a>一，Python 及其科学计算库</h1><h2 id="⚫-Python"><a href="#⚫-Python" class="headerlink" title="⚫ Python"></a>⚫ Python</h2><h3 id=""><a href="#" class="headerlink" title=""></a><a href="/data/python1-8843db772140/" title="&lt;font color&#x3D;#AE6011 &gt;认识 python&lt;&#x2F;font&gt;"><font color=#AE6011 >认识 python</font></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="/data/python2-264a8e0ab5f1/" title="&lt;font color&#x3D;#AE6011 &gt;数据容器&lt;&#x2F;font&gt;"><font color=#AE6011 >数据容器</font></a></h3><h3 id="-2"><a href="#-2" class="headerlink" title=""></a><a href="/data/python3-2dee073565c6/" title="&lt;font color&#x3D;#AE6011 &gt;函数和面向对象&lt;&#x2F;font&gt;"><font color=#AE6011 >函数和面向对象</font></a></h3><h3 id="-3"><a href="#-3" class="headerlink" title=""></a><a href="/data/python4-8e8770a6503f/" title="&lt;font color&#x3D;#AE6011 &gt;异常, 模块和包, 以及文件读写&lt;&#x2F;font&gt;"><font color=#AE6011 >异常, 模块和包, 以及文件读写</font></a></h3><h3 id="-4"><a href="#-4" class="headerlink" title=""></a><a href="/data/regex-95e69c7b339c/" title="&lt;font color&#x3D;#AE6011 &gt;通俗易懂正则表达式&lt;&#x2F;font&gt;"><font color=#AE6011 >通俗易懂正则表达式</font></a></h3><h2 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/data/matplotlib-bfa2528613f9/" title="&lt;font color&#x3D;#AE6011 &gt;Matplotlib&lt;&#x2F;font&gt;"><font color=#AE6011 >Matplotlib</font></a></h2><h2 id="⚫-Numpy"><a href="#⚫-Numpy" class="headerlink" title="⚫ Numpy"></a>⚫ Numpy</h2><h3 id="-5"><a href="#-5" class="headerlink" title=""></a><a href="/data/numpy1-caa388146ce1/" title="&lt;font color&#x3D;#AE6011 &gt;ndarray 对象介绍及切片操作&lt;&#x2F;font&gt;"><font color=#AE6011 >ndarray 对象介绍及切片操作</font></a></h3><h3 id="-6"><a href="#-6" class="headerlink" title=""></a><a href="/data/numpy2-e9e4c18c3431/" title="&lt;font color&#x3D;#AE6011 &gt;ndarray 对象的运算，方法及创建&lt;&#x2F;font&gt;"><font color=#AE6011 >ndarray 对象的运算，方法及创建</font></a></h3><h3 id="-7"><a href="#-7" class="headerlink" title=""></a><a href="/data/numpy3-2300149490ed/" title="&lt;font color&#x3D;#AE6011 &gt;常用的通函数及 API&lt;&#x2F;font&gt;"><font color=#AE6011 >常用的通函数及 API</font></a></h3><h2 id="⚫-Pandas"><a href="#⚫-Pandas" class="headerlink" title="⚫ Pandas"></a>⚫ Pandas</h2><h3 id="-8"><a href="#-8" class="headerlink" title=""></a><a href="/data/pandas1-4798b1c5fd91/" title="&lt;font color&#x3D;#AE6011 &gt;数据结构的操作，处理与计算&lt;&#x2F;font&gt;"><font color=#AE6011 >数据结构的操作，处理与计算</font></a></h3><h3 id="-9"><a href="#-9" class="headerlink" title=""></a><a href="/data/pandas2-467dbcb23e38/" title="&lt;font color&#x3D;#AE6011 &gt;处理和计算函数&lt;&#x2F;font&gt;"><font color=#AE6011 >处理和计算函数</font></a></h3><h3 id="-10"><a href="#-10" class="headerlink" title=""></a><a href="/data/pandas3-bd0cfff75a2b/" title="&lt;font color&#x3D;#AE6011 &gt;时间序列，导入导出与可视化&lt;&#x2F;font&gt;"><font color=#AE6011 >时间序列，导入导出与可视化</font></a></h3><h1 id="二，SQL"><a href="#二，SQL" class="headerlink" title="二，SQL"></a>二，SQL</h1><h2 id="⚫-MySQL"><a href="#⚫-MySQL" class="headerlink" title="⚫ MySQL"></a>⚫ MySQL</h2><h3 id="-11"><a href="#-11" class="headerlink" title=""></a><a href="/data/mysql1-a1e1ed8d89a7/" title="&lt;font color&#x3D;#AE6011 &gt;基本介绍和单表操作&lt;&#x2F;font&gt;"><font color=#AE6011 >基本介绍和单表操作</font></a></h3><h3 id="-12"><a href="#-12" class="headerlink" title=""></a><a href="/data/mysql2-8fd5fec702bb/" title="&lt;font color&#x3D;#AE6011 &gt;多表基础操作&lt;&#x2F;font&gt;"><font color=#AE6011 >多表基础操作</font></a></h3><h3 id="-13"><a href="#-13" class="headerlink" title=""></a><a href="/data/mysql3-8dca988d8207/" title="&lt;font color&#x3D;#AE6011 &gt;常用函数&lt;&#x2F;font&gt;"><font color=#AE6011 >常用函数</font></a></h3><h3 id="-14"><a href="#-14" class="headerlink" title=""></a><a href="/data/mysql4-95ef69379b8e/" title="&lt;font color&#x3D;#AE6011 &gt;索引，视图和三范式&lt;&#x2F;font&gt;"><font color=#AE6011 >索引，视图和三范式</font></a></h3><h2 id="⚫-HiveQL"><a href="#⚫-HiveQL" class="headerlink" title="⚫ HiveQL"></a>⚫ HiveQL</h2><h3 id="-15"><a href="#-15" class="headerlink" title=""></a><a href="/data/hadoop1-ce4bb28dd03c/" title="&lt;font color&#x3D;#AE6011 &gt;Hive 介绍和 HiveQL 库和表初探&lt;&#x2F;font&gt;"><font color=#AE6011 >Hive 介绍和 HiveQL 库和表初探</font></a></h3><h3 id="-16"><a href="#-16" class="headerlink" title=""></a><a href="/data/hadoop2-8198ce8f5fce/" title="&lt;font color&#x3D;#AE6011 &gt;HiveQL 表查询&lt;&#x2F;font&gt;"><font color=#AE6011 >HiveQL 表查询</font></a></h3><h3 id="-17"><a href="#-17" class="headerlink" title=""></a><a href="/data/hadoop3-743e8abb1c1c/" title="&lt;font color&#x3D;#AE6011 &gt;HiveQL 窗口函数和常用优化技巧&lt;&#x2F;font&gt;"><font color=#AE6011 >HiveQL 窗口函数和常用优化技巧</font></a></h3><h1 id="三，统计学方法"><a href="#三，统计学方法" class="headerlink" title="三，统计学方法"></a>三，统计学方法</h1><h2 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics1-24ca6e122f33/" title="&lt;font color&#x3D;#AE6011 &gt;描述统计&lt;&#x2F;font&gt;"><font color=#AE6011 >描述统计</font></a></h2><h2 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics2-136ca00916f8/" title="&lt;font color&#x3D;#AE6011 &gt;推断统计&lt;&#x2F;font&gt;"><font color=#AE6011 >推断统计</font></a></h2><h2 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics3-1967a7845ced/" title="&lt;font color&#x3D;#AE6011 &gt;线性回归&lt;&#x2F;font&gt;"><font color=#AE6011 >线性回归</font></a></h2><h2 id="⚫-4"><a href="#⚫-4" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics4-344a69d01fea/" title="&lt;font color&#x3D;#AE6011 &gt;逻辑回归&lt;&#x2F;font&gt;"><font color=#AE6011 >逻辑回归</font></a></h2><h2 id="⚫-5"><a href="#⚫-5" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics5-2abb7ab7c911/" title="&lt;font color&#x3D;#AE6011 &gt;分类模型评估&lt;&#x2F;font&gt;"><font color=#AE6011 >分类模型评估</font></a></h2><h2 id="⚫-6"><a href="#⚫-6" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics6-a328029dd5af/" title="&lt;font color&#x3D;#AE6011 &gt;KNN 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >KNN 算法</font></a></h2><h2 id="⚫-7"><a href="#⚫-7" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics7-09facbbd1b27/" title="&lt;font color&#x3D;#AE6011 &gt;朴素贝叶斯&lt;&#x2F;font&gt;"><font color=#AE6011 >朴素贝叶斯</font></a></h2><h2 id="⚫-8"><a href="#⚫-8" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics8-32b3a23ba9e8/" title="&lt;font color&#x3D;#AE6011 &gt;决策树&lt;&#x2F;font&gt;"><font color=#AE6011 >决策树</font></a></h2><h2 id="⚫-9"><a href="#⚫-9" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics9-37ff3fbe9723/" title="&lt;font color&#x3D;#AE6011 &gt;K-Means 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >K-Means 算法</font></a></h2><h1 id="-18"><a href="#-18" class="headerlink" title=""></a><a href="/data/case-ede78215895b/" title="&lt;font color&#x3D;#AE6011 &gt;四，综合实践练习&lt;&#x2F;font&gt;"><font color=#AE6011 >四，综合实践练习</font></a></h1>]]></content>
   </entry>
   <entry>
     <title>自然原理，社会原则和心理知识汇编</title>
     <url>/principle/principle-f0e37204b1fa/</url>
     <content><![CDATA[<p><a href="https://billwuhao.com/2020/08/08/zhuye/#more" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
-<h2 id="自然原理"><a href="#自然原理" class="headerlink" title="自然原理"></a>自然原理</h2><blockquote>
-<blockquote>
-<p>&#9899; <a href="/principle/space-4e1b661cc9fa/" title="&lt;font color&#x3D;#AE6011 &gt;四维空间长什么样?&lt;&#x2F;font&gt;"><font color=#AE6011 >四维空间长什么样?</font></a></p>
-<p>&#9899; <a href="/principle/Fibonacci-sequence-golden-section-8a231ce05614/" title="&lt;font color&#x3D;#AE6011 &gt;黄金分割&lt;&#x2F;font&gt;"><font color=#AE6011 >黄金分割</font></a></p>
-</blockquote>
-</blockquote>
-<br>
+<h2 id="自然原理"><a href="#自然原理" class="headerlink" title="自然原理"></a>自然原理</h2><h3 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/principle/space-4e1b661cc9fa/" title="&lt;font color&#x3D;#AE6011 &gt;四维空间长什么样?&lt;&#x2F;font&gt;"><font color=#AE6011 >四维空间长什么样?</font></a></h3><h3 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/principle/Fibonacci-sequence-golden-section-8a231ce05614/" title="&lt;font color&#x3D;#AE6011 &gt;黄金分割&lt;&#x2F;font&gt;"><font color=#AE6011 >黄金分割</font></a></h3><br>
 
-<h2 id="社会原则"><a href="#社会原则" class="headerlink" title="社会原则"></a>社会原则</h2><blockquote>
-<blockquote>
-<p>&#9899; <a href="/principle/37percent-principle-72142339141f/" title="&lt;font color&#x3D;#AE6011 &gt;百分之三十七原则--选择的策略&lt;&#x2F;font&gt;"><font color=#AE6011 >百分之三十七原则--选择的策略</font></a></p>
-</blockquote>
-</blockquote>
-<br>
+<h2 id="社会原则"><a href="#社会原则" class="headerlink" title="社会原则"></a>社会原则</h2><h3 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/principle/37percent-principle-72142339141f/" title="&lt;font color&#x3D;#AE6011 &gt;百分之三十七原则--选择的策略&lt;&#x2F;font&gt;"><font color=#AE6011 >百分之三十七原则--选择的策略</font></a></h3><br>
 
-<h2 id="心理知识"><a href="#心理知识" class="headerlink" title="心理知识"></a>心理知识</h2><blockquote>
-<blockquote>
-<p>&#9899; <a href="/principle/Frog_effect-efcc6f353da2/" title="&lt;font color&#x3D;#AE6011 &gt;温水煮青蛙&lt;&#x2F;font&gt;"><font color=#AE6011 >温水煮青蛙</font></a></p>
-</blockquote>
-</blockquote>
-<br>
+<h2 id="心理知识"><a href="#心理知识" class="headerlink" title="心理知识"></a>心理知识</h2><h3 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/principle/Frog_effect-efcc6f353da2/" title="&lt;font color&#x3D;#AE6011 &gt;温水煮青蛙&lt;&#x2F;font&gt;"><font color=#AE6011 >温水煮青蛙</font></a></h3><br>
 
 <br>]]></content>
   </entry>
   <entry>
-    <title>其他笔记</title>
+    <title>其他文章</title>
     <url>/other/other-a63373b9752b/</url>
     <content><![CDATA[<p><a href="https://billwuhao.com/2020/08/08/zhuye/#more" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
 <p>记录好玩的折腾，问题的解决，学习和生活的有趣发现等。</p>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/other/Build-a-blog-ed67779a8537/" title="&lt;font color&#x3D;#AE6011 &gt;腾讯&#x2F;阿里云服务器 + Hexo 部署个人网站&lt;&#x2F;font&gt;"><font color=#AE6011 >腾讯/阿里云服务器 + Hexo 部署个人网站</font></a></p>
-<p>&#9899; <a href="/other/Read_only_official_documents-f61253601646/" title="&lt;font color&#x3D;#AE6011 &gt;学编程，为什么一定要读官方文档？&lt;&#x2F;font&gt;"><font color=#AE6011 >学编程，为什么一定要读官方文档？</font></a></p>
-</blockquote>
-</blockquote>
-<br>
+<h2 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/other/Build-a-blog-ed67779a8537/" title="&lt;font color&#x3D;#AE6011 &gt;腾讯&#x2F;阿里云服务器 + Hexo 部署个人网站&lt;&#x2F;font&gt;"><font color=#AE6011 >腾讯/阿里云服务器 + Hexo 部署个人网站</font></a></h2><h2 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/other/Read_only_official_documents-f61253601646/" title="&lt;font color&#x3D;#AE6011 &gt;学编程，为什么一定要读官方文档？&lt;&#x2F;font&gt;"><font color=#AE6011 >学编程，为什么一定要读官方文档？</font></a></h2><br>
 
 <br>]]></content>
   </entry>
@@ -199,6 +96,23 @@
       </tags>
   </entry>
   <entry>
+    <title>想象</title>
+    <url>/poetry/poetry10-7893faf46ede/</url>
+    <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
+<p>想象</p>
+<p>天地这只大眼睛闭上了<br>星星是想象出来的<br>再次睁开眼<br>又是一天美好时光  </p>
+<p>生活的眼睛闭上了<br>想象一些星星吧<br>再次睁开眼<br>又是前途光明  </p>
+<p>&emsp;&emsp;&emsp;&emsp;2008</p>
+</center></font>
+]]></content>
+      <categories>
+        <category>白话野诗</category>
+      </categories>
+      <tags>
+        <tag>诗词</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>野诗三百首</title>
     <url>/poetry/poetry-272f7965d2fe/</url>
     <content><![CDATA[<p><a href="https://billwuhao.com/2020/08/08/zhuye/#more" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
@@ -207,167 +121,7 @@
 </blockquote>
 <p>每一首诗都像一幅旧照片, 虽然拍的丑, 还是整理留作纪念吧。</p>
 <hr>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry1-6891ece0699b/" title="&lt;font color&#x3D;#AE6011 &gt;我要发光&lt;&#x2F;font&gt;"><font color=#AE6011 >我要发光</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry2-4572e9824c44/" title="&lt;font color&#x3D;#AE6011 &gt;念奴娇 · 笼鸟归林&lt;&#x2F;font&gt;"><font color=#AE6011 >念奴娇 · 笼鸟归林</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry3-25f8487f1fd1/" title="&lt;font color&#x3D;#AE6011 &gt;离人泪&lt;&#x2F;font&gt;"><font color=#AE6011 >离人泪</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry4-43f4e440b335/" title="&lt;font color&#x3D;#AE6011 &gt;心门掩·叹息&lt;&#x2F;font&gt;"><font color=#AE6011 >心门掩·叹息</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry5-853893c97603/" title="&lt;font color&#x3D;#AE6011 &gt;梦境狂·落魂&lt;&#x2F;font&gt;"><font color=#AE6011 >梦境狂·落魂</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry6-70b29e6d546e/" title="&lt;font color&#x3D;#AE6011 &gt;苏幕遮·早行怀父&lt;&#x2F;font&gt;"><font color=#AE6011 >苏幕遮·早行怀父</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry7-caa908281f62/" title="&lt;font color&#x3D;#AE6011 &gt;自我寻&lt;&#x2F;font&gt;"><font color=#AE6011 >自我寻</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry8-7d8edfebf87a/" title="&lt;font color&#x3D;#AE6011 &gt;树叶&lt;&#x2F;font&gt;"><font color=#AE6011 >树叶</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry9-7b84797e4f72/" title="&lt;font color&#x3D;#AE6011 &gt;给你自由&lt;&#x2F;font&gt;"><font color=#AE6011 >给你自由</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry10-7893faf46ede/" title="&lt;font color&#x3D;#AE6011 &gt;想象&lt;&#x2F;font&gt;"><font color=#AE6011 >想象</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry11-4707210a4a03/" title="&lt;font color&#x3D;#AE6011 &gt;寒光&lt;&#x2F;font&gt;"><font color=#AE6011 >寒光</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry12-c537b3354e3b/" title="&lt;font color&#x3D;#AE6011 &gt;贫瘠的土地&lt;&#x2F;font&gt;"><font color=#AE6011 >贫瘠的土地</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry13-dbff4b29c3e7/" title="&lt;font color&#x3D;#AE6011 &gt;我愿沉醉&lt;&#x2F;font&gt;"><font color=#AE6011 >我愿沉醉</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry14-22ae98e03e61/" title="&lt;font color&#x3D;#AE6011 &gt;年轻的心&lt;&#x2F;font&gt;"><font color=#AE6011 >年轻的心</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry15-403e9f7cd36e/" title="&lt;font color&#x3D;#AE6011 &gt;不会伤痛&lt;&#x2F;font&gt;"><font color=#AE6011 >不会伤痛</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry16-8bb2e1333128/" title="&lt;font color&#x3D;#AE6011 &gt;我好恨&lt;&#x2F;font&gt;"><font color=#AE6011 >我好恨</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry17-a14d0b273d7e/" title="&lt;font color&#x3D;#AE6011 &gt;上帝为我作证&lt;&#x2F;font&gt;"><font color=#AE6011 >上帝为我作证</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry18-7992129799a1/" title="&lt;font color&#x3D;#AE6011 &gt;我怕过什么怕过谁？&lt;&#x2F;font&gt;"><font color=#AE6011 >我怕过什么怕过谁？</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry19-b7b1b01920a5/" title="&lt;font color&#x3D;#AE6011 &gt;孤独的时光&lt;&#x2F;font&gt;"><font color=#AE6011 >孤独的时光</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry20-a422ae85e047/" title="&lt;font color&#x3D;#AE6011 &gt;柳絮与桃花&lt;&#x2F;font&gt;"><font color=#AE6011 >柳絮与桃花</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry21-60bf59e74854/" title="&lt;font color&#x3D;#AE6011 &gt;晴天游林&lt;&#x2F;font&gt;"><font color=#AE6011 >晴天游林</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry22-8aa5fbf68780/" title="&lt;font color&#x3D;#AE6011 &gt;自家乡小曲&lt;&#x2F;font&gt;"><font color=#AE6011 >自家乡小曲</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry23-37b9f5f6f926/" title="&lt;font color&#x3D;#AE6011 &gt;活&lt;&#x2F;font&gt;"><font color=#AE6011 >活</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry24-150ba3490586/" title="&lt;font color&#x3D;#AE6011 &gt;无尽的快乐&lt;&#x2F;font&gt;"><font color=#AE6011 >无尽的快乐</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry25-ce52f91b675e/" title="&lt;font color&#x3D;#AE6011 &gt;时代九言&lt;&#x2F;font&gt;"><font color=#AE6011 >时代九言</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry26-a55cefdf613c/" title="&lt;font color&#x3D;#AE6011 &gt;以诗会友&lt;&#x2F;font&gt;"><font color=#AE6011 >以诗会友</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry27-70019d725910/" title="&lt;font color&#x3D;#AE6011 &gt;我是谁&lt;&#x2F;font&gt;"><font color=#AE6011 >我是谁</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry28-f318593f69f2/" title="&lt;font color&#x3D;#AE6011 &gt;实事求是&lt;&#x2F;font&gt;"><font color=#AE6011 >实事求是</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry29-fdaa29ec3bd0/" title="&lt;font color&#x3D;#AE6011 &gt;明心见性&lt;&#x2F;font&gt;"><font color=#AE6011 >明心见性</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry30-58d94c391e76/" title="&lt;font color&#x3D;#AE6011 &gt;过年&lt;&#x2F;font&gt;"><font color=#AE6011 >过年</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry31-88100919e038/" title="&lt;font color&#x3D;#AE6011 &gt;春节大黑山天乐&lt;&#x2F;font&gt;"><font color=#AE6011 >春节大黑山天乐</font></a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&#9899; <a href="/poetry/poetry32-d59bcc93f946/" title="&lt;font color&#x3D;#AE6011 &gt;倒计时&lt;&#x2F;font&gt;"><font color=#AE6011 >倒计时</font></a></p>
-</blockquote>
-</blockquote>
-]]></content>
+<h2 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry1-6891ece0699b/" title="&lt;font color&#x3D;#AE6011 &gt;我要发光&lt;&#x2F;font&gt;"><font color=#AE6011 >我要发光</font></a></h2><h2 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry2-4572e9824c44/" title="&lt;font color&#x3D;#AE6011 &gt;念奴娇 · 笼鸟归林&lt;&#x2F;font&gt;"><font color=#AE6011 >念奴娇 · 笼鸟归林</font></a></h2><h2 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry3-25f8487f1fd1/" title="&lt;font color&#x3D;#AE6011 &gt;离人泪&lt;&#x2F;font&gt;"><font color=#AE6011 >离人泪</font></a></h2><h2 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry4-43f4e440b335/" title="&lt;font color&#x3D;#AE6011 &gt;心门掩·叹息&lt;&#x2F;font&gt;"><font color=#AE6011 >心门掩·叹息</font></a></h2><h2 id="⚫-4"><a href="#⚫-4" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry5-853893c97603/" title="&lt;font color&#x3D;#AE6011 &gt;梦境狂·落魂&lt;&#x2F;font&gt;"><font color=#AE6011 >梦境狂·落魂</font></a></h2><h2 id="⚫-5"><a href="#⚫-5" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry6-70b29e6d546e/" title="&lt;font color&#x3D;#AE6011 &gt;苏幕遮·早行怀父&lt;&#x2F;font&gt;"><font color=#AE6011 >苏幕遮·早行怀父</font></a></h2><h2 id="⚫-6"><a href="#⚫-6" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry7-caa908281f62/" title="&lt;font color&#x3D;#AE6011 &gt;自我寻&lt;&#x2F;font&gt;"><font color=#AE6011 >自我寻</font></a></h2><h2 id="⚫-7"><a href="#⚫-7" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry8-7d8edfebf87a/" title="&lt;font color&#x3D;#AE6011 &gt;树叶&lt;&#x2F;font&gt;"><font color=#AE6011 >树叶</font></a></h2><h2 id="⚫-8"><a href="#⚫-8" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry9-7b84797e4f72/" title="&lt;font color&#x3D;#AE6011 &gt;给你自由&lt;&#x2F;font&gt;"><font color=#AE6011 >给你自由</font></a></h2><h2 id="⚫-9"><a href="#⚫-9" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry10-7893faf46ede/" title="&lt;font color&#x3D;#AE6011 &gt;想象&lt;&#x2F;font&gt;"><font color=#AE6011 >想象</font></a></h2><h2 id="⚫-10"><a href="#⚫-10" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry11-4707210a4a03/" title="&lt;font color&#x3D;#AE6011 &gt;寒光&lt;&#x2F;font&gt;"><font color=#AE6011 >寒光</font></a></h2><h2 id="⚫-11"><a href="#⚫-11" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry12-c537b3354e3b/" title="&lt;font color&#x3D;#AE6011 &gt;贫瘠的土地&lt;&#x2F;font&gt;"><font color=#AE6011 >贫瘠的土地</font></a></h2><h2 id="⚫-12"><a href="#⚫-12" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry13-dbff4b29c3e7/" title="&lt;font color&#x3D;#AE6011 &gt;我愿沉醉&lt;&#x2F;font&gt;"><font color=#AE6011 >我愿沉醉</font></a></h2><h2 id="⚫-13"><a href="#⚫-13" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry14-22ae98e03e61/" title="&lt;font color&#x3D;#AE6011 &gt;年轻的心&lt;&#x2F;font&gt;"><font color=#AE6011 >年轻的心</font></a></h2><h2 id="⚫-14"><a href="#⚫-14" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry15-403e9f7cd36e/" title="&lt;font color&#x3D;#AE6011 &gt;不会伤痛&lt;&#x2F;font&gt;"><font color=#AE6011 >不会伤痛</font></a></h2><h2 id="⚫-15"><a href="#⚫-15" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry16-8bb2e1333128/" title="&lt;font color&#x3D;#AE6011 &gt;我好恨&lt;&#x2F;font&gt;"><font color=#AE6011 >我好恨</font></a></h2><h2 id="⚫-16"><a href="#⚫-16" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry17-a14d0b273d7e/" title="&lt;font color&#x3D;#AE6011 &gt;上帝为我作证&lt;&#x2F;font&gt;"><font color=#AE6011 >上帝为我作证</font></a></h2><h2 id="⚫-17"><a href="#⚫-17" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry18-7992129799a1/" title="&lt;font color&#x3D;#AE6011 &gt;我怕过什么怕过谁？&lt;&#x2F;font&gt;"><font color=#AE6011 >我怕过什么怕过谁？</font></a></h2><h2 id="⚫-18"><a href="#⚫-18" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry19-b7b1b01920a5/" title="&lt;font color&#x3D;#AE6011 &gt;孤独的时光&lt;&#x2F;font&gt;"><font color=#AE6011 >孤独的时光</font></a></h2><h2 id="⚫-19"><a href="#⚫-19" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry20-a422ae85e047/" title="&lt;font color&#x3D;#AE6011 &gt;柳絮与桃花&lt;&#x2F;font&gt;"><font color=#AE6011 >柳絮与桃花</font></a></h2><h2 id="⚫-20"><a href="#⚫-20" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry21-60bf59e74854/" title="&lt;font color&#x3D;#AE6011 &gt;晴天游林&lt;&#x2F;font&gt;"><font color=#AE6011 >晴天游林</font></a></h2><h2 id="⚫-21"><a href="#⚫-21" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry22-8aa5fbf68780/" title="&lt;font color&#x3D;#AE6011 &gt;自家乡小曲&lt;&#x2F;font&gt;"><font color=#AE6011 >自家乡小曲</font></a></h2><h2 id="⚫-22"><a href="#⚫-22" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry23-37b9f5f6f926/" title="&lt;font color&#x3D;#AE6011 &gt;活&lt;&#x2F;font&gt;"><font color=#AE6011 >活</font></a></h2><h2 id="⚫-23"><a href="#⚫-23" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry24-150ba3490586/" title="&lt;font color&#x3D;#AE6011 &gt;无尽的快乐&lt;&#x2F;font&gt;"><font color=#AE6011 >无尽的快乐</font></a></h2><h2 id="⚫-24"><a href="#⚫-24" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry25-ce52f91b675e/" title="&lt;font color&#x3D;#AE6011 &gt;时代九言&lt;&#x2F;font&gt;"><font color=#AE6011 >时代九言</font></a></h2><h2 id="⚫-25"><a href="#⚫-25" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry26-a55cefdf613c/" title="&lt;font color&#x3D;#AE6011 &gt;以诗会友&lt;&#x2F;font&gt;"><font color=#AE6011 >以诗会友</font></a></h2><h2 id="⚫-26"><a href="#⚫-26" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry27-70019d725910/" title="&lt;font color&#x3D;#AE6011 &gt;我是谁&lt;&#x2F;font&gt;"><font color=#AE6011 >我是谁</font></a></h2><h2 id="⚫-27"><a href="#⚫-27" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry28-f318593f69f2/" title="&lt;font color&#x3D;#AE6011 &gt;实事求是&lt;&#x2F;font&gt;"><font color=#AE6011 >实事求是</font></a></h2><h2 id="⚫-28"><a href="#⚫-28" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry29-fdaa29ec3bd0/" title="&lt;font color&#x3D;#AE6011 &gt;明心见性&lt;&#x2F;font&gt;"><font color=#AE6011 >明心见性</font></a></h2><h2 id="⚫-29"><a href="#⚫-29" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry30-58d94c391e76/" title="&lt;font color&#x3D;#AE6011 &gt;过年&lt;&#x2F;font&gt;"><font color=#AE6011 >过年</font></a></h2><h2 id="⚫-30"><a href="#⚫-30" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry31-88100919e038/" title="&lt;font color&#x3D;#AE6011 &gt;春节大黑山天乐&lt;&#x2F;font&gt;"><font color=#AE6011 >春节大黑山天乐</font></a></h2><h2 id="⚫-31"><a href="#⚫-31" class="headerlink" title="⚫ "></a>⚫ <a href="/poetry/poetry32-d59bcc93f946/" title="&lt;font color&#x3D;#AE6011 &gt;倒计时&lt;&#x2F;font&gt;"><font color=#AE6011 >倒计时</font></a></h2>]]></content>
       <categories>
         <category>白话野诗</category>
       </categories>
@@ -385,23 +139,6 @@
 <p><img src="/images/mx.jpg">  </p>
 </center></font>
 
-]]></content>
-      <categories>
-        <category>白话野诗</category>
-      </categories>
-      <tags>
-        <tag>诗词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>想象</title>
-    <url>/poetry/poetry10-7893faf46ede/</url>
-    <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>想象</p>
-<p>天地这只大眼睛闭上了<br>星星是想象出来的<br>再次睁开眼<br>又是一天美好时光  </p>
-<p>生活的眼睛闭上了<br>想象一些星星吧<br>再次睁开眼<br>又是前途光明  </p>
-<p>&emsp;&emsp;&emsp;&emsp;2008</p>
-</center></font>
 ]]></content>
       <categories>
         <category>白话野诗</category>
@@ -561,14 +298,13 @@
       </tags>
   </entry>
   <entry>
-    <title>柳絮与桃花</title>
-    <url>/poetry/poetry20-a422ae85e047/</url>
+    <title>念奴娇 · 笼鸟归林</title>
+    <url>/poetry/poetry2-4572e9824c44/</url>
     <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>柳絮与桃花  </p>
-<p>癫狂柳絮随风去，轻薄桃花逐水流。<br>自由柳絮随风扬，烂漫桃花逐水荡。<br>圣洁柳絮扬风起，傲骨桃花荡水明。  </p>
-<p>&emsp;&emsp;&emsp;&emsp;2014</p>
-</center></font>
-]]></content>
+<p>念奴娇 · 笼鸟归林</p>
+<p>千古江山，艳无比，迷醉纵情人儿。<br>城边一峰，青松照。<br>佛园曰凤山寺，匿蝉幽鸣，灵鼠戏枝，林动山更静。<br>登高远眺，胸怀云海景。<br>忆想书海鸟笼，绳索缚心愁。<br>无地倾发，血情冷冰。<br>每失意，魂飞魄散殆尽。<br>笼鸟归林，欣无羁纵情。<br>高歌云端，昂首哈哈，倒丛草喜吟。  </p>
+<p>&emsp;&emsp;&emsp;&emsp; 2006年 . 高二</p>
+</center></font>]]></content>
       <categories>
         <category>白话野诗</category>
       </categories>
@@ -577,13 +313,14 @@
       </tags>
   </entry>
   <entry>
-    <title>念奴娇 · 笼鸟归林</title>
-    <url>/poetry/poetry2-4572e9824c44/</url>
+    <title>柳絮与桃花</title>
+    <url>/poetry/poetry20-a422ae85e047/</url>
     <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>念奴娇 · 笼鸟归林</p>
-<p>千古江山，艳无比，迷醉纵情人儿。<br>城边一峰，青松照。<br>佛园曰凤山寺，匿蝉幽鸣，灵鼠戏枝，林动山更静。<br>登高远眺，胸怀云海景。<br>忆想书海鸟笼，绳索缚心愁。<br>无地倾发，血情冷冰。<br>每失意，魂飞魄散殆尽。<br>笼鸟归林，欣无羁纵情。<br>高歌云端，昂首哈哈，倒丛草喜吟。  </p>
-<p>&emsp;&emsp;&emsp;&emsp; 2006年 . 高二</p>
-</center></font>]]></content>
+<p>柳絮与桃花  </p>
+<p>癫狂柳絮随风去，轻薄桃花逐水流。<br>自由柳絮随风扬，烂漫桃花逐水荡。<br>圣洁柳絮扬风起，傲骨桃花荡水明。  </p>
+<p>&emsp;&emsp;&emsp;&emsp;2014</p>
+</center></font>
+]]></content>
       <categories>
         <category>白话野诗</category>
       </categories>
@@ -657,6 +394,22 @@
       </tags>
   </entry>
   <entry>
+    <title>时代九言</title>
+    <url>/poetry/poetry25-ce52f91b675e/</url>
+    <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
+<p>时代九言</p>
+<p>地铁公交匆匆挤工作,<br>微信抖音茫茫点人生.<br>迷与情纠缠工业科技,<br>人与物苟合奸情难分.  </p>
+<p>&emsp;&emsp;&emsp;&emsp;15年作, 20年改</p>
+</center></font>
+]]></content>
+      <categories>
+        <category>白话野诗</category>
+      </categories>
+      <tags>
+        <tag>诗词</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>以诗会友</title>
     <url>/poetry/poetry26-a55cefdf613c/</url>
     <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
@@ -673,12 +426,12 @@
       </tags>
   </entry>
   <entry>
-    <title>时代九言</title>
-    <url>/poetry/poetry25-ce52f91b675e/</url>
+    <title>我是谁</title>
+    <url>/poetry/poetry27-70019d725910/</url>
     <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>时代九言</p>
-<p>地铁公交匆匆挤工作,<br>微信抖音茫茫点人生.<br>迷与情纠缠工业科技,<br>人与物苟合奸情难分.  </p>
-<p>&emsp;&emsp;&emsp;&emsp;15年作, 20年改</p>
+<p>我是谁 </p>
+<p>天地生万物，吾本是尘埃。<br>尘埃落入土，润物春自来。<br>春来春还去，春去春又生。<br>春处即我处，无我处处春。  </p>
+<p>&emsp;&emsp;&emsp;&emsp;2015</p>
 </center></font>
 ]]></content>
       <categories>
@@ -707,11 +460,11 @@
       </tags>
   </entry>
   <entry>
-    <title>我是谁</title>
-    <url>/poetry/poetry27-70019d725910/</url>
+    <title>明心见性</title>
+    <url>/poetry/poetry29-fdaa29ec3bd0/</url>
     <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>我是谁 </p>
-<p>天地生万物，吾本是尘埃。<br>尘埃落入土，润物春自来。<br>春来春还去，春去春又生。<br>春处即我处，无我处处春。  </p>
+<p>明心见性</p>
+<p>拉长时空隧道，截断历史变迁。<br>激扬社会道动，感应人情深浅。<br>剥离万象森罗，坐拥天地规律。<br>空寂物我存在，全部如实观照。  </p>
 <p>&emsp;&emsp;&emsp;&emsp;2015</p>
 </center></font>
 ]]></content>
@@ -723,12 +476,12 @@
       </tags>
   </entry>
   <entry>
-    <title>明心见性</title>
-    <url>/poetry/poetry29-fdaa29ec3bd0/</url>
+    <title>过年</title>
+    <url>/poetry/poetry30-58d94c391e76/</url>
     <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>明心见性</p>
-<p>拉长时空隧道，截断历史变迁。<br>激扬社会道动，感应人情深浅。<br>剥离万象森罗，坐拥天地规律。<br>空寂物我存在，全部如实观照。  </p>
-<p>&emsp;&emsp;&emsp;&emsp;2015</p>
+<p>过年</p>
+<p>颠沛流离处, 肝肠寸断时.<br>岁末残残归, 新天盎盎红.  </p>
+<p>&emsp;&emsp;&emsp;&emsp;2016年春</p>
 </center></font>
 ]]></content>
       <categories>
@@ -748,22 +501,6 @@
 <p>&emsp;&emsp;&emsp;&emsp; 2007年 . 弟入狱</p>
 </center></font>
 
-]]></content>
-      <categories>
-        <category>白话野诗</category>
-      </categories>
-      <tags>
-        <tag>诗词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过年</title>
-    <url>/poetry/poetry30-58d94c391e76/</url>
-    <content><![CDATA[<p><font color=#00BB00>&gt;<center></p>
-<p>过年</p>
-<p>颠沛流离处, 肝肠寸断时.<br>岁末残残归, 新天盎盎红.  </p>
-<p>&emsp;&emsp;&emsp;&emsp;2016年春</p>
-</center></font>
 ]]></content>
       <categories>
         <category>白话野诗</category>
@@ -1675,6 +1412,78 @@ P值: 0.005218925008708613</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>逻辑回归</title>
+    <url>/data/statistics4-344a69d01fea/</url>
+    <content><![CDATA[<blockquote>
+<p>文章主要内容和思路来源: <strong>开课吧</strong>学习笔记</p>
+</blockquote>
+<h2 id="五-逻辑回归"><a href="#五-逻辑回归" class="headerlink" title="五, 逻辑回归"></a>五, 逻辑回归</h2><p>逻辑回归和线性回归有类似之处, 都是利用线性加权计算的模型, 但逻辑回归是分类算法, 例如对是否患癌症进行预测, 因变量就是 <strong>是</strong> 和 <strong>否</strong>, 两个类别, 自变量可以是年龄, 性别, 饮食, 作息, 病菌感染等, 自变量既可以是数值变量, 也可以是类别变量</p>
+<h3 id="1-逻辑回归二分类推导"><a href="#1-逻辑回归二分类推导" class="headerlink" title="1, 逻辑回归二分类推导"></a>1, 逻辑回归二分类推导</h3><p>和线性回归类似, 设自变量为 x, 每个自变量的权重为 w, 令:</p>
+<p>$$\begin{array}{l}<br>z=w_{1} x_{1}+w_{2} x_{2}+\cdots+w_{n} x_{n}+b \<br>=\sum_{j=1}^{n} w_{j} x_{j}+b \<br>=\sum_{j=0}^{n} w_{j} x_{j} \<br>=\vec{w}^{T} \cdot \vec{x}<br>\end{array}$$</p>
+<p>z 是一个连续值, 取值范围(-∞, +∞), 为了实现分类, 一般设置阈值 z = 0, 当 z &gt; 0 时, 将样本判定为一个类别(正例), 该类别设为 1, 当 z ≤ 0 时, 判定为另一个类别(负例), 该类别设为 0, 再设因变量为 y, 从而逻辑回归方程可表示为:</p>
+<p>$$y=\left{\begin{array}{ll}<br>1 &amp; z&gt;0 \<br>0 &amp; z \leq 0<br>\end{array}\right.$$</p>
+<p>上述方程虽然实现了分类, 但提供的信息有限, 因此引入 <strong>sigmoid函数</strong>(也叫 Logistic函数), 将 z 映射到 (0, 1) 区间，可以实现二分类的同时, 还能体现将样本分为某个类的可能性, 这个可能性设为 p:</p>
+<p>$$p=\operatorname{sigmoid}(z)=\frac{1}{1+e^{-z}}$$</p>
+<p>sigmoid 函数图像如下:</p>
+<p><img src="/images/mathematical-statistics/sigmoid.png"></p>
+<p>于是, 逻辑回归方程又可表示为:</p>
+<p>$$y=\left{\begin{array}{ll}<br>1 &amp; p&gt;0.5 \<br>0 &amp; 1-p \geq 0.5<br>\end{array}\right.$$</p>
+<p>从而可见, 通过比较 p 和 1-p 哪个更大(z 的阈值不取 0 时做出调整即可), 预测结果就是对应的一类</p>
+<h3 id="2-逻辑回归的损失函数"><a href="#2-逻辑回归的损失函数" class="headerlink" title="2, 逻辑回归的损失函数"></a>2, 逻辑回归的损失函数</h3><p>通过上述推导过程可知, 要得到逻辑回归模型, 最终就是要求得参数 $\vec{w}^{T}$, 于是将 p 和 1-p 统一, 构造一个损失函数来求 $\vec{w}^{T}$:</p>
+<p>$$\begin{array}{l}<br>p(y=1 | x ; w)=s(z) \<br>p(y=0 | x ; w)=1-s(z)<br>\end{array}$$</p>
+<p>合并:</p>
+<p>$$p(y | x ; w)=s(z)^{y}(1-s(z))^{1-y}$$</p>
+<p>上式表示一个样本的概率, 我们要求解能够使所有样本联合概率密度最大的 $\vec{w}^{T}$ 值, 根据极大似然估计, 所有样本的联合概率密度函数(似然函数)为:</p>
+<p>$$\begin{array}{l}<br>L(w)=\prod_{i=1}^{m} p\left(y^{(i)} | x^{(i)} ; w\right) \<br>=\prod_{i=1}^{m} s\left(z^{(i)}\right)^{y^{(i)}}\left(1-s\left(z^{(i)}\right)\right)^{1-y^{(i)}}<br>\end{array}$$</p>
+<p>取对数, 让累积乘积变累积求和:</p>
+<p>$$\begin{array}{l}<br>\ln L(w)=\ln \left(\prod_{i=1}^{m} s\left(z^{(i)}\right)^{y^{(i)}}\left(1-s\left(z^{(i)}\right)^{1-y^{(i)}}\right)\right) \<br>=\sum_{i=1}^{m}\left(y^{(i)} \ln s\left(z^{(i)}\right)+\left(1-y^{(i)}\right) \ln \left(1-s\left(z^{(i)}\right)\right)\right)<br>\end{array}$$</p>
+<p>要求上式最大值, 取反变成求最小值, 就作为逻辑回归的损失函数(交叉熵损失函数):</p>
+<p>$$J(w)=-\sum_{i=1}^{m}\left(y^{(i)} \ln s\left(z^{(i)}\right)+\left(1-y^{(i)}\right) \ln \left(1-s\left(z^{(i)}\right)\right)\right)$$</p>
+<p>利用梯度下降法最终求得 $\vec{w}^{T}$ (省略)</p>
+<p>例, 对鸢尾花实现二分类并分析:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">x, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line"><span class="comment"># 鸢尾花数据集有 3 个类别, 4 个特性, 取两个类别, 两个特性</span></span><br><span class="line">x = x[y!=<span class="number">0</span>, <span class="number">2</span>:]</span><br><span class="line">y = y[y!=<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拆分训练集与测试集</span></span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(x, y,</span><br><span class="line">        test_size=<span class="number">0.25</span>, random_state=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练分类模型</span></span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">y_hat = lr.predict(x_test)</span><br><span class="line">print(<span class="string">&#x27;权重:&#x27;</span>, lr.coef_)</span><br><span class="line">print(<span class="string">&#x27;偏置:&#x27;</span>, lr.intercept_)</span><br><span class="line">print(<span class="string">&#x27;真实值:&#x27;</span>, y_test)</span><br><span class="line">print(<span class="string">&#x27;预测值:&#x27;</span>, y_hat)</span><br></pre></td></tr></table></figure>
+
+<pre><code>权重: [[2.54536368 2.15257324]]
+偏置: [-16.08741502]
+真实值: [2 1 2 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 2 2 1 1 2 1 2]
+预测值: [2 1 1 1 1 1 1 2 1 1 2 2 2 1 1 1 1 1 2 2 1 1 2 1 2]</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 样本的真实类别可视化</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出两种鸢尾花的特征</span></span><br><span class="line">c1 = x[y==<span class="number">1</span>]</span><br><span class="line">c2 = x[y==<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制样本分布</span></span><br><span class="line">plt.scatter(x=c1[:, <span class="number">0</span>], y=c1[:, <span class="number">1</span>], c=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;类别1&#x27;</span>)</span><br><span class="line">plt.scatter(x=c2[:, <span class="number">0</span>], y=c2[:, <span class="number">1</span>], c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;类别2&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;花瓣长度&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;花瓣宽度&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;鸢尾花样本分布&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_2_0.png"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将预测类别和真实类别可视化对比</span></span><br><span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">2.2</span>))</span><br><span class="line">plt.plot(y_test, marker=<span class="string">&#x27;o&#x27;</span>, ls=<span class="string">&#x27;&#x27;</span>, ms=<span class="number">10</span>, c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;真实类别&#x27;</span>)</span><br><span class="line">plt.plot(y_hat, marker=<span class="string">&#x27;x&#x27;</span>, ls=<span class="string">&#x27;&#x27;</span>, ms=<span class="number">10</span>, c=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;预测类别&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;样本序号&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;类别&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;预测结果&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_3_0.png"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 因预测样本所属类别时, 通过比较概率得到结果, </span></span><br><span class="line"><span class="comment"># 我们可将结果对应的概率可视化</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取预测的概率值</span></span><br><span class="line">probability = lr.predict_proba(x_test)</span><br><span class="line">print(<span class="string">&#x27;概率:&#x27;</span>, probability[:<span class="number">5</span>], sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">index = np.arange(<span class="built_in">len</span>(x_test))</span><br><span class="line">pro_0 = probability[:, <span class="number">0</span>]</span><br><span class="line">pro_1 = probability[:, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置预测结果标签, 对和错</span></span><br><span class="line">tick_label = np.where(y_test==y_hat, <span class="string">&#x27;对&#x27;</span>, <span class="string">&#x27;错&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制堆叠图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">2</span>))</span><br><span class="line">plt.bar(index, height=pro_0, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;类别1的概率&#x27;</span>)</span><br><span class="line">plt.bar(index, height=pro_1, color=<span class="string">&#x27;r&#x27;</span>, bottom=pro_0,</span><br><span class="line">        label=<span class="string">&#x27;类别2的概率&#x27;</span>, tick_label=tick_label)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;样本序号&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;各类别的概率&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;分类概率&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>概率:
+[[0.46933862 0.53066138]
+ [0.98282882 0.01717118]
+ [0.72589695 0.27410305]
+ [0.91245661 0.08754339]
+ [0.80288412 0.19711588]]</code></pre>
+<p><img src="/images/mathematical-statistics/output_4_1.png"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 绘制决策边界</span></span><br><span class="line"><span class="comment"># 决策边界: 不同类别的分界线</span></span><br><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义绘制函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_decision_boundary</span>(<span class="params">model, x, y</span>):</span></span><br><span class="line">    color = [<span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">    marker = [<span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;x&#x27;</span>]</span><br><span class="line">    class_label = np.unique(y)</span><br><span class="line">    cmap = ListedColormap(color[:<span class="built_in">len</span>(class_label)])</span><br><span class="line">    x1_min, x2_min = np.<span class="built_in">min</span>(x, axis=<span class="number">0</span>)</span><br><span class="line">    x1_max, x2_max = np.<span class="built_in">max</span>(x, axis=<span class="number">0</span>)</span><br><span class="line">    x1 = np.arange(x1_min - <span class="number">1</span>, x1_max + <span class="number">1</span>, <span class="number">0.02</span>)</span><br><span class="line">    x2 = np.arange(x2_min - <span class="number">1</span>, x2_max + <span class="number">1</span>, <span class="number">0.02</span>)</span><br><span class="line">    x1, x2 = np.meshgrid(x1, x2)</span><br><span class="line">    z = model.predict(np.array([x1.ravel(), x2.ravel()]).T).reshape(x1.shape)</span><br><span class="line">    </span><br><span class="line">    plt.contourf(x1, x2, z, cmap=cmap, alpha=<span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">for</span> i, class_ <span class="keyword">in</span> <span class="built_in">enumerate</span>(class_label):</span><br><span class="line">        plt.scatter(x=x[y==class_, <span class="number">0</span>], y=x[y==class_, <span class="number">1</span>],</span><br><span class="line">                c=cmap.colors[i], label=class_, marker=marker[i])</span><br><span class="line">    plt.legend()</span><br><span class="line">    plt.show()</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 绘制模型在训练集上的决策边界</span></span><br><span class="line">plot_decision_boundary(lr, x_train, y_train)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_5_0.png"></p>
+<p><strong>拓展</strong>:<br>逻辑回归实现多分类</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">iris = load_iris()</span><br><span class="line">x, y = iris.data, iris.target</span><br><span class="line">x = x[:, <span class="number">2</span>:]</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(x, y, </span><br><span class="line">        test_size=<span class="number">0.25</span>, random_state=<span class="number">2</span>)</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试分类</span></span><br><span class="line">y_hat = lr.predict(x_test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化结果</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>]=<span class="literal">False</span></span><br><span class="line">plot_decision_boundary(lr, x_test, y_test)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_7_0.png"></p>
+<br>
+
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数理统计</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性回归</title>
     <url>/data/statistics3-1967a7845ced/</url>
     <content><![CDATA[<blockquote>
@@ -1828,67 +1637,53 @@ MAE: 0.1543808898175286
       </tags>
   </entry>
   <entry>
-    <title>逻辑回归</title>
-    <url>/data/statistics4-344a69d01fea/</url>
+    <title>KNN 算法</title>
+    <url>/data/statistics6-a328029dd5af/</url>
     <content><![CDATA[<blockquote>
 <p>文章主要内容和思路来源: <strong>开课吧</strong>学习笔记</p>
 </blockquote>
-<h2 id="五-逻辑回归"><a href="#五-逻辑回归" class="headerlink" title="五, 逻辑回归"></a>五, 逻辑回归</h2><p>逻辑回归和线性回归有类似之处, 都是利用线性加权计算的模型, 但逻辑回归是分类算法, 例如对是否患癌症进行预测, 因变量就是 <strong>是</strong> 和 <strong>否</strong>, 两个类别, 自变量可以是年龄, 性别, 饮食, 作息, 病菌感染等, 自变量既可以是数值变量, 也可以是类别变量</p>
-<h3 id="1-逻辑回归二分类推导"><a href="#1-逻辑回归二分类推导" class="headerlink" title="1, 逻辑回归二分类推导"></a>1, 逻辑回归二分类推导</h3><p>和线性回归类似, 设自变量为 x, 每个自变量的权重为 w, 令:</p>
-<p>$$\begin{array}{l}<br>z=w_{1} x_{1}+w_{2} x_{2}+\cdots+w_{n} x_{n}+b \<br>=\sum_{j=1}^{n} w_{j} x_{j}+b \<br>=\sum_{j=0}^{n} w_{j} x_{j} \<br>=\vec{w}^{T} \cdot \vec{x}<br>\end{array}$$</p>
-<p>z 是一个连续值, 取值范围(-∞, +∞), 为了实现分类, 一般设置阈值 z = 0, 当 z &gt; 0 时, 将样本判定为一个类别(正例), 该类别设为 1, 当 z ≤ 0 时, 判定为另一个类别(负例), 该类别设为 0, 再设因变量为 y, 从而逻辑回归方程可表示为:</p>
-<p>$$y=\left{\begin{array}{ll}<br>1 &amp; z&gt;0 \<br>0 &amp; z \leq 0<br>\end{array}\right.$$</p>
-<p>上述方程虽然实现了分类, 但提供的信息有限, 因此引入 <strong>sigmoid函数</strong>(也叫 Logistic函数), 将 z 映射到 (0, 1) 区间，可以实现二分类的同时, 还能体现将样本分为某个类的可能性, 这个可能性设为 p:</p>
-<p>$$p=\operatorname{sigmoid}(z)=\frac{1}{1+e^{-z}}$$</p>
-<p>sigmoid 函数图像如下:</p>
-<p><img src="/images/mathematical-statistics/sigmoid.png"></p>
-<p>于是, 逻辑回归方程又可表示为:</p>
-<p>$$y=\left{\begin{array}{ll}<br>1 &amp; p&gt;0.5 \<br>0 &amp; 1-p \geq 0.5<br>\end{array}\right.$$</p>
-<p>从而可见, 通过比较 p 和 1-p 哪个更大(z 的阈值不取 0 时做出调整即可), 预测结果就是对应的一类</p>
-<h3 id="2-逻辑回归的损失函数"><a href="#2-逻辑回归的损失函数" class="headerlink" title="2, 逻辑回归的损失函数"></a>2, 逻辑回归的损失函数</h3><p>通过上述推导过程可知, 要得到逻辑回归模型, 最终就是要求得参数 $\vec{w}^{T}$, 于是将 p 和 1-p 统一, 构造一个损失函数来求 $\vec{w}^{T}$:</p>
-<p>$$\begin{array}{l}<br>p(y=1 | x ; w)=s(z) \<br>p(y=0 | x ; w)=1-s(z)<br>\end{array}$$</p>
-<p>合并:</p>
-<p>$$p(y | x ; w)=s(z)^{y}(1-s(z))^{1-y}$$</p>
-<p>上式表示一个样本的概率, 我们要求解能够使所有样本联合概率密度最大的 $\vec{w}^{T}$ 值, 根据极大似然估计, 所有样本的联合概率密度函数(似然函数)为:</p>
-<p>$$\begin{array}{l}<br>L(w)=\prod_{i=1}^{m} p\left(y^{(i)} | x^{(i)} ; w\right) \<br>=\prod_{i=1}^{m} s\left(z^{(i)}\right)^{y^{(i)}}\left(1-s\left(z^{(i)}\right)\right)^{1-y^{(i)}}<br>\end{array}$$</p>
-<p>取对数, 让累积乘积变累积求和:</p>
-<p>$$\begin{array}{l}<br>\ln L(w)=\ln \left(\prod_{i=1}^{m} s\left(z^{(i)}\right)^{y^{(i)}}\left(1-s\left(z^{(i)}\right)^{1-y^{(i)}}\right)\right) \<br>=\sum_{i=1}^{m}\left(y^{(i)} \ln s\left(z^{(i)}\right)+\left(1-y^{(i)}\right) \ln \left(1-s\left(z^{(i)}\right)\right)\right)<br>\end{array}$$</p>
-<p>要求上式最大值, 取反变成求最小值, 就作为逻辑回归的损失函数(交叉熵损失函数):</p>
-<p>$$J(w)=-\sum_{i=1}^{m}\left(y^{(i)} \ln s\left(z^{(i)}\right)+\left(1-y^{(i)}\right) \ln \left(1-s\left(z^{(i)}\right)\right)\right)$$</p>
-<p>利用梯度下降法最终求得 $\vec{w}^{T}$ (省略)</p>
-<p>例, 对鸢尾花实现二分类并分析:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">x, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line"><span class="comment"># 鸢尾花数据集有 3 个类别, 4 个特性, 取两个类别, 两个特性</span></span><br><span class="line">x = x[y!=<span class="number">0</span>, <span class="number">2</span>:]</span><br><span class="line">y = y[y!=<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拆分训练集与测试集</span></span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(x, y,</span><br><span class="line">        test_size=<span class="number">0.25</span>, random_state=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练分类模型</span></span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">y_hat = lr.predict(x_test)</span><br><span class="line">print(<span class="string">&#x27;权重:&#x27;</span>, lr.coef_)</span><br><span class="line">print(<span class="string">&#x27;偏置:&#x27;</span>, lr.intercept_)</span><br><span class="line">print(<span class="string">&#x27;真实值:&#x27;</span>, y_test)</span><br><span class="line">print(<span class="string">&#x27;预测值:&#x27;</span>, y_hat)</span><br></pre></td></tr></table></figure>
+<h2 id="七-KNN-算法"><a href="#七-KNN-算法" class="headerlink" title="七, KNN 算法"></a>七, KNN 算法</h2><h3 id="1-关于-KNN"><a href="#1-关于-KNN" class="headerlink" title="1, 关于 KNN"></a>1, 关于 KNN</h3><p>KNN (K-Nearest Neighbor), 即 K 近邻算法, K 个最近的邻居. 当需要预测一个未知样本的时候, 就由与该样本最近的 K 个邻居来决定</p>
+<p>KNN 既可以用于分类, 也可用于回归. 用来分类时, 使用 K 个邻居中, 类别数量最多(或加权最多)者, 作为预测结果; 当用来回归分析时, 使用 K 个邻居的均值(或加权均值), 作为预测结果</p>
+<p>KNN 算法的原理是: 样本映射到多维空间时, 相似度较高的样本, 距离也会较接近, “近朱者赤近墨者黑”</p>
+<h3 id="2-K-值"><a href="#2-K-值" class="headerlink" title="2, K 值"></a>2, K 值</h3><p>KNN 算法的 K 值是一个模型训练前就要人为指定的参数<strong>超参数</strong>, 不同于模型内部通过训练数据计算得到的参数. KNN 的超参数, 需要通常通过<strong>交叉验证</strong>的方式来选择最合适的参数组合 </p>
+<p>K 值的选择非常重要, K 值较小时, 模型预测依赖附近的邻居, 敏感性高, 稳定性低, 容易导致过拟合; 反之, K 值较大, 敏感性低, 稳定性高, 容易欠拟合</p>
+<p>K 值在数据量小时, 可以通过遍历所有样本(穷举)的方式找出最近的 K 个邻居, 当数据量庞大时, 穷举耗费大量时间, 此时可以采用 <strong>KD树</strong> 来找 K 个邻居</p>
+<h3 id="3-交叉验证"><a href="#3-交叉验证" class="headerlink" title="3, 交叉验证"></a>3, 交叉验证</h3><p>KNN 的网格搜索交叉验证: 取不同的 K, 选择不同的距离或权重计算方式等, 将数据分为多个组, 一个组作为测试集, 其他部分作为训练集, 不断循环训练和测试, 对模型进行循环验证, 找出最佳参数组合</p>
+<h3 id="4-距离的度量方式"><a href="#4-距离的度量方式" class="headerlink" title="4, 距离的度量方式"></a>4, 距离的度量方式</h3><p><strong>闵可夫斯基距离:</strong></p>
+<p>设 n 维空间中两个点位 X 和 Y:</p>
+<p>$X=\left(x_{1}, x_{2}, \ldots \ldots, x_{n}\right)$</p>
+<p>$Y=\left(y_{1}, y_{2}, \ldots \ldots, y_{n}\right)$</p>
+<p>则阁可夫斯基距离为:</p>
+<p>$D(X, Y)=\left(\sum_{i=1}^{n}\left|x_{i}-y_{i}\right|^{p}\right)^{1 / p}$</p>
+<p>当 p 为 1 时, 又称 <strong>曼哈顿距离</strong>; 当 p 为 2 时, 称 <strong>欧几里得距离</strong></p>
+<h3 id="5-权重"><a href="#5-权重" class="headerlink" title="5, 权重"></a>5, 权重</h3><p><strong>统一权重:</strong> K 个邻居权重相同, 不管近远都是 1/K</p>
+<p><strong>距离加权权重:</strong> K 个邻居的权重, 与他们各自和待测样本的距离成反比, 同时要保证权重之和为 1. 例如 3 个邻居 a, b, c 距离待测样本的距离分别为 a, b 和 c, 则 a 的权重为:</p>
+<p>$$\frac{\frac{1}{a}}{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}}=\frac{b c}{b c+a c+a b}$$</p>
+<p>b 和 c 同理</p>
+<h3 id="6-数据标准化"><a href="#6-数据标准化" class="headerlink" title="6, 数据标准化"></a>6, 数据标准化</h3><p>样本中的特征通常非常多，由于各特征的性质不同，通常具有不同的量纲(数量级). 当各特征间的量纲相差很大时，如果直接用原始特征值进行分析，就会突出数值较高的特征在综合分析中的作用，相对削弱数值较低特征的作用, 因此需要通过数据标准化, 将量纲统一, 才能客观地描述各个特征对模型的影响程度</p>
+<p>线性回归和逻辑回归, 都是通过每个特征与其权重的乘积相加来进行计算, 不进行数据标准化(不考虑正则化), 对每个特征的权重影响较大, 但对结果不会造成影响, 而 KNN 是基于距离计算的, 如果特征的量纲不同, 量纲较大的特征会占据主导地位, 导致忽略量纲较小的特征, 从而对模型性能造成较大影响</p>
+<h3 id="7-算法实现步骤"><a href="#7-算法实现步骤" class="headerlink" title="7, 算法实现步骤"></a>7, 算法实现步骤</h3><p>a, 确定超参数<br>  确定 K<br>  确定距离度量方式<br>  确定权重计算方式<br>  其他超参数  </p>
+<p>b, 从训练集中选择距离待测样本最近的 K 个样本</p>
+<p>c, 根据 K 个样本对待测样本进行预测, 如果遇到多个样本距离相同的情况, 默认选取训练集中靠前的</p>
+<h3 id="8-流水线-Pipline"><a href="#8-流水线-Pipline" class="headerlink" title="8, 流水线 Pipline"></a>8, 流水线 Pipline</h3><p>流水线可以将每个评估器视为一个步骤, 然后将多个步骤作为整体依次执行. 例如数据处理工作较多时, 可能涉及更多步骤, 例如多项式扩展, One-Hot 编码, 特征选择, 数据标准化, 交叉验证等, 分别执行过于繁琐, 我们可以将数据处理与模型训练各个步骤作为一个整体来执行</p>
+<p>流水线具有最后一个评估器的所有方法:</p>
+<p>a, 当流水线对象调用 fit 方法时, 会从第一个评估器依次调用 fit_transform 方法, 然后到最后一个评估器调用 fit 方法</p>
+<p>b, 当流水线对象调用 <em>其他</em> 方法时, 会从第一个评估器依次调用 transform 方法, 然后到最后一个评估器调用 <em>其他</em> 方法</p>
+<h3 id="9-以鸢尾花为例-对逻辑回归和-KNN-进行比较"><a href="#9-以鸢尾花为例-对逻辑回归和-KNN-进行比较" class="headerlink" title="9, 以鸢尾花为例, 对逻辑回归和 KNN 进行比较:"></a>9, 以鸢尾花为例, 对逻辑回归和 KNN 进行比较:</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">mpl.rcParams[<span class="string">&quot;font.family&quot;</span>] = <span class="string">&quot;SimHei&quot;</span></span><br><span class="line">mpl.rcParams[<span class="string">&quot;axes.unicode_minus&quot;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">X = iris.data[:, :<span class="number">2</span>]</span><br><span class="line">y = iris.target</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, </span><br><span class="line">                        test_size=<span class="number">0.25</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据标准化: StandardScaler 均值标准差标准化, MinMaxScaler 最大最小值标准化</span></span><br><span class="line">ss = StandardScaler()</span><br><span class="line">X_train = ss.fit_transform(X_train)</span><br><span class="line">X_test = ss.transform(X_test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 逻辑回归训练</span></span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(X_train,y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># KNN 训练</span></span><br><span class="line"><span class="comment"># n_neighbors: 邻居的数量</span></span><br><span class="line"><span class="comment"># weights：权重计算方式, 可选值为 uniform 统一权重, 与 distance 加权权重</span></span><br><span class="line">knn = KNeighborsClassifier(n_neighbors=<span class="number">3</span>, weights=<span class="string">&quot;uniform&quot;</span>)</span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 比较 AUC</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc,roc_auc_score</span><br><span class="line"></span><br><span class="line">lr_fpr, lr_tpr, lr_thresholds = roc_curve(y_test,</span><br><span class="line">                lr.predict_proba(X_test)[:,<span class="number">1</span>], pos_label=<span class="number">1</span>)</span><br><span class="line">lr_auc = auc(lr_fpr, lr_tpr)</span><br><span class="line">print(<span class="string">&#x27;Logistic 算法: AUC = %.3f&#x27;</span> % lr_auc)</span><br><span class="line"></span><br><span class="line">knn_fpr, knn_tpr, knn_thresholds = roc_curve(y_test,</span><br><span class="line">                knn.predict_proba(X_test)[:,<span class="number">1</span>], pos_label=<span class="number">1</span>)</span><br><span class="line">knn_auc = auc(knn_fpr, knn_tpr)</span><br><span class="line">print(<span class="string">&#x27;KNN 算法: AUC = %.3f&#x27;</span> % knn_auc)</span><br></pre></td></tr></table></figure>
 
-<pre><code>权重: [[2.54536368 2.15257324]]
-偏置: [-16.08741502]
-真实值: [2 1 2 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 2 2 1 1 2 1 2]
-预测值: [2 1 1 1 1 1 1 2 1 1 2 2 2 1 1 1 1 1 2 2 1 1 2 1 2]</code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 样本的真实类别可视化</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出两种鸢尾花的特征</span></span><br><span class="line">c1 = x[y==<span class="number">1</span>]</span><br><span class="line">c2 = x[y==<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制样本分布</span></span><br><span class="line">plt.scatter(x=c1[:, <span class="number">0</span>], y=c1[:, <span class="number">1</span>], c=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;类别1&#x27;</span>)</span><br><span class="line">plt.scatter(x=c2[:, <span class="number">0</span>], y=c2[:, <span class="number">1</span>], c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;类别2&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;花瓣长度&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;花瓣宽度&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;鸢尾花样本分布&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre><code>Logistic 算法: AUC = 0.835
+KNN 算法: AUC = 0.794</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 KNN 算法参数进行调优再来比较</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line"><span class="comment"># K 值取 1~10, 并定义需要的参数组合</span></span><br><span class="line">knn = KNeighborsClassifier()</span><br><span class="line">grid = &#123;<span class="string">&#x27;n_neighbors&#x27;</span>: <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>,<span class="number">1</span>), <span class="string">&#x27;weights&#x27;</span>: [<span class="string">&#x27;uniform&#x27;</span>,<span class="string">&#x27;distance&#x27;</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 网格搜索交叉验证</span></span><br><span class="line"><span class="comment"># param_grid：需要检验的超参数组合</span></span><br><span class="line"><span class="comment"># scoring：模型评估标准, accuracy 正确率</span></span><br><span class="line"><span class="comment"># n_jobs：并发数量</span></span><br><span class="line"><span class="comment"># cv：交叉验证折数</span></span><br><span class="line"><span class="comment"># verbose：输出冗余信息</span></span><br><span class="line">gs = GridSearchCV(estimator=knn, param_grid=grid, scoring=<span class="string">&#x27;accuracy&#x27;</span>,</span><br><span class="line">                  n_jobs=<span class="number">-1</span>, cv=<span class="number">5</span>, verbose=<span class="number">0</span>)</span><br><span class="line">gs.fit(X_train, y_train)</span><br><span class="line">gs_fpr, gs_tpr, gs_thresholds = roc_curve(y_test,</span><br><span class="line">                gs.predict_proba(X_test)[:,<span class="number">1</span>], pos_label=<span class="number">1</span>)</span><br><span class="line">gs_auc = auc(gs_fpr, gs_tpr)</span><br><span class="line">print(<span class="string">&#x27;KNN 算法: AUC = %.3f&#x27;</span> % gs_auc)</span><br></pre></td></tr></table></figure>
 
+<pre><code>KNN 算法: AUC = 0.855</code></pre>
+<h3 id="10-以波士顿房价为例-对线性回归和-KNN-进行比较"><a href="#10-以波士顿房价为例-对线性回归和-KNN-进行比较" class="headerlink" title="10, 以波士顿房价为例, 对线性回归和 KNN 进行比较:"></a>10, 以波士顿房价为例, 对线性回归和 KNN 进行比较:</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsRegressor </span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">X, y = load_boston(return_X_y=<span class="literal">True</span>)</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y,</span><br><span class="line">                        test_size=<span class="number">0.25</span>, random_state=<span class="number">0</span>)</span><br><span class="line">knn = KNeighborsRegressor(n_neighbors=<span class="number">3</span>, weights=<span class="string">&quot;distance&quot;</span>) </span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;KNN 算法 R²：&quot;</span>, knn.score(X_test, y_test))</span><br><span class="line">lr = LinearRegression()</span><br><span class="line">lr.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;线性回归算法 R²：&quot;</span>, lr.score(X_test, y_test))</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/mathematical-statistics/output_2_0.png"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将预测类别和真实类别可视化对比</span></span><br><span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">2.2</span>))</span><br><span class="line">plt.plot(y_test, marker=<span class="string">&#x27;o&#x27;</span>, ls=<span class="string">&#x27;&#x27;</span>, ms=<span class="number">10</span>, c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;真实类别&#x27;</span>)</span><br><span class="line">plt.plot(y_hat, marker=<span class="string">&#x27;x&#x27;</span>, ls=<span class="string">&#x27;&#x27;</span>, ms=<span class="number">10</span>, c=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;预测类别&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;样本序号&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;类别&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;预测结果&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre><code>KNN 算法 R²： 0.5158073940789912
+线性回归算法 R²： 0.6354638433202129</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对 KNN 数据标准化和参数调优之后再来比较</span></span><br><span class="line">knn = KNeighborsRegressor()</span><br><span class="line">grid = &#123;<span class="string">&#x27;n_neighbors&#x27;</span>: <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>,<span class="number">1</span>), <span class="string">&#x27;weights&#x27;</span>: [<span class="string">&#x27;uniform&#x27;</span>,<span class="string">&#x27;distance&#x27;</span>]&#125;</span><br><span class="line">gs = GridSearchCV(estimator=knn, param_grid=grid, scoring=<span class="string">&#x27;r2&#x27;</span>,</span><br><span class="line">                  n_jobs=<span class="number">-1</span>, cv=<span class="number">5</span>, verbose=<span class="number">0</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用流水线处理</span></span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义流水线的步骤: 类型为一个列表, 列表中的每个元素是元组类型</span></span><br><span class="line"><span class="comment"># 格式为：[(步骤名1，评估器1), (步骤名2， 评估器2), ……, (步骤名n, 评估器n)</span></span><br><span class="line">knn_steps = [(<span class="string">&quot;scaler&quot;</span>, StandardScaler()), (<span class="string">&quot;knn&quot;</span>, gs)]</span><br><span class="line">knn_p = Pipeline(knn_steps)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以设置流水线的参数. 所有可用的参数可以通过 get_params 获取</span></span><br><span class="line"><span class="comment"># 设置格式如下: (步骤名__参数)</span></span><br><span class="line"><span class="comment"># p.set_params(knn__n_neighbors=3, knn__weights=&quot;uniform&quot;)</span></span><br><span class="line">knn_p.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;KNN 算法 R²：&quot;</span>, knn_p.score(X_test, y_test))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 线性回归数据标准化</span></span><br><span class="line">lr_steps = [(<span class="string">&quot;scaler&quot;</span>, StandardScaler()), (<span class="string">&quot;lr&quot;</span>, LinearRegression())]</span><br><span class="line">lr_p = Pipeline(lr_steps)</span><br><span class="line">lr_p.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;线性回归算法 R²：&quot;</span>, lr_p.score(X_test, y_test))</span><br></pre></td></tr></table></figure>
 
-
-<p><img src="/images/mathematical-statistics/output_3_0.png"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 因预测样本所属类别时, 通过比较概率得到结果, </span></span><br><span class="line"><span class="comment"># 我们可将结果对应的概率可视化</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取预测的概率值</span></span><br><span class="line">probability = lr.predict_proba(x_test)</span><br><span class="line">print(<span class="string">&#x27;概率:&#x27;</span>, probability[:<span class="number">5</span>], sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">index = np.arange(<span class="built_in">len</span>(x_test))</span><br><span class="line">pro_0 = probability[:, <span class="number">0</span>]</span><br><span class="line">pro_1 = probability[:, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置预测结果标签, 对和错</span></span><br><span class="line">tick_label = np.where(y_test==y_hat, <span class="string">&#x27;对&#x27;</span>, <span class="string">&#x27;错&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制堆叠图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">2</span>))</span><br><span class="line">plt.bar(index, height=pro_0, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;类别1的概率&#x27;</span>)</span><br><span class="line">plt.bar(index, height=pro_1, color=<span class="string">&#x27;r&#x27;</span>, bottom=pro_0,</span><br><span class="line">        label=<span class="string">&#x27;类别2的概率&#x27;</span>, tick_label=tick_label)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;样本序号&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;各类别的概率&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;分类概率&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<pre><code>概率:
-[[0.46933862 0.53066138]
- [0.98282882 0.01717118]
- [0.72589695 0.27410305]
- [0.91245661 0.08754339]
- [0.80288412 0.19711588]]</code></pre>
-<p><img src="/images/mathematical-statistics/output_4_1.png"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 绘制决策边界</span></span><br><span class="line"><span class="comment"># 决策边界: 不同类别的分界线</span></span><br><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义绘制函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_decision_boundary</span>(<span class="params">model, x, y</span>):</span></span><br><span class="line">    color = [<span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">    marker = [<span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;x&#x27;</span>]</span><br><span class="line">    class_label = np.unique(y)</span><br><span class="line">    cmap = ListedColormap(color[:<span class="built_in">len</span>(class_label)])</span><br><span class="line">    x1_min, x2_min = np.<span class="built_in">min</span>(x, axis=<span class="number">0</span>)</span><br><span class="line">    x1_max, x2_max = np.<span class="built_in">max</span>(x, axis=<span class="number">0</span>)</span><br><span class="line">    x1 = np.arange(x1_min - <span class="number">1</span>, x1_max + <span class="number">1</span>, <span class="number">0.02</span>)</span><br><span class="line">    x2 = np.arange(x2_min - <span class="number">1</span>, x2_max + <span class="number">1</span>, <span class="number">0.02</span>)</span><br><span class="line">    x1, x2 = np.meshgrid(x1, x2)</span><br><span class="line">    z = model.predict(np.array([x1.ravel(), x2.ravel()]).T).reshape(x1.shape)</span><br><span class="line">    </span><br><span class="line">    plt.contourf(x1, x2, z, cmap=cmap, alpha=<span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">for</span> i, class_ <span class="keyword">in</span> <span class="built_in">enumerate</span>(class_label):</span><br><span class="line">        plt.scatter(x=x[y==class_, <span class="number">0</span>], y=x[y==class_, <span class="number">1</span>],</span><br><span class="line">                c=cmap.colors[i], label=class_, marker=marker[i])</span><br><span class="line">    plt.legend()</span><br><span class="line">    plt.show()</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 绘制模型在训练集上的决策边界</span></span><br><span class="line">plot_decision_boundary(lr, x_train, y_train)</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/mathematical-statistics/output_5_0.png"></p>
-<p><strong>拓展</strong>:<br>逻辑回归实现多分类</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">iris = load_iris()</span><br><span class="line">x, y = iris.data, iris.target</span><br><span class="line">x = x[:, <span class="number">2</span>:]</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(x, y, </span><br><span class="line">        test_size=<span class="number">0.25</span>, random_state=<span class="number">2</span>)</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试分类</span></span><br><span class="line">y_hat = lr.predict(x_test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化结果</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>]=<span class="literal">False</span></span><br><span class="line">plot_decision_boundary(lr, x_test, y_test)</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/mathematical-statistics/output_7_0.png"></p>
+<pre><code>KNN 算法 R²： 0.6441485149216897
+线性回归算法 R²： 0.6354638433202131</code></pre>
 <br>
 
 ]]></content>
@@ -1978,53 +1773,70 @@ weighted avg       0.92      0.92      0.92        25</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>KNN 算法</title>
-    <url>/data/statistics6-a328029dd5af/</url>
+    <title>K-Means 算法</title>
+    <url>/data/statistics9-37ff3fbe9723/</url>
     <content><![CDATA[<blockquote>
 <p>文章主要内容和思路来源: <strong>开课吧</strong>学习笔记</p>
 </blockquote>
-<h2 id="七-KNN-算法"><a href="#七-KNN-算法" class="headerlink" title="七, KNN 算法"></a>七, KNN 算法</h2><h3 id="1-关于-KNN"><a href="#1-关于-KNN" class="headerlink" title="1, 关于 KNN"></a>1, 关于 KNN</h3><p>KNN (K-Nearest Neighbor), 即 K 近邻算法, K 个最近的邻居. 当需要预测一个未知样本的时候, 就由与该样本最近的 K 个邻居来决定</p>
-<p>KNN 既可以用于分类, 也可用于回归. 用来分类时, 使用 K 个邻居中, 类别数量最多(或加权最多)者, 作为预测结果; 当用来回归分析时, 使用 K 个邻居的均值(或加权均值), 作为预测结果</p>
-<p>KNN 算法的原理是: 样本映射到多维空间时, 相似度较高的样本, 距离也会较接近, “近朱者赤近墨者黑”</p>
-<h3 id="2-K-值"><a href="#2-K-值" class="headerlink" title="2, K 值"></a>2, K 值</h3><p>KNN 算法的 K 值是一个模型训练前就要人为指定的参数<strong>超参数</strong>, 不同于模型内部通过训练数据计算得到的参数. KNN 的超参数, 需要通常通过<strong>交叉验证</strong>的方式来选择最合适的参数组合 </p>
-<p>K 值的选择非常重要, K 值较小时, 模型预测依赖附近的邻居, 敏感性高, 稳定性低, 容易导致过拟合; 反之, K 值较大, 敏感性低, 稳定性高, 容易欠拟合</p>
-<p>K 值在数据量小时, 可以通过遍历所有样本(穷举)的方式找出最近的 K 个邻居, 当数据量庞大时, 穷举耗费大量时间, 此时可以采用 <strong>KD树</strong> 来找 K 个邻居</p>
-<h3 id="3-交叉验证"><a href="#3-交叉验证" class="headerlink" title="3, 交叉验证"></a>3, 交叉验证</h3><p>KNN 的网格搜索交叉验证: 取不同的 K, 选择不同的距离或权重计算方式等, 将数据分为多个组, 一个组作为测试集, 其他部分作为训练集, 不断循环训练和测试, 对模型进行循环验证, 找出最佳参数组合</p>
-<h3 id="4-距离的度量方式"><a href="#4-距离的度量方式" class="headerlink" title="4, 距离的度量方式"></a>4, 距离的度量方式</h3><p><strong>闵可夫斯基距离:</strong></p>
-<p>设 n 维空间中两个点位 X 和 Y:</p>
-<p>$X=\left(x_{1}, x_{2}, \ldots \ldots, x_{n}\right)$</p>
-<p>$Y=\left(y_{1}, y_{2}, \ldots \ldots, y_{n}\right)$</p>
-<p>则阁可夫斯基距离为:</p>
-<p>$D(X, Y)=\left(\sum_{i=1}^{n}\left|x_{i}-y_{i}\right|^{p}\right)^{1 / p}$</p>
-<p>当 p 为 1 时, 又称 <strong>曼哈顿距离</strong>; 当 p 为 2 时, 称 <strong>欧几里得距离</strong></p>
-<h3 id="5-权重"><a href="#5-权重" class="headerlink" title="5, 权重"></a>5, 权重</h3><p><strong>统一权重:</strong> K 个邻居权重相同, 不管近远都是 1/K</p>
-<p><strong>距离加权权重:</strong> K 个邻居的权重, 与他们各自和待测样本的距离成反比, 同时要保证权重之和为 1. 例如 3 个邻居 a, b, c 距离待测样本的距离分别为 a, b 和 c, 则 a 的权重为:</p>
-<p>$$\frac{\frac{1}{a}}{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}}=\frac{b c}{b c+a c+a b}$$</p>
-<p>b 和 c 同理</p>
-<h3 id="6-数据标准化"><a href="#6-数据标准化" class="headerlink" title="6, 数据标准化"></a>6, 数据标准化</h3><p>样本中的特征通常非常多，由于各特征的性质不同，通常具有不同的量纲(数量级). 当各特征间的量纲相差很大时，如果直接用原始特征值进行分析，就会突出数值较高的特征在综合分析中的作用，相对削弱数值较低特征的作用, 因此需要通过数据标准化, 将量纲统一, 才能客观地描述各个特征对模型的影响程度</p>
-<p>线性回归和逻辑回归, 都是通过每个特征与其权重的乘积相加来进行计算, 不进行数据标准化(不考虑正则化), 对每个特征的权重影响较大, 但对结果不会造成影响, 而 KNN 是基于距离计算的, 如果特征的量纲不同, 量纲较大的特征会占据主导地位, 导致忽略量纲较小的特征, 从而对模型性能造成较大影响</p>
-<h3 id="7-算法实现步骤"><a href="#7-算法实现步骤" class="headerlink" title="7, 算法实现步骤"></a>7, 算法实现步骤</h3><p>a, 确定超参数<br>  确定 K<br>  确定距离度量方式<br>  确定权重计算方式<br>  其他超参数  </p>
-<p>b, 从训练集中选择距离待测样本最近的 K 个样本</p>
-<p>c, 根据 K 个样本对待测样本进行预测, 如果遇到多个样本距离相同的情况, 默认选取训练集中靠前的</p>
-<h3 id="8-流水线-Pipline"><a href="#8-流水线-Pipline" class="headerlink" title="8, 流水线 Pipline"></a>8, 流水线 Pipline</h3><p>流水线可以将每个评估器视为一个步骤, 然后将多个步骤作为整体依次执行. 例如数据处理工作较多时, 可能涉及更多步骤, 例如多项式扩展, One-Hot 编码, 特征选择, 数据标准化, 交叉验证等, 分别执行过于繁琐, 我们可以将数据处理与模型训练各个步骤作为一个整体来执行</p>
-<p>流水线具有最后一个评估器的所有方法:</p>
-<p>a, 当流水线对象调用 fit 方法时, 会从第一个评估器依次调用 fit_transform 方法, 然后到最后一个评估器调用 fit 方法</p>
-<p>b, 当流水线对象调用 <em>其他</em> 方法时, 会从第一个评估器依次调用 transform 方法, 然后到最后一个评估器调用 <em>其他</em> 方法</p>
-<h3 id="9-以鸢尾花为例-对逻辑回归和-KNN-进行比较"><a href="#9-以鸢尾花为例-对逻辑回归和-KNN-进行比较" class="headerlink" title="9, 以鸢尾花为例, 对逻辑回归和 KNN 进行比较:"></a>9, 以鸢尾花为例, 对逻辑回归和 KNN 进行比较:</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">mpl.rcParams[<span class="string">&quot;font.family&quot;</span>] = <span class="string">&quot;SimHei&quot;</span></span><br><span class="line">mpl.rcParams[<span class="string">&quot;axes.unicode_minus&quot;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">X = iris.data[:, :<span class="number">2</span>]</span><br><span class="line">y = iris.target</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, </span><br><span class="line">                        test_size=<span class="number">0.25</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据标准化: StandardScaler 均值标准差标准化, MinMaxScaler 最大最小值标准化</span></span><br><span class="line">ss = StandardScaler()</span><br><span class="line">X_train = ss.fit_transform(X_train)</span><br><span class="line">X_test = ss.transform(X_test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 逻辑回归训练</span></span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(X_train,y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># KNN 训练</span></span><br><span class="line"><span class="comment"># n_neighbors: 邻居的数量</span></span><br><span class="line"><span class="comment"># weights：权重计算方式, 可选值为 uniform 统一权重, 与 distance 加权权重</span></span><br><span class="line">knn = KNeighborsClassifier(n_neighbors=<span class="number">3</span>, weights=<span class="string">&quot;uniform&quot;</span>)</span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 比较 AUC</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc,roc_auc_score</span><br><span class="line"></span><br><span class="line">lr_fpr, lr_tpr, lr_thresholds = roc_curve(y_test,</span><br><span class="line">                lr.predict_proba(X_test)[:,<span class="number">1</span>], pos_label=<span class="number">1</span>)</span><br><span class="line">lr_auc = auc(lr_fpr, lr_tpr)</span><br><span class="line">print(<span class="string">&#x27;Logistic 算法: AUC = %.3f&#x27;</span> % lr_auc)</span><br><span class="line"></span><br><span class="line">knn_fpr, knn_tpr, knn_thresholds = roc_curve(y_test,</span><br><span class="line">                knn.predict_proba(X_test)[:,<span class="number">1</span>], pos_label=<span class="number">1</span>)</span><br><span class="line">knn_auc = auc(knn_fpr, knn_tpr)</span><br><span class="line">print(<span class="string">&#x27;KNN 算法: AUC = %.3f&#x27;</span> % knn_auc)</span><br></pre></td></tr></table></figure>
+<h2 id="十-K-Means-算法"><a href="#十-K-Means-算法" class="headerlink" title="十, K-Means 算法"></a>十, K-Means 算法</h2><h3 id="1-聚类"><a href="#1-聚类" class="headerlink" title="1, 聚类"></a>1, 聚类</h3><p>前面接触的算法, 都是<strong>监督学习</strong>, 即训练数据中自变量(特征)和因变量(结果)都是已知的, 用含有结果的训练集建立模型, 然后对未知结果的数据进行预测</p>
+<p>聚类属于<strong>无监督学习</strong>, 训练数据中没有”已知结果的监督”. 聚类的目的, 就是通过已知样本数据的特征, 将数据划分为若干个类别, 每个类别成一个类簇, 使得同一个簇内的数据相似度越大, “物以类聚”, 不同簇之间的数据相似度越小, 聚类效果越好</p>
+<p>聚类的样本相似度根据距离来度量</p>
+<h3 id="2-K-Means"><a href="#2-K-Means" class="headerlink" title="2, K-Means"></a>2, K-Means</h3><p>即 K 均值算法, 是常见的聚类算法, 该算法将数据集分为 K 个簇, 每个簇使用簇内所有样本的均值来表示, 该均值称为”质心”</p>
+<p>K-Means 算法的目标, 就是选择适合的质心, 使得每个簇内, 样本点距质心的距离尽可能的小, 从而保证簇内样本有较高相似度</p>
+<p>算法实现步骤:</p>
+<p>a, 从样本中选择 K 个点作为初始质心<br>b, 计算每个样本点到各个质心的距离, 将样本点划分到距离最近的质心所对应的簇中<br>c, 计算每个簇内所有样本的均值, 使用该均值作为新的质心<br>d, 重复 b 和 c, 重复一定次数质心一般会趋于稳定, 如果达到以下条件, 重复结束:<br>– 质心位置变化小于指定的阈值<br>– 达到最迭代环次数</p>
+<p>对于算法的实现步骤, 我们有几个重要的疑问:</p>
+<p>– 1.怎么评价质心是否达到了最佳位置?<br>– 2.初始质心随机选, 还是选在哪里?<br>– 3. K 值怎么定?  </p>
+<h3 id="3-算法优化目标"><a href="#3-算法优化目标" class="headerlink" title="3, 算法优化目标"></a>3, 算法优化目标</h3><p>样本的相似度是根据距离来度量的, 一般使用簇内<strong>误差平方和</strong>(within-cluster SSE 簇惯性) 来作为优化算法的目标函数, 距离常用欧氏距离, 优化目标就是使 SSE 最小化:</p>
+<p>$$S S E=\sum_{i=1}^{k} \sum_{j=1}^{m_{i}}\left(\left|x_{j}-\mu_{i}\right|^{2}\right)$$</p>
+<p>k: 族的数量<br>$m_{i}$: 第 i 个簇含有的样本数量<br>${\mu}<em>{i}$: 第 i 个族的质心<br>$\left|x</em>{j}-\mu_{i}\right|$: 第 i 个族中，每个样本  $x_{j}$  与质心  $\mu_{i}$  的距离</p>
+<p>同一个数据集, 相同的簇数, SSE 越小, 通常质心位置更佳, 算法模型更好</p>
+<h3 id="4-初始质心的影响"><a href="#4-初始质心的影响" class="headerlink" title="4, 初始质心的影响"></a>4, 初始质心的影响</h3><p>初始质心可以随机选择, 但由于算法是通过迭代初始质心一步步实现, 初始质心的位置受随机性影响, 算法训练的最终结果也会受到影响</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;YouYuan&#x27;</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">12</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span> </span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">生成数据:</span></span><br><span class="line"><span class="string">n_samples: 样本数量</span></span><br><span class="line"><span class="string">n_features: 特征数</span></span><br><span class="line"><span class="string">centers: 聚类中心</span></span><br><span class="line"><span class="string">cluster_std: 簇的标准差, 可以统一指定, 也分别指定</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">centers = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">5</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">5</span>]]</span><br><span class="line">x, y = make_blobs(n_samples=<span class="number">90</span>,</span><br><span class="line">                  n_features=<span class="number">2</span>,</span><br><span class="line">                  centers=centers,</span><br><span class="line">                  cluster_std=[<span class="number">2.2</span>, <span class="number">2.5</span>, <span class="number">2</span>],</span><br><span class="line">                  random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># x 是特征, y 是类别标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制原始数据</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">8</span>))</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line">colors = np.array([<span class="string">&#x27;Coral&#x27;</span>, <span class="string">&#x27;SeaGreen&#x27;</span>, <span class="string">&#x27;RoyalBlue&#x27;</span>])</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=colors[y], marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;原始数据&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;原始数据&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义绘制聚类结果的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_cluster</span>(<span class="params">model, train, test=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">global</span> colors  <span class="comment"># 使用上面的颜色</span></span><br><span class="line">    cc = model.cluster_centers_ <span class="comment"># 获取质心</span></span><br><span class="line">    label = model.labels_ <span class="comment"># 获取聚类结果的标签</span></span><br><span class="line">    <span class="comment"># 绘制质心</span></span><br><span class="line">    plt.scatter(cc[:, <span class="number">0</span>], <span class="comment"># 质心的 x 坐标</span></span><br><span class="line">                cc[:, <span class="number">1</span>], <span class="comment"># 质心的 y 坐标</span></span><br><span class="line">                marker=<span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">                s=<span class="number">150</span>,</span><br><span class="line">                c=colors)</span><br><span class="line">    <span class="comment"># 绘制训练集</span></span><br><span class="line">    plt.scatter(train[:, <span class="number">0</span>], train[:, <span class="number">1</span>], marker=<span class="string">&#x27;.&#x27;</span>, c=colors[label])</span><br><span class="line">    <span class="comment"># 绘制测试集</span></span><br><span class="line">    <span class="keyword">if</span> test <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        y_hat = model.predict(test)</span><br><span class="line">        plt.scatter(test[:, <span class="number">0</span>], test[:, <span class="number">1</span>], marker=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">                    s=<span class="number">150</span>, c=colors[y_hat])        </span><br><span class="line">    <span class="comment"># 标题</span></span><br><span class="line">    plt.title(<span class="string">f&#x27;SSE:<span class="subst">&#123;model.inertia_:<span class="number">.1</span>f&#125;</span> 迭代次数:<span class="subst">&#123;model.n_iter_&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试集</span></span><br><span class="line">test = np.array([[<span class="number">6</span>, <span class="number">5</span>]])    </span><br><span class="line"><span class="comment"># 绘制不同初始质心的聚类结果</span></span><br><span class="line">seed = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">100</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">5</span>):</span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, i)</span><br><span class="line">    kmeans = KMeans(n_clusters=<span class="number">3</span>, <span class="comment"># 簇数</span></span><br><span class="line">                    init=<span class="string">&#x27;random&#x27;</span>, <span class="comment"># 初始化方式</span></span><br><span class="line">                    n_init=<span class="number">1</span>, <span class="comment"># 初始化质心组数</span></span><br><span class="line">                    random_state=seed[i<span class="number">-2</span>])</span><br><span class="line">    kmeans.fit(x)</span><br><span class="line">    plot_cluster(kmeans, x)</span><br><span class="line">    <span class="comment"># 测试结果</span></span><br><span class="line">    plot_cluster(kmeans, x, test)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Logistic 算法: AUC = 0.835
-KNN 算法: AUC = 0.794</code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 KNN 算法参数进行调优再来比较</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line"><span class="comment"># K 值取 1~10, 并定义需要的参数组合</span></span><br><span class="line">knn = KNeighborsClassifier()</span><br><span class="line">grid = &#123;<span class="string">&#x27;n_neighbors&#x27;</span>: <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>,<span class="number">1</span>), <span class="string">&#x27;weights&#x27;</span>: [<span class="string">&#x27;uniform&#x27;</span>,<span class="string">&#x27;distance&#x27;</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 网格搜索交叉验证</span></span><br><span class="line"><span class="comment"># param_grid：需要检验的超参数组合</span></span><br><span class="line"><span class="comment"># scoring：模型评估标准, accuracy 正确率</span></span><br><span class="line"><span class="comment"># n_jobs：并发数量</span></span><br><span class="line"><span class="comment"># cv：交叉验证折数</span></span><br><span class="line"><span class="comment"># verbose：输出冗余信息</span></span><br><span class="line">gs = GridSearchCV(estimator=knn, param_grid=grid, scoring=<span class="string">&#x27;accuracy&#x27;</span>,</span><br><span class="line">                  n_jobs=<span class="number">-1</span>, cv=<span class="number">5</span>, verbose=<span class="number">0</span>)</span><br><span class="line">gs.fit(X_train, y_train)</span><br><span class="line">gs_fpr, gs_tpr, gs_thresholds = roc_curve(y_test,</span><br><span class="line">                gs.predict_proba(X_test)[:,<span class="number">1</span>], pos_label=<span class="number">1</span>)</span><br><span class="line">gs_auc = auc(gs_fpr, gs_tpr)</span><br><span class="line">print(<span class="string">&#x27;KNN 算法: AUC = %.3f&#x27;</span> % gs_auc)</span><br></pre></td></tr></table></figure>
 
-<pre><code>KNN 算法: AUC = 0.855</code></pre>
-<h3 id="10-以波士顿房价为例-对线性回归和-KNN-进行比较"><a href="#10-以波士顿房价为例-对线性回归和-KNN-进行比较" class="headerlink" title="10, 以波士顿房价为例, 对线性回归和 KNN 进行比较:"></a>10, 以波士顿房价为例, 对线性回归和 KNN 进行比较:</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsRegressor </span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">X, y = load_boston(return_X_y=<span class="literal">True</span>)</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y,</span><br><span class="line">                        test_size=<span class="number">0.25</span>, random_state=<span class="number">0</span>)</span><br><span class="line">knn = KNeighborsRegressor(n_neighbors=<span class="number">3</span>, weights=<span class="string">&quot;distance&quot;</span>) </span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;KNN 算法 R²：&quot;</span>, knn.score(X_test, y_test))</span><br><span class="line">lr = LinearRegression()</span><br><span class="line">lr.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;线性回归算法 R²：&quot;</span>, lr.score(X_test, y_test))</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2O85J.md.png" alt="png"></p>
+<p>从上图可以看出受初始化质心的影响, 聚类效果(SSE) 与 收敛速度(迭代次数) 会不同, 也即是可能会收敛到局部最小, 而不是整体最优; 同时, 也可以看出 SSE 越小, 整体结果越优, 越接近原始数据</p>
+<h3 id="5-K-Means-优化"><a href="#5-K-Means-优化" class="headerlink" title="5, K-Means++ 优化"></a>5, K-Means++ 优化</h3><p>针对上述初始化质心造成的问题, 设置初始化多组质心可以得到缓解, 但通常限于聚类簇数较少的情况, 如果簇数较多, 可能就不会有效</p>
+<p>于是有了 K-Means++, 选择初始化质心时, 不在随机选, 而是按下述步骤进行选择:</p>
+<p>– 1, 从训练数据中随机选择一个样本点, 作为初始质心<br>– 2, 对任意一个非质心样本点 $x^{(i)}$, 计算 $x^{(i)}$ 与现有最近质心的距离 $D\left(x^{(i)}\right)$<br>– 3, 根据概率 $\frac{D\left(x^{(i)}\right)^{2}}{\sum_{j=1}^{m} D\left(x^{(j)}\right)^{2}}$ 最大, 来选择最远的一个样本点 $x^{(i)}$ 作为质心, m 为非质心样本点数量<br>– 4, 重复 2 和 3, 直到选择了 K 个质心为止</p>
+<p>做了优化之后, 保证了初始质心不会集中, 而是分散在数据集中</p>
+<p>下面用试试 K-Means++ 的聚类效果:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">kmeans = KMeans(n_clusters=<span class="number">3</span>, init=<span class="string">&#x27;k-means++&#x27;</span>, n_init=<span class="number">1</span>)</span><br><span class="line">kmeans.fit(x)</span><br><span class="line">plot_cluster(kmeans, x)</span><br></pre></td></tr></table></figure>
 
-<pre><code>KNN 算法 R²： 0.5158073940789912
-线性回归算法 R²： 0.6354638433202129</code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对 KNN 数据标准化和参数调优之后再来比较</span></span><br><span class="line">knn = KNeighborsRegressor()</span><br><span class="line">grid = &#123;<span class="string">&#x27;n_neighbors&#x27;</span>: <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>,<span class="number">1</span>), <span class="string">&#x27;weights&#x27;</span>: [<span class="string">&#x27;uniform&#x27;</span>,<span class="string">&#x27;distance&#x27;</span>]&#125;</span><br><span class="line">gs = GridSearchCV(estimator=knn, param_grid=grid, scoring=<span class="string">&#x27;r2&#x27;</span>,</span><br><span class="line">                  n_jobs=<span class="number">-1</span>, cv=<span class="number">5</span>, verbose=<span class="number">0</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用流水线处理</span></span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义流水线的步骤: 类型为一个列表, 列表中的每个元素是元组类型</span></span><br><span class="line"><span class="comment"># 格式为：[(步骤名1，评估器1), (步骤名2， 评估器2), ……, (步骤名n, 评估器n)</span></span><br><span class="line">knn_steps = [(<span class="string">&quot;scaler&quot;</span>, StandardScaler()), (<span class="string">&quot;knn&quot;</span>, gs)]</span><br><span class="line">knn_p = Pipeline(knn_steps)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以设置流水线的参数. 所有可用的参数可以通过 get_params 获取</span></span><br><span class="line"><span class="comment"># 设置格式如下: (步骤名__参数)</span></span><br><span class="line"><span class="comment"># p.set_params(knn__n_neighbors=3, knn__weights=&quot;uniform&quot;)</span></span><br><span class="line">knn_p.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;KNN 算法 R²：&quot;</span>, knn_p.score(X_test, y_test))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 线性回归数据标准化</span></span><br><span class="line">lr_steps = [(<span class="string">&quot;scaler&quot;</span>, StandardScaler()), (<span class="string">&quot;lr&quot;</span>, LinearRegression())]</span><br><span class="line">lr_p = Pipeline(lr_steps)</span><br><span class="line">lr_p.fit(X_train, y_train)</span><br><span class="line">print(<span class="string">&quot;线性回归算法 R²：&quot;</span>, lr_p.score(X_test, y_test))</span><br></pre></td></tr></table></figure>
 
-<pre><code>KNN 算法 R²： 0.6441485149216897
-线性回归算法 R²： 0.6354638433202131</code></pre>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2OnU8.png" alt="png"></p>
+<h3 id="6-确定-K-值"><a href="#6-确定-K-值" class="headerlink" title="6, 确定 K 值"></a>6, 确定 K 值</h3><p>K 是超参数, 需要预先人为指定 </p>
+<p>有时需要按照建模的需求和目的来选择聚类的个数, 但是 K 值选择不当, 聚类效果可能不佳. 例如实际 3 类, K 选了 10, 或者 K 无限制, 取值和样本点个数一样, 最后每个点一个类, SEE 为 0, 但是聚类已经毫无意义</p>
+<p>如果不是硬性要求 K 的取值, 怎么确定最佳的 K 值呢? 一个比较好的方法就是<strong>肘部法则</strong>:</p>
+<p>SEE 需要越小越好, K 又不能取太大, 我们可以看看他们之间的关系:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置列表储存 SSE</span></span><br><span class="line">sse = []</span><br><span class="line"><span class="comment"># K 值从 1~9 变化</span></span><br><span class="line">scope = <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> scope:</span><br><span class="line">    kmeans = KMeans(n_clusters=k)</span><br><span class="line">    kmeans.fit(x)</span><br><span class="line">    sse.append(kmeans.inertia_)</span><br><span class="line">    </span><br><span class="line">plt.xticks(scope)</span><br><span class="line">plt.plot(scope, sse, marker=<span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_70_0.png" alt="png"></p>
+<p>从上图可以看出, K 增加, SSE 减小, 但当 K &gt; 3 时, K 再增加, SSE 减小变得缓慢, 所以 K 选择 3, 实际情况也是 3</p>
+<h3 id="6-Mini-Batch-K-Means"><a href="#6-Mini-Batch-K-Means" class="headerlink" title="6, Mini Batch K-Means"></a>6, Mini Batch K-Means</h3><p>K-Means 每次迭代都会使用所有数据参与运算, 当数据集较大时, 会比较耗时. Mini Batch K-Means (小批量 K-Means) 算法每次迭代使用小批量样本训练, 逐批次累计的方式进行计算, 从而大大减少计算时间. 效果上, 通常只是略差于 K-Means</p>
+<p>Mini Batch K-Means 算法实现步骤:</p>
+<p>a, 从数据集中随机选择部分数据, 使用 K-Means 算法在这部分数据上聚类, 获取质心<br>b, 再从数据集中随机选择部分数据, 分别分配给最近的质心<br>c, 每个簇根据现有的数据集更新质心<br>d, 重复 b 和 c, 直到质心变化小于指定阈值或达到最大迭代次数</p>
+<p>下面比较一下两个算法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> MiniBatchKMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.pairwise <span class="keyword">import</span> pairwise_distances_argmin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成数据</span></span><br><span class="line">centers = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">400</span>, <span class="number">100</span>], [<span class="number">100</span>, <span class="number">400</span>]]</span><br><span class="line">x, y = make_blobs(n_samples=<span class="number">8000</span>, n_features=<span class="number">2</span>, centers=centers,</span><br><span class="line">                  cluster_std=<span class="number">120</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义函数, 用于计算模型训练时间</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elapsed_time</span>(<span class="params">model, data</span>):</span></span><br><span class="line">    start = time.time()</span><br><span class="line">    model.fit(data)</span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="keyword">return</span> end - start</span><br><span class="line"></span><br><span class="line">n_clusters = <span class="built_in">len</span>(centers)</span><br><span class="line">kmeans = KMeans(n_clusters=n_clusters)</span><br><span class="line">mbk = MiniBatchKMeans(n_clusters=n_clusters,</span><br><span class="line">                      batch_size=<span class="number">200</span>, <span class="comment"># 小批量的大小</span></span><br><span class="line">                     n_init=<span class="number">10</span> <span class="comment"># 和 KMeans 统一为 10</span></span><br><span class="line">                     )</span><br><span class="line">kmeans_time = elapsed_time(kmeans, x)</span><br><span class="line">mbk_time = elapsed_time(mbk, x)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;K-Means耗时:&#x27;</span>, kmeans_time)</span><br><span class="line">print(<span class="string">&#x27;Mini Batch K-Means耗时:&#x27;</span>, mbk_time)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制聚类效果</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">model = [kmeans, mbk]</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(model, start=<span class="number">1</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">2</span>, i)</span><br><span class="line">    plot_cluster(m, x)</span><br></pre></td></tr></table></figure>
+
+<pre><code>K-Means耗时: 0.08678650856018066
+Mini Batch K-Means耗时: 0.05485272407531738</code></pre>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2ONKU.md.png" alt="png"></p>
+<p>可见, 聚类耗时 K-Means 更多, 如果数据量很大, 耗时会更明显, 而聚类效果基本一样. 但发现颜色对不上, 这是因为质心的随机性, 聚类之后质心虽然最终落在相同的位置, 但是顺序不一致, 从而聚类的结果标签不一致, 即使是同一个算法, 运行几次, 标签结果也会不一致</p>
+<p>我们将相同簇用相同的颜色绘制:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line"><span class="comment"># 定义列表, 用来保存两个模型预测结果</span></span><br><span class="line">y_hat_list = []</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(model, start=<span class="number">1</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">2</span>, i)</span><br><span class="line">    y_hat = m.predict(x)</span><br><span class="line">    <span class="keyword">if</span> m == mbk:</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        因为输出的质心顺序就是训练结果标签的顺序</span></span><br><span class="line"><span class="string">        故可以按 mbk 训练的质心, 去找 kmeans 训练的相同簇的质心</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        pairwise_distances_argmin(x, y) 解释:</span></span><br><span class="line"><span class="string">        依次取出数组 X 中的元素 x, </span></span><br><span class="line"><span class="string">        计算找到数组 Y 中与 x 距离最近的元素 y 的索引, </span></span><br><span class="line"><span class="string">        返回索引构成的数组</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        <span class="comment"># 将两者相同簇的质心一一对应并按 mbk 质心的顺序封装成字典</span></span><br><span class="line">        ar = pairwise_distances_argmin(</span><br><span class="line">        mbk.cluster_centers_, kmeans.cluster_centers_)</span><br><span class="line">        dict_ = <span class="built_in">dict</span>(<span class="built_in">enumerate</span>(ar))</span><br><span class="line">        <span class="comment"># 用 mbk 的训练结果标签 y_hat 就可以寻找到对应的 kmeans 的质心</span></span><br><span class="line">        y_hat = pd.Series(y_hat).<span class="built_in">map</span>(dict_).values</span><br><span class="line">    <span class="comment"># 将预测结果加入到列表中</span></span><br><span class="line">    y_hat_list.append(y_hat)</span><br><span class="line">    </span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=colors[y_hat], marker=<span class="string">&#x27;.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2OERm.md.png" alt="png"></p>
+<p>比较两个算法聚类结果的差异:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">same = y_hat_list[<span class="number">0</span>] == y_hat_list[<span class="number">1</span>]</span><br><span class="line">diff = y_hat_list[<span class="number">0</span>] != y_hat_list[<span class="number">1</span>]</span><br><span class="line">plt.scatter(x[same, <span class="number">0</span>], x[same, <span class="number">1</span>], c=<span class="string">&#x27;g&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;预测相同&#x27;</span>)</span><br><span class="line">plt.scatter(x[diff, <span class="number">0</span>], x[diff, <span class="number">1</span>], c=<span class="string">&#x27;r&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;预测不同&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">print(<span class="string">&#x27;相同数量:&#x27;</span>, x[same].shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">&#x27;不同数量:&#x27;</span>, x[diff].shape[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>相同数量: 7983
+不同数量: 17</code></pre>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2Obyd.png" alt="png"></p>
+<p>两个算法聚类结果只有 17 个样本点不同</p>
 <br>
 
 ]]></content>
@@ -2218,81 +2030,6 @@ KNN 算法: AUC = 0.794</code></pre>
 <pre><code>0.9204825770764915
 0.8763987309111113</code></pre>
 <br>
-]]></content>
-      <categories>
-        <category>数据分析</category>
-      </categories>
-      <tags>
-        <tag>数理统计</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>K-Means 算法</title>
-    <url>/data/statistics9-37ff3fbe9723/</url>
-    <content><![CDATA[<blockquote>
-<p>文章主要内容和思路来源: <strong>开课吧</strong>学习笔记</p>
-</blockquote>
-<h2 id="十-K-Means-算法"><a href="#十-K-Means-算法" class="headerlink" title="十, K-Means 算法"></a>十, K-Means 算法</h2><h3 id="1-聚类"><a href="#1-聚类" class="headerlink" title="1, 聚类"></a>1, 聚类</h3><p>前面接触的算法, 都是<strong>监督学习</strong>, 即训练数据中自变量(特征)和因变量(结果)都是已知的, 用含有结果的训练集建立模型, 然后对未知结果的数据进行预测</p>
-<p>聚类属于<strong>无监督学习</strong>, 训练数据中没有”已知结果的监督”. 聚类的目的, 就是通过已知样本数据的特征, 将数据划分为若干个类别, 每个类别成一个类簇, 使得同一个簇内的数据相似度越大, “物以类聚”, 不同簇之间的数据相似度越小, 聚类效果越好</p>
-<p>聚类的样本相似度根据距离来度量</p>
-<h3 id="2-K-Means"><a href="#2-K-Means" class="headerlink" title="2, K-Means"></a>2, K-Means</h3><p>即 K 均值算法, 是常见的聚类算法, 该算法将数据集分为 K 个簇, 每个簇使用簇内所有样本的均值来表示, 该均值称为”质心”</p>
-<p>K-Means 算法的目标, 就是选择适合的质心, 使得每个簇内, 样本点距质心的距离尽可能的小, 从而保证簇内样本有较高相似度</p>
-<p>算法实现步骤:</p>
-<p>a, 从样本中选择 K 个点作为初始质心<br>b, 计算每个样本点到各个质心的距离, 将样本点划分到距离最近的质心所对应的簇中<br>c, 计算每个簇内所有样本的均值, 使用该均值作为新的质心<br>d, 重复 b 和 c, 重复一定次数质心一般会趋于稳定, 如果达到以下条件, 重复结束:<br>– 质心位置变化小于指定的阈值<br>– 达到最迭代环次数</p>
-<p>对于算法的实现步骤, 我们有几个重要的疑问:</p>
-<p>– 1.怎么评价质心是否达到了最佳位置?<br>– 2.初始质心随机选, 还是选在哪里?<br>– 3. K 值怎么定?  </p>
-<h3 id="3-算法优化目标"><a href="#3-算法优化目标" class="headerlink" title="3, 算法优化目标"></a>3, 算法优化目标</h3><p>样本的相似度是根据距离来度量的, 一般使用簇内<strong>误差平方和</strong>(within-cluster SSE 簇惯性) 来作为优化算法的目标函数, 距离常用欧氏距离, 优化目标就是使 SSE 最小化:</p>
-<p>$$S S E=\sum_{i=1}^{k} \sum_{j=1}^{m_{i}}\left(\left|x_{j}-\mu_{i}\right|^{2}\right)$$</p>
-<p>k: 族的数量<br>$m_{i}$: 第 i 个簇含有的样本数量<br>${\mu}<em>{i}$: 第 i 个族的质心<br>$\left|x</em>{j}-\mu_{i}\right|$: 第 i 个族中，每个样本  $x_{j}$  与质心  $\mu_{i}$  的距离</p>
-<p>同一个数据集, 相同的簇数, SSE 越小, 通常质心位置更佳, 算法模型更好</p>
-<h3 id="4-初始质心的影响"><a href="#4-初始质心的影响" class="headerlink" title="4, 初始质心的影响"></a>4, 初始质心的影响</h3><p>初始质心可以随机选择, 但由于算法是通过迭代初始质心一步步实现, 初始质心的位置受随机性影响, 算法训练的最终结果也会受到影响</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;YouYuan&#x27;</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">12</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span> </span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">生成数据:</span></span><br><span class="line"><span class="string">n_samples: 样本数量</span></span><br><span class="line"><span class="string">n_features: 特征数</span></span><br><span class="line"><span class="string">centers: 聚类中心</span></span><br><span class="line"><span class="string">cluster_std: 簇的标准差, 可以统一指定, 也分别指定</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">centers = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">5</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">5</span>]]</span><br><span class="line">x, y = make_blobs(n_samples=<span class="number">90</span>,</span><br><span class="line">                  n_features=<span class="number">2</span>,</span><br><span class="line">                  centers=centers,</span><br><span class="line">                  cluster_std=[<span class="number">2.2</span>, <span class="number">2.5</span>, <span class="number">2</span>],</span><br><span class="line">                  random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># x 是特征, y 是类别标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制原始数据</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">8</span>))</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line">colors = np.array([<span class="string">&#x27;Coral&#x27;</span>, <span class="string">&#x27;SeaGreen&#x27;</span>, <span class="string">&#x27;RoyalBlue&#x27;</span>])</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=colors[y], marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;原始数据&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;原始数据&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义绘制聚类结果的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_cluster</span>(<span class="params">model, train, test=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">global</span> colors  <span class="comment"># 使用上面的颜色</span></span><br><span class="line">    cc = model.cluster_centers_ <span class="comment"># 获取质心</span></span><br><span class="line">    label = model.labels_ <span class="comment"># 获取聚类结果的标签</span></span><br><span class="line">    <span class="comment"># 绘制质心</span></span><br><span class="line">    plt.scatter(cc[:, <span class="number">0</span>], <span class="comment"># 质心的 x 坐标</span></span><br><span class="line">                cc[:, <span class="number">1</span>], <span class="comment"># 质心的 y 坐标</span></span><br><span class="line">                marker=<span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">                s=<span class="number">150</span>,</span><br><span class="line">                c=colors)</span><br><span class="line">    <span class="comment"># 绘制训练集</span></span><br><span class="line">    plt.scatter(train[:, <span class="number">0</span>], train[:, <span class="number">1</span>], marker=<span class="string">&#x27;.&#x27;</span>, c=colors[label])</span><br><span class="line">    <span class="comment"># 绘制测试集</span></span><br><span class="line">    <span class="keyword">if</span> test <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        y_hat = model.predict(test)</span><br><span class="line">        plt.scatter(test[:, <span class="number">0</span>], test[:, <span class="number">1</span>], marker=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">                    s=<span class="number">150</span>, c=colors[y_hat])        </span><br><span class="line">    <span class="comment"># 标题</span></span><br><span class="line">    plt.title(<span class="string">f&#x27;SSE:<span class="subst">&#123;model.inertia_:<span class="number">.1</span>f&#125;</span> 迭代次数:<span class="subst">&#123;model.n_iter_&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试集</span></span><br><span class="line">test = np.array([[<span class="number">6</span>, <span class="number">5</span>]])    </span><br><span class="line"><span class="comment"># 绘制不同初始质心的聚类结果</span></span><br><span class="line">seed = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">100</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">5</span>):</span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, i)</span><br><span class="line">    kmeans = KMeans(n_clusters=<span class="number">3</span>, <span class="comment"># 簇数</span></span><br><span class="line">                    init=<span class="string">&#x27;random&#x27;</span>, <span class="comment"># 初始化方式</span></span><br><span class="line">                    n_init=<span class="number">1</span>, <span class="comment"># 初始化质心组数</span></span><br><span class="line">                    random_state=seed[i<span class="number">-2</span>])</span><br><span class="line">    kmeans.fit(x)</span><br><span class="line">    plot_cluster(kmeans, x)</span><br><span class="line">    <span class="comment"># 测试结果</span></span><br><span class="line">    plot_cluster(kmeans, x, test)</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://wx2.sbimg.cn/2020/07/04/2O85J.md.png" alt="png"></p>
-<p>从上图可以看出受初始化质心的影响, 聚类效果(SSE) 与 收敛速度(迭代次数) 会不同, 也即是可能会收敛到局部最小, 而不是整体最优; 同时, 也可以看出 SSE 越小, 整体结果越优, 越接近原始数据</p>
-<h3 id="5-K-Means-优化"><a href="#5-K-Means-优化" class="headerlink" title="5, K-Means++ 优化"></a>5, K-Means++ 优化</h3><p>针对上述初始化质心造成的问题, 设置初始化多组质心可以得到缓解, 但通常限于聚类簇数较少的情况, 如果簇数较多, 可能就不会有效</p>
-<p>于是有了 K-Means++, 选择初始化质心时, 不在随机选, 而是按下述步骤进行选择:</p>
-<p>– 1, 从训练数据中随机选择一个样本点, 作为初始质心<br>– 2, 对任意一个非质心样本点 $x^{(i)}$, 计算 $x^{(i)}$ 与现有最近质心的距离 $D\left(x^{(i)}\right)$<br>– 3, 根据概率 $\frac{D\left(x^{(i)}\right)^{2}}{\sum_{j=1}^{m} D\left(x^{(j)}\right)^{2}}$ 最大, 来选择最远的一个样本点 $x^{(i)}$ 作为质心, m 为非质心样本点数量<br>– 4, 重复 2 和 3, 直到选择了 K 个质心为止</p>
-<p>做了优化之后, 保证了初始质心不会集中, 而是分散在数据集中</p>
-<p>下面用试试 K-Means++ 的聚类效果:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">kmeans = KMeans(n_clusters=<span class="number">3</span>, init=<span class="string">&#x27;k-means++&#x27;</span>, n_init=<span class="number">1</span>)</span><br><span class="line">kmeans.fit(x)</span><br><span class="line">plot_cluster(kmeans, x)</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://wx2.sbimg.cn/2020/07/04/2OnU8.png" alt="png"></p>
-<h3 id="6-确定-K-值"><a href="#6-确定-K-值" class="headerlink" title="6, 确定 K 值"></a>6, 确定 K 值</h3><p>K 是超参数, 需要预先人为指定 </p>
-<p>有时需要按照建模的需求和目的来选择聚类的个数, 但是 K 值选择不当, 聚类效果可能不佳. 例如实际 3 类, K 选了 10, 或者 K 无限制, 取值和样本点个数一样, 最后每个点一个类, SEE 为 0, 但是聚类已经毫无意义</p>
-<p>如果不是硬性要求 K 的取值, 怎么确定最佳的 K 值呢? 一个比较好的方法就是<strong>肘部法则</strong>:</p>
-<p>SEE 需要越小越好, K 又不能取太大, 我们可以看看他们之间的关系:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置列表储存 SSE</span></span><br><span class="line">sse = []</span><br><span class="line"><span class="comment"># K 值从 1~9 变化</span></span><br><span class="line">scope = <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> scope:</span><br><span class="line">    kmeans = KMeans(n_clusters=k)</span><br><span class="line">    kmeans.fit(x)</span><br><span class="line">    sse.append(kmeans.inertia_)</span><br><span class="line">    </span><br><span class="line">plt.xticks(scope)</span><br><span class="line">plt.plot(scope, sse, marker=<span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/mathematical-statistics/output_70_0.png" alt="png"></p>
-<p>从上图可以看出, K 增加, SSE 减小, 但当 K &gt; 3 时, K 再增加, SSE 减小变得缓慢, 所以 K 选择 3, 实际情况也是 3</p>
-<h3 id="6-Mini-Batch-K-Means"><a href="#6-Mini-Batch-K-Means" class="headerlink" title="6, Mini Batch K-Means"></a>6, Mini Batch K-Means</h3><p>K-Means 每次迭代都会使用所有数据参与运算, 当数据集较大时, 会比较耗时. Mini Batch K-Means (小批量 K-Means) 算法每次迭代使用小批量样本训练, 逐批次累计的方式进行计算, 从而大大减少计算时间. 效果上, 通常只是略差于 K-Means</p>
-<p>Mini Batch K-Means 算法实现步骤:</p>
-<p>a, 从数据集中随机选择部分数据, 使用 K-Means 算法在这部分数据上聚类, 获取质心<br>b, 再从数据集中随机选择部分数据, 分别分配给最近的质心<br>c, 每个簇根据现有的数据集更新质心<br>d, 重复 b 和 c, 直到质心变化小于指定阈值或达到最大迭代次数</p>
-<p>下面比较一下两个算法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> MiniBatchKMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.pairwise <span class="keyword">import</span> pairwise_distances_argmin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成数据</span></span><br><span class="line">centers = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">400</span>, <span class="number">100</span>], [<span class="number">100</span>, <span class="number">400</span>]]</span><br><span class="line">x, y = make_blobs(n_samples=<span class="number">8000</span>, n_features=<span class="number">2</span>, centers=centers,</span><br><span class="line">                  cluster_std=<span class="number">120</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义函数, 用于计算模型训练时间</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elapsed_time</span>(<span class="params">model, data</span>):</span></span><br><span class="line">    start = time.time()</span><br><span class="line">    model.fit(data)</span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="keyword">return</span> end - start</span><br><span class="line"></span><br><span class="line">n_clusters = <span class="built_in">len</span>(centers)</span><br><span class="line">kmeans = KMeans(n_clusters=n_clusters)</span><br><span class="line">mbk = MiniBatchKMeans(n_clusters=n_clusters,</span><br><span class="line">                      batch_size=<span class="number">200</span>, <span class="comment"># 小批量的大小</span></span><br><span class="line">                     n_init=<span class="number">10</span> <span class="comment"># 和 KMeans 统一为 10</span></span><br><span class="line">                     )</span><br><span class="line">kmeans_time = elapsed_time(kmeans, x)</span><br><span class="line">mbk_time = elapsed_time(mbk, x)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;K-Means耗时:&#x27;</span>, kmeans_time)</span><br><span class="line">print(<span class="string">&#x27;Mini Batch K-Means耗时:&#x27;</span>, mbk_time)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制聚类效果</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">model = [kmeans, mbk]</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(model, start=<span class="number">1</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">2</span>, i)</span><br><span class="line">    plot_cluster(m, x)</span><br></pre></td></tr></table></figure>
-
-<pre><code>K-Means耗时: 0.08678650856018066
-Mini Batch K-Means耗时: 0.05485272407531738</code></pre>
-<p><img src="https://wx2.sbimg.cn/2020/07/04/2ONKU.md.png" alt="png"></p>
-<p>可见, 聚类耗时 K-Means 更多, 如果数据量很大, 耗时会更明显, 而聚类效果基本一样. 但发现颜色对不上, 这是因为质心的随机性, 聚类之后质心虽然最终落在相同的位置, 但是顺序不一致, 从而聚类的结果标签不一致, 即使是同一个算法, 运行几次, 标签结果也会不一致</p>
-<p>我们将相同簇用相同的颜色绘制:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line"><span class="comment"># 定义列表, 用来保存两个模型预测结果</span></span><br><span class="line">y_hat_list = []</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(model, start=<span class="number">1</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">2</span>, i)</span><br><span class="line">    y_hat = m.predict(x)</span><br><span class="line">    <span class="keyword">if</span> m == mbk:</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        因为输出的质心顺序就是训练结果标签的顺序</span></span><br><span class="line"><span class="string">        故可以按 mbk 训练的质心, 去找 kmeans 训练的相同簇的质心</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        pairwise_distances_argmin(x, y) 解释:</span></span><br><span class="line"><span class="string">        依次取出数组 X 中的元素 x, </span></span><br><span class="line"><span class="string">        计算找到数组 Y 中与 x 距离最近的元素 y 的索引, </span></span><br><span class="line"><span class="string">        返回索引构成的数组</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        <span class="comment"># 将两者相同簇的质心一一对应并按 mbk 质心的顺序封装成字典</span></span><br><span class="line">        ar = pairwise_distances_argmin(</span><br><span class="line">        mbk.cluster_centers_, kmeans.cluster_centers_)</span><br><span class="line">        dict_ = <span class="built_in">dict</span>(<span class="built_in">enumerate</span>(ar))</span><br><span class="line">        <span class="comment"># 用 mbk 的训练结果标签 y_hat 就可以寻找到对应的 kmeans 的质心</span></span><br><span class="line">        y_hat = pd.Series(y_hat).<span class="built_in">map</span>(dict_).values</span><br><span class="line">    <span class="comment"># 将预测结果加入到列表中</span></span><br><span class="line">    y_hat_list.append(y_hat)</span><br><span class="line">    </span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=colors[y_hat], marker=<span class="string">&#x27;.&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://wx2.sbimg.cn/2020/07/04/2OERm.md.png" alt="png"></p>
-<p>比较两个算法聚类结果的差异:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">same = y_hat_list[<span class="number">0</span>] == y_hat_list[<span class="number">1</span>]</span><br><span class="line">diff = y_hat_list[<span class="number">0</span>] != y_hat_list[<span class="number">1</span>]</span><br><span class="line">plt.scatter(x[same, <span class="number">0</span>], x[same, <span class="number">1</span>], c=<span class="string">&#x27;g&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;预测相同&#x27;</span>)</span><br><span class="line">plt.scatter(x[diff, <span class="number">0</span>], x[diff, <span class="number">1</span>], c=<span class="string">&#x27;r&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;预测不同&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">print(<span class="string">&#x27;相同数量:&#x27;</span>, x[same].shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">&#x27;不同数量:&#x27;</span>, x[diff].shape[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>相同数量: 7983
-不同数量: 17</code></pre>
-<p><img src="https://wx2.sbimg.cn/2020/07/04/2Obyd.png" alt="png"></p>
-<p>两个算法聚类结果只有 17 个样本点不同</p>
-<br>
-
 ]]></content>
       <categories>
         <category>数据分析</category>
