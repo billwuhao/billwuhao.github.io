@@ -1,0 +1,2993 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
+  <meta name="baidu-site-verification" content="zzxKZjYogh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="内容主要来源：官方文档 学习笔记。   Pandas 是 Python 的核心数据分析支持库, 基于 NumPy 创建, 它使 python 成为强大而高效的数据分析环境   2020年7月13日更新  下文约定 NumPy 简写 np, Pandas 简写 pd, Series 简写 s, DataFrame 简写 df  一, 数据结构pd 的数据结构是基于 np 的, 因此其有着 n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas 速查笔记">
+<meta property="og:url" content="http://example.com/pandas-a5600fdbeadc/">
+<meta property="og:site_name" content="吴明文的站点">
+<meta property="og:description" content="内容主要来源：官方文档 学习笔记。   Pandas 是 Python 的核心数据分析支持库, 基于 NumPy 创建, 它使 python 成为强大而高效的数据分析环境   2020年7月13日更新  下文约定 NumPy 简写 np, Pandas 简写 pd, Series 简写 s, DataFrame 简写 df  一, 数据结构pd 的数据结构是基于 np 的, 因此其有着 n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/dbj.jpg">
+<meta property="article:published_time" content="2020-05-02T03:57:40.000Z">
+<meta property="article:modified_time" content="2021-01-02T09:35:40.948Z">
+<meta property="article:author" content="吴明文">
+<meta property="article:tag" content="pandas">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/dbj.jpg">
+
+
+<link rel="canonical" href="http://example.com/pandas-a5600fdbeadc/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Pandas 速查笔记 | 吴明文的站点</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">吴明文的站点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">探索花花世界，追寻自己内心</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">298</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">一, 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BA-s-%E5%92%8C-df"><span class="nav-number">1.1.</span> <span class="nav-text">1, 创建 s 和 df</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-s-%E5%92%8C-df-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">2, s 和 df 的常用属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-s-%E5%92%8C-df-%E7%BB%93%E6%9E%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">3, s 和 df 结构理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%93%8D%E4%BD%9C-%E5%A4%84%E7%90%86%E4%B8%8E%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">二, 数据结构操作, 处理与计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8B-s-%E5%92%8C-df-%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">1, 查看 s 和 df 数据信息常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%95%B0%E6%8D%AE%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">2, 数据的直接计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-s-%E5%92%8C-df-%E4%B8%8B%E6%A0%87%E5%92%8C%E7%B4%A2%E5%BC%95%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C"><span class="nav-number">2.3.</span> <span class="nav-text">3, s 和 df 下标和索引切片操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-01-s-%E5%92%8C-df-%E4%B8%8B%E6%A0%87%E5%88%87%E7%89%87%E5%8F%96%E5%80%BC"><span class="nav-number">2.3.1.</span> <span class="nav-text">3.01, s 和 df 下标切片取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-02-s-%E5%92%8C-df-%E7%B4%A2%E5%BC%95%E5%88%87%E7%89%87%E5%8F%96%E5%80%BC"><span class="nav-number">2.3.2.</span> <span class="nav-text">3.02, s 和 df 索引切片取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-03-%E7%94%A8-iloc-%E6%96%B9%E6%B3%95%E5%8F%96%E5%80%BC-%E6%8E%A8%E8%8D%90"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.03, 用 iloc 方法取值(推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-04-%E7%94%A8-loc-%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.4.</span> <span class="nav-text">3.04, 用 loc 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-05-%E5%88%A9%E7%94%A8%E5%88%87%E7%89%87%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">2.3.5.</span> <span class="nav-text">3.05, 利用切片修改数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-s-%E5%92%8C-df-%E7%9A%84%E5%A4%84%E7%90%86%E5%92%8C%E8%AE%A1%E7%AE%97%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">三, s 和 df 的处理和计算函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%B4%A2%E5%BC%95"><span class="nav-number">3.1.</span> <span class="nav-text">1, 索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A2%9E%E5%88%A0%E4%B8%8E%E5%90%88%E5%B9%B6%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.</span> <span class="nav-text">2, 增删与合并数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E4%B8%8E%E5%A4%84%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">3, 数据选择与处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E8%81%9A%E5%90%88%E8%AE%A1%E7%AE%97"><span class="nav-number">3.4.</span> <span class="nav-text">4, 数据分组聚合计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86%E4%B8%8E%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.5.</span> <span class="nav-text">5, 数据透视与窗口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="nav-number">3.6.</span> <span class="nav-text">6, 文本字符串处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="nav-number">4.</span> <span class="nav-text">三, 时间序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">四, 数据的导入导出与可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-pd-%E5%8F%AF%E4%BB%A5%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E5%A4%9A%E7%A7%8D%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">5.1.</span> <span class="nav-text">1, pd 可以导入导出多种格式的数据:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">5.2.</span> <span class="nav-text">2, 可视化</span></a></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吴明文"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">吴明文</p>
+  <div class="site-description" itemprop="description">探索花花世界，追寻自己内心</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">298</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-instagram fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.catb.org/~esr/faqs/hacker-howto.html" title="http:&#x2F;&#x2F;www.catb.org&#x2F;~esr&#x2F;faqs&#x2F;hacker-howto.html" rel="noopener" target="_blank">How To Become A Hacker</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.marxists.org/index.htm" title="https:&#x2F;&#x2F;www.marxists.org&#x2F;index.htm" rel="noopener" target="_blank">Marxists Internet Archive</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.gutenberg.org/wiki/Main_Page" title="https:&#x2F;&#x2F;www.gutenberg.org&#x2F;wiki&#x2F;Main_Page" rel="noopener" target="_blank">Project Gutenberg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.shi-ci.com/" title="https:&#x2F;&#x2F;www.shi-ci.com&#x2F;" rel="noopener" target="_blank">中华诗词</a>
+        </li>
+    </ul>
+  </div>
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/pandas-a5600fdbeadc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴明文">
+      <meta itemprop="description" content="探索花花世界，追寻自己内心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴明文的站点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pandas 速查笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表</span>
+
+      <time title="创建时间：2020-05-02 11:57:40" itemprop="dateCreated datePublished" datetime="2020-05-02T11:57:40+08:00">2020-05-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新</span>
+        <time title="修改时间：2021-01-02 17:35:40" itemprop="dateModified" datetime="2021-01-02T17:35:40+08:00">2021-01-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="浏览" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">浏览：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">字数：</span>
+      <span>18k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://billwuhao.com/" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
+<br>
+
+<blockquote>
+<p>内容主要来源：<a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/">官方文档</a> 学习笔记。</p>
+</blockquote>
+<blockquote>
+<p>Pandas 是 Python 的核心数据分析支持库, 基于 NumPy 创建, 它使 python 成为强大而高效的数据分析环境 </p>
+</blockquote>
+<p><font color=#00A600 >2020年7月13日更新</font></p>
+<blockquote>
+<p>下文约定 NumPy 简写 <code>np</code>, Pandas 简写 <code>pd</code>, Series 简写 <code>s</code>, DataFrame 简写 <code>df</code></p>
+</blockquote>
+<h2 id="一-数据结构"><a href="#一-数据结构" class="headerlink" title="一, 数据结构"></a>一, 数据结构</h2><p>pd 的数据结构是基于 np 的, 因此其有着 np 的基因, 许多操作和大部分函数与 np 类似</p>
+<p>pd 的数据结构其实是 np 数组数据对象 array 的容器, 在 pd 中有了索引结构, 可以利用索引来取 array 或 array 的值</p>
+<h3 id="1-创建-s-和-df"><a href="#1-创建-s-和-df" class="headerlink" title="1, 创建 s 和 df"></a>1, 创建 s 和 df</h3><p>创建 s 用 Series 方法, 创建 df 用 DataFrame 方法, 创建时若不指定索引, 将自动生成(从 0 开始)</p>
+<p>s 是一维, 只有行索引, 而 df 有行和列索引</p>
+<p>创建方式灵活多变, 可以查看参数, 根据要求传参进行创建, 简单介绍几种</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">s = pd.Series(<span class="built_in">range</span>(<span class="number">3</span>))</span><br><span class="line">df = pd.DataFrame(<span class="built_in">range</span>(<span class="number">3</span>))</span><br><span class="line">display(s)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>0    0
+1    1
+2    2
+dtype: int64</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(<span class="built_in">range</span>(<span class="number">3</span>), index=<span class="built_in">list</span>(<span class="string">&#x27;abc&#x27;</span>))</span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: <span class="built_in">range</span>(<span class="number">3</span>), <span class="string">&#x27;B&#x27;</span>: <span class="built_in">list</span>(<span class="string">&#x27;jkl&#x27;</span>)&#125;, index=<span class="built_in">list</span>(<span class="string">&#x27;abc&#x27;</span>))</span><br><span class="line">display(s)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>a    0
+b    1
+c    2
+dtype: int64</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0</td>
+      <td>j</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>1</td>
+      <td>k</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>2</td>
+      <td>l</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dict_1 = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;c&#x27;</span>: <span class="number">2</span>&#125;</span><br><span class="line">dict_2 = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="built_in">range</span>(<span class="number">3</span>), <span class="string">&#x27;b&#x27;</span>: <span class="built_in">list</span>(<span class="string">&#x27;jkl&#x27;</span>)&#125;</span><br><span class="line">s = pd.Series(dict_1)</span><br><span class="line">df1 = pd.DataFrame(dict_1, index=[<span class="string">&#x27;A&#x27;</span>])</span><br><span class="line">df2 = pd.DataFrame(dict_2)</span><br><span class="line">display(s)</span><br><span class="line">display(df1)</span><br><span class="line">df2</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>a    0
+b    1
+c    2
+dtype: int64</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>j</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>k</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>l</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="2-s-和-df-的常用属性"><a href="#2-s-和-df-的常用属性" class="headerlink" title="2, s 和 df 的常用属性"></a>2, s 和 df 的常用属性</h3><p>大部分属性和 numpy 一样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(<span class="number">1</span>, index=<span class="built_in">list</span>(<span class="string">&#x27;abc&#x27;</span>))</span><br><span class="line">df = pd.DataFrame(dict_2)</span><br><span class="line"></span><br><span class="line">s, df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    1
+ b    1
+ c    1
+ dtype: int64,
+    a  b
+ 0  0  j
+ 1  1  k
+ 2  2  l)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看形状, 形状不包括 索引</span></span><br><span class="line">s.shape, df.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>((3,), (3, 2))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取索引</span></span><br><span class="line">s.index, df.index, df.columns</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;),
+ RangeIndex(start=0, stop=3, step=1),
+ Index([&#39;a&#39;, &#39;b&#39;], dtype=&#39;object&#39;))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看元素个数</span></span><br><span class="line">s.size, df.size</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(3, 6)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看数据类型</span></span><br><span class="line">s.dtype, df.dtypes</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(dtype(&#39;int64&#39;),
+ a     int64
+ b    object
+ dtype: object)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看值</span></span><br><span class="line">s.values, df.values, df[<span class="string">&#x27;a&#x27;</span>].values</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(array([1, 1, 1], dtype=int64),
+ array([[0, &#39;j&#39;],
+        [1, &#39;k&#39;],
+        [2, &#39;l&#39;]], dtype=object),
+ array([0, 1, 2], dtype=int64))</code></pre>
+<h3 id="3-s-和-df-结构理解"><a href="#3-s-和-df-结构理解" class="headerlink" title="3, s 和 df 结构理解"></a>3, s 和 df 结构理解</h3><p>从上述可以看出, pd 数据结构的值, 是一个 array 对象. 对于 df, 每一列的值取出来也是一个 array 对象, 并且每一列可以是不同的数据类型</p>
+<p>需要注意的是, df 每一列取出来, 整体是一个 s, 因此 df 又可以看成 s 的容器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(s), <span class="built_in">type</span>(df[<span class="string">&#x27;a&#x27;</span>]), <span class="built_in">type</span>(df)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(pandas.core.series.Series,
+ pandas.core.series.Series,
+ pandas.core.frame.DataFrame)</code></pre>
+<p>s 和 df 可以有多层索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s.index = [[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line">df.index = [[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line"></span><br><span class="line">s, df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a  1    1
+ b  2    1
+ c  3    1
+ dtype: int64,
+      a  b
+ a 1  0  j
+ b 2  1  k
+ c 3  2  l)</code></pre>
+<h2 id="二-数据结构操作-处理与计算"><a href="#二-数据结构操作-处理与计算" class="headerlink" title="二, 数据结构操作, 处理与计算"></a>二, 数据结构操作, 处理与计算</h2><h3 id="1-查看-s-和-df-数据信息常用方法"><a href="#1-查看-s-和-df-数据信息常用方法" class="headerlink" title="1, 查看 s 和 df 数据信息常用方法"></a>1, 查看 s 和 df 数据信息常用方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = np.random.randint(<span class="number">1</span>, <span class="number">9</span>, (<span class="number">6</span>, <span class="number">2</span>))</span><br><span class="line">s = pd.Series(a[:, <span class="number">0</span>])</span><br><span class="line">df = pd.DataFrame(a)</span><br><span class="line">s, df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(0    1
+ 1    2
+ 2    2
+ 3    8
+ 4    8
+ 5    2
+ dtype: int32,
+    0  1
+ 0  1  8
+ 1  2  3
+ 2  2  1
+ 3  8  3
+ 4  8  8
+ 5  2  7)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看前 5 行(默认)</span></span><br><span class="line">s.head()</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看后 5 行(默认)</span></span><br><span class="line">s.tail()</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>8</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看详情, s 没有该方法</span></span><br><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   0       6 non-null      int32
+ 1   1       6 non-null      int32
+dtypes: int32(2)
+memory usage: 176.0 bytes</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看统计量</span></span><br><span class="line">s.describe()</span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>6.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.000000</td>
+      <td>3.166667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.529822</td>
+      <td>2.401388</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.250000</td>
+      <td>1.250000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.000000</td>
+      <td>2.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.000000</td>
+      <td>4.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.000000</td>
+      <td>7.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="2-数据的直接计算"><a href="#2-数据的直接计算" class="headerlink" title="2, 数据的直接计算"></a>2, 数据的直接计算</h3><p>s 和 df 的数据可以像 np 的数组一样直接进行计算, 索引相同的行列进行计算, 不同的 NaN 填充</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df1 = pd.DataFrame(a, columns=[<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>])</span><br><span class="line">df1 * df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>8</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>24</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>64</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>14</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s1 = pd.Series(a[:, <span class="number">0</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">s**<span class="number">2</span> + s1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0     NaN
+1     6.0
+2     6.0
+3    72.0
+4    72.0
+5     6.0
+a     NaN
+dtype: float64</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 笛卡儿积展开</span></span><br><span class="line">s + df1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="3-s-和-df-下标和索引切片操作"><a href="#3-s-和-df-下标和索引切片操作" class="headerlink" title="3, s 和 df 下标和索引切片操作"></a>3, s 和 df 下标和索引切片操作</h3><h4 id="3-01-s-和-df-下标切片取值"><a href="#3-01-s-和-df-下标切片取值" class="headerlink" title="3.01, s 和 df 下标切片取值"></a>3.01, s 和 df 下标切片取值</h4><p>s 和 df 下标切片取值有许多不同之处</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1, df1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    1
+ 1    2
+ 2    2
+ 3    8
+ 4    8
+ 5    2
+ dtype: int32,
+    1  b
+ 0  1  8
+ 1  2  3
+ 2  2  1
+ 3  8  3
+ 4  8  8
+ 5  2  7)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此方法 df 只能取行, 不能取列</span></span><br><span class="line">s1[<span class="number">0</span>:<span class="number">2</span>], df1[<span class="number">0</span>:<span class="number">2</span>], s1[[<span class="number">0</span>, <span class="number">2</span>]]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    1
+ 1    2
+ dtype: int32,
+    1  b
+ 0  1  8
+ 1  2  3,
+ a    1
+ 2    2
+ dtype: int32)</code></pre>
+<p><strong>同 np 一样, 可以条件取值, 此方法常用来筛选和重新赋值等</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1[s1&gt;<span class="number">1</span>], df1[df1&gt;<span class="number">1</span>], df1[df1 == <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1    2
+ 2    2
+ 3    8
+ 4    8
+ 5    2
+ dtype: int32,
+      1    b
+ 0  NaN  8.0
+ 1  2.0  3.0
+ 2  2.0  NaN
+ 3  8.0  3.0
+ 4  8.0  8.0
+ 5  2.0  7.0,
+      1    b
+ 0  NaN  8.0
+ 1  NaN  NaN
+ 2  NaN  NaN
+ 3  8.0  NaN
+ 4  8.0  8.0
+ 5  NaN  NaN)</code></pre>
+<h4 id="3-02-s-和-df-索引切片取值"><a href="#3-02-s-和-df-索引切片取值" class="headerlink" title="3.02, s 和 df 索引切片取值"></a>3.02, s 和 df 索引切片取值</h4><p>索引切片取值, 左右都包含</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要将索引转换类型</span></span><br><span class="line">s1.index = s1.index.astype(<span class="built_in">str</span>)</span><br><span class="line">df1.index = df1.index.astype(<span class="built_in">str</span>)</span><br><span class="line">s1[<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;2&#x27;</span>], df1[<span class="string">&#x27;1&#x27;</span>:<span class="string">&#x27;3&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    1
+ 1    2
+ 2    2
+ dtype: int32,
+    1  b
+ 1  2  3
+ 2  2  1
+ 3  8  3)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1[<span class="string">&#x27;1&#x27;</span>:<span class="string">&#x27;3&#x27;</span>][[<span class="number">1</span>]], df1[<span class="string">&#x27;b&#x27;</span>], df1[[<span class="string">&#x27;b&#x27;</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   1
+ 1  2
+ 2  2
+ 3  8,
+ 0    8
+ 1    3
+ 2    1
+ 3    3
+ 4    8
+ 5    7
+ Name: b, dtype: int32,
+    b  1
+ 0  8  1
+ 1  3  2
+ 2  1  2
+ 3  3  8
+ 4  8  8
+ 5  7  2)</code></pre>
+<h4 id="3-03-用-iloc-方法取值-推荐"><a href="#3-03-用-iloc-方法取值-推荐" class="headerlink" title="3.03, 用 iloc 方法取值(推荐)"></a>3.03, 用 iloc 方法取值(推荐)</h4><p>上述的取值太复杂麻烦, iloc 方法传入下标取值更方便且条理清晰. 存在多层索引时, iloc 按最内层索引取值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 右不包含</span></span><br><span class="line">s1.iloc[<span class="number">0</span>:<span class="number">3</span>], df1.iloc[<span class="number">0</span>:<span class="number">5</span>:<span class="number">2</span>], df1.iloc[[<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>], <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    1
+ 1    2
+ 2    2
+ dtype: int32,
+    1  b
+ 0  1  8
+ 2  2  1
+ 4  8  8,
+ 1    2
+ 4    8
+ 2    2
+ Name: 1, dtype: int32)</code></pre>
+<h4 id="3-04-用-loc-方法"><a href="#3-04-用-loc-方法" class="headerlink" title="3.04, 用 loc 方法"></a>3.04, 用 loc 方法</h4><p>loc 方法取值左右都包含, 传入索引标签取值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1.loc[<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;2&#x27;</span>], df1.loc[<span class="string">&#x27;1&#x27;</span>:<span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    1
+ 1    2
+ 2    2
+ dtype: int32,
+ 1    3
+ 2    1
+ 3    3
+ Name: b, dtype: int32)</code></pre>
+<h4 id="3-05-利用切片修改数据"><a href="#3-05-利用切片修改数据" class="headerlink" title="3.05, 利用切片修改数据"></a>3.05, 利用切片修改数据</h4><p>利用切片修改数据, 其实就是取值重新赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(np.random.rand(<span class="number">5</span>, <span class="number">4</span>),</span><br><span class="line">                  index=<span class="built_in">list</span>(<span class="string">&#x27;abcde&#x27;</span>),</span><br><span class="line">                  columns=<span class="built_in">list</span>(<span class="string">&#x27;ABCD&#x27;</span>))</span><br><span class="line">df[df&gt;<span class="number">0.5</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.584239</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>NaN</td>
+      <td>0.946957</td>
+      <td>0.710115</td>
+      <td>0.542091</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>NaN</td>
+      <td>0.749082</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>0.990660</td>
+      <td>0.537833</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>0.579108</td>
+      <td>0.527163</td>
+      <td>NaN</td>
+      <td>0.930887</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将大于 0.5 的数据换成 nan</span></span><br><span class="line">df[df&gt;<span class="number">0.5</span>] = np.nan</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0.055483</td>
+      <td>0.376705</td>
+      <td>0.295532</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>0.230846</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>0.304272</td>
+      <td>NaN</td>
+      <td>0.415037</td>
+      <td>0.271673</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.413262</td>
+      <td>0.207829</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.387687</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 A 列全部改成 1 , 增加一列 E 值为 0</span></span><br><span class="line">df[<span class="string">&#x27;A&#x27;</span>] = <span class="number">1</span> <span class="comment"># 与 df.A = 1 等价</span></span><br><span class="line">df[<span class="string">&#x27;E&#x27;</span>] = <span class="number">0</span></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>1</td>
+      <td>0.376705</td>
+      <td>0.295532</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>0.415037</td>
+      <td>0.271673</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>0.413262</td>
+      <td>0.207829</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>0.387687</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 行列值互换</span></span><br><span class="line">df.loc[[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>], [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]] = df.loc[[<span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;a&#x27;</span>], [<span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;A&#x27;</span>]].to_numpy()</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0.415037</td>
+      <td>0.376705</td>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>0.295532</td>
+      <td>NaN</td>
+      <td>1.000000</td>
+      <td>0.271673</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>0.413262</td>
+      <td>0.207829</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>0.387687</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只要 B 不为 nan 的数据</span></span><br><span class="line">df[df[<span class="string">&#x27;B&#x27;</span>] == df[<span class="string">&#x27;B&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0.415037</td>
+      <td>0.376705</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="三-s-和-df-的处理和计算函数"><a href="#三-s-和-df-的处理和计算函数" class="headerlink" title="三, s 和 df 的处理和计算函数"></a>三, s 和 df 的处理和计算函数</h2><h3 id="1-索引"><a href="#1-索引" class="headerlink" title="1, 索引"></a>1, 索引</h3><p>在 pd 里, 索引非常重要, 一个行索引, 通常就是数据的一条记录(例如一个人的信息), 一个列索引就是数据的一个特征(例如某个人的性别, 年龄等), 通过索引能够更方便数据处理与计算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">s = pd.Series(np.random.rand(<span class="number">4</span>), index=<span class="built_in">list</span>(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">df = pd.DataFrame(np.random.rand(<span class="number">4</span>, <span class="number">4</span>),</span><br><span class="line">                  index=<span class="built_in">list</span>(<span class="string">&#x27;abcd&#x27;</span>),</span><br><span class="line">                  columns=<span class="built_in">list</span>(<span class="string">&#x27;ABCD&#x27;</span>))</span><br><span class="line">s, df</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    0.081048
+ b    0.075218
+ c    0.339713
+ d    0.103027
+ dtype: float64,
+           A         B         C         D
+ a  0.752838  0.858899  0.779652  0.390347
+ b  0.727027  0.518987  0.356425  0.154784
+ c  0.134500  0.115313  0.994597  0.236809
+ d  0.259354  0.624735  0.430290  0.282564)</code></pre>
+<p><strong>reindex 索引重排, 新增的索引 nan 填充, 缺少索引的数据舍弃</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新增 e 舍弃 d, 有许多参数可以调节</span></span><br><span class="line">s.reindex(<span class="built_in">list</span>(<span class="string">&#x27;bcae&#x27;</span>)), df.reindex(columns=<span class="built_in">list</span>(<span class="string">&#x27;BCAE&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(b    0.719566
+ c    0.997383
+ a    0.702877
+ e         NaN
+ dtype: float64,
+           B         C         A   E
+ a  0.260505  0.112192  0.661345 NaN
+ b  0.419849  0.335675  0.840509 NaN
+ c  0.211215  0.542169  0.751707 NaN
+ d  0.310829  0.019690  0.859212 NaN)</code></pre>
+<p><strong>sort_index 索引排序</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认 True 升序, 许多参数可调, df 只排行索引</span></span><br><span class="line">s.sort_index(ascending=<span class="literal">False</span>), df.sort_index(ascending=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(d    0.182391
+ c    0.387592
+ b    0.457121
+ a    0.637088
+ dtype: float64,
+           A         B         C         D
+ d  0.729718  0.406537  0.248429  0.837150
+ c  0.527112  0.646597  0.956364  0.444216
+ b  0.232444  0.790157  0.504928  0.728113
+ a  0.693281  0.805136  0.185669  0.737717)</code></pre>
+<p><strong>rename, set_index, reset_index 设置索引</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意参数及传参方式</span></span><br><span class="line">s.rename(index=&#123;<span class="string">&#x27;a&#x27;</span>: <span class="string">&#x27;f&#x27;</span>&#125;), df.rename(<span class="keyword">lambda</span> x: x + x)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(f    0.637088
+ b    0.457121
+ c    0.387592
+ d    0.182391
+ dtype: float64,
+            A         B         C         D
+ aa  0.693281  0.805136  0.185669  0.737717
+ bb  0.232444  0.790157  0.504928  0.728113
+ cc  0.527112  0.646597  0.956364  0.444216
+ dd  0.729718  0.406537  0.248429  0.837150)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s 没有此方法, 可以将某列设为索引, 默认不保留原列, 可设参数 drop 保留</span></span><br><span class="line">df1 = df.set_index([[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">df2 = df.set_index(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">df1, df2</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(            A         B         C         D
+ a 1  0.752838  0.858899  0.779652  0.390347
+ b 2  0.727027  0.518987  0.356425  0.154784
+ c 3  0.134500  0.115313  0.994597  0.236809
+ d 4  0.259354  0.624735  0.430290  0.282564,
+                  B         C         D
+ A                                     
+ 0.752838  0.858899  0.779652  0.390347
+ 0.727027  0.518987  0.356425  0.154784
+ 0.134500  0.115313  0.994597  0.236809
+ 0.259354  0.624735  0.430290  0.282564)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将索引设为列(drop=True将其删除), 多层索引时可选某层</span></span><br><span class="line">df1.reset_index(level=<span class="number">1</span>), df2.reset_index()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   level_1         A         B         C         D
+ a        1  0.693281  0.805136  0.185669  0.737717
+ b        2  0.232444  0.790157  0.504928  0.728113
+ c        3  0.527112  0.646597  0.956364  0.444216
+ d        4  0.729718  0.406537  0.248429  0.837150,
+           A         B         C         D
+ 0  0.693281  0.805136  0.185669  0.737717
+ 1  0.232444  0.790157  0.504928  0.728113
+ 2  0.527112  0.646597  0.956364  0.444216
+ 3  0.729718  0.406537  0.248429  0.837150)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 索引可以设置名字, 设置索引还可以通过获取索引重新赋值</span></span><br><span class="line"><span class="comment"># df 还可以转置</span></span><br><span class="line">print(df2.index.name)</span><br><span class="line">df2.index = <span class="built_in">list</span>(<span class="string">&#x27;abcd&#x27;</span>) <span class="comment"># 重设索引后, 索引名消失</span></span><br><span class="line">df2, df2.T</span><br></pre></td></tr></table></figure>
+
+<pre><code>A
+
+
+
+
+
+(          B         C         D
+ a  0.858899  0.779652  0.390347
+ b  0.518987  0.356425  0.154784
+ c  0.115313  0.994597  0.236809
+ d  0.624735  0.430290  0.282564,
+           a         b         c         d
+ B  0.858899  0.518987  0.115313  0.624735
+ C  0.779652  0.356425  0.994597  0.430290
+ D  0.390347  0.154784  0.236809  0.282564)</code></pre>
+<p><strong>多层索引</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ar = [[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line">tup = <span class="built_in">list</span>(<span class="built_in">zip</span>(*ar))</span><br><span class="line">pd.MultiIndex.from_tuples(tup)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>MultiIndex([(&#39;a&#39;, 1),
+            (&#39;b&#39;, 2),
+            (&#39;c&#39;, 3)],
+           )</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">index = pd.MultiIndex.from_product(ar)</span><br><span class="line">s = pd.Series(<span class="built_in">range</span>(<span class="number">9</span>), index=index)</span><br><span class="line">s</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>a  1    0
+   2    1
+   3    2
+b  1    3
+   2    4
+   3    5
+c  1    6
+   2    7
+   3    8
+dtype: int64</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.MultiIndex.from_frame(df2[[<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>MultiIndex([( 0.8588989323584892,  0.7796522836753877),
+            ( 0.5189870245469372,  0.3564252746188795),
+            (0.11531289701355718,  0.9945971753660031),
+            (  0.624734777956396, 0.43029040226834503)],
+           names=[&#39;B&#39;, &#39;C&#39;])</code></pre>
+<h3 id="2-增删与合并数据"><a href="#2-增删与合并数据" class="headerlink" title="2, 增删与合并数据"></a>2, 增删与合并数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(np.random.randint(<span class="number">1</span>, <span class="number">9</span>, (<span class="number">4</span>, <span class="number">5</span>)))</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   0  1  2  3  4
+0  8  5  1  6  2
+1  6  5  1  6  8
+2  7  5  5  4  6
+3  2  1  3  6  1</code></pre>
+<p><strong>insert 在指定位置前插入数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s 没有该方法</span></span><br><span class="line">df.insert(<span class="number">2</span>, <span class="string">&#x27;A&#x27;</span>, <span class="number">1</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   0  1  A  2  3  4
+0  8  5  1  1  6  2
+1  6  5  1  1  6  8
+2  7  5  1  5  4  6
+3  2  1  1  3  6  1</code></pre>
+<p><strong>append 在数据最后增加数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s 只能传 s</span></span><br><span class="line">df1 = pd.DataFrame(&#123;<span class="string">&#x27;B&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>]&#125;)</span><br><span class="line"><span class="comment"># df 可以在行后面增加, 也可在列后面新增</span></span><br><span class="line">df.iloc[<span class="number">0</span>].append(pd.Series(<span class="number">8</span>))</span><br><span class="line">df.append([<span class="number">1</span>]), df.append(df1, ignore_index=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   0    1    A    2    3    4
+ 0  8  5.0  1.0  1.0  6.0  2.0
+ 1  6  5.0  1.0  1.0  6.0  8.0
+ 2  7  5.0  1.0  5.0  4.0  6.0
+ 3  2  1.0  1.0  3.0  6.0  1.0
+ 0  1  NaN  NaN  NaN  NaN  NaN,
+      0    1    A    2    3    4    B
+ 0  8.0  5.0  1.0  1.0  6.0  2.0  NaN
+ 1  6.0  5.0  1.0  1.0  6.0  8.0  NaN
+ 2  7.0  5.0  1.0  5.0  4.0  6.0  NaN
+ 3  2.0  1.0  1.0  3.0  6.0  1.0  NaN
+ 4  NaN  NaN  NaN  NaN  NaN  NaN  1.0
+ 5  NaN  NaN  NaN  NaN  NaN  NaN  2.0)</code></pre>
+<p><strong>drop 删除指定数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;A&#x27;</span>].drop(<span class="number">1</span>), df.drop(<span class="number">1</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(0    1
+ 2    1
+ 3    1
+ Name: A, dtype: int64,
+    0  A  2  3  4
+ 0  8  1  1  6  2
+ 1  6  1  1  6  8
+ 2  7  1  5  4  6
+ 3  2  1  3  6  1)</code></pre>
+<p><strong>concat 合并数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df1 = pd.DataFrame(np.random.randint(<span class="number">1</span>, <span class="number">3</span>, (<span class="number">4</span>, <span class="number">4</span>)),</span><br><span class="line">                   index=<span class="built_in">list</span>(<span class="string">&#x27;abcd&#x27;</span>), columns=<span class="built_in">list</span>(<span class="string">&#x27;ABCD&#x27;</span>))</span><br><span class="line">df2 = pd.DataFrame(np.random.randint(<span class="number">1</span>, <span class="number">3</span>, (<span class="number">4</span>, <span class="number">4</span>)),</span><br><span class="line">                   index=<span class="built_in">list</span>(<span class="string">&#x27;abef&#x27;</span>), columns=<span class="built_in">list</span>(<span class="string">&#x27;ABEF&#x27;</span>))</span><br><span class="line">df1, df2</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D
+ a  2  2  1  2
+ b  2  1  1  2
+ c  2  1  2  2
+ d  1  1  2  2,
+    A  B  E  F
+ a  2  1  1  1
+ b  1  2  1  1
+ e  2  1  1  2
+ f  2  2  2  1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认按列索引合并, 保留合并后的全部索引, 缺失用 nan 填充</span></span><br><span class="line"><span class="comment"># join 参数可控制合并的方式: inner 只留下都有的索引</span></span><br><span class="line">pd.concat([df1, df2]), pd.concat([df1, df2], join=<span class="string">&#x27;inner&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B    C    D    E    F
+ a  2  2  1.0  2.0  NaN  NaN
+ b  2  1  1.0  2.0  NaN  NaN
+ c  2  1  2.0  2.0  NaN  NaN
+ d  1  1  2.0  2.0  NaN  NaN
+ a  2  1  NaN  NaN  1.0  1.0
+ b  1  2  NaN  NaN  1.0  1.0
+ e  2  1  NaN  NaN  1.0  2.0
+ f  2  2  NaN  NaN  2.0  1.0,
+    A  B
+ a  2  2
+ b  2  1
+ c  2  1
+ d  1  1
+ a  2  1
+ b  1  2
+ e  2  1
+ f  2  2)</code></pre>
+<p><strong>join 主要用于行索引的合并</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认以左边(df1)为基准, 相同列名需要加以区分</span></span><br><span class="line"><span class="comment"># how 参数: outer 全保留, inner 只保留共同部分</span></span><br><span class="line">df1.join(df2, lsuffix=<span class="string">&#x27;_1&#x27;</span>, rsuffix=<span class="string">&#x27;_2&#x27;</span>), df1.join(df2, how=<span class="string">&#x27;outer&#x27;</span>, lsuffix=<span class="string">&#x27;_1&#x27;</span>, rsuffix=<span class="string">&#x27;_2&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A_1  B_1  C  D  A_2  B_2    E    F
+ a    2    2  1  2  2.0  1.0  1.0  1.0
+ b    2    1  1  2  1.0  2.0  1.0  1.0
+ c    2    1  2  2  NaN  NaN  NaN  NaN
+ d    1    1  2  2  NaN  NaN  NaN  NaN,
+    A_1  B_1    C    D  A_2  B_2    E    F
+ a  2.0  2.0  1.0  2.0  2.0  1.0  1.0  1.0
+ b  2.0  1.0  1.0  2.0  1.0  2.0  1.0  1.0
+ c  2.0  1.0  2.0  2.0  NaN  NaN  NaN  NaN
+ d  1.0  1.0  2.0  2.0  NaN  NaN  NaN  NaN
+ e  NaN  NaN  NaN  NaN  2.0  1.0  1.0  2.0
+ f  NaN  NaN  NaN  NaN  2.0  2.0  2.0  1.0)</code></pre>
+<p><strong>merge 主要用于内容的合并, 常用于两者有相同内容的列</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认 inner, 全部列都保留, </span></span><br><span class="line"><span class="comment"># 但只保留两者都有的列内容相同的行, 且行索引都舍弃</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以选择以某一个为基准, 需要合并的列内容, 以及保留某一个的索引</span></span><br><span class="line">pd.merge(df1, df2), pd.merge(df1, df2,</span><br><span class="line">                             how=<span class="string">&#x27;left&#x27;</span>, <span class="comment"># 以 df1 为准, 匹配不上的保留 df1</span></span><br><span class="line">                             on=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>], <span class="comment"># 按 A,B 列合并</span></span><br><span class="line">                             left_index=<span class="literal">True</span>) <span class="comment"># 保留匹配上的 df1 的行索引</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D  E  F
+ 0  2  2  1  2  2  1
+ 1  2  1  1  2  1  1
+ 2  2  1  1  2  1  2
+ 3  2  1  2  2  1  1
+ 4  2  1  2  2  1  2,
+      A  B  C  D    E    F
+ f    2  2  1  2  2.0  1.0
+ a    2  1  1  2  1.0  1.0
+ e    2  1  1  2  1.0  2.0
+ a    2  1  2  2  1.0  1.0
+ e    2  1  2  2  1.0  2.0
+ NaN  1  1  2  2  NaN  NaN)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 假设 df1 的 C 列与 df2 的 E 列内容相同需要合并</span></span><br><span class="line">print(pd.merge(df1, df2, left_on=<span class="string">&#x27;C&#x27;</span>, right_on=<span class="string">&#x27;E&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>   A_x  B_x  C  D  A_y  B_y  E  F
+0    2    2  1  2    2    1  1  1
+1    2    2  1  2    1    2  1  1
+2    2    2  1  2    2    1  1  2
+3    2    1  1  2    2    1  1  1
+4    2    1  1  2    1    2  1  1
+5    2    1  1  2    2    1  1  2
+6    2    1  2  2    2    2  2  1
+7    1    1  2  2    2    2  2  1</code></pre>
+<h3 id="3-数据选择与处理"><a href="#3-数据选择与处理" class="headerlink" title="3, 数据选择与处理"></a>3, 数据选择与处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">np.random.seed(<span class="number">0</span>)</span><br><span class="line">df = pd.DataFrame(np.random.randint(<span class="number">1</span>, <span class="number">9</span>, (<span class="number">6</span>, <span class="number">6</span>)),</span><br><span class="line">                  index=<span class="built_in">list</span>(<span class="string">&#x27;abcdef&#x27;</span>),</span><br><span class="line">                  columns=<span class="built_in">list</span>(<span class="string">&#x27;ABCDEF&#x27;</span>))</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   A  B  C  D  E  F
+a  5  8  6  1  4  4
+b  4  8  2  4  6  3
+c  5  8  7  1  1  5
+d  3  2  7  8  8  7
+e  1  2  6  2  6  1
+f  2  5  4  1  4  6</code></pre>
+<p><strong>sample 随机选择数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以指定数量, 也可以按比例选</span></span><br><span class="line">df.iloc[<span class="number">0</span>].sample(<span class="number">2</span>) <span class="comment"># s 也可</span></span><br><span class="line">df.sample(<span class="number">3</span>), df.sample(frac=<span class="number">0.5</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D  E  F
+ d  3  2  7  8  8  7
+ b  4  8  2  4  6  3
+ f  2  5  4  1  4  6,
+    E  F  D
+ a  4  4  1
+ b  6  3  4
+ c  1  5  1
+ d  8  7  8
+ e  6  1  2
+ f  4  6  1)</code></pre>
+<p><strong>where 按条件选择数据, 且可替换, 替换的是条件之外的数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.A.where(df.A&gt;<span class="number">3</span>) <span class="comment"># s 也可</span></span><br><span class="line">df1 = df.where(df&gt;<span class="number">1</span>)</span><br><span class="line">df1, df.where(df==<span class="number">1</span>, <span class="keyword">lambda</span> x: x*x)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A  B  C    D    E    F
+ a  5.0  8  6  NaN  4.0  4.0
+ b  4.0  8  2  4.0  6.0  3.0
+ c  5.0  8  7  NaN  NaN  5.0
+ d  3.0  2  7  8.0  8.0  7.0
+ e  NaN  2  6  2.0  6.0  NaN
+ f  2.0  5  4  NaN  4.0  6.0,
+     A   B   C   D   E   F
+ a  25  64  36   1  16  16
+ b  16  64   4  16  36   9
+ c  25  64  49   1   1  25
+ d   9   4  49  64  64  49
+ e   1   4  36   4  36   1
+ f   4  25  16   1  16  36)</code></pre>
+<p><strong>isin 生成布尔数组来选择数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">values = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">df.C.isin(values), df.A[df.C.isin(values)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    False
+ b    False
+ c     True
+ d     True
+ e    False
+ f    False
+ Name: C, dtype: bool,
+ c    5
+ d    3
+ Name: A, dtype: int32)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df.isin(values)], df[df.index.isin(values)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A    B    C   D   E    F
+ a  5.0  NaN  NaN NaN NaN  NaN
+ b  NaN  NaN  NaN NaN NaN  3.0
+ c  5.0  NaN  7.0 NaN NaN  5.0
+ d  3.0  NaN  7.0 NaN NaN  7.0
+ e  NaN  NaN  NaN NaN NaN  NaN
+ f  NaN  5.0  NaN NaN NaN  NaN,
+    A  B  C  D  E  F
+ a  5  8  6  1  4  4
+ c  5  8  7  1  1  5)</code></pre>
+<p><strong>isna( isnull ) 和 notna ( notnull ) 生成布尔数组</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以 pd 调用, 也可 df 或 s 调用</span></span><br><span class="line">pd.isna(df1.D), df1.D.isnull(), df1.isna()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a     True
+ b    False
+ c     True
+ d    False
+ e    False
+ f     True
+ Name: D, dtype: bool,
+ a     True
+ b    False
+ c     True
+ d    False
+ e    False
+ f     True
+ Name: D, dtype: bool,
+        A      B      C      D      E      F
+ a  False  False  False   True  False  False
+ b  False  False  False  False  False  False
+ c  False  False  False   True   True  False
+ d  False  False  False  False  False  False
+ e   True  False  False  False  False   True
+ f  False  False  False   True  False  False)</code></pre>
+<p><strong>dropna 删除 nan, fillna 将 nan 填充</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认有 nan 的行就删除, 参数 all: 全部 nan 才删除</span></span><br><span class="line">df1.A.dropna() <span class="comment"># s 也可</span></span><br><span class="line">df1.dropna(), df1.dropna(axis=<span class="number">1</span>, how=<span class="string">&#x27;all&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A  B  C    D    E    F
+ b  4.0  8  2  4.0  6.0  3.0
+ d  3.0  2  7  8.0  8.0  7.0,
+      A  B  C    D    E    F
+ a  5.0  8  6  NaN  4.0  4.0
+ b  4.0  8  2  4.0  6.0  3.0
+ c  5.0  8  7  NaN  NaN  5.0
+ d  3.0  2  7  8.0  8.0  7.0
+ e  NaN  2  6  2.0  6.0  NaN
+ f  2.0  5  4  NaN  4.0  6.0)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给定填充值, 默认全部填充, </span></span><br><span class="line"><span class="comment"># 可以指定填充数, 填充方式</span></span><br><span class="line">df1.A.fillna(<span class="number">0</span>) <span class="comment"># s 也可</span></span><br><span class="line">df1.fillna(<span class="number">0</span>), df1.fillna(<span class="number">0</span>, limit=<span class="number">1</span>) <span class="comment"># 每一列填充一个</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A  B  C    D    E    F
+ a  5.0  8  6  0.0  4.0  4.0
+ b  4.0  8  2  4.0  6.0  3.0
+ c  5.0  8  7  0.0  0.0  5.0
+ d  3.0  2  7  8.0  8.0  7.0
+ e  0.0  2  6  2.0  6.0  0.0
+ f  2.0  5  4  0.0  4.0  6.0,
+      A  B  C    D    E    F
+ a  5.0  8  6  0.0  4.0  4.0
+ b  4.0  8  2  4.0  6.0  3.0
+ c  5.0  8  7  NaN  0.0  5.0
+ d  3.0  2  7  8.0  8.0  7.0
+ e  0.0  2  6  2.0  6.0  0.0
+ f  2.0  5  4  NaN  4.0  6.0)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ffill 前面值填充, bfill 后面值填充</span></span><br><span class="line">df1.fillna(method=<span class="string">&#x27;ffill&#x27;</span>), df1.fillna(method=<span class="string">&#x27;bfill&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A  B  C    D    E    F
+ a  5.0  8  6  NaN  4.0  4.0
+ b  4.0  8  2  4.0  6.0  3.0
+ c  5.0  8  7  4.0  6.0  5.0
+ d  3.0  2  7  8.0  8.0  7.0
+ e  3.0  2  6  2.0  6.0  7.0
+ f  2.0  5  4  2.0  4.0  6.0,
+      A  B  C    D    E    F
+ a  5.0  8  6  4.0  4.0  4.0
+ b  4.0  8  2  4.0  6.0  3.0
+ c  5.0  8  7  8.0  8.0  5.0
+ d  3.0  2  7  8.0  8.0  7.0
+ e  2.0  2  6  2.0  6.0  6.0
+ f  2.0  5  4  NaN  4.0  6.0)</code></pre>
+<p><strong>drop_duplicates 去重</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df.iloc[<span class="number">0</span>] = df.iloc[<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 默认保留第 1 条数据</span></span><br><span class="line">df.A.drop_duplicates() <span class="comment"># s 也可</span></span><br><span class="line">df, df.drop_duplicates()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D  E  F
+ a  4  8  2  4  6  3
+ b  4  8  2  4  6  3
+ c  5  8  7  1  1  5
+ d  3  2  7  8  8  7
+ e  1  2  6  2  6  1
+ f  2  5  4  1  4  6,
+    A  B  C  D  E  F
+ a  4  8  2  4  6  3
+ c  5  8  7  1  1  5
+ d  3  2  7  8  8  7
+ e  1  2  6  2  6  1
+ f  2  5  4  1  4  6)</code></pre>
+<p><strong>nlargest 选择某列(某几列)值最大的几条数据, 对应还有 nsmallest</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.nlargest(<span class="number">3</span>, <span class="string">&#x27;A&#x27;</span>), df.nsmallest(<span class="number">3</span>, <span class="string">&#x27;A&#x27;</span>), df.nlargest(<span class="number">3</span>, [<span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D  E  F
+ c  5  8  7  1  1  5
+ a  4  8  2  4  6  3
+ b  4  8  2  4  6  3,
+    A  B  C  D  E  F
+ e  1  2  6  2  6  1
+ f  2  5  4  1  4  6
+ d  3  2  7  8  8  7,
+    A  B  C  D  E  F
+ d  3  2  7  8  8  7
+ c  5  8  7  1  1  5
+ e  1  2  6  2  6  1)</code></pre>
+<p><strong>filter 按索引查找数据, 可正则模糊查找</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.<span class="built_in">filter</span>([<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>]), df.<span class="built_in">filter</span>(like=<span class="string">&#x27;a&#x27;</span>, axis=<span class="number">0</span>), df.<span class="built_in">filter</span>(regex=<span class="string">&#x27;c&#x27;</span>, axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B
+ a  4  8
+ b  4  8
+ c  5  8
+ d  3  2
+ e  1  2
+ f  2  5,
+    A  B  C  D  E  F
+ a  4  8  2  4  6  3,
+    A  B  C  D  E  F
+ c  5  8  7  1  1  5)</code></pre>
+<p><strong>assign 用于新增辅助列</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.assign(A1=df[<span class="string">&#x27;A&#x27;</span>]/df[<span class="string">&#x27;F&#x27;</span>]), df.assign(A1=<span class="keyword">lambda</span> x:x.A/x.F)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D  E  F        A1
+ a  4  8  2  4  6  3  1.333333
+ b  4  8  2  4  6  3  1.333333
+ c  5  8  7  1  1  5  1.000000
+ d  3  2  7  8  8  7  0.428571
+ e  1  2  6  2  6  1  1.000000
+ f  2  5  4  1  4  6  0.333333,
+    A  B  C  D  E  F        A1
+ a  4  8  2  4  6  3  1.333333
+ b  4  8  2  4  6  3  1.333333
+ c  5  8  7  1  1  5  1.000000
+ d  3  2  7  8  8  7  0.428571
+ e  1  2  6  2  6  1  1.000000
+ f  2  5  4  1  4  6  0.333333)</code></pre>
+<p><strong>clip 将过大或过小的数据去掉, 并填充指定值</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 小于指定值的填充为指定值小者, 大于的反之</span></span><br><span class="line">df.clip(<span class="number">2</span>, <span class="number">6</span>), df.clip(df.A, df.A + <span class="number">2</span>, axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   A  B  C  D  E  F
+ a  4  6  2  4  6  3
+ b  4  6  2  4  6  3
+ c  5  6  6  2  2  5
+ d  3  2  6  6  6  6
+ e  2  2  6  2  6  2
+ f  2  5  4  2  4  6,
+    A  B  C  D  E  F
+ a  4  6  4  4  6  4
+ b  4  6  4  4  6  4
+ c  5  7  7  5  5  5
+ d  3  3  5  5  5  5
+ e  1  2  3  2  3  1
+ f  2  4  4  2  4  4)</code></pre>
+<h3 id="4-数据分组聚合计算"><a href="#4-数据分组聚合计算" class="headerlink" title="4, 数据分组聚合计算"></a>4, 数据分组聚合计算</h3><p>聚合计算和 np 函数基本一样, 例如 sum, count, median, min, max, mean, var, std 等, 比较容易. 更为重要的, 是将数据按需分组后再聚合运算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">np.random.seed(<span class="number">0</span>)</span><br><span class="line">df = pd.DataFrame(np.random.randint(<span class="number">1</span>, <span class="number">9</span>, (<span class="number">6</span>, <span class="number">6</span>)),</span><br><span class="line">                  index=<span class="built_in">list</span>(<span class="string">&#x27;abcdef&#x27;</span>),</span><br><span class="line">                  columns=<span class="built_in">list</span>(<span class="string">&#x27;ABCDEF&#x27;</span>))</span><br><span class="line"></span><br><span class="line">df.A.where(df.A&gt;<span class="number">3</span>, <span class="string">&#x27;M&#x27;</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df.A.where(df.A==<span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df.B.where(df.B&gt;<span class="number">3</span>, <span class="string">&#x27;J&#x27;</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df.B.where(df.B==<span class="string">&#x27;J&#x27;</span>, <span class="string">&#x27;K&#x27;</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df.C.where(df.C&lt;<span class="number">5</span>, np.nan, inplace=<span class="literal">True</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   A  B    C  D  E  F
+a  N  K  NaN  1  4  4
+b  N  K  2.0  4  6  3
+c  N  K  NaN  1  1  5
+d  M  J  NaN  8  8  7
+e  M  J  NaN  2  6  1
+f  M  K  4.0  1  4  6</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认按列加和, 将 nan 转换为 0 来计算</span></span><br><span class="line">df.<span class="built_in">sum</span>(), df.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 默认按列统计忽略 nan</span></span><br><span class="line">df.count(axis=<span class="number">1</span>), df.set_index([<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>]).count(level=<span class="string">&quot;A&quot;</span>)</span><br><span class="line"><span class="comment"># df.cumsum()</span></span><br><span class="line"><span class="comment"># df.cummax()</span></span><br><span class="line"><span class="comment"># 等等</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    5
+ b    6
+ c    5
+ d    5
+ e    5
+ f    6
+ dtype: int64,
+    C  D  E  F
+ A            
+ M  1  3  3  3
+ N  1  3  3  3)</code></pre>
+<p><strong>value_counts 统计 s 中每个值出现次数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s 的值统计, 也即是 df 的每一列中每个值的数量统计</span></span><br><span class="line">df.A.value_counts(), df.C.value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(M    3
+ N    3
+ Name: A, dtype: int64,
+ 4.0    1
+ 2.0    1
+ Name: C, dtype: int64)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以统计索引, 可按百分比显示, 可以分组统计</span></span><br><span class="line">df.set_index(<span class="string">&#x27;A&#x27;</span>).index.value_counts(normalize=<span class="literal">True</span>), df.D.value_counts(bins=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(M    0.5
+ N    0.5
+ Name: A, dtype: float64,
+ (0.992, 4.5]    5
+ (4.5, 8.0]      1
+ Name: D, dtype: int64)</code></pre>
+<p><strong>nunique 去重计数, 统计每一行或列不同值的数量</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.nunique() </span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>A    2
+B    2
+C    2
+D    4
+E    4
+F    6
+dtype: int64</code></pre>
+<p><strong>quantile 计算分位数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(df.quantile([<span class="number">0.3</span>, <span class="number">0.6</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       C    D    E    F
+0.3  2.6  1.0  4.0  3.5
+0.6  3.2  2.0  6.0  5.0</code></pre>
+<p><strong>cut 与 qcut 数据分箱</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将某一列中的值分别分到一个范围中, 默认左不包含右包含</span></span><br><span class="line"><span class="comment"># 这对分组非常有用, 例如年龄分段</span></span><br><span class="line">c = pd.cut(df.D, bins=[<span class="number">0</span>, <span class="number">3</span>, <span class="number">8</span>], labels=[<span class="string">&#x27;0到3&#x27;</span>, <span class="string">&#x27;3到8&#x27;</span>])</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>a    0到3
+b    3到8
+c    0到3
+d    3到8
+e    0到3
+f    0到3
+Name: D, dtype: category
+Categories (2, object): [0到3 &lt; 3到8]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据数值的频率来选择间隔, 使每个分段里值的个数相同</span></span><br><span class="line">pd.qcut(df.D, q=<span class="number">2</span>), pd.qcut(df.D, q=<span class="number">2</span>).value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(a    (0.999, 1.5]
+ b      (1.5, 8.0]
+ c    (0.999, 1.5]
+ d      (1.5, 8.0]
+ e      (1.5, 8.0]
+ f    (0.999, 1.5]
+ Name: D, dtype: category
+ Categories (2, interval[float64]): [(0.999, 1.5] &lt; (1.5, 8.0]],
+ (1.5, 8.0]      3
+ (0.999, 1.5]    3
+ Name: D, dtype: int64)</code></pre>
+<p><strong>rank 用来给数据排名, 例如销售额, 成绩等</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有多种排名方式可供选择, 举一例: 给 D 列排名</span></span><br><span class="line">df[<span class="string">&#x27;排名&#x27;</span>] = df.D.rank(method=<span class="string">&#x27;dense&#x27;</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   A  B    C  D  E  F   排名
+a  N  K  NaN  1  4  4  4.0
+b  N  K  2.0  4  6  3  2.0
+c  N  K  NaN  1  1  5  4.0
+d  M  J  NaN  8  8  7  1.0
+e  M  J  NaN  2  6  1  3.0
+f  M  K  4.0  1  4  6  4.0</code></pre>
+<p><strong>sort_values 数据排序</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.sort_values(<span class="string">&#x27;排名&#x27;</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   A  B    C  D  E  F   排名
+d  M  J  NaN  8  8  7  1.0
+b  N  K  2.0  4  6  3  2.0
+e  M  J  NaN  2  6  1  3.0
+a  N  K  NaN  1  4  4  4.0
+c  N  K  NaN  1  1  5  4.0
+f  M  K  4.0  1  4  6  4.0</code></pre>
+<p><strong>shift 数据移动, 索引不变</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认向后移动一行, 同类型相移动, nan 填充</span></span><br><span class="line">df.info(), df.shift(<span class="number">1</span>), df.shift(<span class="number">-1</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 6 entries, d to f
+Data columns (total 7 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   A       6 non-null      object 
+ 1   B       6 non-null      object 
+ 2   C       2 non-null      float64
+ 3   D       6 non-null      int32  
+ 4   E       6 non-null      int32  
+ 5   F       6 non-null      int32  
+ 6   排名      6 non-null      float64
+dtypes: float64(2), int32(3), object(2)
+memory usage: 312.0+ bytes
+
+(None,
+      A    B    C    D    E    F   排名
+ d  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+ b    M    J  NaN  8.0  8.0  7.0  1.0
+ e    N    K  2.0  4.0  6.0  3.0  2.0
+ a    M    J  NaN  2.0  6.0  1.0  3.0
+ c    N    K  NaN  1.0  4.0  4.0  4.0
+ f    N    K  NaN  1.0  1.0  5.0  4.0,
+    A    B    C    D    E   F  排名
+ d  J  NaN  1.0  8.0  7.0 NaN NaN
+ b  K  NaN  2.0  6.0  3.0 NaN NaN
+ e  J  NaN  3.0  6.0  1.0 NaN NaN
+ a  K  NaN  4.0  4.0  4.0 NaN NaN
+ c  K  NaN  4.0  1.0  5.0 NaN NaN
+ f  K  NaN  4.0  4.0  6.0 NaN NaN)</code></pre>
+<p><strong>agg 和 apply 传入函数进行高级聚合运算, 已存在的函数用字符串形式传入, 自定义函数传入函数名</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.agg(<span class="string">&#x27;sum&#x27;</span>), df.agg([<span class="string">&#x27;max&#x27;</span>, <span class="string">&#x27;min&#x27;</span>]), df.apply([<span class="string">&#x27;max&#x27;</span>, <span class="string">&#x27;min&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A     MNMNNM
+ B     JKJKKK
+ C          6
+ D         17
+ E         29
+ F         26
+ 排名        18
+ dtype: object,
+      A  B    C  D  E  F   排名
+ max  N  K  4.0  8  8  7  4.0
+ min  M  J  2.0  1  1  1  1.0,
+      A  B    C  D  E  F   排名
+ max  N  K  4.0  8  8  7  4.0
+ min  M  J  2.0  1  1  1  1.0)</code></pre>
+<p>🔺🔺<strong>groupby 按指定的列(行)中不同值分组, 与前面的聚合函数组合出无限的变化, 满足各种需求</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分组后是一个迭代器, 可以查看分组, 获取分组</span></span><br><span class="line">df.groupby(<span class="string">&#x27;A&#x27;</span>), df.groupby(<span class="string">&#x27;A&#x27;</span>).groups, df.groupby(<span class="string">&#x27;A&#x27;</span>).get_group(<span class="string">&#x27;M&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000002C3AE430630&gt;,
+ &#123;&#39;M&#39;: Index([&#39;d&#39;, &#39;e&#39;, &#39;f&#39;], dtype=&#39;object&#39;),
+  &#39;N&#39;: Index([&#39;b&#39;, &#39;a&#39;, &#39;c&#39;], dtype=&#39;object&#39;)&#125;,
+    A  B    C  D  E  F   排名
+ d  M  J  NaN  8  8  7  1.0
+ e  M  J  NaN  2  6  1  3.0
+ f  M  K  4.0  1  4  6  4.0)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分别取出 M 和 N 中 F 列任意排名的数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_second</span>(<span class="params">x, m, n</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x[x[m].rank(method=<span class="string">&#x27;dense&#x27;</span>, ascending=<span class="literal">False</span>)==n]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过修改 n 参数取出任意排名</span></span><br><span class="line">print(df.groupby(<span class="string">&#x27;A&#x27;</span>).apply(get_second, m=<span class="string">&#x27;F&#x27;</span>, n=<span class="number">3.0</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>     A  B    C  D  E  F   排名
+A                           
+M e  M  J  NaN  2  6  1  3.0
+N b  N  K  2.0  4  6  3  2.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将上述 cut 分箱得到的数据用来分组统计</span></span><br><span class="line">print(df.groupby(c).count())</span><br></pre></td></tr></table></figure>
+
+<pre><code>     A  B  C  D  E  F  排名
+D                        
+0到3  4  4  1  4  4  4   4
+3到8  2  2  1  2  2  2   2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对不同的列作不同的分组聚合运算</span></span><br><span class="line">print(df.groupby(<span class="string">&#x27;A&#x27;</span>).agg(&#123;<span class="string">&#x27;E&#x27;</span>: [<span class="string">&#x27;mean&#x27;</span>, <span class="string">&#x27;max&#x27;</span>], <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;sum&#x27;</span>&#125;))</span><br></pre></td></tr></table></figure>
+
+<pre><code>          E       F
+       mean max sum
+A                  
+M  6.000000   8  14
+N  3.666667   6  12</code></pre>
+<h3 id="5-数据透视与窗口函数"><a href="#5-数据透视与窗口函数" class="headerlink" title="5, 数据透视与窗口函数"></a>5, 数据透视与窗口函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">np.random.seed(<span class="number">0</span>)</span><br><span class="line">df = pd.DataFrame(np.random.randint(<span class="number">1</span>, <span class="number">20</span>, (<span class="number">4</span>, <span class="number">5</span>)))</span><br><span class="line">df.columns = <span class="built_in">list</span>(<span class="string">&#x27;ABCDE&#x27;</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>    A   B   C  D   E
+0  13  16   1  4   4
+1   8  10  19  5   7
+2  13   2   7  8  15
+3  18   6  14  9  10</code></pre>
+<p><strong>melt 将列索引展开成数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认全部展开</span></span><br><span class="line">df1 = pd.melt(df, id_vars=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>], var_name=<span class="string">&#x27;F&#x27;</span>, value_name=<span class="string">&#x27;G&#x27;</span>)</span><br><span class="line">df1, pd.melt(df, id_vars=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>], value_vars=[<span class="string">&#x27;C&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A   B  F   G
+ 0   13  16  C   1
+ 1    8  10  C  19
+ 2   13   2  C   7
+ 3   18   6  C  14
+ 4   13  16  D   4
+ 5    8  10  D   5
+ 6   13   2  D   8
+ 7   18   6  D   9
+ 8   13  16  E   4
+ 9    8  10  E   7
+ 10  13   2  E  15
+ 11  18   6  E  10,
+     A   B variable  value
+ 0  13  16        C      1
+ 1   8  10        C     19
+ 2  13   2        C      7
+ 3  18   6        C     14)</code></pre>
+<p><strong>pivot 将行值展开成为列索引</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(df1.pivot(columns=<span class="string">&#x27;F&#x27;</span>, values=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       A                 B            
+F      C     D     E     C     D     E
+0   13.0   NaN   NaN  16.0   NaN   NaN
+1    8.0   NaN   NaN  10.0   NaN   NaN
+2   13.0   NaN   NaN   2.0   NaN   NaN
+3   18.0   NaN   NaN   6.0   NaN   NaN
+4    NaN  13.0   NaN   NaN  16.0   NaN
+5    NaN   8.0   NaN   NaN  10.0   NaN
+6    NaN  13.0   NaN   NaN   2.0   NaN
+7    NaN  18.0   NaN   NaN   6.0   NaN
+8    NaN   NaN  13.0   NaN   NaN  16.0
+9    NaN   NaN   8.0   NaN   NaN  10.0
+10   NaN   NaN  13.0   NaN   NaN   2.0
+11   NaN   NaN  18.0   NaN   NaN   6.0</code></pre>
+<p><strong>pivot_table 与 groupby + 聚合函数 类似, 可以对表格进行各种需求的透视</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df1.index = <span class="built_in">list</span>(<span class="string">&#x27;LMNLMNLMNLMN&#x27;</span>)</span><br><span class="line">df1.reset_index(inplace=<span class="literal">True</span>)</span><br><span class="line">df1.rename(columns=&#123;<span class="string">&#x27;index&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line">print(df1.pivot_table(index=[<span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;F&#x27;</span>], aggfunc=<span class="string">&#x27;mean&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>        A   B     G
+Q F                
+L C  15.5  11   7.5
+  D  13.0   2   8.0
+  E   8.0  10   7.0
+M C   8.0  10  19.0
+  D  15.5  11   6.5
+  E  13.0   2  15.0
+N C  13.0   2   7.0
+  D   8.0  10   5.0
+  E  15.5  11   7.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df1, df1.pivot_table(index=<span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line">                    columns=<span class="string">&#x27;F&#x27;</span>,</span><br><span class="line">                    values=<span class="string">&#x27;A&#x27;</span>,</span><br><span class="line">                    aggfunc=[<span class="string">&#x27;mean&#x27;</span>, <span class="string">&#x27;sum&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(    Q   A   B  F   G
+ 0   L  13  16  C   1
+ 1   M   8  10  C  19
+ 2   N  13   2  C   7
+ 3   L  18   6  C  14
+ 4   M  13  16  D   4
+ 5   N   8  10  D   5
+ 6   L  13   2  D   8
+ 7   M  18   6  D   9
+ 8   N  13  16  E   4
+ 9   L   8  10  E   7
+ 10  M  13   2  E  15
+ 11  N  18   6  E  10,
+    mean             sum        
+ F     C     D     E   C   D   E
+ Q                              
+ L  15.5  13.0   8.0  31  13   8
+ M   8.0  15.5  13.0   8  31  13
+ N  13.0   8.0  15.5  13   8  31)</code></pre>
+<p><strong>rolling 将数据依次移动指定尺寸的窗口并进行聚合运算</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1.rolling(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Rolling [window=3,center=False,axis=0]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 每移动 3 条数据加和一次作为一条新数据,</span></span><br><span class="line"><span class="comment"># 前面默认 nan 填充</span></span><br><span class="line">df1, df1.rolling(<span class="number">3</span>).<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(    Q   A   B  F   G
+ 0   L  13  16  C   1
+ 1   M   8  10  C  19
+ 2   N  13   2  C   7
+ 3   L  18   6  C  14
+ 4   M  13  16  D   4
+ 5   N   8  10  D   5
+ 6   L  13   2  D   8
+ 7   M  18   6  D   9
+ 8   N  13  16  E   4
+ 9   L   8  10  E   7
+ 10  M  13   2  E  15
+ 11  N  18   6  E  10,
+        A     B     G
+ 0    NaN   NaN   NaN
+ 1    NaN   NaN   NaN
+ 2   34.0  28.0  27.0
+ 3   39.0  18.0  40.0
+ 4   44.0  24.0  25.0
+ 5   39.0  32.0  23.0
+ 6   34.0  28.0  17.0
+ 7   39.0  18.0  22.0
+ 8   44.0  24.0  21.0
+ 9   39.0  32.0  20.0
+ 10  34.0  28.0  26.0
+ 11  39.0  18.0  32.0)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以设置最小观察值(必须小于移动尺寸)</span></span><br><span class="line"><span class="comment"># 可以用高级函数聚合运算</span></span><br><span class="line">df1.rolling(<span class="built_in">len</span>(df1), min_periods=<span class="number">1</span>).<span class="built_in">sum</span>(), df1.rolling(<span class="number">2</span>).agg([<span class="string">&#x27;sum&#x27;</span>, np.<span class="built_in">max</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(        A      B      G
+ 0    13.0   16.0    1.0
+ 1    21.0   26.0   20.0
+ 2    34.0   28.0   27.0
+ 3    52.0   34.0   41.0
+ 4    65.0   50.0   45.0
+ 5    73.0   60.0   50.0
+ 6    86.0   62.0   58.0
+ 7   104.0   68.0   67.0
+ 8   117.0   84.0   71.0
+ 9   125.0   94.0   78.0
+ 10  138.0   96.0   93.0
+ 11  156.0  102.0  103.0,
+        A           B           G      
+      sum  amax   sum  amax   sum  amax
+ 0    NaN   NaN   NaN   NaN   NaN   NaN
+ 1   21.0  13.0  26.0  16.0  20.0  19.0
+ 2   21.0  13.0  12.0  10.0  26.0  19.0
+ 3   31.0  18.0   8.0   6.0  21.0  14.0
+ 4   31.0  18.0  22.0  16.0  18.0  14.0
+ 5   21.0  13.0  26.0  16.0   9.0   5.0
+ 6   21.0  13.0  12.0  10.0  13.0   8.0
+ 7   31.0  18.0   8.0   6.0  17.0   9.0
+ 8   31.0  18.0  22.0  16.0  13.0   9.0
+ 9   21.0  13.0  26.0  16.0  11.0   7.0
+ 10  21.0  13.0  12.0  10.0  22.0  15.0
+ 11  31.0  18.0   8.0   6.0  25.0  15.0)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x.iloc[<span class="number">0</span>] * x.iloc[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">df1[[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]], df1.rolling(<span class="number">2</span>)[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;G&#x27;</span>].apply(f)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(     A   G
+ 0   13   1
+ 1    8  19
+ 2   13   7
+ 3   18  14
+ 4   13   4
+ 5    8   5
+ 6   13   8
+ 7   18   9
+ 8   13   4
+ 9    8   7
+ 10  13  15
+ 11  18  10,
+         A      G
+ 0     NaN    NaN
+ 1   104.0   19.0
+ 2   104.0  133.0
+ 3   234.0   98.0
+ 4   234.0   56.0
+ 5   104.0   20.0
+ 6   104.0   40.0
+ 7   234.0   72.0
+ 8   234.0   36.0
+ 9   104.0   28.0
+ 10  104.0  105.0
+ 11  234.0  150.0)</code></pre>
+<h3 id="6-文本字符串处理"><a href="#6-文本字符串处理" class="headerlink" title="6, 文本字符串处理"></a>6, 文本字符串处理</h3><p>文本字符串处理方法基本上和 python 内建字符串方法同名, 这些方法自动忽略 nan 进行处理</p>
+<p>方法较多, 常用的举几个例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series([<span class="string">&#x27;A_1&#x27;</span>, <span class="string">&#x27;B_2&#x27;</span>, <span class="string">&#x27;C_3&#x27;</span>, np.nan],</span><br><span class="line">              index=[<span class="string">&#x27;A_a&#x27;</span>, <span class="string">&#x27;B_b&#x27;</span>, <span class="string">&#x27;C_c&#x27;</span>, <span class="string">&#x27;D&#x27;</span>])</span><br><span class="line">s</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>A_a    A_1
+B_b    B_2
+C_c    C_3
+D      NaN
+dtype: object</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取值</span></span><br><span class="line">s.<span class="built_in">str</span>[<span class="number">0</span>], s.<span class="built_in">str</span>[:<span class="number">2</span>], s.index.<span class="built_in">str</span>[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A_a      A
+ B_b      B
+ C_c      C
+ D      NaN
+ dtype: object,
+ A_a     A_
+ B_b     B_
+ C_c     C_
+ D      NaN
+ dtype: object,
+ Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, nan], dtype=&#39;object&#39;))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拆分</span></span><br><span class="line">s.<span class="built_in">str</span>.split(<span class="string">&#x27;_&#x27;</span>), s.<span class="built_in">str</span>.split(<span class="string">&#x27;_&#x27;</span>).<span class="built_in">str</span>.get(<span class="number">0</span>), s.<span class="built_in">str</span>.split(<span class="string">&#x27;_&#x27;</span>).<span class="built_in">str</span>[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A_a    [A, 1]
+ B_b    [B, 2]
+ C_c    [C, 3]
+ D         NaN
+ dtype: object,
+ A_a      A
+ B_b      B
+ C_c      C
+ D      NaN
+ dtype: object,
+ A_a      1
+ B_b      2
+ C_c      3
+ D      NaN
+ dtype: object)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s, s.<span class="built_in">str</span>.split(<span class="string">&#x27;_&#x27;</span>, expand=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A_a    A_1
+ B_b    B_2
+ C_c    C_3
+ D      NaN
+ dtype: object,
+        0    1
+ A_a    A    1
+ B_b    B    2
+ C_c    C    3
+ D    NaN  NaN)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 替换, 默认正则匹配, 可传入函数高级匹配</span></span><br><span class="line">s.<span class="built_in">str</span>.replace(<span class="string">&#x27;_&#x27;</span>, <span class="string">&#x27;&#x27;</span>), s.index.<span class="built_in">str</span>.replace(<span class="string">&#x27;_&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A_a     A1
+ B_b     B2
+ C_c     C3
+ D      NaN
+ dtype: object,
+ Index([&#39;Aa&#39;, &#39;Bb&#39;, &#39;Cc&#39;, &#39;D&#39;], dtype=&#39;object&#39;))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拼接</span></span><br><span class="line">s1 = s.<span class="built_in">str</span>.split(<span class="string">&#x27;_&#x27;</span>).<span class="built_in">str</span>[<span class="number">0</span>]</span><br><span class="line">s1, s1.<span class="built_in">str</span>.cat(), s1.<span class="built_in">str</span>.cat(sep=<span class="string">&#x27;_&#x27;</span>), s1.<span class="built_in">str</span>.cat(sep=<span class="string">&#x27;_&#x27;</span>, na_rep=<span class="string">&#x27;_&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A_a      A
+ B_b      B
+ C_c      C
+ D      NaN
+ dtype: object,
+ &#39;ABC&#39;,
+ &#39;A_B_C&#39;,
+ &#39;A_B_C__&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1.<span class="built_in">str</span>.cat([<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>], na_rep=<span class="string">&#x27;_&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>A_a    A1
+B_b    B2
+C_c    C3
+D      _4
+dtype: object</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取</span></span><br><span class="line">s, s.<span class="built_in">str</span>.extract(<span class="string">r&#x27;([ABC])_(\d)&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(A_a    A_1
+ B_b    B_2
+ C_c    C_3
+ D      NaN
+ dtype: object,
+        0    1
+ A_a    A    1
+ B_b    B    2
+ C_c    C    3
+ D    NaN  NaN)</code></pre>
+<h2 id="三-时间序列"><a href="#三-时间序列" class="headerlink" title="三, 时间序列"></a>三, 时间序列</h2><p>时间序列对数据分析很重要, 很多数据都和时间发生的先后顺序相关</p>
+<p><strong>date_range 生成时间序列</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">pd.date_range(start=<span class="string">&#x27;20200701&#x27;</span>, end=<span class="string">&#x27;20200705&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>DatetimeIndex([&#39;2020-07-01&#39;, &#39;2020-07-02&#39;, &#39;2020-07-03&#39;, &#39;2020-07-04&#39;,
+               &#39;2020-07-05&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以指定生成个数与频率等</span></span><br><span class="line">pd.date_range(start=<span class="string">&#x27;6/1/2020&#x27;</span>, periods=<span class="number">5</span>, freq=<span class="string">&#x27;10D&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>DatetimeIndex([&#39;2020-06-01&#39;, &#39;2020-06-11&#39;, &#39;2020-06-21&#39;, &#39;2020-07-01&#39;,
+               &#39;2020-07-11&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;10D&#39;)</code></pre>
+<p><strong>to_datetime 转换时间格式</strong></p>
+<p>1970年 1 月 1 日 00:00:00 UTC+00:00 时区的时刻称为 epoch time，记为 0，当前时间就是相对于 epoch time 的秒数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取本地当前时间</span></span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.now())</span><br><span class="line">d = datetime.now().timestamp()</span><br><span class="line">print(datetime.fromtimestamp(d))</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+
+<pre><code>2020-07-17 10:57:59.465220
+2020-07-17 10:57:59.465220
+
+1594954679.46522</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数字形式的时间, 用 to_datetime 转换为时间格式后与上述有差别,</span></span><br><span class="line"><span class="comment"># 是由于时区的原因, 转换时区即可一样</span></span><br><span class="line">print(pd.to_datetime(d, utc=<span class="literal">True</span>, unit=<span class="string">&#x27;s&#x27;</span>))</span><br><span class="line">d = pd.Series(d)</span><br><span class="line">pd.to_datetime(d, utc=<span class="literal">True</span>, unit=<span class="string">&#x27;s&#x27;</span>).dt.tz_convert(<span class="string">&#x27;Asia/Shanghai&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0   2020-07-17 02:57:59.465219975+00:00
+dtype: datetime64[ns, UTC]
+
+0   2020-07-17 10:57:59.465219975+08:00
+dtype: datetime64[ns, Asia/Shanghai]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 各种日期格式的转换</span></span><br><span class="line">print(pd.to_datetime([<span class="string">&#x27;07-17-2020&#x27;</span>, <span class="string">&#x27;11-07-2020&#x27;</span>], dayfirst=<span class="literal">True</span>))</span><br><span class="line">print(pd.to_datetime(<span class="string">&#x27;2020年7月17日&#x27;</span>, <span class="built_in">format</span>=<span class="string">&#x27;%Y年%m月%d日&#x27;</span>))</span><br><span class="line">pd.to_datetime([<span class="string">&#x27;jul 17, 2020&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;2020-07-17&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;20200717&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;2020/07/17&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;2020.07.17&#x27;</span>, </span><br><span class="line">                np.nan])</span><br></pre></td></tr></table></figure>
+
+<pre><code>DatetimeIndex([&#39;2020-07-17&#39;, &#39;2020-07-11&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
+2020-07-17 00:00:00
+
+DatetimeIndex([&#39;2020-07-17&#39;, &#39;2020-07-17&#39;, &#39;2020-07-17&#39;, &#39;2020-07-17&#39;,
+               &#39;2020-07-17&#39;, &#39;NaT&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=None)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以跳过非时间, 可以转换 df 但索引名是固定的名称</span></span><br><span class="line">print(pd.to_datetime([<span class="string">&#x27;2020.07.17&#x27;</span>, <span class="string">&#x27;日期&#x27;</span>], errors=<span class="string">&#x27;coerce&#x27;</span>))</span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;year&#x27;</span>: [<span class="number">2019</span>, <span class="number">2020</span>],</span><br><span class="line">              <span class="string">&#x27;month&#x27;</span>: [<span class="number">6</span>, <span class="number">7</span>],</span><br><span class="line">              <span class="string">&#x27;day&#x27;</span>: [<span class="number">4</span>, <span class="number">5</span>]&#125;)</span><br><span class="line">pd.to_datetime(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>DatetimeIndex([&#39;2020-07-17&#39;, &#39;NaT&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
+
+0   2019-06-04
+1   2020-07-05
+dtype: datetime64[ns]</code></pre>
+<p><strong>tshift 时间索引移动, 数据不变</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(np.random.randint(<span class="number">0</span>, <span class="number">10</span>, (<span class="number">5</span>, <span class="number">2</span>)),</span><br><span class="line">                  index=pd.date_range(<span class="string">&#x27;20180717&#x27;</span>, periods=<span class="number">5</span>, freq=<span class="string">&#x27;200D&#x27;</span>))</span><br><span class="line">df, df.tshift(<span class="number">2</span>), df.tshift(<span class="number">-2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(            0  1
+ 2018-07-17  0  5
+ 2019-02-02  7  9
+ 2019-08-21  2  4
+ 2020-03-08  5  8
+ 2020-09-24  8  6,
+             0  1
+ 2019-08-21  0  5
+ 2020-03-08  7  9
+ 2020-09-24  2  4
+ 2021-04-12  5  8
+ 2021-10-29  8  6,
+             0  1
+ 2017-06-12  0  5
+ 2017-12-29  7  9
+ 2018-07-17  2  4
+ 2019-02-02  5  8
+ 2019-08-21  8  6)</code></pre>
+<p><strong>时间索引取值, between_time 取时间段</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;2018&#x27;</span>:<span class="string">&#x27;2019&#x27;</span>], df[<span class="string">&#x27;2019-01&#x27;</span>:<span class="string">&#x27;2020-01&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(            0  1
+ 2018-07-17  0  5
+ 2019-02-02  7  9
+ 2019-08-21  2  4,
+             0  1
+ 2019-02-02  7  9
+ 2019-08-21  2  4)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.index = pd.date_range(<span class="string">&#x27;20200717&#x27;</span>, periods=<span class="number">5</span>, freq=<span class="string">&#x27;2H&#x27;</span>)</span><br><span class="line">print(df.between_time(<span class="string">&#x27;3:00&#x27;</span>, <span class="string">&#x27;7:00&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>                     0  1
+2020-07-17 04:00:00  2  4
+2020-07-17 06:00:00  5  8</code></pre>
+<p><strong>时间序列作为数据的操作</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df.index = pd.date_range(<span class="string">&#x27;20180717&#x27;</span>, periods=<span class="number">5</span>, freq=<span class="string">&#x27;100D&#x27;</span>)</span><br><span class="line">df.index.name = <span class="string">&#x27;日期&#x27;</span></span><br><span class="line">df.reset_index(inplace=<span class="literal">True</span>)</span><br><span class="line">df, df.日期.dt.day</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(                   日期  0  1  月份
+ 2018-07-17 2018-07-17  0  5   7
+ 2018-10-25 2018-10-25  7  9  10
+ 2019-02-02 2019-02-02  2  4   2
+ 2019-05-13 2019-05-13  5  8   5
+ 2019-08-21 2019-08-21  8  6   8,
+ 2018-07-17    17
+ 2018-10-25    25
+ 2019-02-02     2
+ 2019-05-13    13
+ 2019-08-21    21
+ Freq: 100D, Name: 日期, dtype: int64)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;月份&#x27;</span>] = df[<span class="string">&#x27;日期&#x27;</span>].dt.month</span><br><span class="line">df, df[df.日期.dt.month &gt;= <span class="number">5</span>], df[df.月份 &gt;= <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(                   日期  0  1  月份
+ 2018-07-17 2018-07-17  0  5   7
+ 2018-10-25 2018-10-25  7  9  10
+ 2019-02-02 2019-02-02  2  4   2
+ 2019-05-13 2019-05-13  5  8   5
+ 2019-08-21 2019-08-21  8  6   8,
+                    日期  0  1  月份
+ 2018-07-17 2018-07-17  0  5   7
+ 2018-10-25 2018-10-25  7  9  10
+ 2019-05-13 2019-05-13  5  8   5
+ 2019-08-21 2019-08-21  8  6   8,
+                    日期  0  1  月份
+ 2018-07-17 2018-07-17  0  5   7
+ 2018-10-25 2018-10-25  7  9  10
+ 2019-05-13 2019-05-13  5  8   5
+ 2019-08-21 2019-08-21  8  6   8)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = df.日期.astype(<span class="built_in">str</span>).<span class="built_in">str</span>.split(<span class="string">&#x27;-&#x27;</span>, expand=<span class="literal">True</span>)</span><br><span class="line">df, d, df[d[<span class="number">0</span>] ==<span class="string">&#x27;2018&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(                   日期  0  1  月份
+ 2018-07-17 2018-07-17  0  5   7
+ 2018-10-25 2018-10-25  7  9  10
+ 2019-02-02 2019-02-02  2  4   2
+ 2019-05-13 2019-05-13  5  8   5
+ 2019-08-21 2019-08-21  8  6   8,
+                0   1   2
+ 2018-07-17  2018  07  17
+ 2018-10-25  2018  10  25
+ 2019-02-02  2019  02  02
+ 2019-05-13  2019  05  13
+ 2019-08-21  2019  08  21,
+                    日期  0  1  月份
+ 2018-07-17 2018-07-17  0  5   7
+ 2018-10-25 2018-10-25  7  9  10)</code></pre>
+<h2 id="四-数据的导入导出与可视化"><a href="#四-数据的导入导出与可视化" class="headerlink" title="四, 数据的导入导出与可视化"></a>四, 数据的导入导出与可视化</h2><h3 id="1-pd-可以导入导出多种格式的数据"><a href="#1-pd-可以导入导出多种格式的数据" class="headerlink" title="1, pd 可以导入导出多种格式的数据:"></a>1, pd 可以导入导出多种格式的数据:</h3><p>read_csv,    to_csv<br>read_json,    to_json<br>read_html,    to_html<br>read_excel,    to_excel<br>read_hdf,    to_hdf<br>等等</p>
+<p>参数非常多, 简单看几个</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认读取第一个 sheet, 默认第一行为列索引</span></span><br><span class="line">df = pd.read_excel(<span class="string">&#x27;数据/sheet.xlsx&#x27;</span>,</span><br><span class="line">                   sheet_name=<span class="number">0</span>, header=<span class="number">0</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   名次  战队名         说明
+0   1  FPX      四包二战术
+1   2   G2      个人能力强
+2   3   IG       喜欢打架
+3   4  SKT  Faker状态低迷
+4   5  GRF      上单是短板
+5   6  DWG        下路弱
+6   7  FNC       欧洲强队
+7   8  SPY        AD强
+8   9  RNG        四保一
+9  10   TL       北美强队</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以设置将某列作为行索引, 某列作为列索引</span></span><br><span class="line">df1 = pd.read_excel(<span class="string">&#x27;数据/sheet.xlsx&#x27;</span>,</span><br><span class="line">                   sheet_name=<span class="number">1</span>)</span><br><span class="line">df2 = pd.read_excel(<span class="string">&#x27;数据/sheet.xlsx&#x27;</span>,</span><br><span class="line">                   sheet_name=<span class="number">1</span>,</span><br><span class="line">                   header=<span class="number">1</span>,</span><br><span class="line">                   index_col=<span class="number">0</span>)</span><br><span class="line">df1, df2</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(   名次        上单
+ 0   1   GIMGOOM
+ 1   2    WUNDER
+ 2   3      KHAN
+ 3   4   FLANDER
+ 4   5    THESHY
+ 5   6    NUGURI
+ 6   7     BWIPO
+ 7   8   IPMPACT
+ 8   9  LICORICE
+ 9  10      HUNI,
+      GIMGOOM
+ 1           
+ 2     WUNDER
+ 3       KHAN
+ 4    FLANDER
+ 5     THESHY
+ 6     NUGURI
+ 7      BWIPO
+ 8    IPMPACT
+ 9   LICORICE
+ 10      HUNI)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有时报错需要根据文件调节编码和引擎参数</span></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;数据/ratings_chinses.csv&#x27;</span>,</span><br><span class="line">                 engine=<span class="literal">None</span>,</span><br><span class="line">                 encoding=<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>       数量   收获  评分
+0     1.0  235   4
+1     1.0  260   4
+2     2.0  296   4
+3     2.0  316   5
+4     2.5  333   5
+..    ...  ...  ..
+97   39.7  231   4
+98   40.1  235   5
+99   40.5  260   4
+100  40.9  296   5
+101  41.3  316   3
+
+[102 rows x 3 columns]</code></pre>
+<h3 id="2-可视化"><a href="#2-可视化" class="headerlink" title="2, 可视化"></a>2, 可视化</h3><p>pd 有自己简单的可视化方法, 但通常使用 matplotlib, 或一起使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;YouYuan&#x27;</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">12</span></span><br><span class="line"></span><br><span class="line">df.收获.plot() </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;评分&#x27;</span>].plot(kind=<span class="string">&#x27;hist&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.plot(x=<span class="string">&#x27;数量&#x27;</span>, y=<span class="string">&#x27;评分&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.评分.plot.box()</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>吴明文
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/pandas-a5600fdbeadc/" title="Pandas 速查笔记">http://example.com/pandas-a5600fdbeadc/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。联系作者，微信号 JFSXXXSJYLWL。
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/pandas/" rel="tag"><i class="fa fa-tag"></i> pandas</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Markdown-d39685381dd6/" rel="prev" title="实用 Markdown 语法汇总">
+                  <i class="fa fa-chevron-left"></i> 实用 Markdown 语法汇总
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/numpy-464aacb14f3e/" rel="next" title="Numpy 速查笔记">
+                  Numpy 速查笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg3Mi8yNjM2Mw=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴昊</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>总字数：</span>
+    <span title="总字数">298k</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments('#lv-container', () => {
+  window.livereOptions = {
+    refer: "pandas-a5600fdbeadc/"
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

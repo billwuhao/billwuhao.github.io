@@ -28,9 +28,9 @@
 
   <meta name="description" content="探索花花世界，追寻自己内心">
 <meta property="og:type" content="website">
-<meta property="og:title" content="WuMingwen">
+<meta property="og:title" content="吴明文的站点">
 <meta property="og:url" content="http://example.com/page/2/">
-<meta property="og:site_name" content="WuMingwen">
+<meta property="og:site_name" content="吴明文的站点">
 <meta property="og:description" content="探索花花世界，追寻自己内心">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="吴明文">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>WuMingwen - 探索花花世界，追寻自己内心</title>
+  <title>吴明文的站点 - 探索花花世界，追寻自己内心</title>
   
 
 
@@ -113,7 +113,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">WuMingwen</h1>
+      <h1 class="site-title">吴明文的站点</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">探索花花世界，追寻自己内心</p>
@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -147,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">73</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">298</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -222,7 +222,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">298</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -235,7 +235,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -295,7 +295,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/data/data-432d96069dc0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/14_inheritance-7f8cae695208/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -304,12 +304,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuMingwen">
+      <meta itemprop="name" content="吴明文的站点">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/data/data-432d96069dc0/" class="post-title-link" itemprop="url">数据分析基础工具，方法与实践</a>
+            <a href="/python/16_class/14_inheritance-7f8cae695208/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +320,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2020-11-07 23:08:17" itemprop="dateCreated datePublished" datetime="2020-11-07T23:08:17+08:00">2020-11-07</time>
+      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2020-11-08 09:02:15" itemprop="dateModified" datetime="2020-11-08T09:02:15+08:00">2020-11-08</time>
+        <time title="修改时间：2021-01-03 00:11:43" itemprop="dateModified" datetime="2021-01-03T00:11:43+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +336,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>364</span>
+      <span>859</span>
     </span>
 </div>
 
@@ -347,13 +347,44 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://billwuhao.com/2020/08/08/zhuye/#more" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
-<br>
+          <h2 id="类继承"><a href="#类继承" class="headerlink" title="类继承"></a>类继承</h2><p>所有的类都继承自 object。被继承的类称为基类（或父类，超类），继承者称为子类。</p>
+<p>对于多数应用来说，在最简单的情况下，你可以认为搜索从父类所继承属性的操作是<strong>深度优先、从左至右</strong>的，当层次结构中存在重叠时不会在同一个类中搜索两次。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span>(<span class="params">C, B, D</span>):</span>  <span class="comment"># C -&gt; B -&gt; A -&gt; D</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">e = E()</span><br><span class="line">e.show()</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>该笔记主要内容是数据分析工具应用层面的基础知识，基础的统计学方法以及综合实践练习。</p>
-</blockquote>
-<h1 id="一，Python-及其科学计算库"><a href="#一，Python-及其科学计算库" class="headerlink" title="一，Python 及其科学计算库"></a>一，Python 及其科学计算库</h1><h2 id="⚫-Python"><a href="#⚫-Python" class="headerlink" title="⚫ Python"></a>⚫ Python</h2><h3 id=""><a href="#" class="headerlink" title=""></a><a href="/data/python1-8843db772140/" title="&lt;font color&#x3D;#AE6011 &gt;认识 python&lt;&#x2F;font&gt;"><font color=#AE6011 >认识 python</font></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="/data/python2-264a8e0ab5f1/" title="&lt;font color&#x3D;#AE6011 &gt;数据容器&lt;&#x2F;font&gt;"><font color=#AE6011 >数据容器</font></a></h3><h3 id="-2"><a href="#-2" class="headerlink" title=""></a><a href="/data/python3-2dee073565c6/" title="&lt;font color&#x3D;#AE6011 &gt;函数和面向对象&lt;&#x2F;font&gt;"><font color=#AE6011 >函数和面向对象</font></a></h3><h3 id="-3"><a href="#-3" class="headerlink" title=""></a><a href="/data/python4-8e8770a6503f/" title="&lt;font color&#x3D;#AE6011 &gt;异常, 模块和包, 以及文件读写&lt;&#x2F;font&gt;"><font color=#AE6011 >异常, 模块和包, 以及文件读写</font></a></h3><h3 id="-4"><a href="#-4" class="headerlink" title=""></a><a href="/data/regex-95e69c7b339c/" title="&lt;font color&#x3D;#AE6011 &gt;通俗易懂正则表达式&lt;&#x2F;font&gt;"><font color=#AE6011 >通俗易懂正则表达式</font></a></h3><h2 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/data/matplotlib-bfa2528613f9/" title="&lt;font color&#x3D;#AE6011 &gt;Matplotlib&lt;&#x2F;font&gt;"><font color=#AE6011 >Matplotlib</font></a></h2><h2 id="⚫-Numpy"><a href="#⚫-Numpy" class="headerlink" title="⚫ Numpy"></a>⚫ Numpy</h2><h3 id="-5"><a href="#-5" class="headerlink" title=""></a><a href="/data/numpy1-caa388146ce1/" title="&lt;font color&#x3D;#AE6011 &gt;ndarray 对象介绍及切片操作&lt;&#x2F;font&gt;"><font color=#AE6011 >ndarray 对象介绍及切片操作</font></a></h3><h3 id="-6"><a href="#-6" class="headerlink" title=""></a><a href="/data/numpy2-e9e4c18c3431/" title="&lt;font color&#x3D;#AE6011 &gt;ndarray 对象的运算，方法及创建&lt;&#x2F;font&gt;"><font color=#AE6011 >ndarray 对象的运算，方法及创建</font></a></h3><h3 id="-7"><a href="#-7" class="headerlink" title=""></a><a href="/data/numpy3-2300149490ed/" title="&lt;font color&#x3D;#AE6011 &gt;常用的通函数及 API&lt;&#x2F;font&gt;"><font color=#AE6011 >常用的通函数及 API</font></a></h3><h2 id="⚫-Pandas"><a href="#⚫-Pandas" class="headerlink" title="⚫ Pandas"></a>⚫ Pandas</h2><h3 id="-8"><a href="#-8" class="headerlink" title=""></a><a href="/data/pandas1-4798b1c5fd91/" title="&lt;font color&#x3D;#AE6011 &gt;数据结构的操作，处理与计算&lt;&#x2F;font&gt;"><font color=#AE6011 >数据结构的操作，处理与计算</font></a></h3><h3 id="-9"><a href="#-9" class="headerlink" title=""></a><a href="/data/pandas2-467dbcb23e38/" title="&lt;font color&#x3D;#AE6011 &gt;处理和计算函数&lt;&#x2F;font&gt;"><font color=#AE6011 >处理和计算函数</font></a></h3><h3 id="-10"><a href="#-10" class="headerlink" title=""></a><a href="/data/pandas3-bd0cfff75a2b/" title="&lt;font color&#x3D;#AE6011 &gt;时间序列，导入导出与可视化&lt;&#x2F;font&gt;"><font color=#AE6011 >时间序列，导入导出与可视化</font></a></h3><h1 id="二，SQL"><a href="#二，SQL" class="headerlink" title="二，SQL"></a>二，SQL</h1><h2 id="⚫-MySQL"><a href="#⚫-MySQL" class="headerlink" title="⚫ MySQL"></a>⚫ MySQL</h2><h3 id="-11"><a href="#-11" class="headerlink" title=""></a><a href="/data/mysql1-a1e1ed8d89a7/" title="&lt;font color&#x3D;#AE6011 &gt;基本介绍和单表操作&lt;&#x2F;font&gt;"><font color=#AE6011 >基本介绍和单表操作</font></a></h3><h3 id="-12"><a href="#-12" class="headerlink" title=""></a><a href="/data/mysql2-8fd5fec702bb/" title="&lt;font color&#x3D;#AE6011 &gt;多表基础操作&lt;&#x2F;font&gt;"><font color=#AE6011 >多表基础操作</font></a></h3><h3 id="-13"><a href="#-13" class="headerlink" title=""></a><a href="/data/mysql3-8dca988d8207/" title="&lt;font color&#x3D;#AE6011 &gt;常用函数&lt;&#x2F;font&gt;"><font color=#AE6011 >常用函数</font></a></h3><h3 id="-14"><a href="#-14" class="headerlink" title=""></a><a href="/data/mysql4-95ef69379b8e/" title="&lt;font color&#x3D;#AE6011 &gt;索引，视图和三范式&lt;&#x2F;font&gt;"><font color=#AE6011 >索引，视图和三范式</font></a></h3><h2 id="⚫-HiveQL"><a href="#⚫-HiveQL" class="headerlink" title="⚫ HiveQL"></a>⚫ HiveQL</h2><h3 id="-15"><a href="#-15" class="headerlink" title=""></a><a href="/data/hadoop1-ce4bb28dd03c/" title="&lt;font color&#x3D;#AE6011 &gt;Hive 介绍和 HiveQL 库和表初探&lt;&#x2F;font&gt;"><font color=#AE6011 >Hive 介绍和 HiveQL 库和表初探</font></a></h3><h3 id="-16"><a href="#-16" class="headerlink" title=""></a><a href="/data/hadoop2-8198ce8f5fce/" title="&lt;font color&#x3D;#AE6011 &gt;HiveQL 表查询&lt;&#x2F;font&gt;"><font color=#AE6011 >HiveQL 表查询</font></a></h3><h3 id="-17"><a href="#-17" class="headerlink" title=""></a><a href="/data/hadoop3-743e8abb1c1c/" title="&lt;font color&#x3D;#AE6011 &gt;HiveQL 窗口函数和常用优化技巧&lt;&#x2F;font&gt;"><font color=#AE6011 >HiveQL 窗口函数和常用优化技巧</font></a></h3><h1 id="三，统计学方法"><a href="#三，统计学方法" class="headerlink" title="三，统计学方法"></a>三，统计学方法</h1><h2 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics1-24ca6e122f33/" title="&lt;font color&#x3D;#AE6011 &gt;描述统计&lt;&#x2F;font&gt;"><font color=#AE6011 >描述统计</font></a></h2><h2 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics2-136ca00916f8/" title="&lt;font color&#x3D;#AE6011 &gt;推断统计&lt;&#x2F;font&gt;"><font color=#AE6011 >推断统计</font></a></h2><h2 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics3-1967a7845ced/" title="&lt;font color&#x3D;#AE6011 &gt;线性回归&lt;&#x2F;font&gt;"><font color=#AE6011 >线性回归</font></a></h2><h2 id="⚫-4"><a href="#⚫-4" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics4-344a69d01fea/" title="&lt;font color&#x3D;#AE6011 &gt;逻辑回归&lt;&#x2F;font&gt;"><font color=#AE6011 >逻辑回归</font></a></h2><h2 id="⚫-5"><a href="#⚫-5" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics5-2abb7ab7c911/" title="&lt;font color&#x3D;#AE6011 &gt;分类模型评估&lt;&#x2F;font&gt;"><font color=#AE6011 >分类模型评估</font></a></h2><h2 id="⚫-6"><a href="#⚫-6" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics6-a328029dd5af/" title="&lt;font color&#x3D;#AE6011 &gt;KNN 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >KNN 算法</font></a></h2><h2 id="⚫-7"><a href="#⚫-7" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics7-09facbbd1b27/" title="&lt;font color&#x3D;#AE6011 &gt;朴素贝叶斯&lt;&#x2F;font&gt;"><font color=#AE6011 >朴素贝叶斯</font></a></h2><h2 id="⚫-8"><a href="#⚫-8" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics8-32b3a23ba9e8/" title="&lt;font color&#x3D;#AE6011 &gt;决策树&lt;&#x2F;font&gt;"><font color=#AE6011 >决策树</font></a></h2><h2 id="⚫-9"><a href="#⚫-9" class="headerlink" title="⚫ "></a>⚫ <a href="/data/statistics9-37ff3fbe9723/" title="&lt;font color&#x3D;#AE6011 &gt;K-Means 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >K-Means 算法</font></a></h2><h1 id="-18"><a href="#-18" class="headerlink" title=""></a><a href="/data/case-ede78215895b/" title="&lt;font color&#x3D;#AE6011 &gt;四，综合实践练习&lt;&#x2F;font&gt;"><font color=#AE6011 >四，综合实践练习</font></a></h1>
+<pre><code>A</code></pre>
+<p>真实情况比这个更复杂一些；方法解析顺序会动态改变以支持对 super() 的协同调用。这种方式在某些其他多重继承型语言中被称为 后续方法调用，它比单继承型语言中的 super 调用更强大。</p>
+<p>动态改变顺序是有必要的，因为所有多重继承的情况都会显示出一个或更多的菱形关联（即至少有一个父类可通过多条路径被最底层类所访问）。例如，所有类都是继承自 object，因此任何多重继承的情况都提供了一条以上的路径可以通向 object。为了确保基类不会被访问一次以上，动态算法会用一种特殊方式将搜索顺序线性化，保留每个类所指定的从左至右的顺序，只调用每个父类一次，并且保持单调（即一个类可以被子类化而不影响其父类的优先顺序）。</p>
+<p>总而言之，这些特性使得设计具有多重继承的可靠且可扩展的类成为可能。</p>
+<p>一个基类如果有 <code>__init__()</code> 方法，则其所派生的类如果也有 <code>__init__()</code> 方法，就必须显式地调用它以确保实例基类部分的正确初始化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(self.a)</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.b = <span class="string">&#x27;B&#x27;</span></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.f() <span class="comment"># 基类未初始化，属性 a 不可调用</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-5-cda60db4451f&gt; in &lt;module&gt;
+     11 
+     12 b = B()
+---&gt; 13 b.f()
+
+
+&lt;ipython-input-5-cda60db4451f&gt; in f(self)
+      4 
+      5     def f(self):
+----&gt; 6         print(self.a)
+      7 
+      8 class B(A):
+
+
+AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A.__init__(b) <span class="comment"># 将实例 b 传给 A 初始化</span></span><br><span class="line">b.f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>A</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 或者直接用 super()</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(self.a)</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.b = <span class="string">&#x27;B&#x27;</span></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>A</code></pre>
+
       
     </div>
 
@@ -374,7 +405,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/298/">298</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -418,7 +449,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -430,7 +461,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>总字数：</span>
-    <span title="总字数">111k</span>
+    <span title="总字数">298k</span>
   </span>
 </div>
 <div class="busuanzi-count">

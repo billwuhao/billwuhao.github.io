@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
+  <meta name="baidu-site-verification" content="zzxKZjYogh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="bytes 创建 bytes 对象内置函数（类）bytes，Python 官方文档描述如下： 1help(bytes)  Help on class bytes in module builtins:  class bytes(object)  |  bytes(iterable_of_ints) -&gt; bytes  |  bytes(string, encoding[, errors])">
+<meta property="og:type" content="article">
+<meta property="og:title" content="吴明文的站点">
+<meta property="og:url" content="http://example.com/python/11_built-in_function/07_bytes-4d4be988c190/">
+<meta property="og:site_name" content="吴明文的站点">
+<meta property="og:description" content="bytes 创建 bytes 对象内置函数（类）bytes，Python 官方文档描述如下： 1help(bytes)  Help on class bytes in module builtins:  class bytes(object)  |  bytes(iterable_of_ints) -&gt; bytes  |  bytes(string, encoding[, errors])">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-02T12:20:12.639Z">
+<meta property="article:modified_time" content="2021-01-02T16:11:36.622Z">
+<meta property="article:author" content="吴明文">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/python/11_built-in_function/07_bytes-4d4be988c190/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 吴明文的站点</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">吴明文的站点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">探索花花世界，追寻自己内心</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">298</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bytes-%E5%88%9B%E5%BB%BA-bytes-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">bytes 创建 bytes 对象</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吴明文"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">吴明文</p>
+  <div class="site-description" itemprop="description">探索花花世界，追寻自己内心</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">298</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-instagram fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.catb.org/~esr/faqs/hacker-howto.html" title="http:&#x2F;&#x2F;www.catb.org&#x2F;~esr&#x2F;faqs&#x2F;hacker-howto.html" rel="noopener" target="_blank">How To Become A Hacker</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.marxists.org/index.htm" title="https:&#x2F;&#x2F;www.marxists.org&#x2F;index.htm" rel="noopener" target="_blank">Marxists Internet Archive</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.gutenberg.org/wiki/Main_Page" title="https:&#x2F;&#x2F;www.gutenberg.org&#x2F;wiki&#x2F;Main_Page" rel="noopener" target="_blank">Project Gutenberg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.shi-ci.com/" title="https:&#x2F;&#x2F;www.shi-ci.com&#x2F;" rel="noopener" target="_blank">中华诗词</a>
+        </li>
+    </ul>
+  </div>
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/07_bytes-4d4be988c190/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴明文">
+      <meta itemprop="description" content="探索花花世界，追寻自己内心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴明文的站点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表</span>
+
+      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新</span>
+        <time title="修改时间：2021-01-03 00:11:36" itemprop="dateModified" datetime="2021-01-03T00:11:36+08:00">2021-01-03</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="浏览" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">浏览：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">字数：</span>
+      <span>9.6k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="bytes-创建-bytes-对象"><a href="#bytes-创建-bytes-对象" class="headerlink" title="bytes 创建 bytes 对象"></a>bytes 创建 bytes 对象</h2><p>内置函数（类）bytes，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">bytes</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Help on class bytes in module builtins:
+
+class bytes(object)
+ |  bytes(iterable_of_ints) -&gt; bytes
+ |  bytes(string, encoding[, errors]) -&gt; bytes
+ |  bytes(bytes_or_buffer) -&gt; immutable copy of bytes_or_buffer
+ |  bytes(int) -&gt; bytes object of size given by the parameter initialized with null bytes
+ |  bytes() -&gt; empty bytes object
+ |  
+ |  Construct an immutable array of bytes from:
+ |    - an iterable yielding integers in range(256)
+ |    - a text string encoded using the specified encoding
+ |    - any object implementing the buffer API.
+ |    - an integer
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(self, key, /)
+ |      Return self[key].
+ |  
+ |  __getnewargs__(...)
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mod__(self, value, /)
+ |      Return self%value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __rmod__(self, value, /)
+ |      Return value%self.
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __str__(self, /)
+ |      Return str(self).
+ |  
+ |  capitalize(...)
+ |      B.capitalize() -&gt; copy of B
+ |      
+ |      Return a copy of B with only its first character capitalized (ASCII)
+ |      and the rest lower-cased.
+ |  
+ |  center(...)
+ |      B.center(width[, fillchar]) -&gt; copy of B
+ |      
+ |      Return B centered in a string of length width.  Padding is
+ |      done using the specified fill character (default is a space).
+ |  
+ |  count(...)
+ |      B.count(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the number of non-overlapping occurrences of subsection sub in
+ |      bytes B[start:end].  Optional arguments start and end are interpreted
+ |      as in slice notation.
+ |  
+ |  decode(self, /, encoding=&#39;utf-8&#39;, errors=&#39;strict&#39;)
+ |      Decode the bytes using the codec registered for encoding.
+ |      
+ |      encoding
+ |        The encoding with which to decode the bytes.
+ |      errors
+ |        The error handling scheme to use for the handling of decoding errors.
+ |        The default is &#39;strict&#39; meaning that decoding errors raise a
+ |        UnicodeDecodeError. Other possible values are &#39;ignore&#39; and &#39;replace&#39;
+ |        as well as any other name registered with codecs.register_error that
+ |        can handle UnicodeDecodeErrors.
+ |  
+ |  endswith(...)
+ |      B.endswith(suffix[, start[, end]]) -&gt; bool
+ |      
+ |      Return True if B ends with the specified suffix, False otherwise.
+ |      With optional start, test B beginning at that position.
+ |      With optional end, stop comparing B at that position.
+ |      suffix can also be a tuple of bytes to try.
+ |  
+ |  expandtabs(...)
+ |      B.expandtabs(tabsize=8) -&gt; copy of B
+ |      
+ |      Return a copy of B where all tab characters are expanded using spaces.
+ |      If tabsize is not given, a tab size of 8 characters is assumed.
+ |  
+ |  find(...)
+ |      B.find(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the lowest index in B where subsection sub is found,
+ |      such that sub is contained within B[start,end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Return -1 on failure.
+ |  
+ |  hex(...)
+ |      B.hex() -&gt; string
+ |      
+ |      Create a string of hexadecimal numbers from a bytes object.
+ |      Example: b&#39;\xb9\x01\xef&#39;.hex() -&gt; &#39;b901ef&#39;.
+ |  
+ |  index(...)
+ |      B.index(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the lowest index in B where subsection sub is found,
+ |      such that sub is contained within B[start,end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Raises ValueError when the subsection is not found.
+ |  
+ |  isalnum(...)
+ |      B.isalnum() -&gt; bool
+ |      
+ |      Return True if all characters in B are alphanumeric
+ |      and there is at least one character in B, False otherwise.
+ |  
+ |  isalpha(...)
+ |      B.isalpha() -&gt; bool
+ |      
+ |      Return True if all characters in B are alphabetic
+ |      and there is at least one character in B, False otherwise.
+ |  
+ |  isascii(...)
+ |      B.isascii() -&gt; bool
+ |      
+ |      Return True if B is empty or all characters in B are ASCII,
+ |      False otherwise.
+ |  
+ |  isdigit(...)
+ |      B.isdigit() -&gt; bool
+ |      
+ |      Return True if all characters in B are digits
+ |      and there is at least one character in B, False otherwise.
+ |  
+ |  islower(...)
+ |      B.islower() -&gt; bool
+ |      
+ |      Return True if all cased characters in B are lowercase and there is
+ |      at least one cased character in B, False otherwise.
+ |  
+ |  isspace(...)
+ |      B.isspace() -&gt; bool
+ |      
+ |      Return True if all characters in B are whitespace
+ |      and there is at least one character in B, False otherwise.
+ |  
+ |  istitle(...)
+ |      B.istitle() -&gt; bool
+ |      
+ |      Return True if B is a titlecased string and there is at least one
+ |      character in B, i.e. uppercase characters may only follow uncased
+ |      characters and lowercase characters only cased ones. Return False
+ |      otherwise.
+ |  
+ |  isupper(...)
+ |      B.isupper() -&gt; bool
+ |      
+ |      Return True if all cased characters in B are uppercase and there is
+ |      at least one cased character in B, False otherwise.
+ |  
+ |  join(self, iterable_of_bytes, /)
+ |      Concatenate any number of bytes objects.
+ |      
+ |      The bytes whose method is called is inserted in between each pair.
+ |      
+ |      The result is returned as a new bytes object.
+ |      
+ |      Example: b&#39;.&#39;.join([b&#39;ab&#39;, b&#39;pq&#39;, b&#39;rs&#39;]) -&gt; b&#39;ab.pq.rs&#39;.
+ |  
+ |  ljust(...)
+ |      B.ljust(width[, fillchar]) -&gt; copy of B
+ |      
+ |      Return B left justified in a string of length width. Padding is
+ |      done using the specified fill character (default is a space).
+ |  
+ |  lower(...)
+ |      B.lower() -&gt; copy of B
+ |      
+ |      Return a copy of B with all ASCII characters converted to lowercase.
+ |  
+ |  lstrip(self, bytes=None, /)
+ |      Strip leading bytes contained in the argument.
+ |      
+ |      If the argument is omitted or None, strip leading  ASCII whitespace.
+ |  
+ |  partition(self, sep, /)
+ |      Partition the bytes into three parts using the given separator.
+ |      
+ |      This will search for the separator sep in the bytes. If the separator is found,
+ |      returns a 3-tuple containing the part before the separator, the separator
+ |      itself, and the part after it.
+ |      
+ |      If the separator is not found, returns a 3-tuple containing the original bytes
+ |      object and two empty bytes objects.
+ |  
+ |  replace(self, old, new, count=-1, /)
+ |      Return a copy with all occurrences of substring old replaced by new.
+ |      
+ |        count
+ |          Maximum number of occurrences to replace.
+ |          -1 (the default value) means replace all occurrences.
+ |      
+ |      If the optional argument count is given, only the first count occurrences are
+ |      replaced.
+ |  
+ |  rfind(...)
+ |      B.rfind(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the highest index in B where subsection sub is found,
+ |      such that sub is contained within B[start,end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Return -1 on failure.
+ |  
+ |  rindex(...)
+ |      B.rindex(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the highest index in B where subsection sub is found,
+ |      such that sub is contained within B[start,end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Raise ValueError when the subsection is not found.
+ |  
+ |  rjust(...)
+ |      B.rjust(width[, fillchar]) -&gt; copy of B
+ |      
+ |      Return B right justified in a string of length width. Padding is
+ |      done using the specified fill character (default is a space)
+ |  
+ |  rpartition(self, sep, /)
+ |      Partition the bytes into three parts using the given separator.
+ |      
+ |      This will search for the separator sep in the bytes, starting at the end. If
+ |      the separator is found, returns a 3-tuple containing the part before the
+ |      separator, the separator itself, and the part after it.
+ |      
+ |      If the separator is not found, returns a 3-tuple containing two empty bytes
+ |      objects and the original bytes object.
+ |  
+ |  rsplit(self, /, sep=None, maxsplit=-1)
+ |      Return a list of the sections in the bytes, using sep as the delimiter.
+ |      
+ |        sep
+ |          The delimiter according which to split the bytes.
+ |          None (the default value) means split on ASCII whitespace characters
+ |          (space, tab, return, newline, formfeed, vertical tab).
+ |        maxsplit
+ |          Maximum number of splits to do.
+ |          -1 (the default value) means no limit.
+ |      
+ |      Splitting is done starting at the end of the bytes and working to the front.
+ |  
+ |  rstrip(self, bytes=None, /)
+ |      Strip trailing bytes contained in the argument.
+ |      
+ |      If the argument is omitted or None, strip trailing ASCII whitespace.
+ |  
+ |  split(self, /, sep=None, maxsplit=-1)
+ |      Return a list of the sections in the bytes, using sep as the delimiter.
+ |      
+ |      sep
+ |        The delimiter according which to split the bytes.
+ |        None (the default value) means split on ASCII whitespace characters
+ |        (space, tab, return, newline, formfeed, vertical tab).
+ |      maxsplit
+ |        Maximum number of splits to do.
+ |        -1 (the default value) means no limit.
+ |  
+ |  splitlines(self, /, keepends=False)
+ |      Return a list of the lines in the bytes, breaking at line boundaries.
+ |      
+ |      Line breaks are not included in the resulting list unless keepends is given and
+ |      true.
+ |  
+ |  startswith(...)
+ |      B.startswith(prefix[, start[, end]]) -&gt; bool
+ |      
+ |      Return True if B starts with the specified prefix, False otherwise.
+ |      With optional start, test B beginning at that position.
+ |      With optional end, stop comparing B at that position.
+ |      prefix can also be a tuple of bytes to try.
+ |  
+ |  strip(self, bytes=None, /)
+ |      Strip leading and trailing bytes contained in the argument.
+ |      
+ |      If the argument is omitted or None, strip leading and trailing ASCII whitespace.
+ |  
+ |  swapcase(...)
+ |      B.swapcase() -&gt; copy of B
+ |      
+ |      Return a copy of B with uppercase ASCII characters converted
+ |      to lowercase ASCII and vice versa.
+ |  
+ |  title(...)
+ |      B.title() -&gt; copy of B
+ |      
+ |      Return a titlecased version of B, i.e. ASCII words start with uppercase
+ |      characters, all remaining cased characters have lowercase.
+ |  
+ |  translate(self, table, /, delete=b&#39;&#39;)
+ |      Return a copy with each character mapped by the given translation table.
+ |      
+ |        table
+ |          Translation table, which must be a bytes object of length 256.
+ |      
+ |      All characters occurring in the optional argument delete are removed.
+ |      The remaining characters are mapped through the given translation table.
+ |  
+ |  upper(...)
+ |      B.upper() -&gt; copy of B
+ |      
+ |      Return a copy of B with all ASCII characters converted to uppercase.
+ |  
+ |  zfill(...)
+ |      B.zfill(width) -&gt; copy of B
+ |      
+ |      Pad a numeric string B with zeros on the left, to fill a field
+ |      of the specified width.  B is never truncated.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  fromhex(string, /) from builtins.type
+ |      Create a bytes object from a string of hexadecimal numbers.
+ |      
+ |      Spaces between two numbers are accepted.
+ |      Example: bytes.fromhex(&#39;B9 01EF&#39;) -&gt; b&#39;\\xb9\\x01\\xef&#39;.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  maketrans(frm, to, /)
+ |      Return a translation table useable for the bytes or bytearray translate method.
+ |      
+ |      The returned table will be one where each byte in frm is mapped to the byte at
+ |      the same position in to.
+ |      
+ |      The bytes objects frm and to must be of the same length.</code></pre>
+<p>返回一个新的二进制序列 bytes 对象。参数可以是：</p>
+<ul>
+<li>0~255 的整数组成的可迭代类型</li>
+<li>字符串，并指定编码格式 encoding</li>
+<li>与缓冲区接口一致的对象</li>
+<li>整数</li>
+<li>或者不传参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">bytes</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bytes</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>b&#39;\x01\x02\x03&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bytes</span>(<span class="string">&#x27;嗨&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>b&#39;\xe5\x97\xa8&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bytes</span>(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>b&#39;\x00\x00\x00&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bytes</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>b&#39;&#39;</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>吴明文
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/python/11_built-in_function/07_bytes-4d4be988c190/" title="">http://example.com/python/11_built-in_function/07_bytes-4d4be988c190/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。联系作者，微信号 JFSXXXSJYLWL。
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/python/11_built-in_function/06_bool-5c5098537317/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/python/11_built-in_function/08_callable-3a9ca57d3e85/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg3Mi8yNjM2Mw=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴昊</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>总字数：</span>
+    <span title="总字数">298k</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments('#lv-container', () => {
+  window.livereOptions = {
+    refer: "python/11_built-in_function/07_bytes-4d4be988c190/"
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

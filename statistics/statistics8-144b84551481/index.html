@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
+  <meta name="baidu-site-verification" content="zzxKZjYogh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="内容主要来源：开课吧学习笔记整理。  九, 决策树1, 概念理解决策树: 通过数据特征的差别, 用已知数据训练将不同数据划分到不同分支(子树)中, 层层划分, 最终得到一个树型结构, 用来对未知数据进行预测, 实现分类或回归 例如, 有如下数据集, 预测第 11 条数据能否偿还债务:            序号       有无房产       婚姻状况       年收入       能否偿还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树">
+<meta property="og:url" content="http://example.com/statistics/statistics8-144b84551481/">
+<meta property="og:site_name" content="吴明文的站点">
+<meta property="og:description" content="内容主要来源：开课吧学习笔记整理。  九, 决策树1, 概念理解决策树: 通过数据特征的差别, 用已知数据训练将不同数据划分到不同分支(子树)中, 层层划分, 最终得到一个树型结构, 用来对未知数据进行预测, 实现分类或回归 例如, 有如下数据集, 预测第 11 条数据能否偿还债务:            序号       有无房产       婚姻状况       年收入       能否偿还">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wx2.sbimg.cn/2020/07/02/2Y8Lk.md.png">
+<meta property="og:image" content="http://example.com/images/mathematical-statistics/output_1_0100.png">
+<meta property="og:image" content="http://example.com/images/mathematical-statistics/output_3_0001.png">
+<meta property="og:image" content="https://wx2.sbimg.cn/2020/07/02/2Yx2j.png">
+<meta property="article:published_time" content="2020-06-03T03:57:40.000Z">
+<meta property="article:modified_time" content="2021-01-02T07:33:46.509Z">
+<meta property="article:author" content="吴明文">
+<meta property="article:tag" content="数理统计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx2.sbimg.cn/2020/07/02/2Y8Lk.md.png">
+
+
+<link rel="canonical" href="http://example.com/statistics/statistics8-144b84551481/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>决策树 | 吴明文的站点</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">吴明文的站点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">探索花花世界，追寻自己内心</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">298</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D-%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">九, 决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">1, 概念理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%86%E7%B1%BB%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">2, 分类决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-01-%E4%BF%A1%E6%81%AF%E7%86%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.01, 信息熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-02-%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%95%86%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.02, 概率分布与信息商的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-03-%E4%BF%A1%E6%81%AF%E5%A2%9E%E7%9B%8A"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.03, 信息增益</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-04-%E8%BF%87%E6%8B%9F%E5%90%88%E4%B8%8E%E6%AC%A0%E6%8B%9F%E5%90%88"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.04, 过拟合与欠拟合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%8D%E7%BA%AF%E5%BA%A6%E5%BA%A6%E9%87%8F%E6%A0%87%E5%87%86"><span class="nav-number">1.3.</span> <span class="nav-text">3, 不纯度度量标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%86%B3%E7%AD%96%E6%A0%91%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.4.</span> <span class="nav-text">4, 决策树常用算法介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%9B%9E%E5%BD%92%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">1.5.</span> <span class="nav-text">5, 回归决策树</span></a></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吴明文"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">吴明文</p>
+  <div class="site-description" itemprop="description">探索花花世界，追寻自己内心</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">298</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-instagram fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.catb.org/~esr/faqs/hacker-howto.html" title="http:&#x2F;&#x2F;www.catb.org&#x2F;~esr&#x2F;faqs&#x2F;hacker-howto.html" rel="noopener" target="_blank">How To Become A Hacker</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.marxists.org/index.htm" title="https:&#x2F;&#x2F;www.marxists.org&#x2F;index.htm" rel="noopener" target="_blank">Marxists Internet Archive</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.gutenberg.org/wiki/Main_Page" title="https:&#x2F;&#x2F;www.gutenberg.org&#x2F;wiki&#x2F;Main_Page" rel="noopener" target="_blank">Project Gutenberg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.shi-ci.com/" title="https:&#x2F;&#x2F;www.shi-ci.com&#x2F;" rel="noopener" target="_blank">中华诗词</a>
+        </li>
+    </ul>
+  </div>
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics8-144b84551481/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴明文">
+      <meta itemprop="description" content="探索花花世界，追寻自己内心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴明文的站点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          决策树
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表</span>
+
+      <time title="创建时间：2020-06-03 11:57:40" itemprop="dateCreated datePublished" datetime="2020-06-03T11:57:40+08:00">2020-06-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新</span>
+        <time title="修改时间：2021-01-02 15:33:46" itemprop="dateModified" datetime="2021-01-02T15:33:46+08:00">2021-01-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="浏览" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">浏览：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">字数：</span>
+      <span>3.8k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>内容主要来源：<strong>开课吧</strong>学习笔记整理。</p>
+</blockquote>
+<h2 id="九-决策树"><a href="#九-决策树" class="headerlink" title="九, 决策树"></a>九, 决策树</h2><h3 id="1-概念理解"><a href="#1-概念理解" class="headerlink" title="1, 概念理解"></a>1, 概念理解</h3><p>决策树: 通过数据特征的差别, 用已知数据训练将不同数据划分到不同分支(子树)中, 层层划分, 最终得到一个树型结构, 用来对未知数据进行预测, 实现分类或回归</p>
+<p>例如, 有如下数据集, 预测第 11 条数据能否偿还债务:</p>
+<table>
+   <tr>
+      <td>序号</td>
+      <td>有无房产</td>
+      <td>婚姻状况</td>
+      <td>年收入</td>
+      <td>能否偿还债务</td>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>是</td>
+      <td>单身</td>
+      <td>125</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>否</td>
+      <td>已婚</td>
+      <td>100</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>否</td>
+      <td>单身</td>
+      <td>100</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>4</td>
+      <td>是</td>
+      <td>已婚</td>
+      <td>110</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>5</td>
+      <td>是</td>
+      <td>离婚</td>
+      <td>60</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>6</td>
+      <td>否</td>
+      <td>离婚</td>
+      <td>95</td>
+      <td>不能</td>
+   </tr>
+   <tr>
+      <td>7</td>
+      <td>否</td>
+      <td>单身</td>
+      <td>85</td>
+      <td>不能</td>
+   </tr>
+   <tr>
+      <td>8</td>
+      <td>否</td>
+      <td>已婚</td>
+      <td>75</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>9</td>
+      <td>否</td>
+      <td>单身</td>
+      <td>90</td>
+      <td>不能</td>
+   </tr>
+   <tr>
+      <td>10</td>
+      <td>是</td>
+      <td>离婚</td>
+      <td>220</td>
+      <td>能</td>
+   </tr>
+   <tr>
+      <td>11</td>
+      <td>否</td>
+      <td>已婚</td>
+      <td>94</td>
+      <td>?</td>
+   </tr>
+</table>
+
+<p>我们可以将已知样本作如下划分(训练), 构建一颗决策树, 然后将第 11 条数据代入(测试), 落在哪一个叶子中, 它就是对应叶子的类别: 预测结果是<strong>能</strong></p>
+<p><img src="https://wx2.sbimg.cn/2020/07/02/2Y8Lk.md.png"></p>
+<p>上例中, 层级已经不可再分, 但如果只划分到婚姻状况就不再划分如何实现预测?</p>
+<p>决策树实现预测:<br>对于分类树, 叶子节点中, 哪个类别样本数量最多, 就将其作为未知样本的类别<br>对于回归树, 使用叶子节点中, 所有样本的均值, 作为未知样本的结果</p>
+<p>对于上例, 如果只划分到婚姻状况, 那对于婚姻状况这个叶子中, 不能偿还的最多, 预测结果就是<strong>不能</strong></p>
+<h3 id="2-分类决策树"><a href="#2-分类决策树" class="headerlink" title="2, 分类决策树"></a>2, 分类决策树</h3><p>对上例出现的情况, 我们会有如下问题:<br>我们为什么以年收入开始划分, 依据是什么? 划分顺序怎么定?<br>年收入为什么选 97.5 为划分阈值?<br>要划分多少层才好, 是否越多越好?<br>等等…</p>
+<p>下面一步步来作讨论:</p>
+<h4 id="2-01-信息熵"><a href="#2-01-信息熵" class="headerlink" title="2.01, 信息熵"></a>2.01, 信息熵</h4><p><strong>信息熵</strong>: 用来描述信源的不确定度, 不确定性越大, 信息熵越大. 例如, 明天海南要下雪, 不确定性非常小, 信息熵很小, 明天海南要下雨, 不确定性大, 信息熵就大</p>
+<p>设随机变量 X 具有 m 个特征值, 各个值出现的概率为 $p_{1}$, …, $p_{m}$, 且 </p>
+<p>$$p_{1}+p_{2}+\cdots+p_{m} = 1$$</p>
+<p>则变量 X 的信息熵(信息期望值)为:</p>
+<p>$$H(X)=-p_{1} \log_{2} p_{1} -p_{2} \log_{2} p_{2}-\cdots -p_{m} \log_{2} p_{m}$$</p>
+<p>$$ =-\sum_{i=1}^{m}p_{i}\log_{2}p_{i}$$</p>
+<h4 id="2-02-概率分布与信息商的关系"><a href="#2-02-概率分布与信息商的关系" class="headerlink" title="2.02, 概率分布与信息商的关系"></a>2.02, 概率分布与信息商的关系</h4><p>假设明天下雨的概率从 0.01 ~ 0.99 递增, 那么不下雨的概率就从 0.99 ~ 0.01 递减, 看看概率分布和信息熵的关系:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">14</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下雨的概率</span></span><br><span class="line">p = np.linspace(<span class="number">0.01</span>, <span class="number">0.99</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 信息熵</span></span><br><span class="line">h = -p * np.log2(p) - (<span class="number">1</span>-p) * np.log2(<span class="number">1</span>-p)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制关系图</span></span><br><span class="line">plt.plot(p, h)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;概率分布&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;信息熵&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;概率分布和信息熵关系图&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_1_0100.png" alt="png"></p>
+<p>可见, 概率分布越均衡, 不确定性越大, 信息熵越大, 在所有概率都相等(p下雨=p不下雨)时, 信息熵最大</p>
+<p>如果把概率分布转换到决策树的数据集上, 信息熵体现的就是数据的<strong>不纯度</strong>, 即样本类别的均衡程度. 因为数据集是未分类的, 要把它分类, 样本类别越均衡, 各个类别的占比(概率)分布越均衡, 不纯度越高, 信息熵越大</p>
+<h4 id="2-03-信息增益"><a href="#2-03-信息增益" class="headerlink" title="2.03, 信息增益"></a>2.03, 信息增益</h4><p>信息增益的定义如下:</p>
+<p>$$I G\left(D_{p}, f\right)=I\left(D_{p}\right)-\sum_{j=1}^{n} \frac{N_{j}}{N_{p}} I\left(D_{j}\right) $$</p>
+<p>$f$:  划分的特征<br>$D_{p}$:  父节点, 即使用特征  f  分割之前的节点<br>$I G\left(D_{p}, f\right)$:  父节点  $D_{p}$  使用特征  f  划分下, 获得的信息增益<br>$I\left(D_{p}\right)$：父节点不纯度, 信息熵是度量标准之一<br>$D_{j}$:  父节点 $D_{p}$ 经过分割之后, 会产生 n 个子节点,  $D_{j}$  为第  j  个子节点<br>$I\left(D_{j}\right)$：子节点不纯度<br>$N_{p}$:  父节点  $D_{p}$  包含样本的数量<br>$N_{j}$:  第  j  个子节点  $D_{j}$  包含样本的数量   </p>
+<p>如果是二叉树, 即父节点最多分为左右两个子节点, 此时, 信息增益为:</p>
+<p>$$I G\left(D_{p}, f\right)=I\left(D_{p}\right)-\frac{N_{l e f t}}{N_{p}} I\left(D_{l e f t}\right)-\frac{N_{r i g h t}}{N_{p}} I\left(D_{r i g h t}\right)$$</p>
+<p>可见, 信息增益就是父节点的不纯度减去所有子节点的(加权)不纯度</p>
+<p>父节点的不纯度是不变的, 在选择特征进行类别划分时, 应该让子节点的不纯度尽可能低, 这样训练可以更快完成, 信息增益也最大. 这正是训练决策树时, 选择特征顺序的依据</p>
+<p>以开头的例子为例, 不纯度使用信息熵度量, 则根节点的信息熵为:</p>
+<p>$$I\left(D_{p}\right)=-0.7 * \log _{2} 0.7-0.3 * \log _{2} 0.3=0.88$$</p>
+<p>如果以”有无房产”划分, 则可计算得子节点信息熵:</p>
+<p>$$\begin{array}{l}<br>I\left(D_{\text {有房产 }}\right)=0 \<br>I\left(D_{\text {无房产 }}\right)=1<br>\end{array}$$</p>
+<p>从而可得根节点信息增益为:</p>
+<p>$$I G(\text { 有无房产 })=0.88-0.4 * 0-0.6 * 1=0.28 $$</p>
+<p>同理, </p>
+<p>$$I G(\text { 婚姻状况 })=0.205 $$</p>
+<p>而对于年收入, 将年收入排序后, 取不同类别的分界点年收入(75 与 85, 95 与 100)的均值进行划分, 比较哪一个信息增益大:</p>
+<p>$$\begin{array}{l}<br>I\left(D_{\text {年收入 }&lt; 80}\right)=0 \<br>I\left(D_{\text { 年收入 } &gt;=80}\right)=0.954 \<br>I G(\text { 年收入 }=80)=0.88-0.2 * 0-0.8 * 0.954=0.117<br>\end{array}$$</p>
+<p>同理, </p>
+<p>$$I G(\text { 年收入 }=97.5)=0.395$$</p>
+<p>可见, 以 年收入=97.5 划分时, 信息增益最大, 故首先选它进行划分</p>
+<p>根节点划分结束, 第二层的父节点以同样的方式计算之后再次划分, 一直到划分停止</p>
+<h4 id="2-04-过拟合与欠拟合"><a href="#2-04-过拟合与欠拟合" class="headerlink" title="2.04, 过拟合与欠拟合"></a>2.04, 过拟合与欠拟合</h4><p>如果不设置条件, 是不是划分深度越大越好呢?</p>
+<p>下面以鸢尾花数据集为例, 看看划分深度对模型效果的影响:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"></span><br><span class="line">x, y = load_iris(return_X_y=<span class="literal">True</span>)</span><br><span class="line">x = x[:, :<span class="number">2</span>]</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(</span><br><span class="line">    x, y, test_size=<span class="number">0.25</span>, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">参数介绍:</span></span><br><span class="line"><span class="string">criterion: 不纯度度量标准, 默认基尼系数 gini, 信息熵为 entropy</span></span><br><span class="line"><span class="string">splitter: 选择划分节点的方式, 默认最好 best, 随机 random</span></span><br><span class="line"><span class="string">max_depth: 划分深度, 默认 None 不设限</span></span><br><span class="line"><span class="string">min_samples_split: 划分节点的最小样本数, 默认 2</span></span><br><span class="line"><span class="string">min_samples_leaf: 划分节点后, 叶子节点的最少样本数, 默认 1</span></span><br><span class="line"><span class="string">max_features: 划分节点时, 考虑的最大特征数, 默认 None 考虑所有, 设置数量后会随机选择</span></span><br><span class="line"><span class="string">random_state: 随机种子, 控制模型的随机行为</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">tree = DecisionTreeClassifier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义列表, 用来储存不同深度下, 模型的分值</span></span><br><span class="line">train_score = []</span><br><span class="line">test_score = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置深度 1~12 开始训练</span></span><br><span class="line"><span class="keyword">for</span> depth <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">13</span>):</span><br><span class="line">    tree = DecisionTreeClassifier(criterion=<span class="string">&#x27;entropy&#x27;</span>,</span><br><span class="line">                    max_depth=depth, random_state=<span class="number">0</span>)</span><br><span class="line">    tree.fit(x_train, y_train)</span><br><span class="line">    train_score.append(tree.score(x_train, y_train))</span><br><span class="line">    test_score.append(tree.score(x_test, y_test))</span><br><span class="line">    </span><br><span class="line">plt.plot(train_score, label=<span class="string">&#x27;训练集分值&#x27;</span>)</span><br><span class="line">plt.plot(test_score, label=<span class="string">&#x27;测试集分值&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;划分深度&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;分值&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_3_0001.png" alt="png"></p>
+<p>可见, 划分深度小, 训练集和测试集的分值都小, 容易欠拟合<br>随着划分深度的增加, 分值都在增加, 模型预测效果也在变好<br>当深度增加到一定程度, 深度再增加, 训练集分值随着增加, 但造成了模型过分依赖训练集数据特征, 从而测试集分值减小, 容易过拟合</p>
+<h3 id="3-不纯度度量标准"><a href="#3-不纯度度量标准" class="headerlink" title="3, 不纯度度量标准"></a>3, 不纯度度量标准</h3><p>不纯度度量标准有:</p>
+<p><strong>信息熵</strong></p>
+<p>$$I_{H}(D)=-\sum_{i=1}^{m} p(i \mid D) \log _{2} p(i \mid D) $$</p>
+<p>m: 节点 D 中含有样本的类别数量<br>$p(i \mid D)$: 节点 D 中, 属于类别 i 的样本占节点 D 中样本总数的比例(概率)</p>
+<p><strong>基尼系数</strong></p>
+<p>$$I_{G}(D)=1-\sum_{i=1}^{m} p(i \mid D)^{2}$$</p>
+<p><strong>错误率</strong></p>
+<p>$$I_{E}(D)=1-\max {p(i \mid D)}$$</p>
+<p>看看各个度量标准与概率分布的关系:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">entropy</span>(<span class="params">p</span>):</span></span><br><span class="line">    <span class="keyword">return</span> -p * np.log2(p) - (<span class="number">1</span>-p) * np.log2(<span class="number">1</span>-p)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gini</span>(<span class="params">p</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - p**<span class="number">2</span> - (<span class="number">1</span>-p)**<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error</span>(<span class="params">p</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - np.<span class="built_in">max</span>([p, <span class="number">1</span>-p], axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">p = np.linspace(<span class="number">0.0001</span>, <span class="number">0.9999</span>, <span class="number">200</span>)</span><br><span class="line"></span><br><span class="line">en = entropy(p)</span><br><span class="line">er = error(p)</span><br><span class="line">g = gini(p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, lab, ls <span class="keyword">in</span> <span class="built_in">zip</span>([en, g, er],</span><br><span class="line">                      [<span class="string">&#x27;信息熵&#x27;</span>, <span class="string">&#x27;基尼系数&#x27;</span>, <span class="string">&#x27;错误率&#x27;</span>],</span><br><span class="line">                      [<span class="string">&#x27;-&#x27;</span>, <span class="string">&#x27;:&#x27;</span>, <span class="string">&#x27;--&#x27;</span>]):</span><br><span class="line">    plt.plot(p, i, label=lab, linestyle=ls, lw=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">plt.legend()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;概率分布&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;不纯度&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://wx2.sbimg.cn/2020/07/02/2Yx2j.png" alt="png"></p>
+<p>可见, 无论选哪一种度量标准, 样本属于同一类, 不纯度都是 0; 样本中不同类别占比相同时, 不纯度最大</p>
+<h3 id="4-决策树常用算法介绍"><a href="#4-决策树常用算法介绍" class="headerlink" title="4, 决策树常用算法介绍"></a>4, 决策树常用算法介绍</h3><p><strong>ID3</strong></p>
+<p>ID3 (Iterative Dichotomiser3), 迭代二分法特点:<br>  -使用多叉树结构<br>  -使用信息熵作为不纯度度量, 选择信息增益最大的特征划分<br>  -经典算法, 简单, 训练快<br>局限:<br>  -不支持连续特征<br>  -不支持缺失值处理<br>  -不支持回归<br>  -倾向选择特征取值多的特征来划分, 例如按身份证号划分, 一个号码就是一个特征</p>
+<p><strong>C4.5</strong></p>
+<p>ID3算法改进而来, 特点:<br>  -使用多叉树结构<br>  -不支持回归<br>优化:<br>  -支持缺失值处理<br>  -连续值进行离散化处理<br>  -信息熵作为不纯度度量, 但选择<strong>信息增益率</strong>最大的特征划分   </p>
+<p>信息增益率:</p>
+<p>$$I G_{\text {Ratio}}\left(D_{p}, f\right)=\frac{I G_{H}\left(D_{p}, f\right)}{I_{H}(f)} $$</p>
+<p>$I_{H}(f)$:  在特征 $f$ 下, 取各个特征值计算得到的信息熵之和, 其实就是特征 $f$ 的不纯度, 特征值越多, 特征不纯度越大</p>
+<p>选择信息增益最大的特征来划分, 父节点的信息熵不变, 就要求信息增益的第二项 $\sum_{j=1}^{n} \frac{N_{j}}{N_{p}} I\left(D_{j}\right)$ 最小, 从而会倾向选择特征取值多的特征</p>
+<p>因为, 特征取值多, 通常划分之后子节点的不纯度(信息熵)就更低, 例如极端情况, 选身份证划分, 划分之后不管什么类别, 子节点都只有一种类别, 不纯度都是 0, 第二项就是 0, 信息增益就最大</p>
+<p>因此, 采用信息增益率, 将 信息增益/特征不纯度, 就避免了 特征不纯度大 造成 信息增益大 而选择类别多的特征来划分的情况</p>
+<p>看看类别数量与信息熵的关系:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">en = <span class="keyword">lambda</span> p: np.<span class="built_in">sum</span>(-p * np.log2(p))</span><br><span class="line"></span><br><span class="line">a1 = np.array([<span class="number">0.3</span>, <span class="number">0.7</span>])</span><br><span class="line">a2 = np.array([<span class="number">0.3</span>, <span class="number">0.3</span>, <span class="number">0.4</span>])</span><br><span class="line">a3 = np.array([<span class="number">0.25</span>] * <span class="number">4</span>)</span><br><span class="line">a4 = np.array([<span class="number">0.1</span>] * <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">print(en(a1), en(a2), en(a3), en(a4), sep=<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8812908992306927
+1.5709505944546684
+2.0
+3.321928094887362</code></pre>
+<p><strong>CART</strong></p>
+<p>CART (Classification And Regression Tree), 分类回归树, 特点如下:<br>  -使用二叉树结构<br>  -支持连续值与缺失值处理<br>  -分类时, 使用基尼系数作为不纯度度量, 选择基尼增益最大的特征划分<br>  -回归时, 使用 MSE 或 MAE 最小的特征划分</p>
+<h3 id="5-回归决策树"><a href="#5-回归决策树" class="headerlink" title="5, 回归决策树"></a>5, 回归决策树</h3><p>回归决策树因变量 y 是连续的, 使用叶子节点的均值来预测未知样本, 使用 MSE 或 MAE 作为特征划分的评估指标</p>
+<p>在 scikit-learn 中, 使用的是优化的 CART 算法来实现决策树</p>
+<p>以波士顿房价为例来实现(参数参考分类决策树):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">x, y = load_boston(return_X_y=<span class="literal">True</span>)</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(</span><br><span class="line">            x, y, test_size=<span class="number">0.25</span>, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">tree = DecisionTreeRegressor(max_depth=<span class="number">5</span>, random_state=<span class="number">0</span>)</span><br><span class="line">tree.fit(x_train, y_train)</span><br><span class="line">print(tree.score(x_train, y_train))</span><br><span class="line">print(tree.score(x_test, y_test))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.9204825770764915
+0.8763987309111113</code></pre>
+<br>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>吴明文
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/statistics/statistics8-144b84551481/" title="决策树">http://example.com/statistics/statistics8-144b84551481/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。联系作者，微信号 JFSXXXSJYLWL。
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag"><i class="fa fa-tag"></i> 数理统计</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/statistics/statistics7-c1988cb61792/" rel="prev" title="朴素贝叶斯">
+                  <i class="fa fa-chevron-left"></i> 朴素贝叶斯
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/statistics/statistics9-1d958e8e187b/" rel="next" title="K-Means 算法">
+                  K-Means 算法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg3Mi8yNjM2Mw=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴昊</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>总字数：</span>
+    <span title="总字数">298k</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments('#lv-container', () => {
+  window.livereOptions = {
+    refer: "statistics/statistics8-144b84551481/"
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

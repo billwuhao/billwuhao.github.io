@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
+  <meta name="baidu-site-verification" content="zzxKZjYogh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="内容主要来源：开课吧学习笔记整理。  2020年6月4日更新 一, 数理统计介绍数理统计以概率论为基础, 研究大量随机现象的统计规律性. 分为描述统计和推断统计, 在数据分析领域具有非常重要的地位  二, 描述统计描述统计, 就是从总体数据中提取变量的主要信息(总和, 均值, 最大, 最多等), 从而从总体层面上, 对数据进行统计性描述. 通常配合绘制相关统计图进行辅助 2.01, 统计学的变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="描述统计">
+<meta property="og:url" content="http://example.com/statistics/statistics1-c52131cc9c3a/">
+<meta property="og:site_name" content="吴明文的站点">
+<meta property="og:description" content="内容主要来源：开课吧学习笔记整理。  2020年6月4日更新 一, 数理统计介绍数理统计以概率论为基础, 研究大量随机现象的统计规律性. 分为描述统计和推断统计, 在数据分析领域具有非常重要的地位  二, 描述统计描述统计, 就是从总体数据中提取变量的主要信息(总和, 均值, 最大, 最多等), 从而从总体层面上, 对数据进行统计性描述. 通常配合绘制相关统计图进行辅助 2.01, 统计学的变量">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/mathematical-statistics/fenbu.png">
+<meta property="og:image" content="http://example.com/images/mathematical-statistics/output_25_0.png">
+<meta property="og:image" content="http://example.com/images/mathematical-statistics/output_28_0.png">
+<meta property="article:published_time" content="2020-06-03T03:57:40.000Z">
+<meta property="article:modified_time" content="2021-01-02T06:56:51.641Z">
+<meta property="article:author" content="吴明文">
+<meta property="article:tag" content="数理统计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/mathematical-statistics/fenbu.png">
+
+
+<link rel="canonical" href="http://example.com/statistics/statistics1-c52131cc9c3a/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>描述统计 | 吴明文的站点</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">吴明文的站点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">探索花花世界，追寻自己内心</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">298</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">一, 数理统计介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">二, 描述统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">2.01, 统计学的变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-02-%E7%BB%9F%E8%AE%A1%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text">2.02, 统计量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-%E9%A2%91%E6%95%B0"><span class="nav-number">2.2.1.</span> <span class="nav-text">a, 频数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-%E9%A2%91%E7%8E%87"><span class="nav-number">2.2.2.</span> <span class="nav-text">b, 频率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-%E5%9D%87%E5%80%BC"><span class="nav-number">2.2.3.</span> <span class="nav-text">c, 均值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-%E4%B8%AD%E4%BD%8D%E6%95%B0"><span class="nav-number">2.2.4.</span> <span class="nav-text">d, 中位数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-%E4%BC%97%E6%95%B0"><span class="nav-number">2.2.5.</span> <span class="nav-text">e, 众数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-%E5%88%86%E4%BD%8D%E6%95%B0"><span class="nav-number">2.2.6.</span> <span class="nav-text">f, 分位数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g-%E6%9E%81%E5%B7%AE"><span class="nav-number">2.2.7.</span> <span class="nav-text">g, 极差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h-%E6%96%B9%E5%B7%AE"><span class="nav-number">2.2.8.</span> <span class="nav-text">h, 方差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i-%E6%A0%87%E5%87%86%E5%B7%AE"><span class="nav-number">2.2.9.</span> <span class="nav-text">i, 标准差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j-%E5%81%8F%E5%BA%A6"><span class="nav-number">2.2.10.</span> <span class="nav-text">j, 偏度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k-%E5%B3%B0%E5%BA%A6"><span class="nav-number">2.2.11.</span> <span class="nav-text">k, 峰度</span></a></li></ol></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吴明文"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">吴明文</p>
+  <div class="site-description" itemprop="description">探索花花世界，追寻自己内心</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">298</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-instagram fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.catb.org/~esr/faqs/hacker-howto.html" title="http:&#x2F;&#x2F;www.catb.org&#x2F;~esr&#x2F;faqs&#x2F;hacker-howto.html" rel="noopener" target="_blank">How To Become A Hacker</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.marxists.org/index.htm" title="https:&#x2F;&#x2F;www.marxists.org&#x2F;index.htm" rel="noopener" target="_blank">Marxists Internet Archive</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.gutenberg.org/wiki/Main_Page" title="https:&#x2F;&#x2F;www.gutenberg.org&#x2F;wiki&#x2F;Main_Page" rel="noopener" target="_blank">Project Gutenberg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.shi-ci.com/" title="https:&#x2F;&#x2F;www.shi-ci.com&#x2F;" rel="noopener" target="_blank">中华诗词</a>
+        </li>
+    </ul>
+  </div>
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics1-c52131cc9c3a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴明文">
+      <meta itemprop="description" content="探索花花世界，追寻自己内心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴明文的站点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          描述统计
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表</span>
+
+      <time title="创建时间：2020-06-03 11:57:40" itemprop="dateCreated datePublished" datetime="2020-06-03T11:57:40+08:00">2020-06-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新</span>
+        <time title="修改时间：2021-01-02 14:56:51" itemprop="dateModified" datetime="2021-01-02T14:56:51+08:00">2021-01-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="浏览" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">浏览：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">字数：</span>
+      <span>2.8k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>内容主要来源：<strong>开课吧</strong>学习笔记整理。</p>
+</blockquote>
+<p><font color=#00A600 >2020年6月4日更新</font></p>
+<h2 id="一-数理统计介绍"><a href="#一-数理统计介绍" class="headerlink" title="一, 数理统计介绍"></a>一, 数理统计介绍</h2><p>数理统计以概率论为基础, 研究大量随机现象的统计规律性. 分为<strong>描述统计</strong>和<strong>推断统计</strong>, 在数据分析领域具有非常重要的地位 </p>
+<h2 id="二-描述统计"><a href="#二-描述统计" class="headerlink" title="二, 描述统计"></a>二, 描述统计</h2><p>描述统计, 就是从总体数据中提取变量的主要信息(总和, 均值, 最大, 最多等), 从而从总体层面上, 对数据进行统计性描述. 通常配合绘制相关统计图进行辅助</p>
+<h3 id="2-01-统计学的变量类型"><a href="#2-01-统计学的变量类型" class="headerlink" title="2.01, 统计学的变量类型"></a>2.01, 统计学的变量类型</h3><p>统计学中的变量指研究对象的特征(属性), 每个变量都有变量值和类型, 类型可分为:</p>
+<p><strong>类别变量</strong>: 对研究对象定性, 分类</p>
+<p>类别变量又可分为: </p>
+<ul>
+<li>有序类别变量: 描述对象等级或顺序等, 例如, 优良中差</li>
+<li>无序类别变量: 仅做分类, 例如 A, B 血型, 男女</li>
+</ul>
+<p><strong>数值变量</strong>: 对研究对象定量描述</p>
+<p>数值变量又可分为:</p>
+<ul>
+<li>离散变量: 取值只能用自然数或整数个单位计算, 例如统计人数</li>
+<li>连续变量: 在一定区间内可以任意取值, 例如计算身高</li>
+</ul>
+<p>数值变量对加, 减, 求平均等操作有意义, 而类别变量无意义</p>
+<h3 id="2-02-统计量"><a href="#2-02-统计量" class="headerlink" title="2.02, 统计量"></a>2.02, 统计量</h3><p>描述统计所提取的统计信息, 称为统计量, 主要包括: </p>
+<ul>
+<li>类别分析: 频数, 频率</li>
+<li>集中趋势分析: 均值, 中位数, 众数, 分位数</li>
+<li>离散程度分析: 极差, 方差, 标准差</li>
+<li>描述分布形状: 偏度, 峰度</li>
+</ul>
+<p>准备数据:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 正态分布</span></span><br><span class="line">data1 = np.around(np.random.normal(<span class="number">10</span>, <span class="number">3</span>, <span class="number">600</span>)).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 左偏</span></span><br><span class="line">t1 = np.random.randint(<span class="number">1</span>, <span class="number">21</span>, size=<span class="number">100</span>)</span><br><span class="line">t2 = np.random.randint(<span class="number">21</span>, <span class="number">31</span>, size=<span class="number">500</span>)</span><br><span class="line">left_data = np.concatenate([t1, t2]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 右偏</span></span><br><span class="line">t3 = np.random.randint(<span class="number">1</span>, <span class="number">11</span>, size=<span class="number">500</span>)</span><br><span class="line">t4 = np.random.randint(<span class="number">11</span>, <span class="number">21</span>, size=<span class="number">100</span>)</span><br><span class="line">right_data = np.concatenate([t3, t4]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类别</span></span><br><span class="line">type_data = np.random.randint(<span class="number">0</span>, <span class="number">2</span>, size=<span class="number">600</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">data = np.concatenate([data1, left_data, right_data, type_data], axis=<span class="number">1</span>)</span><br><span class="line">data = pd.DataFrame(data,</span><br><span class="line">                   columns=[<span class="string">&#x27;data1&#x27;</span>, <span class="string">&#x27;left_data&#x27;</span>, <span class="string">&#x27;right_data&#x27;</span>, <span class="string">&#x27;type_data&#x27;</span>])</span><br><span class="line"><span class="comment"># 随机取 10 条数据</span></span><br><span class="line">data.sample(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data1</th>
+      <th>left_data</th>
+      <th>right_data</th>
+      <th>type_data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>83</th>
+      <td>12.0</td>
+      <td>11.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>4.0</td>
+      <td>29.0</td>
+      <td>10.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>9.0</td>
+      <td>25.0</td>
+      <td>10.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>12.0</td>
+      <td>22.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>542</th>
+      <td>12.0</td>
+      <td>25.0</td>
+      <td>17.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>6.0</td>
+      <td>27.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>16.0</td>
+      <td>29.0</td>
+      <td>10.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>10.0</td>
+      <td>23.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>10.0</td>
+      <td>28.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="a-频数"><a href="#a-频数" class="headerlink" title="a, 频数"></a>a, 频数</h4><p>数据中某个类别出现的次数称为该类别的频数</p>
+<p>例如, 计算上述两个类别(<code>0.0</code> 和 <code>1.0</code>)出现的频数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">frequency = data[<span class="string">&#x27;type_data&#x27;</span>].value_counts()</span><br><span class="line">frequency</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.0    315
+1.0    285
+Name: type_data, dtype: int64</code></pre>
+<h4 id="b-频率"><a href="#b-频率" class="headerlink" title="b, 频率"></a>b, 频率</h4><p>数据中某个类别出现次数与总次数的比值称为该类别的频率</p>
+<p>例如, 计算上述两个类别(<code>0.0</code> 和 <code>1.0</code>)出现的频率:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">percentage = frequency * <span class="number">100</span> / <span class="built_in">len</span>(data)</span><br><span class="line">percentage</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.0    52.5
+1.0    47.5
+Name: type_data, dtype: float64</code></pre>
+<h4 id="c-均值"><a href="#c-均值" class="headerlink" title="c, 均值"></a>c, 均值</h4><p>平均值, 一组数据的总和除以数据的个数</p>
+<h4 id="d-中位数"><a href="#d-中位数" class="headerlink" title="d, 中位数"></a>d, 中位数</h4><p>将一组数据按顺序排列, 位于最中间位置的值, 即是中位数, 如果数据个数为偶数, 取中间两个的平均值</p>
+<h4 id="e-众数"><a href="#e-众数" class="headerlink" title="e, 众数"></a>e, 众数</h4><p>一组数据中出现次数最多的值</p>
+<p>通常三者的关系如下图所示:</p>
+<p><img src="/images/mathematical-statistics/fenbu.png"></p>
+<p><strong>注意点</strong>:<br>数值变量通常使用均值和中值表示集中趋势, 类别变量则通常使用众数<br>正态分布下, 数据量足够多, 三者相同<br>均值使用所有数据计算, 容易受极端值影响, 中位数和众数则不会<br>众数在一组数据中可能不唯一</p>
+<p>例, 计算字段 <code>data1</code> 的均值, 中位数和众数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mean = data[<span class="string">&#x27;data1&#x27;</span>].mean()</span><br><span class="line">median = data[<span class="string">&#x27;data1&#x27;</span>].median()</span><br><span class="line">mode = data[<span class="string">&#x27;data1&#x27;</span>].mode()</span><br><span class="line">print(<span class="string">f&#x27;均值:<span class="subst">&#123;mean&#125;</span> 中位数:<span class="subst">&#123;median&#125;</span>\n众数:\n<span class="subst">&#123;mode&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>均值:9.973333333333333 中位数:10.0
+众数:
+0    10.0
+dtype: float64</code></pre>
+<p>还可以使用 <code>scipy</code> 中的 <code>stats</code> 模块来求一组数据的众数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">stats.mode(data[<span class="string">&#x27;data1&#x27;</span>]).mode</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([10.])</code></pre>
+<p>求众数方法两者对比: 前者的返回值类型是 Serise, 后者的返回值类型是 array. 如果众数的值不唯一，前者都会显示，后者只显示一个</p>
+<h4 id="f-分位数"><a href="#f-分位数" class="headerlink" title="f, 分位数"></a>f, 分位数</h4><p>通过 n - 1 个分位, 将升序排列的数据分为 n 个区间, 使得每个区间数值个数相等(或近似相等), 则每个分位对应的数, 就是该 n 分位的分位数. 常用的有四分位数和百分位数</p>
+<p>以四分位数为例:<br>第一个分位称为 1/4 分位(下四分位), 第二个称为 2/4 分位(中四分位), 第三个称为 3/4 分位(上四分位), 其中中四分位数, 其实就是中位数</p>
+<p>求四分位的值:  </p>
+<ul>
+<li><p>首先计算各个分位的位置<br>index1 = (n - 1) * 0.25<br>index2 = (n - 1) * 0.5<br>index3 = (n - 1) * 0.75<br>(index 从 0 开始, n 为元素的个数)</p>
+</li>
+<li><p>根据位置计算各个分位的值<br>index 为整数, 值就是相应的 index 对应的元素<br>index 不为整数, 四分位位置介于 ceil(index) 和 floor(index) 之间, 加权计算分位值</p>
+</li>
+</ul>
+<p>例, 求 x 的四分位数:<br><strong>index 为整数</strong>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">9</span>)</span><br><span class="line">n = <span class="built_in">len</span>(x)</span><br><span class="line"></span><br><span class="line">index1 = (n - <span class="number">1</span>) * <span class="number">0.25</span></span><br><span class="line">index2 = (n - <span class="number">1</span>) * <span class="number">0.5</span>  </span><br><span class="line">index3 = (n - <span class="number">1</span>) * <span class="number">0.75</span>  </span><br><span class="line"></span><br><span class="line">index = np.array([index1, index2, index3]).astype(np.int32)</span><br><span class="line">x[index]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([2, 4, 6])</code></pre>
+<p><strong>index 不是整数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">10</span>)</span><br><span class="line">n = <span class="built_in">len</span>(x)</span><br><span class="line"></span><br><span class="line">index1 = (n - <span class="number">1</span>) * <span class="number">0.25</span></span><br><span class="line">index2 = (n - <span class="number">1</span>) * <span class="number">0.5</span>  </span><br><span class="line">index3 = (n - <span class="number">1</span>) * <span class="number">0.75</span>  </span><br><span class="line"></span><br><span class="line">index = np.array([index1, index2, index3])</span><br><span class="line">left = np.floor(index).astype(np.int32)</span><br><span class="line">right = np.ceil(index).astype(np.int32)</span><br><span class="line">weight, _ = np.modf(index) <span class="comment"># 获取 index 整数和小数部分</span></span><br><span class="line"></span><br><span class="line">result = x[left] * (<span class="number">1</span> - weight) + x[right] * weight</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([2.25, 4.5 , 6.75])</code></pre>
+<p><strong>注意点:</strong><br>Numpy 中计算分位数可直接用方法 <code>np.quantile</code> 和 <code>np.percentile</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.quantile(x, q=[<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">0.75</span>]), np.percentile(x, q=[<span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(array([2.25, 4.5 , 6.75]), array([2.25, 4.5 , 6.75]))</code></pre>
+<p>Pandas 中计算分位数可利用 <code>describe</code> (默认 4 分位)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(x)</span><br><span class="line">s.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>count    10.00000
+mean      4.50000
+std       3.02765
+min       0.00000
+25%       2.25000
+50%       4.50000
+75%       6.75000
+max       9.00000
+dtype: float64</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.describe().iloc[<span class="number">4</span>:<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>25%    2.25
+50%    4.50
+75%    6.75
+dtype: float64</code></pre>
+<p>可自定义分位:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.describe(percentiles=[<span class="number">0.15</span>, <span class="number">0.4</span>, <span class="number">0.8</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>count    10.00000
+mean      4.50000
+std       3.02765
+min       0.00000
+15%       1.35000
+40%       3.60000
+50%       4.50000
+80%       7.20000
+max       9.00000
+dtype: float64</code></pre>
+<h4 id="g-极差"><a href="#g-极差" class="headerlink" title="g, 极差"></a>g, 极差</h4><p>一组数据中, 最大值与最小值之差</p>
+<h4 id="h-方差"><a href="#h-方差" class="headerlink" title="h, 方差"></a>h, 方差</h4><p>方差体现一组数据中, 每个元素与均值的偏离程度</p>
+<p>$$\sigma^{2}=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}$$</p>
+<p>$x_{i}:$ 数组中的每个元素<br>$n:$ 数组元素的个数<br>$\bar{x}:$ 数组中所有元素的均值  </p>
+<h4 id="i-标准差"><a href="#i-标准差" class="headerlink" title="i, 标准差"></a>i, 标准差</h4><p>标准差为方差的开方. 方差和标准差可以体现数据的分散性, 越大越分散, 越小越集中. 也可体现数据波动性(稳定性), 越大波动越大, 反之亦然  </p>
+<p>当数据足够多时, 可用 n 代替 n - 1</p>
+<p>例, 计算 <code>left_data</code> 字段的极差, 方差, 标准差:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sub = np.ptp(data[<span class="string">&#x27;left_data&#x27;</span>])</span><br><span class="line">var = data[<span class="string">&#x27;left_data&#x27;</span>].var()</span><br><span class="line">std = data[<span class="string">&#x27;left_data&#x27;</span>].std()</span><br><span class="line">sub, var, std</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(29.0, 41.241399554813675, 6.42194671068)</code></pre>
+<p>绘图对比 <code>data1</code> 和 <code>left_data</code> 的分散程度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">11</span>, <span class="number">1</span>))</span><br><span class="line">plt.ylim(<span class="number">-0.5</span>, <span class="number">1.5</span>)</span><br><span class="line">plt.plot(data[<span class="string">&#x27;data1&#x27;</span>], np.zeros(<span class="built_in">len</span>(data)), ls=<span class="string">&#x27;&#x27;</span>, marker=<span class="string">&#x27;o&#x27;</span>, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;data1&#x27;</span>)</span><br><span class="line">plt.plot(data[<span class="string">&#x27;left_data&#x27;</span>], np.ones(<span class="built_in">len</span>(data)), ls=<span class="string">&#x27;&#x27;</span>, marker=<span class="string">&#x27;o&#x27;</span>, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;left_data&#x27;</span>)</span><br><span class="line">plt.axvline(data[<span class="string">&#x27;data1&#x27;</span>].mean(), ls=<span class="string">&#x27;--&#x27;</span>, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;data1均值&#x27;</span>)</span><br><span class="line">plt.axvline(data[<span class="string">&#x27;left_data&#x27;</span>].mean(), ls=<span class="string">&#x27;--&#x27;</span>, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;left_data均值&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_25_0.png" alt="png"></p>
+<h4 id="j-偏度"><a href="#j-偏度" class="headerlink" title="j, 偏度"></a>j, 偏度</h4><p>统计数据分布偏斜方向和程度的度量, 统计数据分布非对称程度的数字特征, 偏度为 0 , 对称分布, 小于 0, 左偏分别, 大于 0, 右偏分布</p>
+<h4 id="k-峰度"><a href="#k-峰度" class="headerlink" title="k, 峰度"></a>k, 峰度</h4><p>表征概率密度分布曲线在平均值处峰值高低的特征数. 直观看来, 峰度反映了峰部的尖度, 峰度高意味着标准差增大是由低频度的大于或小于平均值的极端差值引起的. 在相同的标准差下，峰度越大，分布就有更多的极端值，那么其余值必然要更加集中在众数周围，其分布必然就更加陡峭</p>
+<p>样本的峰度是和正态分布相比较而言的统计量, 符合正态分布的峰度为 0</p>
+<p>例, 计算 <code>data</code> 中前三个字段的偏度, 峰度与标准差, 并绘图比较:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;偏度:&#x27;</span>, data[<span class="string">&#x27;data1&#x27;</span>].skew(), data[<span class="string">&#x27;left_data&#x27;</span>].skew(), data[<span class="string">&#x27;right_data&#x27;</span>].skew())</span><br><span class="line">print(<span class="string">&#x27;峰度:&#x27;</span>, data[<span class="string">&#x27;data1&#x27;</span>].kurt(), data[<span class="string">&#x27;left_data&#x27;</span>].kurt(), data[<span class="string">&#x27;right_data&#x27;</span>].kurt())</span><br><span class="line">print(<span class="string">&#x27;标准差:&#x27;</span>, data[<span class="string">&#x27;data1&#x27;</span>].std(), data[<span class="string">&#x27;left_data&#x27;</span>].std(), data[<span class="string">&#x27;right_data&#x27;</span>].std())</span><br></pre></td></tr></table></figure>
+
+<pre><code>偏度: 0.01863368573517327 -1.6482232780416728 0.8893682831648914
+峰度: 0.01734807363555335 2.3817050408202034 0.16006510575975996
+标准差: 3.0585748897401723 6.42194671068 4.940541290899053</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.kdeplot(data[<span class="string">&#x27;data1&#x27;</span>], shade=<span class="literal">True</span>, label=<span class="string">&#x27;正态&#x27;</span>)</span><br><span class="line">sns.kdeplot(data[<span class="string">&#x27;left_data&#x27;</span>], shade=<span class="literal">True</span>, label=<span class="string">&#x27;左偏&#x27;</span>)</span><br><span class="line">sns.kdeplot(data[<span class="string">&#x27;right_data&#x27;</span>], shade=<span class="literal">True</span>, label=<span class="string">&#x27;右偏&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_28_0.png" alt="png"></p>
+<br>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>吴明文
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/statistics/statistics1-c52131cc9c3a/" title="描述统计">http://example.com/statistics/statistics1-c52131cc9c3a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。联系作者，微信号 JFSXXXSJYLWL。
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag"><i class="fa fa-tag"></i> 数理统计</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/statistics/statistics2-4cc5fc64703e/" rel="prev" title="推断统计">
+                  <i class="fa fa-chevron-left"></i> 推断统计
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/regex-acfc7a7a1ed4/" rel="next" title="通俗易懂正则表达式">
+                  通俗易懂正则表达式 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg3Mi8yNjM2Mw=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴昊</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>总字数：</span>
+    <span title="总字数">298k</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments('#lv-container', () => {
+  window.livereOptions = {
+    refer: "statistics/statistics1-c52131cc9c3a/"
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
