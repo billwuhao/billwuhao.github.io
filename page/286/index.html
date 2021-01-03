@@ -295,7 +295,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics8-144b84551481/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics9-1d958e8e187b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +309,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/statistics/statistics8-144b84551481/" class="post-title-link" itemprop="url">决策树</a>
+            <a href="/statistics/statistics9-1d958e8e187b/" class="post-title-link" itemprop="url">K-Means 算法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -327,7 +327,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-02 15:33:46" itemprop="dateModified" datetime="2021-01-02T15:33:46+08:00">2021-01-02</time>
+        <time title="修改时间：2021-01-02 15:38:53" itemprop="dateModified" datetime="2021-01-02T15:38:53+08:00">2021-01-02</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -345,7 +345,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>3.8k</span>
+      <span>2.2k</span>
     </span>
 </div>
 
@@ -359,184 +359,70 @@
           <blockquote>
 <p>内容主要来源：<strong>开课吧</strong>学习笔记整理。</p>
 </blockquote>
-<h2 id="九-决策树"><a href="#九-决策树" class="headerlink" title="九, 决策树"></a>九, 决策树</h2><h3 id="1-概念理解"><a href="#1-概念理解" class="headerlink" title="1, 概念理解"></a>1, 概念理解</h3><p>决策树: 通过数据特征的差别, 用已知数据训练将不同数据划分到不同分支(子树)中, 层层划分, 最终得到一个树型结构, 用来对未知数据进行预测, 实现分类或回归</p>
-<p>例如, 有如下数据集, 预测第 11 条数据能否偿还债务:</p>
-<table>
-   <tr>
-      <td>序号</td>
-      <td>有无房产</td>
-      <td>婚姻状况</td>
-      <td>年收入</td>
-      <td>能否偿还债务</td>
-   </tr>
-   <tr>
-      <td>1</td>
-      <td>是</td>
-      <td>单身</td>
-      <td>125</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>2</td>
-      <td>否</td>
-      <td>已婚</td>
-      <td>100</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>3</td>
-      <td>否</td>
-      <td>单身</td>
-      <td>100</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>4</td>
-      <td>是</td>
-      <td>已婚</td>
-      <td>110</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>5</td>
-      <td>是</td>
-      <td>离婚</td>
-      <td>60</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>6</td>
-      <td>否</td>
-      <td>离婚</td>
-      <td>95</td>
-      <td>不能</td>
-   </tr>
-   <tr>
-      <td>7</td>
-      <td>否</td>
-      <td>单身</td>
-      <td>85</td>
-      <td>不能</td>
-   </tr>
-   <tr>
-      <td>8</td>
-      <td>否</td>
-      <td>已婚</td>
-      <td>75</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>9</td>
-      <td>否</td>
-      <td>单身</td>
-      <td>90</td>
-      <td>不能</td>
-   </tr>
-   <tr>
-      <td>10</td>
-      <td>是</td>
-      <td>离婚</td>
-      <td>220</td>
-      <td>能</td>
-   </tr>
-   <tr>
-      <td>11</td>
-      <td>否</td>
-      <td>已婚</td>
-      <td>94</td>
-      <td>?</td>
-   </tr>
-</table>
-
-<p>我们可以将已知样本作如下划分(训练), 构建一颗决策树, 然后将第 11 条数据代入(测试), 落在哪一个叶子中, 它就是对应叶子的类别: 预测结果是<strong>能</strong></p>
-<p><img src="https://wx2.sbimg.cn/2020/07/02/2Y8Lk.md.png"></p>
-<p>上例中, 层级已经不可再分, 但如果只划分到婚姻状况就不再划分如何实现预测?</p>
-<p>决策树实现预测:<br>对于分类树, 叶子节点中, 哪个类别样本数量最多, 就将其作为未知样本的类别<br>对于回归树, 使用叶子节点中, 所有样本的均值, 作为未知样本的结果</p>
-<p>对于上例, 如果只划分到婚姻状况, 那对于婚姻状况这个叶子中, 不能偿还的最多, 预测结果就是<strong>不能</strong></p>
-<h3 id="2-分类决策树"><a href="#2-分类决策树" class="headerlink" title="2, 分类决策树"></a>2, 分类决策树</h3><p>对上例出现的情况, 我们会有如下问题:<br>我们为什么以年收入开始划分, 依据是什么? 划分顺序怎么定?<br>年收入为什么选 97.5 为划分阈值?<br>要划分多少层才好, 是否越多越好?<br>等等…</p>
-<p>下面一步步来作讨论:</p>
-<h4 id="2-01-信息熵"><a href="#2-01-信息熵" class="headerlink" title="2.01, 信息熵"></a>2.01, 信息熵</h4><p><strong>信息熵</strong>: 用来描述信源的不确定度, 不确定性越大, 信息熵越大. 例如, 明天海南要下雪, 不确定性非常小, 信息熵很小, 明天海南要下雨, 不确定性大, 信息熵就大</p>
-<p>设随机变量 X 具有 m 个特征值, 各个值出现的概率为 $p_{1}$, …, $p_{m}$, 且 </p>
-<p>$$p_{1}+p_{2}+\cdots+p_{m} = 1$$</p>
-<p>则变量 X 的信息熵(信息期望值)为:</p>
-<p>$$H(X)=-p_{1} \log_{2} p_{1} -p_{2} \log_{2} p_{2}-\cdots -p_{m} \log_{2} p_{m}$$</p>
-<p>$$ =-\sum_{i=1}^{m}p_{i}\log_{2}p_{i}$$</p>
-<h4 id="2-02-概率分布与信息商的关系"><a href="#2-02-概率分布与信息商的关系" class="headerlink" title="2.02, 概率分布与信息商的关系"></a>2.02, 概率分布与信息商的关系</h4><p>假设明天下雨的概率从 0.01 ~ 0.99 递增, 那么不下雨的概率就从 0.99 ~ 0.01 递减, 看看概率分布和信息熵的关系:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">14</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下雨的概率</span></span><br><span class="line">p = np.linspace(<span class="number">0.01</span>, <span class="number">0.99</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 信息熵</span></span><br><span class="line">h = -p * np.log2(p) - (<span class="number">1</span>-p) * np.log2(<span class="number">1</span>-p)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制关系图</span></span><br><span class="line">plt.plot(p, h)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;概率分布&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;信息熵&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;概率分布和信息熵关系图&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="十-K-Means-算法"><a href="#十-K-Means-算法" class="headerlink" title="十, K-Means 算法"></a>十, K-Means 算法</h2><h3 id="1-聚类"><a href="#1-聚类" class="headerlink" title="1, 聚类"></a>1, 聚类</h3><p>前面接触的算法, 都是<strong>监督学习</strong>, 即训练数据中自变量(特征)和因变量(结果)都是已知的, 用含有结果的训练集建立模型, 然后对未知结果的数据进行预测</p>
+<p>聚类属于<strong>无监督学习</strong>, 训练数据中没有”已知结果的监督”. 聚类的目的, 就是通过已知样本数据的特征, 将数据划分为若干个类别, 每个类别成一个类簇, 使得同一个簇内的数据相似度越大, “物以类聚”, 不同簇之间的数据相似度越小, 聚类效果越好</p>
+<p>聚类的样本相似度根据距离来度量</p>
+<h3 id="2-K-Means"><a href="#2-K-Means" class="headerlink" title="2, K-Means"></a>2, K-Means</h3><p>即 K 均值算法, 是常见的聚类算法, 该算法将数据集分为 K 个簇, 每个簇使用簇内所有样本的均值来表示, 该均值称为”质心”</p>
+<p>K-Means 算法的目标, 就是选择适合的质心, 使得每个簇内, 样本点距质心的距离尽可能的小, 从而保证簇内样本有较高相似度</p>
+<p>算法实现步骤:</p>
+<p>a, 从样本中选择 K 个点作为初始质心<br>b, 计算每个样本点到各个质心的距离, 将样本点划分到距离最近的质心所对应的簇中<br>c, 计算每个簇内所有样本的均值, 使用该均值作为新的质心<br>d, 重复 b 和 c, 重复一定次数质心一般会趋于稳定, 如果达到以下条件, 重复结束:<br>– 质心位置变化小于指定的阈值<br>– 达到最迭代环次数</p>
+<p>对于算法的实现步骤, 我们有几个重要的疑问:</p>
+<p>– 1.怎么评价质心是否达到了最佳位置?<br>– 2.初始质心随机选, 还是选在哪里?<br>– 3. K 值怎么定?  </p>
+<h3 id="3-算法优化目标"><a href="#3-算法优化目标" class="headerlink" title="3, 算法优化目标"></a>3, 算法优化目标</h3><p>样本的相似度是根据距离来度量的, 一般使用簇内<strong>误差平方和</strong>(within-cluster SSE 簇惯性) 来作为优化算法的目标函数, 距离常用欧氏距离, 优化目标就是使 SSE 最小化:</p>
+<p>$$S S E=\sum_{i=1}^{k} \sum_{j=1}^{m_{i}}\left(\left|x_{j}-\mu_{i}\right|^{2}\right)$$</p>
+<p>k: 族的数量  </p>
+<p>$m_{i}$: 第 i 个簇含有的样本数量 </p>
+<p>${\mu}_{i}$: 第 i 个族的质心  </p>
+<p>$\left|x_{j}-\mu_{i}\right|$: 第 i 个族中，每个样本  $x_{j}$  与质心 $\mu_{i}$  的距离</p>
+<p>同一个数据集, 相同的簇数, SSE 越小, 通常质心位置更佳, 算法模型更好</p>
+<h3 id="4-初始质心的影响"><a href="#4-初始质心的影响" class="headerlink" title="4, 初始质心的影响"></a>4, 初始质心的影响</h3><p>初始质心可以随机选择, 但由于算法是通过迭代初始质心一步步实现, 初始质心的位置受随机性影响, 算法训练的最终结果也会受到影响</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;YouYuan&#x27;</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">12</span> </span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span> </span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">生成数据:</span></span><br><span class="line"><span class="string">n_samples: 样本数量</span></span><br><span class="line"><span class="string">n_features: 特征数</span></span><br><span class="line"><span class="string">centers: 聚类中心</span></span><br><span class="line"><span class="string">cluster_std: 簇的标准差, 可以统一指定, 也分别指定</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">centers = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">5</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">5</span>]]</span><br><span class="line">x, y = make_blobs(n_samples=<span class="number">90</span>,</span><br><span class="line">                  n_features=<span class="number">2</span>,</span><br><span class="line">                  centers=centers,</span><br><span class="line">                  cluster_std=[<span class="number">2.2</span>, <span class="number">2.5</span>, <span class="number">2</span>],</span><br><span class="line">                  random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># x 是特征, y 是类别标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制原始数据</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">8</span>))</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line">colors = np.array([<span class="string">&#x27;Coral&#x27;</span>, <span class="string">&#x27;SeaGreen&#x27;</span>, <span class="string">&#x27;RoyalBlue&#x27;</span>])</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=colors[y], marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;原始数据&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;原始数据&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义绘制聚类结果的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_cluster</span>(<span class="params">model, train, test=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">global</span> colors  <span class="comment"># 使用上面的颜色</span></span><br><span class="line">    cc = model.cluster_centers_ <span class="comment"># 获取质心</span></span><br><span class="line">    label = model.labels_ <span class="comment"># 获取聚类结果的标签</span></span><br><span class="line">    <span class="comment"># 绘制质心</span></span><br><span class="line">    plt.scatter(cc[:, <span class="number">0</span>], <span class="comment"># 质心的 x 坐标</span></span><br><span class="line">                cc[:, <span class="number">1</span>], <span class="comment"># 质心的 y 坐标</span></span><br><span class="line">                marker=<span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">                s=<span class="number">150</span>,</span><br><span class="line">                c=colors)</span><br><span class="line">    <span class="comment"># 绘制训练集</span></span><br><span class="line">    plt.scatter(train[:, <span class="number">0</span>], train[:, <span class="number">1</span>], marker=<span class="string">&#x27;.&#x27;</span>, c=colors[label])</span><br><span class="line">    <span class="comment"># 绘制测试集</span></span><br><span class="line">    <span class="keyword">if</span> test <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        y_hat = model.predict(test)</span><br><span class="line">        plt.scatter(test[:, <span class="number">0</span>], test[:, <span class="number">1</span>], marker=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">                    s=<span class="number">150</span>, c=colors[y_hat])        </span><br><span class="line">    <span class="comment"># 标题</span></span><br><span class="line">    plt.title(<span class="string">f&#x27;SSE:<span class="subst">&#123;model.inertia_:<span class="number">.1</span>f&#125;</span> 迭代次数:<span class="subst">&#123;model.n_iter_&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试集</span></span><br><span class="line">test = np.array([[<span class="number">6</span>, <span class="number">5</span>]])    </span><br><span class="line"><span class="comment"># 绘制不同初始质心的聚类结果</span></span><br><span class="line">seed = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">100</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">5</span>):</span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, i)</span><br><span class="line">    kmeans = KMeans(n_clusters=<span class="number">3</span>, <span class="comment"># 簇数</span></span><br><span class="line">                    init=<span class="string">&#x27;random&#x27;</span>, <span class="comment"># 初始化方式</span></span><br><span class="line">                    n_init=<span class="number">1</span>, <span class="comment"># 初始化质心组数</span></span><br><span class="line">                    random_state=seed[i<span class="number">-2</span>])</span><br><span class="line">    kmeans.fit(x)</span><br><span class="line">    plot_cluster(kmeans, x)</span><br><span class="line">    <span class="comment"># 测试结果</span></span><br><span class="line">    plot_cluster(kmeans, x, test)</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/mathematical-statistics/output_1_0100.png" alt="png"></p>
-<p>可见, 概率分布越均衡, 不确定性越大, 信息熵越大, 在所有概率都相等(p下雨=p不下雨)时, 信息熵最大</p>
-<p>如果把概率分布转换到决策树的数据集上, 信息熵体现的就是数据的<strong>不纯度</strong>, 即样本类别的均衡程度. 因为数据集是未分类的, 要把它分类, 样本类别越均衡, 各个类别的占比(概率)分布越均衡, 不纯度越高, 信息熵越大</p>
-<h4 id="2-03-信息增益"><a href="#2-03-信息增益" class="headerlink" title="2.03, 信息增益"></a>2.03, 信息增益</h4><p>信息增益的定义如下:</p>
-<p>$$I G\left(D_{p}, f\right)=I\left(D_{p}\right)-\sum_{j=1}^{n} \frac{N_{j}}{N_{p}} I\left(D_{j}\right) $$</p>
-<p>$f$:  划分的特征<br>$D_{p}$:  父节点, 即使用特征  f  分割之前的节点<br>$I G\left(D_{p}, f\right)$:  父节点  $D_{p}$  使用特征  f  划分下, 获得的信息增益<br>$I\left(D_{p}\right)$：父节点不纯度, 信息熵是度量标准之一<br>$D_{j}$:  父节点 $D_{p}$ 经过分割之后, 会产生 n 个子节点,  $D_{j}$  为第  j  个子节点<br>$I\left(D_{j}\right)$：子节点不纯度<br>$N_{p}$:  父节点  $D_{p}$  包含样本的数量<br>$N_{j}$:  第  j  个子节点  $D_{j}$  包含样本的数量   </p>
-<p>如果是二叉树, 即父节点最多分为左右两个子节点, 此时, 信息增益为:</p>
-<p>$$I G\left(D_{p}, f\right)=I\left(D_{p}\right)-\frac{N_{l e f t}}{N_{p}} I\left(D_{l e f t}\right)-\frac{N_{r i g h t}}{N_{p}} I\left(D_{r i g h t}\right)$$</p>
-<p>可见, 信息增益就是父节点的不纯度减去所有子节点的(加权)不纯度</p>
-<p>父节点的不纯度是不变的, 在选择特征进行类别划分时, 应该让子节点的不纯度尽可能低, 这样训练可以更快完成, 信息增益也最大. 这正是训练决策树时, 选择特征顺序的依据</p>
-<p>以开头的例子为例, 不纯度使用信息熵度量, 则根节点的信息熵为:</p>
-<p>$$I\left(D_{p}\right)=-0.7 * \log _{2} 0.7-0.3 * \log _{2} 0.3=0.88$$</p>
-<p>如果以”有无房产”划分, 则可计算得子节点信息熵:</p>
-<p>$$\begin{array}{l}<br>I\left(D_{\text {有房产 }}\right)=0 \<br>I\left(D_{\text {无房产 }}\right)=1<br>\end{array}$$</p>
-<p>从而可得根节点信息增益为:</p>
-<p>$$I G(\text { 有无房产 })=0.88-0.4 * 0-0.6 * 1=0.28 $$</p>
-<p>同理, </p>
-<p>$$I G(\text { 婚姻状况 })=0.205 $$</p>
-<p>而对于年收入, 将年收入排序后, 取不同类别的分界点年收入(75 与 85, 95 与 100)的均值进行划分, 比较哪一个信息增益大:</p>
-<p>$$\begin{array}{l}<br>I\left(D_{\text {年收入 }&lt; 80}\right)=0 \<br>I\left(D_{\text { 年收入 } &gt;=80}\right)=0.954 \<br>I G(\text { 年收入 }=80)=0.88-0.2 * 0-0.8 * 0.954=0.117<br>\end{array}$$</p>
-<p>同理, </p>
-<p>$$I G(\text { 年收入 }=97.5)=0.395$$</p>
-<p>可见, 以 年收入=97.5 划分时, 信息增益最大, 故首先选它进行划分</p>
-<p>根节点划分结束, 第二层的父节点以同样的方式计算之后再次划分, 一直到划分停止</p>
-<h4 id="2-04-过拟合与欠拟合"><a href="#2-04-过拟合与欠拟合" class="headerlink" title="2.04, 过拟合与欠拟合"></a>2.04, 过拟合与欠拟合</h4><p>如果不设置条件, 是不是划分深度越大越好呢?</p>
-<p>下面以鸢尾花数据集为例, 看看划分深度对模型效果的影响:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"></span><br><span class="line">x, y = load_iris(return_X_y=<span class="literal">True</span>)</span><br><span class="line">x = x[:, :<span class="number">2</span>]</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(</span><br><span class="line">    x, y, test_size=<span class="number">0.25</span>, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">参数介绍:</span></span><br><span class="line"><span class="string">criterion: 不纯度度量标准, 默认基尼系数 gini, 信息熵为 entropy</span></span><br><span class="line"><span class="string">splitter: 选择划分节点的方式, 默认最好 best, 随机 random</span></span><br><span class="line"><span class="string">max_depth: 划分深度, 默认 None 不设限</span></span><br><span class="line"><span class="string">min_samples_split: 划分节点的最小样本数, 默认 2</span></span><br><span class="line"><span class="string">min_samples_leaf: 划分节点后, 叶子节点的最少样本数, 默认 1</span></span><br><span class="line"><span class="string">max_features: 划分节点时, 考虑的最大特征数, 默认 None 考虑所有, 设置数量后会随机选择</span></span><br><span class="line"><span class="string">random_state: 随机种子, 控制模型的随机行为</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">tree = DecisionTreeClassifier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义列表, 用来储存不同深度下, 模型的分值</span></span><br><span class="line">train_score = []</span><br><span class="line">test_score = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置深度 1~12 开始训练</span></span><br><span class="line"><span class="keyword">for</span> depth <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">13</span>):</span><br><span class="line">    tree = DecisionTreeClassifier(criterion=<span class="string">&#x27;entropy&#x27;</span>,</span><br><span class="line">                    max_depth=depth, random_state=<span class="number">0</span>)</span><br><span class="line">    tree.fit(x_train, y_train)</span><br><span class="line">    train_score.append(tree.score(x_train, y_train))</span><br><span class="line">    test_score.append(tree.score(x_test, y_test))</span><br><span class="line">    </span><br><span class="line">plt.plot(train_score, label=<span class="string">&#x27;训练集分值&#x27;</span>)</span><br><span class="line">plt.plot(test_score, label=<span class="string">&#x27;测试集分值&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;划分深度&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;分值&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2O85J.md.png" alt="png"></p>
+<p>从上图可以看出受初始化质心的影响, 聚类效果(SSE) 与 收敛速度(迭代次数) 会不同, 也即是可能会收敛到局部最小, 而不是整体最优; 同时, 也可以看出 SSE 越小, 整体结果越优, 越接近原始数据</p>
+<h3 id="5-K-Means-优化"><a href="#5-K-Means-优化" class="headerlink" title="5, K-Means++ 优化"></a>5, K-Means++ 优化</h3><p>针对上述初始化质心造成的问题, 设置初始化多组质心可以得到缓解, 但通常限于聚类簇数较少的情况, 如果簇数较多, 可能就不会有效</p>
+<p>于是有了 K-Means++, 选择初始化质心时, 不在随机选, 而是按下述步骤进行选择:</p>
+<p>– 1, 从训练数据中随机选择一个样本点, 作为初始质心<br>– 2, 对任意一个非质心样本点 $x^{(i)}$, 计算 $x^{(i)}$ 与现有最近质心的距离 $D\left(x^{(i)}\right)$<br>– 3, 根据概率 $\frac{D\left(x^{(i)}\right)^{2}}{\sum_{j=1}^{m} D\left(x^{(j)}\right)^{2}}$ 最大, 来选择最远的一个样本点 $x^{(i)}$ 作为质心, m 为非质心样本点数量<br>– 4, 重复 2 和 3, 直到选择了 K 个质心为止</p>
+<p>做了优化之后, 保证了初始质心不会集中, 而是分散在数据集中</p>
+<p>下面试试 K-Means++ 的聚类效果:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kmeans = KMeans(n_clusters=<span class="number">3</span>, init=<span class="string">&#x27;k-means++&#x27;</span>, n_init=<span class="number">1</span>)</span><br><span class="line">kmeans.fit(x)</span><br><span class="line">plot_cluster(kmeans, x)</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/mathematical-statistics/output_3_0001.png" alt="png"></p>
-<p>可见, 划分深度小, 训练集和测试集的分值都小, 容易欠拟合<br>随着划分深度的增加, 分值都在增加, 模型预测效果也在变好<br>当深度增加到一定程度, 深度再增加, 训练集分值随着增加, 但造成了模型过分依赖训练集数据特征, 从而测试集分值减小, 容易过拟合</p>
-<h3 id="3-不纯度度量标准"><a href="#3-不纯度度量标准" class="headerlink" title="3, 不纯度度量标准"></a>3, 不纯度度量标准</h3><p>不纯度度量标准有:</p>
-<p><strong>信息熵</strong></p>
-<p>$$I_{H}(D)=-\sum_{i=1}^{m} p(i \mid D) \log _{2} p(i \mid D) $$</p>
-<p>m: 节点 D 中含有样本的类别数量<br>$p(i \mid D)$: 节点 D 中, 属于类别 i 的样本占节点 D 中样本总数的比例(概率)</p>
-<p><strong>基尼系数</strong></p>
-<p>$$I_{G}(D)=1-\sum_{i=1}^{m} p(i \mid D)^{2}$$</p>
-<p><strong>错误率</strong></p>
-<p>$$I_{E}(D)=1-\max {p(i \mid D)}$$</p>
-<p>看看各个度量标准与概率分布的关系:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">entropy</span>(<span class="params">p</span>):</span></span><br><span class="line">    <span class="keyword">return</span> -p * np.log2(p) - (<span class="number">1</span>-p) * np.log2(<span class="number">1</span>-p)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gini</span>(<span class="params">p</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - p**<span class="number">2</span> - (<span class="number">1</span>-p)**<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error</span>(<span class="params">p</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - np.<span class="built_in">max</span>([p, <span class="number">1</span>-p], axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">p = np.linspace(<span class="number">0.0001</span>, <span class="number">0.9999</span>, <span class="number">200</span>)</span><br><span class="line"></span><br><span class="line">en = entropy(p)</span><br><span class="line">er = error(p)</span><br><span class="line">g = gini(p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, lab, ls <span class="keyword">in</span> <span class="built_in">zip</span>([en, g, er],</span><br><span class="line">                      [<span class="string">&#x27;信息熵&#x27;</span>, <span class="string">&#x27;基尼系数&#x27;</span>, <span class="string">&#x27;错误率&#x27;</span>],</span><br><span class="line">                      [<span class="string">&#x27;-&#x27;</span>, <span class="string">&#x27;:&#x27;</span>, <span class="string">&#x27;--&#x27;</span>]):</span><br><span class="line">    plt.plot(p, i, label=lab, linestyle=ls, lw=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">plt.legend()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;概率分布&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;不纯度&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2OnU8.png" alt="png"></p>
+<h3 id="6-确定-K-值"><a href="#6-确定-K-值" class="headerlink" title="6, 确定 K 值"></a>6, 确定 K 值</h3><p>K 是超参数, 需要预先人为指定 </p>
+<p>有时需要按照建模的需求和目的来选择聚类的个数, 但是 K 值选择不当, 聚类效果可能不佳. 例如实际 3 类, K 选了 10, 或者 K 无限制, 取值和样本点个数一样, 最后每个点一个类, SEE 为 0, 但是聚类已经毫无意义</p>
+<p>如果不是硬性要求 K 的取值, 怎么确定最佳的 K 值呢? 一个比较好的方法就是<strong>肘部法则</strong>:</p>
+<p>SEE 需要越小越好, K 又不能取太大, 我们可以看看他们之间的关系:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置列表储存 SSE</span></span><br><span class="line">sse = []</span><br><span class="line"><span class="comment"># K 值从 1~9 变化</span></span><br><span class="line">scope = <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> scope:</span><br><span class="line">    kmeans = KMeans(n_clusters=k)</span><br><span class="line">    kmeans.fit(x)</span><br><span class="line">    sse.append(kmeans.inertia_)</span><br><span class="line">    </span><br><span class="line">plt.xticks(scope)</span><br><span class="line">plt.plot(scope, sse, marker=<span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="https://wx2.sbimg.cn/2020/07/02/2Yx2j.png" alt="png"></p>
-<p>可见, 无论选哪一种度量标准, 样本属于同一类, 不纯度都是 0; 样本中不同类别占比相同时, 不纯度最大</p>
-<h3 id="4-决策树常用算法介绍"><a href="#4-决策树常用算法介绍" class="headerlink" title="4, 决策树常用算法介绍"></a>4, 决策树常用算法介绍</h3><p><strong>ID3</strong></p>
-<p>ID3 (Iterative Dichotomiser3), 迭代二分法特点:<br>  -使用多叉树结构<br>  -使用信息熵作为不纯度度量, 选择信息增益最大的特征划分<br>  -经典算法, 简单, 训练快<br>局限:<br>  -不支持连续特征<br>  -不支持缺失值处理<br>  -不支持回归<br>  -倾向选择特征取值多的特征来划分, 例如按身份证号划分, 一个号码就是一个特征</p>
-<p><strong>C4.5</strong></p>
-<p>ID3算法改进而来, 特点:<br>  -使用多叉树结构<br>  -不支持回归<br>优化:<br>  -支持缺失值处理<br>  -连续值进行离散化处理<br>  -信息熵作为不纯度度量, 但选择<strong>信息增益率</strong>最大的特征划分   </p>
-<p>信息增益率:</p>
-<p>$$I G_{\text {Ratio}}\left(D_{p}, f\right)=\frac{I G_{H}\left(D_{p}, f\right)}{I_{H}(f)} $$</p>
-<p>$I_{H}(f)$:  在特征 $f$ 下, 取各个特征值计算得到的信息熵之和, 其实就是特征 $f$ 的不纯度, 特征值越多, 特征不纯度越大</p>
-<p>选择信息增益最大的特征来划分, 父节点的信息熵不变, 就要求信息增益的第二项 $\sum_{j=1}^{n} \frac{N_{j}}{N_{p}} I\left(D_{j}\right)$ 最小, 从而会倾向选择特征取值多的特征</p>
-<p>因为, 特征取值多, 通常划分之后子节点的不纯度(信息熵)就更低, 例如极端情况, 选身份证划分, 划分之后不管什么类别, 子节点都只有一种类别, 不纯度都是 0, 第二项就是 0, 信息增益就最大</p>
-<p>因此, 采用信息增益率, 将 信息增益/特征不纯度, 就避免了 特征不纯度大 造成 信息增益大 而选择类别多的特征来划分的情况</p>
-<p>看看类别数量与信息熵的关系:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">en = <span class="keyword">lambda</span> p: np.<span class="built_in">sum</span>(-p * np.log2(p))</span><br><span class="line"></span><br><span class="line">a1 = np.array([<span class="number">0.3</span>, <span class="number">0.7</span>])</span><br><span class="line">a2 = np.array([<span class="number">0.3</span>, <span class="number">0.3</span>, <span class="number">0.4</span>])</span><br><span class="line">a3 = np.array([<span class="number">0.25</span>] * <span class="number">4</span>)</span><br><span class="line">a4 = np.array([<span class="number">0.1</span>] * <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">print(en(a1), en(a2), en(a3), en(a4), sep=<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/mathematical-statistics/output_70_0.png" alt="png"></p>
+<p>从上图可以看出, K 增加, SSE 减小, 但当 K &gt; 3 时, K 再增加, SSE 减小变得缓慢, 所以 K 选择 3, 实际情况也是 3</p>
+<h3 id="6-Mini-Batch-K-Means"><a href="#6-Mini-Batch-K-Means" class="headerlink" title="6, Mini Batch K-Means"></a>6, Mini Batch K-Means</h3><p>K-Means 每次迭代都会使用所有数据参与运算, 当数据集较大时, 会比较耗时. Mini Batch K-Means (小批量 K-Means) 算法每次迭代使用小批量样本训练, 逐批次累计的方式进行计算, 从而大大减少计算时间. 效果上, 通常只是略差于 K-Means</p>
+<p>Mini Batch K-Means 算法实现步骤:</p>
+<p>a, 从数据集中随机选择部分数据, 使用 K-Means 算法在这部分数据上聚类, 获取质心<br>b, 再从数据集中随机选择部分数据, 分别分配给最近的质心<br>c, 每个簇根据现有的数据集更新质心<br>d, 重复 b 和 c, 直到质心变化小于指定阈值或达到最大迭代次数</p>
+<p>下面比较一下两个算法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> MiniBatchKMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.pairwise <span class="keyword">import</span> pairwise_distances_argmin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成数据</span></span><br><span class="line">centers = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">400</span>, <span class="number">100</span>], [<span class="number">100</span>, <span class="number">400</span>]]</span><br><span class="line">x, y = make_blobs(n_samples=<span class="number">8000</span>, n_features=<span class="number">2</span>, centers=centers,</span><br><span class="line">                  cluster_std=<span class="number">120</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义函数, 用于计算模型训练时间</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elapsed_time</span>(<span class="params">model, data</span>):</span></span><br><span class="line">    start = time.time()</span><br><span class="line">    model.fit(data)</span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="keyword">return</span> end - start</span><br><span class="line"></span><br><span class="line">n_clusters = <span class="built_in">len</span>(centers)</span><br><span class="line">kmeans = KMeans(n_clusters=n_clusters)</span><br><span class="line">mbk = MiniBatchKMeans(n_clusters=n_clusters,</span><br><span class="line">                      batch_size=<span class="number">200</span>, <span class="comment"># 小批量的大小</span></span><br><span class="line">                     n_init=<span class="number">10</span> <span class="comment"># 和 KMeans 统一为 10</span></span><br><span class="line">                     )</span><br><span class="line">kmeans_time = elapsed_time(kmeans, x)</span><br><span class="line">mbk_time = elapsed_time(mbk, x)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;K-Means耗时:&#x27;</span>, kmeans_time)</span><br><span class="line">print(<span class="string">&#x27;Mini Batch K-Means耗时:&#x27;</span>, mbk_time)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制聚类效果</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">model = [kmeans, mbk]</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(model, start=<span class="number">1</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">2</span>, i)</span><br><span class="line">    plot_cluster(m, x)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0.8812908992306927
-1.5709505944546684
-2.0
-3.321928094887362</code></pre>
-<p><strong>CART</strong></p>
-<p>CART (Classification And Regression Tree), 分类回归树, 特点如下:<br>  -使用二叉树结构<br>  -支持连续值与缺失值处理<br>  -分类时, 使用基尼系数作为不纯度度量, 选择基尼增益最大的特征划分<br>  -回归时, 使用 MSE 或 MAE 最小的特征划分</p>
-<h3 id="5-回归决策树"><a href="#5-回归决策树" class="headerlink" title="5, 回归决策树"></a>5, 回归决策树</h3><p>回归决策树因变量 y 是连续的, 使用叶子节点的均值来预测未知样本, 使用 MSE 或 MAE 作为特征划分的评估指标</p>
-<p>在 scikit-learn 中, 使用的是优化的 CART 算法来实现决策树</p>
-<p>以波士顿房价为例来实现(参数参考分类决策树):</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">x, y = load_boston(return_X_y=<span class="literal">True</span>)</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(</span><br><span class="line">            x, y, test_size=<span class="number">0.25</span>, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">tree = DecisionTreeRegressor(max_depth=<span class="number">5</span>, random_state=<span class="number">0</span>)</span><br><span class="line">tree.fit(x_train, y_train)</span><br><span class="line">print(tree.score(x_train, y_train))</span><br><span class="line">print(tree.score(x_test, y_test))</span><br></pre></td></tr></table></figure>
+<pre><code>K-Means耗时: 0.08678650856018066
+Mini Batch K-Means耗时: 0.05485272407531738</code></pre>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2ONKU.md.png" alt="png"></p>
+<p>可见, 聚类耗时 K-Means 更多, 如果数据量很大, 耗时会更明显, 而聚类效果基本一样. 但发现颜色对不上, 这是因为质心的随机性, 聚类之后质心虽然最终落在相同的位置, 但是顺序不一致, 从而聚类的结果标签不一致, 即使是同一个算法, 运行几次, 标签结果也会不一致</p>
+<p>我们将相同簇用相同的颜色绘制:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line"><span class="comment"># 定义列表, 用来保存两个模型预测结果</span></span><br><span class="line">y_hat_list = []</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(model, start=<span class="number">1</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>, <span class="number">2</span>, i)</span><br><span class="line">    y_hat = m.predict(x)</span><br><span class="line">    <span class="keyword">if</span> m == mbk:</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        因为输出的质心顺序就是训练结果标签的顺序</span></span><br><span class="line"><span class="string">        故可以按 mbk 训练的质心, 去找 kmeans 训练的相同簇的质心</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        pairwise_distances_argmin(x, y) 解释:</span></span><br><span class="line"><span class="string">        依次取出数组 X 中的元素 x, </span></span><br><span class="line"><span class="string">        计算找到数组 Y 中与 x 距离最近的元素 y 的索引, </span></span><br><span class="line"><span class="string">        返回索引构成的数组</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        <span class="comment"># 将两者相同簇的质心一一对应并按 mbk 质心的顺序封装成字典</span></span><br><span class="line">        ar = pairwise_distances_argmin(</span><br><span class="line">        mbk.cluster_centers_, kmeans.cluster_centers_)</span><br><span class="line">        dict_ = <span class="built_in">dict</span>(<span class="built_in">enumerate</span>(ar))</span><br><span class="line">        <span class="comment"># 用 mbk 的训练结果标签 y_hat 就可以寻找到对应的 kmeans 的质心</span></span><br><span class="line">        y_hat = pd.Series(y_hat).<span class="built_in">map</span>(dict_).values</span><br><span class="line">    <span class="comment"># 将预测结果加入到列表中</span></span><br><span class="line">    y_hat_list.append(y_hat)</span><br><span class="line">    </span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=colors[y_hat], marker=<span class="string">&#x27;.&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0.9204825770764915
-0.8763987309111113</code></pre>
+
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2OERm.md.png" alt="png"></p>
+<p>比较两个算法聚类结果的差异:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">same = y_hat_list[<span class="number">0</span>] == y_hat_list[<span class="number">1</span>]</span><br><span class="line">diff = y_hat_list[<span class="number">0</span>] != y_hat_list[<span class="number">1</span>]</span><br><span class="line">plt.scatter(x[same, <span class="number">0</span>], x[same, <span class="number">1</span>], c=<span class="string">&#x27;g&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;预测相同&#x27;</span>)</span><br><span class="line">plt.scatter(x[diff, <span class="number">0</span>], x[diff, <span class="number">1</span>], c=<span class="string">&#x27;r&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">&#x27;预测不同&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">print(<span class="string">&#x27;相同数量:&#x27;</span>, x[same].shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">&#x27;不同数量:&#x27;</span>, x[diff].shape[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>相同数量: 7983
+不同数量: 17</code></pre>
+<p><img src="https://wx2.sbimg.cn/2020/07/04/2Obyd.png" alt="png"></p>
+<p>两个算法聚类结果只有 17 个样本点不同</p>
 <br>
+
 
       
     </div>
