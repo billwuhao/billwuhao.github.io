@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/13_exception/05_finally-d1923271464c/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/14_file/02_read-b076bc13cc25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/13_exception/05_finally-d1923271464c/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/14_file/02_read-b076bc13cc25/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>709</span>
+      <span>645</span>
     </span>
 </div>
 
@@ -347,48 +345,130 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="finally-清理操作"><a href="#finally-清理操作" class="headerlink" title="finally 清理操作"></a>finally 清理操作</h2><p>try 语句有另一个可选子句 finally，用于定义必须在所有情况下执行的清理操作（详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/14_try.ipynb">try 语句</a>）。</p>
-<p>例如，在 finally 子句中关闭打开的文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span>():</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = <span class="built_in">open</span>(<span class="string">&#x27;../11_built-in_function/test.txt&#x27;</span>,</span><br><span class="line">                encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> f.read()</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        print(<span class="string">&#x27;不能打开&#x27;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        print(<span class="string">&#x27;执行清理操作&#x27;</span>)</span><br><span class="line">        f.close()</span><br><span class="line">        </span><br><span class="line">read_file() <span class="comment"># 先执行关闭，在执行返回</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>执行清理操作
-
-
-
-
-
-&#39;xue.cn\n\n自学是门手艺&#39;</code></pre>
-<p>如果 finally 子句中引发了新的异常，清理操作本身无效，则达不到清理目的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span>():</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = <span class="built_in">open</span>(<span class="string">&#x27;../11_built-in_function/test.txt&#x27;</span>,</span><br><span class="line">                encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> f.read()</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        print(<span class="string">&#x27;不能打开&#x27;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        print(执行清理操作) <span class="comment"># 清理操作引发异常</span></span><br><span class="line">        f.close()</span><br><span class="line">        </span><br><span class="line">read_file() </span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-NameError                                 Traceback (most recent call last)
-
-&lt;ipython-input-13-af7cdb6d88f0&gt; in &lt;module&gt;
-     10         f.close()
-     11 
----&gt; 12 read_file() # 先执行关闭，在执行返回
-
-
-&lt;ipython-input-13-af7cdb6d88f0&gt; in read_file()
-      7         print(&#39;不能打开&#39;)
-      8     finally:
-----&gt; 9         print(执行清理操作) # 清理操作引发异常
-     10         f.close()
-     11 
-
-
-NameError: name &#39;执行清理操作&#39; is not defined</code></pre>
-<p>某些对象（例如文件对象）定义了在不再需要该对象时，要执行的标准清理操作，无论使用该对象的操作是成功还是失败，清理操作都会被执行。此时使用 with 语句允许像文件这样的对象能够以一种确保它们得到及时和正确的清理的方式使用。</p>
-<p>with 语句相当于将引发异常情况下的清理操作放到了 except 子句中，正常情况下的清理操作放到了 finally 子句中。详情见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/16_with.ipynb">with 语句</a>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span>():</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;../11_built-in_function/test.txt&#x27;</span>,</span><br><span class="line">                encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">return</span> f.read()</span><br><span class="line">    </span><br><span class="line">read_file()</span><br></pre></td></tr></table></figure>
+          <h2 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h2><p>打开方式不同，会创建不同类型的文件对象（流），不同类型的文件对象，可能有不同的属性或方法。</p>
+<p>下列检查或读取内容的属性或方法，是多数文件对象通用的：</p>
+<ul>
+<li>readable() 如果可以读取流，则返回 True 。否则为 False ，且 read() 将引发 OSError 错误。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">f.readable()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;xue.cn\n\n自学是门手艺&#39;</code></pre>
+<pre><code>True</code></pre>
+<ul>
+<li><p>read(size=-1) 从对象中读取 size 个字节并将其返回。作为一个便捷选项，如果 size 未指定或为 -1，则返回所有字节直到 EOF。流的位置与读取内容同步，不重设流的位置，内容只能被读取一次。</p>
+</li>
+<li><p>tell() 返回当前流的位置。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;为什么一定要掌握自学能力？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.read(<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;为什么一定要掌握自学能力&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.tell()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>36</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 再次读取，将读取剩下未读部分</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 已经没有内容</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;&#39;</code></pre>
+<ul>
+<li>seek(offset, whence=0) 将流位置修改到给定的字节 offset。返回新的绝对位置。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.seek(<span class="number">0</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 从新位置读取</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;为什么一定要掌握自学能力？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
+<ul>
+<li>readline(size=-1) 从流中读取并返回一行。如果指定了 size，将至多读取 size 个字节。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.readline()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;为什么一定要掌握自学能力？\n&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.readline(<span class="number">2</span>) <span class="comment"># 再次读取，将读取剩下未读部分</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;未来&#39;</code></pre>
+<ul>
+<li>readlines(hint=-1) 从流中读取并返回包含多行的列表。可以指定 hint 来控制要读取的行数。指定行数可以多于实际。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.readlines(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;为什么一定要掌握自学能力？\n&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.readlines(<span class="number">10</span>) <span class="comment"># 再次读取，将读取剩下未读部分</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;未来的日子还很长，\n&#39;, &#39;这世界进步得太快，\n&#39;]</code></pre>
+<ul>
+<li>使用 <code>for line in file: ...</code> 就足够对文件对象进行迭代了，可以不必调用 file.readlines()。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">    print(line)</span><br></pre></td></tr></table></figure>
+
+<pre><code>为什么一定要掌握自学能力？
+
+未来的日子还很长，
+
+这世界进步得太快，
+
+没有自学能力，
+
+没有未来。</code></pre>
+<ul>
+<li>closed 如果流已关闭，则返回 True。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.closed</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<ul>
+<li>close() 刷新并关闭此流。无论读写操作，最后都应该关闭流。如果文件已经关闭，则此方法无效。文件关闭后，对文件的任何操作（例如读取或写入）都会引发 ValueError 。为方便起见，允许多次调用此方法。但是，只有第一个调用才会生效。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f.close()</span><br><span class="line">f.close()</span><br><span class="line">f.closed</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
 
       
     </div>
@@ -447,9 +527,6 @@ NameError: name &#39;执行清理操作&#39; is not defined</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -540,7 +617,6 @@ NameError: name &#39;执行清理操作&#39; is not defined</code></pre>
   
 
   
-
 
 </body>
 </html>

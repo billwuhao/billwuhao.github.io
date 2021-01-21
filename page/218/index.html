@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/18_str.rindex-b6d7dc3b8a7d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/20_str.startswith-7610ff892666/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/18_str.rindex-b6d7dc3b8a7d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/20_str.startswith-7610ff892666/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>825</span>
+      <span>434</span>
     </span>
 </div>
 
@@ -347,51 +345,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-rindex-查找最大索引"><a href="#str-rindex-查找最大索引" class="headerlink" title="str.rindex 查找最大索引"></a>str.rindex 查找最大索引</h2><p>字符串方法 str.rindex()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.rindex)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-startswith-指定字符串开头？"><a href="#str-startswith-指定字符串开头？" class="headerlink" title="str.startswith 指定字符串开头？"></a>str.startswith 指定字符串开头？</h2><p>字符串方法 str.startswith()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.startswith)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-rindex(...)
-    S.rindex(sub[, start[, end]]) -&gt; int
+startswith(...)
+    S.startswith(prefix[, start[, end]]) -&gt; bool
 
-    Return the highest index in S where substring sub is found,
-    such that sub is contained within S[start:end].  Optional
-    arguments start and end are interpreted as in slice notation.
-
-    Raises ValueError when the substring is not found.</code></pre>
-<p>返回子字符串 sub 在字符串内被找到的最大（最右）索引，这样 sub 将包含在 s[start:end] 当中。可选参数 start 与 end 会被解读为切片表示法。如果未找到则返回 -1。类似于 rfind()，但在子字符串 sub 未找到时会引发 ValueError。</p>
-<p>只给定 sub 一个参数的话，于是从第一个字符开始搜索到字符串结束；如果，随后给定了一个可选参数的话，那么它是 start，于是从 start 开始，搜索到字符串结束；如果 start 之后还有参数的话，那么它是 end；于是从 start 开始，搜索到 end - 1 结束（即不包含索引值为 end 的那个字符）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.rindex(<span class="string">&#x27;on&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    Return True if S starts with the specified prefix, False otherwise.
+    With optional start, test S beginning at that position.
+    With optional end, stop comparing S at that position.
+    prefix can also be a tuple of strings to try.</code></pre>
+<p>如果字符串以指定的 prefix 开始则返回 True，否则返回 False。prefix 也可以为由多个供查找的前缀构成的元组。如果有可选项 start，将从所指定位置开始检查。如果有可选项 end，将在所指定位置之前停止比较。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;ab&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>11</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.rindex(<span class="string">&#x27;on&#x27;</span>,<span class="number">1</span>,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;a.&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>4</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.rindex(<span class="string">&#x27;on&#x27;</span>,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;ab&#x27;</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>11</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.rindex(<span class="string">&#x27;no&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;a.&#x27;</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 
 
-<pre><code>---------------------------------------------------------------------------
-
-ValueError                                Traceback (most recent call last)
-
-&lt;ipython-input-5-92aeb174dba9&gt; in &lt;module&gt;
-----&gt; 1 &#39;python python&#39;.rindex(&#39;no&#39;)
 
 
-ValueError: substring not found</code></pre>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;a&#x27;</span>,<span class="number">1</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
 
       
     </div>
@@ -450,9 +446,6 @@ ValueError: substring not found</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -543,7 +536,6 @@ ValueError: substring not found</code></pre>
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/41_min-8274d842e4c5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/43_object-6dcdc800455f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/41_min-8274d842e4c5/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/43_object-6dcdc800455f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>549</span>
+      <span>642</span>
     </span>
 </div>
 
@@ -347,56 +345,55 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="min-求最小项"><a href="#min-求最小项" class="headerlink" title="min() 求最小项"></a>min() 求最小项</h2><p>内置函数 min()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">min</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="object-所有类的基类"><a href="#object-所有类的基类" class="headerlink" title="object 所有类的基类"></a>object 所有类的基类</h2><p>内置函数（类）object，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function min in module builtins:
+<pre><code>Help on class object in module builtins:
 
-min(...)
-    min(iterable, *[, default=obj, key=func]) -&gt; value
-    min(arg1, arg2, *args, *[, key=func]) -&gt; value
-
-    With a single iterable argument, return its smallest item. The
-    default keyword-only argument specifies an object to return if
-    the provided iterable is empty.
-    With two or more arguments, return the smallest argument.</code></pre>
-<p>返回可迭代对象中最小的元素，或多个实参中最小的项。参数说明：</p>
-<ul>
-<li>如果只提供了一个位置参数，它必须是可迭代对象（iterable），返回 iterable 中最小的元素，iterable 为空，返回 default。</li>
-<li>如果提供了两个及以上的位置参数，则返回最小的位置参数。</li>
-<li>如果有多个最小元素，则此函数将返回第一个找到的。</li>
-<li>参数 key（可选）指定排序函数，将排序的项都经此函数计算，按计算值取最小的项。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">min</span>(<span class="string">&#x27;3142&#x27;</span>)</span><br></pre></td></tr></table></figure>
+class object
+ |  The most base type</code></pre>
+<p>当被调用时，它不接受任何参数，并返回一个新的无特性实例，并且不能给定任何实例属性。</p>
+<p>object 是所有类的基类。它具有所有 Python 类实例的通用方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;1&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">min</span>([], default=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">object</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">min</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;object at 0x1de8bc75170&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span>(<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">min</span>([<span class="number">2</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[2, 1]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">min</span>((<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;ab&#x27;</span>,<span class="string">&#x27;bcd&#x27;</span>),key=<span class="built_in">len</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;a&#39;</code></pre>
+<pre><code>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;]</code></pre>
 
       
     </div>
@@ -455,9 +452,6 @@ min(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -548,7 +542,6 @@ min(...)
   
 
   
-
 
 </body>
 </html>

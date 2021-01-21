@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/39_str.isalnum-f7d4e5aa9090/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/41_str.isdecimal-24a5f30d26fb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/39_str.isalnum-f7d4e5aa9090/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/41_str.isdecimal-24a5f30d26fb/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>301</span>
+      <span>631</span>
     </span>
 </div>
 
@@ -347,41 +345,60 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-isalnum-是字母或数字？"><a href="#str-isalnum-是字母或数字？" class="headerlink" title="str.isalnum 是字母或数字？"></a>str.isalnum 是字母或数字？</h2><p>字符串方法 str.isalnum()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isalnum)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-isdecimal-是十进制字符？"><a href="#str-isdecimal-是十进制字符？" class="headerlink" title="str.isdecimal 是十进制字符？"></a>str.isdecimal 是十进制字符？</h2><p>字符串方法 str.isdecimal()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isdecimal)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-isalnum(self, /)
-    Return True if the string is an alpha-numeric string, False otherwise.
+isdecimal(self, /)
+    Return True if the string is a decimal string, False otherwise.
 
-    A string is alpha-numeric if all characters in the string are alpha-numeric and
+    A string is a decimal string if all characters in the string are decimal and
     there is at least one character in the string.</code></pre>
-<p>如果字符串中的所有字符都是字母或数字且至少有一个字符，则返回 True ，否则返回 False 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.isalnum()</span><br></pre></td></tr></table></figure>
+<p>如果字符串中的所有字符都是十进制字符且该字符串至少有一个字符，则返回 True，否则返回 False。</p>
+<p>十进制字符指那些可以用来组成 10 进制数字的字符。严格地讲，十进制字符是 Unicode 通用类别 ”Nd” 中的一个字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.isdecimal()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python123&#x27;</span>.isalnum()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python 123&#x27;</span>.isalnum()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;3.14&#x27;</span>.isdecimal()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;γ&#x27;</span>.isalnum()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;０1２3&#x27;</span>.isdecimal()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;5²&#x27;</span>.isdecimal()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.isdecimal()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">b&#x27;100&#x27;</span>.isdecimal()</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-13-52e1682babfd&gt; in &lt;module&gt;
+----&gt; 1 b&#39;100&#39;.isdecimal()
+
+
+AttributeError: &#39;bytes&#39; object has no attribute &#39;isdecimal&#39;</code></pre>
 
       
     </div>
@@ -440,9 +457,6 @@ isalnum(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -533,7 +547,6 @@ isalnum(self, /)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/64_vars-76cba666cfcb/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/01_function_summary-2667ef3bdac3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/64_vars-76cba666cfcb/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/12_function/01_function_summary-2667ef3bdac3/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:39" itemprop="dateModified" datetime="2021-01-03T00:11:39+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:40" itemprop="dateModified" datetime="2021-01-03T00:11:40+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.9k</span>
+      <span>345</span>
     </span>
 </div>
 
@@ -347,72 +345,52 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="vars-返回对象的变量字典"><a href="#vars-返回对象的变量字典" class="headerlink" title="vars() 返回对象的变量字典"></a>vars() 返回对象的变量字典</h2><p>内置函数 vars()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">vars</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on built-in function vars in module builtins:
-
-vars(...)
-    vars([object]) -&gt; dictionary
-
-    Without arguments, equivalent to locals().
-    With an argument, equivalent to object.__dict__.</code></pre>
-<p>返回模块、类、实例或任何其它具有 <code>__dict__</code> 属性的对象的 <code>__dict__</code> 属性。</p>
-<p>模块和实例这样的对象具有可更新的 <code>__dict__</code> 属性；但是，其它对象的 <code>__dict__</code> 属性可能会设为限制写入（例如，类会使用<code>types.MappingProxyType</code> 来防止直接更新字典）。</p>
-<p>不带参数时，vars() 的行为类似 locals()。请注意，locals 字典仅对于读取起作用，因为对 locals 字典的更新会被忽略。</p>
-<p>如果指定了一个对象但它没有 <code>__dict__</code> 属性则会引发TypeError 异常。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vars</span>()</span><br></pre></td></tr></table></figure>
+          <h2 id="函数概述"><a href="#函数概述" class="headerlink" title="函数概述"></a>函数概述</h2><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。是可以向调用者返回某个值（至少是 None）的一组语句。</p>
+<p>函数使代码的组织模块化，提供了代码的利用率。例如 print() 函数实现打印功能，input() 函数实现输入功能，需要它们的地方，都可以使用。</p>
+<p>函数通过函数名称来使用它，传入零个或多个参数，并在函数体执行中被使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数 abs() 返回一个数的绝对值</span></span><br><span class="line">a = <span class="built_in">abs</span>(<span class="number">-3.14</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#39;__name__&#39;: &#39;__main__&#39;,
- &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;,
- &#39;__package__&#39;: None,
- &#39;__loader__&#39;: None,
- &#39;__spec__&#39;: None,
- &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;,
- &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;,
- &#39;_ih&#39;: [&#39;&#39;, &quot;get_ipython().run_line_magic(&#39;pinfo&#39;, &#39;vars&#39;)&quot;, &#39;vars()&#39;],
- &#39;_oh&#39;: &#123;&#125;,
- &#39;_dh&#39;: [&#39;E:\\xue\\脚本\\kp_book\\11_built-in_function&#39;],
- &#39;In&#39;: [&#39;&#39;, &quot;get_ipython().run_line_magic(&#39;pinfo&#39;, &#39;vars&#39;)&quot;, &#39;vars()&#39;],
- &#39;Out&#39;: &#123;&#125;,
- &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x00000189A6512310&gt;&gt;,
- &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall at 0x189a65b32e0&gt;,
- &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall at 0x189a65b32e0&gt;,
- &#39;_&#39;: &#39;&#39;,
- &#39;__&#39;: &#39;&#39;,
- &#39;___&#39;: &#39;&#39;,
- &#39;_i&#39;: &#39;vars?&#39;,
- &#39;_ii&#39;: &#39;&#39;,
- &#39;_iii&#39;: &#39;&#39;,
- &#39;_i1&#39;: &#39;vars?&#39;,
- &#39;_i2&#39;: &#39;vars()&#39;&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span><span class="keyword">pass</span></span><br><span class="line"><span class="built_in">vars</span>(f)</span><br></pre></td></tr></table></figure>
+<pre><code>3.14</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print() 函数打印传入的参数值，返回 None</span></span><br><span class="line">n = print(<span class="string">&#x27;hello, world&#x27;</span>)</span><br><span class="line">n <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>hello, world
 
 
 
 
-<pre><code>&#123;&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f.__dict__[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span></span><br><span class="line">f.a</span><br></pre></td></tr></table></figure>
+
+True</code></pre>
+<p>按照上述定义，类也被称作函数（例如内置函数 int，list 等）。</p>
+<p>我们通常所说的函数，是指使用 def 语句和 lambda 表达式定义的函数。</p>
+<p>而在类内部定义，使用属性表示法来调用的函数，我们习惯称作方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># int 类实例化返回整数对象</span></span><br><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vars</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>, <span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
 
 
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-9-3391faf83557&gt; in &lt;module&gt;
-----&gt; 1 vars(1)
 
 
-TypeError: vars() argument must have __dict__ attribute</code></pre>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list 类的方法 append 将一个对象加入列表中，返回值为 None</span></span><br><span class="line">a = []</span><br><span class="line">b = <span class="built_in">list</span>.append(a,<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line">a, b <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([&#39;123&#39;], True)</code></pre>
+<p>函数有内置函数和内置方法，用户也可以自定义函数和方法。定义了一个函数，即创建了一个函数对象，可以通过函数名和必要的参数调用它。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_sum</span>(<span class="params">lst</span>):</span></span><br><span class="line">    <span class="string">&#x27;将列表中的字符串数字转为数字求和&#x27;</span> <span class="comment"># 函数文档说明</span></span><br><span class="line">    </span><br><span class="line">    rlt = <span class="built_in">sum</span>(<span class="built_in">map</span>(<span class="built_in">float</span>,lst)) <span class="comment"># 调用内置函数求值</span></span><br><span class="line">    <span class="keyword">return</span> rlt <span class="comment"># 返回结果</span></span><br><span class="line"></span><br><span class="line">my_sum([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;3.14&#x27;</span>,<span class="number">2</span>]) <span class="comment"># 调用自定义函数</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>6.140000000000001</code></pre>
 
       
     </div>
@@ -471,9 +449,6 @@ TypeError: vars() argument must have __dict__ attribute</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -564,7 +539,6 @@ TypeError: vars() argument must have __dict__ attribute</code></pre>
   
 
   
-
 
 </body>
 </html>

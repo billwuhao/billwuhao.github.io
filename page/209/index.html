@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/27_f-string-4dfe124c59cb/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/29_str.encode-a0d851097965/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/27_f-string-4dfe124c59cb/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/29_str.encode-a0d851097965/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:29" itemprop="dateModified" datetime="2021-01-03T00:11:29+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:30" itemprop="dateModified" datetime="2021-01-03T00:11:30+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>756</span>
+      <span>1.7k</span>
     </span>
 </div>
 
@@ -347,87 +345,84 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="f-string-格式化字符串"><a href="#f-string-格式化字符串" class="headerlink" title="f-string 格式化字符串"></a>f-string 格式化字符串</h2><p>f-string 即格式化字符串字面值。字符串以 ‘f’ 或 ‘F’ 为前缀。这种字符串可包含替换字段，即以 {} 标示的表达式。格式化字符串字面值，会在运行时将表达式求值，而其他字符串字面值总是一个常量。</p>
-<p>格式化字符串字面值中的表达式会被当作包含在圆括号中的普通 Python 表达式一样处理，但有少数例外。</p>
-<p>空表达式不被允许，lambda 和赋值表达式 :=（python 3.8版添加）必须显式地加上圆括号。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">f&#x27;<span class="subst">&#123;(a := <span class="number">1</span>+<span class="number">1</span>)&#125;</span>&#x27;</span> <span class="comment"># python 3.8 才能运行</span></span><br></pre></td></tr></table></figure>
+          <h2 id="str-encode-编码为字节串"><a href="#str-encode-编码为字节串" class="headerlink" title="str.encode 编码为字节串"></a>str.encode 编码为字节串</h2><p>字符串方法 str.encode()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.encode)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Help on method_descriptor:
+
+encode(self, /, encoding=&#39;utf-8&#39;, errors=&#39;strict&#39;)
+    Encode the string using the codec registered for encoding.
+
+    encoding
+      The encoding in which to encode the string.
+    errors
+      The error handling scheme to use for encoding errors.
+      The default is &#39;strict&#39; meaning that encoding errors raise a
+      UnicodeEncodeError.  Other possible values are &#39;ignore&#39;, &#39;replace&#39; and
+      &#39;xmlcharrefreplace&#39; as well as any other name registered with
+      codecs.register_error that can handle UnicodeEncodeErrors.</code></pre>
+<p>返回原字符串编码为字节串对象的版本。默认编码为 ‘utf-8’。可以给出 errors 来设置不同的错误处理方案。errors 的默认值为 ‘strict’，表示编码错误会引发 UnicodeError。</p>
+<p>下列为 ‘utf-8’ 和 ‘gbk’ 两种编码比较：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 python&#x27;</span>.encode()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;2&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">f&#x27;<span class="subst">&#123;(<span class="keyword">lambda</span> x:<span class="number">1</span>)&#125;</span>&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre><code>b&#39;\xe5\x97\xa8 python&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 python&#x27;</span>.encode(<span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;&lt;function &lt;lambda&gt; at 0x000001D70B06CA60&gt;&#39;</code></pre>
-<p>替换表达式可以包含换行（例如在三重引号字符串中），但是不能包含注释。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span>; b = <span class="number">2</span></span><br><span class="line"><span class="string">f&#x27;&#x27;&#x27;3+2\</span></span><br><span class="line"><span class="string">-5=</span></span><br><span class="line"><span class="string"><span class="subst">&#123;a +</span></span></span><br><span class="line"><span class="string"><span class="subst">b - <span class="number">5</span>&#125;</span>&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre><code>b&#39;\xe0\xcb python&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;▲ python&#x27;</span>.encode(<span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;3+2-5=\n0&#39;</code></pre>
-<p>每个表达式会在格式化字符串字面值所包含的位置按照从左至右的顺序被求值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">f&#x27;<span class="subst">&#123;<span class="number">1</span>+<span class="number">2</span> &gt; <span class="number">3</span>&#125;</span>&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre><code>b&#39;\xa1\xf8 python&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;🔺 python&#x27;</span>.encode()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;False&#39;</code></pre>
-<p>可以在表达式后加一个等于号 ‘=’（3.8 新版功能），提供了等于号 ‘=’ 的时候，输出将包含 ‘=’、’=’ 前后的空格以及求值结果。默认情况下，’=’ 会导致表达式的 repr() 被使用，除非专门指定了格式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="string">&quot;bar&quot;</span></span><br><span class="line"><span class="string">f&quot;<span class="subst">&#123; foo = &#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<pre><code>b&#39;\xf0\x9f\x94\xba python&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;🔺 python&#x27;</span>.encode(<span class="string">&#x27;gbk&#x27;</span>) <span class="comment">#gbk 不能编码 🔺</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+UnicodeEncodeError                        Traceback (most recent call last)
+
+&lt;ipython-input-15-60e87a9208be&gt; in &lt;module&gt;
+----&gt; 1 &#39;🔺 python&#39;.encode(&#39;gbk&#39;)
+
+
+UnicodeEncodeError: &#39;gbk&#39; codec can&#39;t encode character &#39;\U0001f53a&#39; in position 0: illegal multibyte sequence</code></pre>
+<p><strong>拓展：</strong></p>
+<p>将字节串解码为字符串用 bytes.decode:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">bytes</span>.decode)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>[1;31mSignature:[0m [0mbytes[0m[1;33m.[0m[0mdecode[0m[1;33m([0m[0mself[0m[1;33m,[0m [1;33m/[0m[1;33m,[0m [0mencoding[0m[1;33m=[0m[1;34m&#39;utf-8&#39;[0m[1;33m,[0m [0merrors[0m[1;33m=[0m[1;34m&#39;strict&#39;[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;31mDocstring:[0m
+Decode the bytes using the codec registered for encoding.
+
+encoding
+  The encoding with which to decode the bytes.
+errors
+  The error handling scheme to use for the handling of decoding errors.
+  The default is &#39;strict&#39; meaning that decoding errors raise a
+  UnicodeDecodeError. Other possible values are &#39;ignore&#39; and &#39;replace&#39;
+  as well as any other name registered with codecs.register_error that
+  can handle UnicodeDecodeErrors.
+[1;31mType:[0m      method_descriptor</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">b&#x27;\xf0\x9f\x94\xba python&#x27;</span>.decode()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&quot; foo = &#39;bar&#39;&quot;</code></pre>
-<p>可以带一个以叹号 ‘!’ 标示的转换字段，转换符 ‘!s’ 即对结果调用 str()，’!r’ 为调用 repr()，而 ‘!a’ 为调用 ascii()。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="string">&quot;bar&quot;</span></span><br><span class="line"><span class="string">f&quot;<span class="subst">&#123;foo = !s&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;foo = bar&#39;</code></pre>
-<p>还可带一个以冒号 ‘:’ 标示的格式说明符，“格式化迷你语言” 与 str.format() 方法所使用的微语言一致，详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/02_string/25_str.format.ipynb">str.format</a> 方法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="number">3.14</span></span><br><span class="line"><span class="string">f&quot;<span class="subst">&#123;foo:<span class="number">.4</span>f&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;3.1400&#39;</code></pre>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f&#x27;&#123;123:#o&#125;&#x27;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;0o173&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">5</span>/<span class="number">6</span></span><br><span class="line"><span class="string">f&#x27;<span class="subst">&#123;a:<span class="number">.2</span>%&#125;</span>&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;83.33%&#39;</code></pre>
-<p>格式表达式中不允许有反斜杠，这会引发错误:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">f&quot;newline: <span class="subst">&#123;<span class="built_in">ord</span>(<span class="string">&#x27;\n&#x27;</span>)&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>  File &quot;&lt;ipython-input-23-30c78f70325d&gt;&quot;, line 1
-    f&quot;newline: &#123;ord(&#39;\n&#39;)&#125;&quot;
-    ^
-SyntaxError: f-string expression part cannot include a backslash</code></pre>
-<p>想包含需要用反斜杠转义的值，可以创建一个临时变量:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">newline = <span class="built_in">ord</span>(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="string">f&quot;newline: <span class="subst">&#123;newline&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;newline: 10&#39;</code></pre>
-<p>格式化字符串字面值不可用作文档字符串，即便其中没有包含表达式:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>():</span></span><br><span class="line">    <span class="string">f&quot;Not a docstring&quot;</span></span><br><span class="line"></span><br><span class="line">print(foo.__doc__)</span><br></pre></td></tr></table></figure>
-
-<pre><code>None</code></pre>
+<pre><code>&#39;🔺 python&#39;</code></pre>
 
       
     </div>
@@ -486,9 +481,6 @@ SyntaxError: f-string expression part cannot include a backslash</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -579,7 +571,6 @@ SyntaxError: f-string expression part cannot include a backslash</code></pre>
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/35_iter-a6f4d5775514/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/37_list-ac1386f7aa8f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/35_iter-a6f4d5775514/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/37_list-ac1386f7aa8f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>647</span>
+      <span>2.4k</span>
     </span>
 </div>
 
@@ -347,50 +345,161 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="iter-转迭代器"><a href="#iter-转迭代器" class="headerlink" title="iter() 转迭代器"></a>iter() 转迭代器</h2><p>内置函数 iter()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">iter</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="list-创建列表"><a href="#list-创建列表" class="headerlink" title="list 创建列表"></a>list 创建列表</h2><p>内置函数（类）list，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function iter in module builtins:
+<pre><code>Help on class list in module builtins:
 
-iter(...)
-    iter(iterable) -&gt; iterator
-    iter(callable, sentinel) -&gt; iterator
+class list(object)
+ |  list(iterable=(), /)
+ |  
+ |  Built-in mutable sequence.
+ |  
+ |  If no argument is given, the constructor creates a new empty list.
+ |  The argument must be an iterable if specified.
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __delitem__(self, key, /)
+ |      Delete self[key].
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(...)
+ |      x.__getitem__(y) &lt;==&gt; x[y]
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __iadd__(self, value, /)
+ |      Implement self+=value.
+ |  
+ |  __imul__(self, value, /)
+ |      Implement self*=value.
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __reversed__(self, /)
+ |      Return a reverse iterator over the list.
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __setitem__(self, key, value, /)
+ |      Set self[key] to value.
+ |  
+ |  __sizeof__(self, /)
+ |      Return the size of the list in memory, in bytes.
+ |  
+ |  append(self, object, /)
+ |      Append object to the end of the list.
+ |  
+ |  clear(self, /)
+ |      Remove all items from list.
+ |  
+ |  copy(self, /)
+ |      Return a shallow copy of the list.
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  extend(self, iterable, /)
+ |      Extend list by appending elements from the iterable.
+ |  
+ |  index(self, value, start=0, stop=9223372036854775807, /)
+ |      Return first index of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  insert(self, index, object, /)
+ |      Insert object before index.
+ |  
+ |  pop(self, index=-1, /)
+ |      Remove and return item at index (default last).
+ |      
+ |      Raises IndexError if list is empty or index is out of range.
+ |  
+ |  remove(self, value, /)
+ |      Remove first occurrence of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  reverse(self, /)
+ |      Reverse *IN PLACE*.
+ |  
+ |  sort(self, /, *, key=None, reverse=False)
+ |      Stable sort *IN PLACE*.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __hash__ = None</code></pre>
+<p>将一个可迭代对象转为列表。不传参数将得到空列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
 
-    Get an iterator from an object.  In the first form, the argument must
-    supply its own iterator, or be a sequence.
-    In the second form, the callable is called until it returns the sentinel.</code></pre>
-<p>将一个可迭代对象（iterable）或可调用对象（callable）转换为一个迭代器。</p>
-<p>当参数是可调用对象时，需要提供参数 sentinel，生成的迭代器，每次<br>迭代时都会不带实参地调用 callable，返回 sentinel 时则触<br>发 StopIteration。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">iter</span>(<span class="string">&#x27;abcd&#x27;</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;str_iterator at 0x1c7eea4f910&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(a),<span class="built_in">next</span>(a),<span class="built_in">next</span>(a),<span class="built_in">next</span>(a)</span><br></pre></td></tr></table></figure>
+<pre><code>[]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="string">&#x27;123&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">iter</span>(<span class="built_in">int</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    print(<span class="built_in">next</span>(a))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0
-0
-0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">iter</span>(<span class="built_in">int</span>, <span class="number">0</span>)</span><br><span class="line"><span class="built_in">next</span>(a)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
-<pre><code>---------------------------------------------------------------------------
-
-StopIteration                             Traceback (most recent call last)
-
-&lt;ipython-input-21-694e44f6d78c&gt; in &lt;module&gt;
-      1 a = iter(int, 0)
-----&gt; 2 next(a)
 
 
-StopIteration: </code></pre>
+<pre><code>[&#39;a&#39;, &#39;b&#39;]</code></pre>
 
       
     </div>
@@ -449,9 +558,6 @@ StopIteration: </code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -542,7 +648,6 @@ StopIteration: </code></pre>
   
 
   
-
 
 </body>
 </html>

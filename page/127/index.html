@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/08_other_types/02_comprehension-05bd9777e408/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/09_operator/01_operator_summary-b1897c05dd00/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/08_other_types/02_comprehension-05bd9777e408/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/09_operator/01_operator_summary-b1897c05dd00/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>260</span>
+      <span>866</span>
     </span>
 </div>
 
@@ -347,58 +345,100 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="生成器表达式和推导式"><a href="#生成器表达式和推导式" class="headerlink" title="生成器表达式和推导式"></a>生成器表达式和推导式</h2><p>生成器表达式和列表推导式非常相似，区别就是将方括号换成了小括号。</p>
-<p>生成器表达式返回的是一个生成器迭代器 generator。表达式会产生一系列值，可使用内置函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/42_next.ipynb">next()</a> 逐一获取，或使用 for 循环遍历。</p>
-<p>生成器迭代器中的元素，仅供一次性使用，而且可以要多少取多少，它会记住你取了多少，取到了哪里。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(i*i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+          <h2 id="操作符概述"><a href="#操作符概述" class="headerlink" title="操作符概述"></a>操作符概述</h2><p>操作符可分为<strong>运算符</strong>（operators）和<strong>分隔符</strong>（delimiters）。</p>
+<p>运算符有：</p>
+<ul>
+<li>数字运算符</li>
+</ul>
+<p><code>+</code>，<code>-</code>，<code>*</code>，<code>**</code>，<code>/</code>，<code>//</code>，<code>%</code>，详细用法见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/01_numeric/06_number_operations.ipynb">数字运算</a>。</p>
+<ul>
+<li>整数按位运算符</li>
+</ul>
+<p><code>&lt;&lt;</code>，<code>&gt;&gt;</code>，<code>&amp;</code>，<code>|</code>，<code>^</code>，<code>~</code>，详细用法见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/01_numeric/02_int.ipynb">整数及其位运算</a>。</p>
+<ul>
+<li>比较运算符</li>
+</ul>
+<p><code>&lt;</code>，<code>&gt;</code>，<code>&lt;=</code>，<code>&gt;=</code>，<code>==</code>，<code>!=</code>，<code>in</code>，<code>not in</code>，<code>is</code>，<code>is not</code>，详细用法见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/09_operator/02_compare.ipynb">比较运算符</a>。</p>
+<ul>
+<li>布尔运算符</li>
+</ul>
+<p><code>and</code>，<code>or</code>，<code>not</code>，详细用法见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/01_numeric/03_bool.ipynb">布尔值及布尔运算</a>。</p>
+<ul>
+<li>赋值运算符 <code>:=</code></li>
+</ul>
+<p>Python 3.8 新增，将右边的表达式赋值给左边的变量， 同时返回表达式的值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a := <span class="number">1</span>+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;generator object &lt;genexpr&gt; at 0x00000271080FBC00&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = (i*i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>))</span><br><span class="line"><span class="built_in">type</span>(g)</span><br></pre></td></tr></table></figure>
+<pre><code>2</code></pre>
+<p>运算符还分为一元运算符和二元运算符，一元运算符运算一个对象（操作数），二元运算符运算两个。一元运算符有 <code>+</code>（正数），<code>-</code>（负数），<code>~</code>（整数按位取反）和 <code>not</code>（布尔运算 非）。<code>if ... else ...</code> 有时称作三元运算符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">-1</span>, +<span class="number">2</span>, ~<span class="number">3</span>, <span class="keyword">not</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>generator</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(g), <span class="built_in">next</span>(g)</span><br></pre></td></tr></table></figure>
+<pre><code>(-1, 2, -4, False)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span> - <span class="number">3</span> * <span class="number">4</span> <span class="comment"># 二元运算符加、减和乘</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(0, 1)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> g:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
-
-<pre><code>4
-9
-16</code></pre>
-<p>这种表达式被设计用于生成器将立即被外层函数所使用的情况。生成器表达式相比完整的生成器更紧凑但较不灵活，相比等效的列表推导式则更为节省内存。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>(i*i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>-9</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span> <span class="keyword">if</span> <span class="number">2</span> &gt; <span class="number">3</span> <span class="keyword">else</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>30</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(i*i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>False</code></pre>
+<p>分隔符有：</p>
+<p><code>(</code>，<code>)</code>，<code>[</code>，<code>]</code>，<code>&#123;</code>，<code>&#125;</code>，<code>,</code>，<code>:</code>，<code>.</code>，<code>;</code>，<code>=</code>，<code>+=</code>，<code>-=</code>，<code>*=</code>，<code>/=</code>，<code>//=</code>，<code>%=</code>，<code>&amp;=</code>，<code>|=</code>，<code>^=</code>，<code>&gt;&gt;=</code>，<code>&lt;&lt;=</code>，<code>**=</code></p>
+<p>部分分隔符用法举例：</p>
+<p>圆括号绑定表达式，或元组显示，方括号用来对序列进行索引、切片取值或列表显示，花括号字典显示或集合显示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> * (<span class="number">1</span> + <span class="number">2</span>) * (<span class="number">1</span>,)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[0, 1, 4, 9, 16]</code></pre>
-<p>除了列表推导式和生成器表达式，集合和字典也可使用类似的推导式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;i*<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&#x27;abac&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>(1, 1, 1, 1, 1, 1, 1, 1, 1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>][<span class="number">1</span>:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#39;aa&#39;, &#39;bb&#39;, &#39;cc&#39;&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;i:j <span class="keyword">for</span> i,j <span class="keyword">in</span> <span class="built_in">zip</span>(<span class="string">&#x27;abc&#x27;</span>,(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>[2, 3]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;列表&#x27;</span>:[], <span class="string">&#x27;集合&#x27;</span>:&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
+<pre><code>&#123;&#39;列表&#39;: [], &#39;集合&#39;: &#123;1, 2, 3&#125;&#125;</code></pre>
+<p>上述分隔符 <code>=</code> 为赋值操作符，之后的操作符为增强赋值操作符，将名称绑定（或重新绑定）到特定值，以及修改属性或可变对象的成员项。 详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/02_assignment.ipynb">赋值语句</a>。</p>
+<p>假设将值 value1 绑定到名称 name，<code>name = value1</code>，则 <code>name += value2</code> 的结果相当于 <code>name = name + value2</code>，其他操作符类似。</p>
+<p>举例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">a += <span class="number">1</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">17</span></span><br><span class="line">b |= <span class="number">5</span></span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>21</code></pre>
+<p>除了运算符和分隔符，还有 <code>&#39;</code>，<code>&quot;</code>，<code>\</code>，<code>#</code> 字符，作为其他字符的组成部分时具有特殊含义，或是对词法分析器有重要意义。</p>
+<p><code>&#39;</code>，<code>&quot;</code>，<code>\</code>，详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/02_string/01_string.ipynb">字符串概述</a> 和 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/02_string/03_escape_character.ipynb">转义字符</a>。</p>
+<p><code>#</code> 通常用来注释代码，但不能包含在字符串中，注释在语法分析中会被忽略：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string"># hello world</span></span><br><span class="line"><span class="string"># hello python</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;\n# hello world\n# hello python\n&#39;</code></pre>
+<p>操作符除了常规的用法，操作不同的数据类型，相应的数据类型可能定义了特定的操作规则；在特定的应用场景，也有着特殊的用法。详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/09_operator/04_special.ipynb">操作符特殊用法</a></p>
 
       
     </div>
@@ -457,9 +497,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -550,7 +587,6 @@
   
 
   
-
 
 </body>
 </html>

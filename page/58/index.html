@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/44_oct-b77aa5da3458/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/46_ord-8edcb872b0d6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/44_oct-b77aa5da3458/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/46_ord-8edcb872b0d6/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>195</span>
+      <span>176</span>
     </span>
 </div>
 
@@ -347,41 +345,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="oct-整数的八进制形式"><a href="#oct-整数的八进制形式" class="headerlink" title="oct() 整数的八进制形式"></a>oct() 整数的八进制形式</h2><p>内置函数 oct()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">oct</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="ord-返回单个字符-Unicode-码位值"><a href="#ord-返回单个字符-Unicode-码位值" class="headerlink" title="ord() 返回单个字符 Unicode 码位值"></a>ord() 返回单个字符 Unicode 码位值</h2><p>内置函数 ord()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">ord</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function oct in module builtins:
+<pre><code>Help on built-in function ord in module builtins:
 
-oct(number, /)
-    Return the octal representation of an integer.
-
-    &gt;&gt;&gt; oct(342391)
-    &#39;0o1234567&#39;</code></pre>
-<p>将一个整数转换为八进制整数的字符串形式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">oct</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+ord(c, /)
+    Return the Unicode code point for a one-character string.</code></pre>
+<p>返回单个字符 Unicode 码点的整数。这是 chr() 的逆函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;0o173&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0o173</span></span><br></pre></td></tr></table></figure>
+<pre><code>97</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>123</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">oct</span>(<span class="number">0x12</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;0o22&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0x12</span>, <span class="number">0o22</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(18, 18)</code></pre>
+<pre><code>&#39;a&#39;</code></pre>
 
       
     </div>
@@ -440,9 +423,6 @@ oct(number, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -533,7 +513,6 @@ oct(number, /)
   
 
   
-
 
 </body>
 </html>

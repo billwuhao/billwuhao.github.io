@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/11_compile-fe5a0f680d62/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/13_delattr-e928b9eee226/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/11_compile-fe5a0f680d62/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/13_delattr-e928b9eee226/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.1k</span>
+      <span>530</span>
     </span>
 </div>
 
@@ -347,49 +345,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="compile-创建代码对象"><a href="#compile-创建代码对象" class="headerlink" title="compile() 创建代码对象"></a>compile() 创建代码对象</h2><p>内置函数 compile()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">compile</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="delattr-删除对象属性"><a href="#delattr-删除对象属性" class="headerlink" title="delattr() 删除对象属性"></a>delattr() 删除对象属性</h2><p>内置函数 delattr()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">delattr</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function compile in module builtins:
+<pre><code>Help on built-in function delattr in module builtins:
 
-compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
-    Compile source into a code object that can be executed by exec() or eval().
+delattr(obj, name, /)
+    Deletes the named attribute from the given object.
 
-    The source code may represent a Python module, statement or expression.
-    The filename will be used for run-time error messages.
-    The mode must be &#39;exec&#39; to compile a module, &#39;single&#39; to compile a
-    single (interactive) statement, or &#39;eval&#39; to compile an expression.
-    The flags argument, if present, controls which future statements influence
-    the compilation of the code.
-    The dont_inherit argument, if true, stops the compilation inheriting
-    the effects of any future statements in effect in the code calling
-    compile; if absent or false these statements do influence the compilation,
-    in addition to any features explicitly specified.</code></pre>
-<p>将 source 编译成代码或 AST 对象。代码对象可以被 exec() 或 eval() 执行。</p>
-<p>参数说明：</p>
-<ul>
-<li>source，要编译的资源，可以是字符串、字节或 AST 对象。</li>
-<li>filename，源所来自的文件的名称。如果代码不需要从文件中读取，可以传入一些可辨识的值（经常会使用字符串）。</li>
-<li>mode，指定了编译代码必须用的模式。如果 source 是语句序列，可以是 ‘exec’；如果是单一表达式，可以是 ‘eval’；如果是单个交互式语句，可以是 ‘single’。</li>
-<li>flags    和 dont-inherit，控制在编译 source 时要用到哪个 future 语句。</li>
-<li>optimize，指定编译器的优化级别；默认值 -1 选择与解释器的 -O 选项相同的优化级别。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source = <span class="string">&#x27;for i in range(3):print(i)&#x27;</span></span><br><span class="line">code = <span class="built_in">compile</span>(source,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;exec&#x27;</span>)</span><br><span class="line">code</span><br></pre></td></tr></table></figure>
+    delattr(x, &#39;y&#39;) is equivalent to ``del x.y&#39;&#39;</code></pre>
+<p>实参是一个对象和一个字符串。该字符串必须是对象的某个属性。如果对象允许，该函数将删除指定的属性。<code>delattr(x, &#39;y&#39;)</code> 等价于 <code>del x.y</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    y = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">x = A</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;code object &lt;module&gt; at 0x000001E999B07780, file &quot;null&quot;, line 1&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec(code)</span><br></pre></td></tr></table></figure>
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">delattr</span>(x,<span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(code)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.y</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-12-3552434a3e61&gt; in &lt;module&gt;
+----&gt; 1 x.y
+
+
+AttributeError: type object &#39;A&#39; has no attribute &#39;y&#39;</code></pre>
 
       
     </div>
@@ -448,9 +434,6 @@ compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -541,7 +524,6 @@ compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
   
 
   
-
 
 </body>
 </html>

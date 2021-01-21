@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/03_escape_character-0e7ec5224234/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/05_str.replace-4e8bbf22ea43/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/03_escape_character-0e7ec5224234/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/05_str.replace-4e8bbf22ea43/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>871</span>
+      <span>436</span>
     </span>
 </div>
 
@@ -347,133 +345,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>转义字符 <code>\</code> 本身不被当作字符，如果要表示一个字符 <code>\</code>，需要自己将自己转义：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\\&#x27;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="str-replace-替换"><a href="#str-replace-替换" class="headerlink" title="str.replace 替换"></a>str.replace 替换</h2><p>字符串方法 str.replace()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.replace)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Help on method_descriptor:
+
+replace(self, old, new, count=-1, /)
+    Return a copy with all occurrences of substring old replaced by new.
+
+      count
+        Maximum number of occurrences to replace.
+        -1 (the default value) means replace all occurrences.
+
+    If the optional argument count is given, only the first count occurrences are
+    replaced.</code></pre>
+<p>返回字符串的副本，其中出现的所有子字符串 old 都将被替换为 new。如果给出了可选参数 count，则只替换前 count 次出现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.replace(<span class="string">&#x27;p&#x27;</span>,<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;\\&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>  File &quot;&lt;ipython-input-2-d44a383620ab&gt;&quot;, line 1
-    &#39;\&#39;
-       ^
-SyntaxError: EOL while scanning string literal</code></pre>
-<p>上面这一行报错信息是 SyntaxError: EOL while scanning string literal。这是因为 <code>\&#39;</code> 表示的是单引号字符 <code>&#39;</code>（Literal）—— 是可被输出到屏幕的 <code>&#39;</code>，而不是用来标示字符串的那个 <code>&#39;</code>—— 别急，无论哪个初学者第一次读到前面的句子都觉得有点莫名其妙…… —— 于是，Python 编译器扫描这个 “字符串” 的时候，还没找到标示字符串末尾的另外一个 <code>&#39;</code> 的时候就读到了 EOL（End Of Line）。</p>
-<p>如果你想输出这么个字符串，He said, it’s fine.，如果用双引号扩起来 <code>&quot;</code> 倒没啥问题，但是如果用单引号扩起来就麻烦了，因为编译器会把 it 后面的那个单引号 <code>&#39;</code> 当作字符串结尾。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;He said, it&#x27;</span>s fine.<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>  File &quot;&lt;ipython-input-3-2bcf2ca6dd95&gt;&quot;, line 1
-    &#39;He said, it&#39;s fine.&#39;
-                 ^
-SyntaxError: invalid syntax</code></pre>
-<p>于是你就得用转义符 <code>\</code>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要么你这么写：</span></span><br><span class="line">print(<span class="string">&#x27;He said, it\&#x27;s fine.&#x27;</span>)</span><br><span class="line"><span class="comment"># 要么你这么写：</span></span><br><span class="line">print(<span class="string">&quot;He said, it&#x27;s fine.&quot;</span>)</span><br><span class="line"><span class="comment"># 要么，不管用单引号还是双引号标示字符串，</span></span><br><span class="line"><span class="comment"># 都习惯于用 \&#x27; 和 \&quot; 书写属于字符串内部的引号……</span></span><br><span class="line"><span class="string">&quot;He said, it\&#x27;s fine.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>He said, it&#39;s fine.
-He said, it&#39;s fine.
+<pre><code>&#39;Cython Cython&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.replace(<span class="string">&#x27;py&#x27;</span>,<span class="string">&#x27;Cpy&#x27;</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-
-&quot;He said, it&#39;s fine.&quot;</code></pre>
-<p>转义字符 <code>\</code> 可与其他字符组合成有特殊含义的字符：</p>
-<table>
-<thead>
-<tr>
-<th>转义字符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>\(在行尾时)</code></td>
-<td>续行符</td>
-</tr>
-<tr>
-<td><code>\\</code></td>
-<td>反斜杠符号</td>
-</tr>
-<tr>
-<td><code>\&#39;</code></td>
-<td>单引号</td>
-</tr>
-<tr>
-<td><code>\&quot;</code></td>
-<td>双引号</td>
-</tr>
-<tr>
-<td><code>\a</code></td>
-<td>响铃</td>
-</tr>
-<tr>
-<td><code>\b</code></td>
-<td>退格</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>换行</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>纵向制表符</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>横向制表符</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>回车</td>
-</tr>
-<tr>
-<td><code>\f</code></td>
-<td>换页</td>
-</tr>
-<tr>
-<td><code>\yy</code></td>
-<td>八进制数 yy 码位的字符</td>
-</tr>
-<tr>
-<td><code>\xyy</code></td>
-<td>十六进制数 yy 码位的字符</td>
-</tr>
-</tbody></table>
-<p>续航符，可以将两行代码（或字符串）连接起来，表示一行：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> \</span><br><span class="line"><span class="built_in">range</span>(<span class="number">3</span>): <span class="comment"># 两行相当于 for i in range(10):</span></span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
-
-<pre><code>0
-1
-2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;hello \</span></span><br><span class="line"><span class="string">world&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;Cpython python&#39;</code></pre>
+<p>如果 old 为空字符串，则在每个字符之间（包括前后）插入 new：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.replace(<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;hello world&#39;</code></pre>
-<p>八进制和十六进制字符举例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 八进制字符</span></span><br><span class="line"><span class="string">&#x27;\101&#x27;</span>, <span class="string">&#x27;\102&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;CpCyCtChCoCnC CpCyCtChCoCnC&#39;</code></pre>
+<p>如果 new 为空字符串，则相当于去除了 old：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python python&#x27;</span>.replace(<span class="string">&#x27;p&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;A&#39;, &#39;B&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 十六进制字符</span></span><br><span class="line"><span class="string">&#x27;\x41&#x27;</span>, <span class="string">&#x27;\x42&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;A&#39;, &#39;B&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 十进制</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>),<span class="built_in">chr</span>(<span class="number">66</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;A&#39;, &#39;B&#39;)</code></pre>
-<p>在正则表达式中，转义字符 <code>\</code> 的应用更加普遍。详情请看<a target="_blank" rel="noopener" href="https://xue.cn/hub/app/books/21">《正则指引》</a>。</p>
+<pre><code>&#39;ython ython&#39;</code></pre>
 
       
     </div>
@@ -532,9 +444,6 @@ He said, it&#39;s fine.
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -625,7 +534,6 @@ He said, it&#39;s fine.
   
 
   
-
 
 </body>
 </html>

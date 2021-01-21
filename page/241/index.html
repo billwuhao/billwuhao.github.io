@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/01_numeric/01_numeric-0f843faf1599/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/01_numeric/03_bool-af0e51c1aa10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/01_numeric/01_numeric-0f843faf1599/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/01_numeric/03_bool-af0e51c1aa10/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:11" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:11+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:27" itemprop="dateModified" datetime="2021-01-03T00:11:27+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:28" itemprop="dateModified" datetime="2021-01-03T00:11:28+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>349</span>
+      <span>696</span>
     </span>
 </div>
 
@@ -347,64 +345,90 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="数字类型概述"><a href="#数字类型概述" class="headerlink" title="数字类型概述"></a>数字类型概述</h2><p>数字类型属于内置类型。有三种不同的数字类型：整数，浮点数和复数。</p>
-<p>整数通常只有数字，浮点数有小数点，而复数有实部（省略则为 0）和虚部，虚部必须有 J 或 j。</p>
-<p>它们的类型分别是 int，float 和 complex。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="number">1</span>), <span class="built_in">type</span>(<span class="number">1.0</span>), <span class="built_in">type</span>(<span class="number">1j</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(int, float, complex)</code></pre>
-<p>它们虽然属于不同的类型，但 Python 完全支持其混合运算。</p>
-<p>而且布尔类型属于整数类型的子类型，布尔类型也可参与混合运算。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span>/<span class="number">3</span> + <span class="number">1.5</span> - <span class="number">1J</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(1.8333333333333333-1j)</code></pre>
-<p>数字之间比较时，比较的是它们的精度决定的精确值：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span> == <span class="number">1</span> == <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+          <h2 id="布尔值及布尔运算"><a href="#布尔值及布尔运算" class="headerlink" title="布尔值及布尔运算"></a>布尔值及布尔运算</h2><p>布尔值有 True 和 False，布尔类型是整数类型的子类型，所以整数的运算都适用布尔值运算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">issubclass</span>(<span class="built_in">bool</span>,<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<p>对于不同类型的数字，只要精确值相等，哈希值必定相等：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>(<span class="literal">True</span>) == <span class="built_in">hash</span>(<span class="number">1</span>) == <span class="built_in">hash</span>(<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span> + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>-2</code></pre>
+<p>任何对象都可以进行布尔值的检测，以便在 if 或 while 中作为条件或是作为下文所述布尔运算的操作数来使用。</p>
+<p>一个对象在默认情况下均被视为真值，除非当该对象被调用时其所属类定义了 <code>__bool__()</code> 方法且返回 False 或是定义了 <code>__len__()</code> 方法且返回零。</p>
+<p>下面基本完整地列出了会被视为假值的内置对象:</p>
+<ul>
+<li>被定义为假值的常量: None 和 False。</li>
+<li>任何数值类型的零: 0, 0.0, 0j, Decimal(0), Fraction(0, 1)</li>
+<li>空的序列和多项集: ‘’, (), [], {}, set(), range(0)</li>
+</ul>
+<p>可以使用内置函数 bool() 来查看任意对象的布尔值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span>(<span class="literal">None</span>), <span class="built_in">bool</span>(<span class="built_in">int</span>), <span class="built_in">bool</span>(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(False, True, False)</code></pre>
+<h2 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h2><p>布尔运算按优先级升序排列：</p>
+<ul>
+<li><code>x or y</code>, if x is false, then y, else x </li>
+<li><code>x and y</code>, if x is false, then x, else y </li>
+<li><code>not x</code>, if x is false, then True, else False </li>
+</ul>
+<p>任何值（包括表达式求值结果），除了自身之外，还有相应的逻辑值（布尔值），所以布尔运算符 or，and，not 可对任何值进行运算。</p>
+<p>举例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>&gt;<span class="number">2</span> <span class="keyword">or</span> <span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;python&#39;</code></pre>
+<p>1&gt;2 表达式结果为 False，所以布尔运算结果为 ‘python’。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>+<span class="number">1</span> <span class="keyword">or</span> <span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2</code></pre>
+<p>1+1 表达式结果为 2，布尔值为 True，所以布尔运算结果为 2。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>&gt;<span class="number">2</span> <span class="keyword">and</span> <span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<p>1&gt;2 表达式的结果为 False，所以布尔运算结果为 False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>&lt;<span class="number">2</span> <span class="keyword">and</span> <span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;python&#39;</code></pre>
+<p>1&lt;2 表达式的结果为 True，所以布尔运算结果为 ‘python’。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">not</span> <span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<p>‘python’ 的布尔值为 True，所以布尔运算结果为 False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">not</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<p>因此作为集合的元素时，它们是一个元素；作为字典的键时，是同一个键。但这不是明智之举，因为浮点数存在精度问题：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="literal">True</span>, <span class="number">1</span>, <span class="number">1.0</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;True&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="literal">True</span>:<span class="number">1</span>, <span class="number">1</span>:<span class="number">2</span>, <span class="number">1.0</span>:<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;True: 3&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.00000000000000009</span> == <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<p>整数，浮点数和复数的构造函数分别是：<a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/32_int.ipynb">int()</a>，<a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/21_float.ipynb">float()</a> 和 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/12_complex.ipynb">complex()</a>。构造细节详见相应内置函数知识点。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;1&#x27;</span>), <span class="built_in">float</span>(<span class="string">&#x27;1.0&#x27;</span>), <span class="built_in">complex</span>(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(1, 1.0, (1+0j))</code></pre>
-<p>关于各数字类型的特性和详细介绍见后面章节。</p>
+<p>0 的布尔值为 False，所以布尔运算结果为 True。</p>
 
       
     </div>
@@ -463,9 +487,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -556,7 +577,6 @@
   
 
   
-
 
 </body>
 </html>

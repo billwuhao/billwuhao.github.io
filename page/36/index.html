@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/01_function_summary-d6f4ee9a81d4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/03_formal_parameter-e773aef4e75c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/12_function/01_function_summary-d6f4ee9a81d4/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/12_function/03_formal_parameter-e773aef4e75c/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>345</span>
+      <span>1.5k</span>
     </span>
 </div>
 
@@ -347,52 +345,106 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="函数概述"><a href="#函数概述" class="headerlink" title="函数概述"></a>函数概述</h2><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。是可以向调用者返回某个值（至少是 None）的一组语句。</p>
-<p>函数使代码的组织模块化，提供了代码的利用率。例如 print() 函数实现打印功能，input() 函数实现输入功能，需要它们的地方，都可以使用。</p>
-<p>函数通过函数名称来使用它，传入零个或多个参数，并在函数体执行中被使用。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数 abs() 返回一个数的绝对值</span></span><br><span class="line">a = <span class="built_in">abs</span>(<span class="number">-3.14</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+          <h2 id="函数形参"><a href="#函数形参" class="headerlink" title="函数形参"></a>函数形参</h2><p>形参是函数定义中指定的参数名称。指定某个参数的形式，决定了该形参在函数调用时，可以接受实参的方式。关于实参详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/12_function/07_function_call.ipynb">函数调用</a>。</p>
+<p>因而形参分为五种：</p>
+<ul>
+<li>位置或关键字：指定一个可以作为 位置参数 传入也可以作为 关键字参数 传入的实参。这是默认的形参类型，但有默认值的形参必须置于无默认值的形参之后。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span></span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 位置实参传入</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 关键字实参传入</span></span><br><span class="line">f(b=<span class="number">2</span>,a=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2
+a=1,b=2</code></pre>
+<ul>
+<li>仅限位置：指定一个只能通过位置传入的参数。仅限位置形参通过在函数定义的形参之后包含一个 <code>/</code> 字符来定义。<code>/</code> 之前的参数为仅限位置形参，之后的形参为默认形参类型。有默认值的形参也必须置于无默认值的形参之后。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,/,c=<span class="literal">None</span></span>):</span> <span class="comment"># 因为 b 有默认值，c 必须要有默认值</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 按位置传参调用</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 关键字传参则不允许</span></span><br><span class="line">f(a=<span class="number">1</span>,b=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2,c=3
+
+
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-6-52b3afdaad4c&gt; in &lt;module&gt;
+      4 f(1,2,c=3)
+      5 # 关键字传参则不允许
+----&gt; 6 f(a=1,b=2)
+
+
+TypeError: f() got some positional-only arguments passed as keyword arguments: &#39;a, b&#39;</code></pre>
+<ul>
+<li>仅限关键字：指定一个只能通过关键字传入的参数。仅限关键字形参可通过在函数定义的形参中包含单个 可变位置形参 或者在形参之前放一个 <code>*</code> 来定义。可变位置形参 或 <code>*</code> 之后的参数为仅限关键字形参。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*a,b=<span class="literal">None</span>,c=<span class="literal">None</span></span>):</span> <span class="comment"># b 和 c 必须有默认值</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 位置传参将被解读为可变位置参数</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 关键字传参</span></span><br><span class="line">f(<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=(1, 2, 3),b=None,c=None
+a=(1,),b=2,c=3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*,a,b=<span class="literal">None</span>,c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 关键字传参</span></span><br><span class="line">f(b=<span class="number">2</span>,a=<span class="number">1</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 位置传参不允许</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2,c=3
+
+
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-1-9d584fa28622&gt; in &lt;module&gt;
+      4 f(b=2,a=1,c=3)
+      5 # 位置传参不允许
+----&gt; 6 f(1,2,3)
+
+
+TypeError: f() takes 0 positional arguments but 3 were given</code></pre>
+<ul>
+<li>可变位置：指定一个可以接受任意数量的位置参数传入的参数。这种形参可通过在形参名称前加缀 <code>*</code> 来定义，并将接受到的参数封装成一个元组。该参数如果接受到了实参，它前面的参数必须为仅限位置参数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,*c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># c 没有接受参数</span></span><br><span class="line">f(<span class="number">1</span>); f(b=<span class="number">2</span>,a=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># c 接受到了参数</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=None,c=()
+a=1,b=2,c=()
+a=1,b=2,c=(3, 4, 5)</code></pre>
+<ul>
+<li>可变关键字：指定一个可以接受任意数量的关键字参数的参数。这种形参可通过在形参名称前加缀 <code>**</code> 来定义，并将接受到的参数封装成一个字典。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,**c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>,d=<span class="number">4</span>)</span><br><span class="line">f(d=<span class="number">4</span>,b=<span class="number">2</span>,a=<span class="number">1</span>,c=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2,c=&#123;&#39;c&#39;: 3, &#39;d&#39;: 4&#125;
+a=1,b=2,c=&#123;&#39;d&#39;: 4, &#39;c&#39;: 3&#125;</code></pre>
+<p>带默认值的参数，可变位置参数和可变关键字参数，调用函数时可以不传参。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=<span class="number">1</span>,*b,c=<span class="number">3</span>,**d</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>,d=<span class="subst">&#123;d&#125;</span>&#x27;</span>)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=(),c=3,d=&#123;&#125;</code></pre>
+<p>默认值只会执行一次，这条规则很重要。如果参数有默认值且为可变对象，则需要做必要的限制：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=[]</span>):</span></span><br><span class="line">    print(<span class="built_in">id</span>(a))</span><br><span class="line">    a.append(<span class="number">1</span>)</span><br><span class="line">    print(a)</span><br><span class="line">f() <span class="comment"># 多次调用会引用参数指向的同一个对象</span></span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>2399568560064
+[1]
+2399568560064
+[1, 1]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以拷贝一个副本</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=[]</span>):</span></span><br><span class="line">    b = a.copy()</span><br><span class="line">    b.append(<span class="number">1</span>)</span><br><span class="line">    print(b)</span><br><span class="line">f()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1]
+[1]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 或者修改参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="literal">None</span>:</span><br><span class="line">        a = []</span><br><span class="line">        a.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a.append(<span class="number">1</span>)</span><br><span class="line">    print(a)</span><br><span class="line">    </span><br><span class="line">f()</span><br><span class="line">f([])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1]
+[1]</code></pre>
+<p>函数的形参可以使用标注，标注的语法是参数后面接一个冒号 <code>:</code>，然后接一个表达式（任意表达式），通常用来指明应该（不是必须）传递什么类型的参数等。标注提高了代码的可读性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a 标注为字符串类型，b 标注为整数，并设置默认值 2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a:<span class="built_in">str</span>,b:<span class="built_in">int</span>=<span class="number">2</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> a*b</span><br><span class="line">f(<span class="string">&#x27;Hi&#x27;</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>3.14</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print() 函数打印传入的参数值，返回 None</span></span><br><span class="line">n = print(<span class="string">&#x27;hello, world&#x27;</span>)</span><br><span class="line">n <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>hello, world
+<pre><code>&#39;HiHiHi&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a:<span class="string">&#x27;字符串&#x27;</span>,b:<span class="string">&#x27;整数&#x27;</span>=<span class="number">2</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> a*b</span><br><span class="line">f(<span class="string">&#x27;Hi&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-
-True</code></pre>
-<p>按照上述定义，类也被称作函数（例如内置函数 int，list 等）。</p>
-<p>我们通常所说的函数，是指使用 def 语句和 lambda 表达式定义的函数。</p>
-<p>而在类内部定义，使用属性表示法来调用的函数，我们习惯称作方法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># int 类实例化返回整数对象</span></span><br><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>, <span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list 类的方法 append 将一个对象加入列表中，返回值为 None</span></span><br><span class="line">a = []</span><br><span class="line">b = <span class="built_in">list</span>.append(a,<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line">a, b <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>([&#39;123&#39;], True)</code></pre>
-<p>函数有内置函数和内置方法，用户也可以自定义函数和方法。定义了一个函数，即创建了一个函数对象，可以通过函数名和必要的参数调用它。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_sum</span>(<span class="params">lst</span>):</span></span><br><span class="line">    <span class="string">&#x27;将列表中的字符串数字转为数字求和&#x27;</span> <span class="comment"># 函数文档说明</span></span><br><span class="line">    </span><br><span class="line">    rlt = <span class="built_in">sum</span>(<span class="built_in">map</span>(<span class="built_in">float</span>,lst)) <span class="comment"># 调用内置函数求值</span></span><br><span class="line">    <span class="keyword">return</span> rlt <span class="comment"># 返回结果</span></span><br><span class="line"></span><br><span class="line">my_sum([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;3.14&#x27;</span>,<span class="number">2</span>]) <span class="comment"># 调用自定义函数</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>6.140000000000001</code></pre>
+<pre><code>&#39;HiHi&#39;</code></pre>
 
       
     </div>
@@ -451,9 +503,6 @@ True</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -544,7 +593,6 @@ True</code></pre>
   
 
   
-
 
 </body>
 </html>

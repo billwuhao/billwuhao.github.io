@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/20_str.startswith-07f6befc6992/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/22_str.ljust-bae7ddf7179b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/20_str.startswith-07f6befc6992/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/22_str.ljust-bae7ddf7179b/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>434</span>
+      <span>303</span>
     </span>
 </div>
 
@@ -347,49 +345,34 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-startswith-指定字符串开头？"><a href="#str-startswith-指定字符串开头？" class="headerlink" title="str.startswith 指定字符串开头？"></a>str.startswith 指定字符串开头？</h2><p>字符串方法 str.startswith()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.startswith)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-ljust-左对齐"><a href="#str-ljust-左对齐" class="headerlink" title="str.ljust 左对齐"></a>str.ljust 左对齐</h2><p>字符串方法 str.ljust()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.ljust)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-startswith(...)
-    S.startswith(prefix[, start[, end]]) -&gt; bool
+ljust(self, width, fillchar=&#39; &#39;, /)
+    Return a left-justified string of length width.
 
-    Return True if S starts with the specified prefix, False otherwise.
-    With optional start, test S beginning at that position.
-    With optional end, stop comparing S at that position.
-    prefix can also be a tuple of strings to try.</code></pre>
-<p>如果字符串以指定的 prefix 开始则返回 True，否则返回 False。prefix 也可以为由多个供查找的前缀构成的元组。如果有可选项 start，将从所指定位置开始检查。如果有可选项 end，将在所指定位置之前停止比较。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;ab&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    Padding is done using the specified fill character (default is a space).</code></pre>
+<p>返回长度为 width 的字符串，原字符串在其中靠左对齐。使用指定的 fillchar 填充空位 (默认使用 ASCII 空格符)。如果 width 小于等于字符串长度 len(str) 则返回原字符串的副本。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.ljust(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;a.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;python&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.ljust(<span class="number">10</span>,<span class="string">&#x27;~&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;ab&#x27;</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;python~~~~&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.ljust(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;a.&#x27;</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a.b.a.c&#x27;</span>.startswith(<span class="string">&#x27;a&#x27;</span>,<span class="number">1</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
+<pre><code>&#39;python    &#39;</code></pre>
 
       
     </div>
@@ -448,9 +431,6 @@ startswith(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -541,7 +521,6 @@ startswith(...)
   
 
   
-
 
 </body>
 </html>

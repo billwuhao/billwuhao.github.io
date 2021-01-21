@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/13_class-a55bb6356b87/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/15_raise-eecf40bbbddf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/13_class-a55bb6356b87/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/15_raise-eecf40bbbddf/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>255</span>
+      <span>2.9k</span>
     </span>
 </div>
 
@@ -347,38 +345,159 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="class-定义类"><a href="#class-定义类" class="headerlink" title="class 定义类"></a>class 定义类</h2><p>class 语句用来定义类，语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@assignment_expression</span><br><span class="line">class classname(argument_list):</span><br><span class="line">    suite</span><br></pre></td></tr></table></figure>
+          <h2 id="raise-语句"><a href="#raise-语句" class="headerlink" title="raise 语句"></a>raise 语句</h2><p>raise 语句用来引发异常。语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raise expression from expression</span><br></pre></td></tr></table></figure>
 
-<p>其中的装饰器 <code>@assignment_expression</code>，基类参数及圆括号 <code>(argument_list)</code> 是可选项。</p>
-<p>类定义是一条可执行语句。它执行时会将类名称 classname 绑定到一个新建的类对象。</p>
-<p>没有继承基类参数 argument_list 的类默认继承自基类 object。下列是一个必选参数定义的类，默认继承自 object:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个类名为 A 的类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span> <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">A.__bases__ <span class="comment"># 查看基类</span></span><br></pre></td></tr></table></figure>
+<p>如果不带表达式，raise 会重新引发当前作用域内最后一个激活的异常。如果当前作用域内没有激活的异常，将会引发 RuntimeError 来提示错误。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
 
 
+<pre><code>---------------------------------------------------------------------------
+
+RuntimeError                              Traceback (most recent call last)
+
+&lt;ipython-input-1-9c9a2cba73bf&gt; in &lt;module&gt;
+----&gt; 1 raise
 
 
-<pre><code>(object,)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个类 B 继承自 int 和 A</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params"><span class="built_in">int</span>, A</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">B.__bases__</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(int, __main__.A)</code></pre>
-<p>类也可以被装饰，就像装饰函数一样，装饰器表达式的求值规则与函数装饰器相同（详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/10_def.ipynb">def 定义函数</a>）。结果随后会被绑定到类名称。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@str</span></span><br><span class="line"><span class="meta">@type</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span> <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">C</span><br></pre></td></tr></table></figure>
+RuntimeError: No active exception to reraise</code></pre>
+<p>raise 会将第一个表达式求值为异常对象。它必须为 BaseException 的子类或实例。如果它是一个类，当需要时会通过不带参数地实例化该类来获得异常的实例。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(ZeroDivisionError)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&quot;&lt;class &#39;type&#39;&gt;&quot;</code></pre>
-<p>大致相当于：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span> <span class="keyword">pass</span></span><br><span class="line">C = <span class="built_in">str</span>(<span class="built_in">type</span>(C))</span><br><span class="line">C</span><br></pre></td></tr></table></figure>
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> ZeroDivisionError <span class="comment"># 无提示信息</span></span><br></pre></td></tr></table></figure>
 
 
+<pre><code>---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-2-798b08d1683c&gt; in &lt;module&gt;
+----&gt; 1 raise ZeroDivisionError # 无提示信息
 
 
-<pre><code>&quot;&lt;class &#39;type&#39;&gt;&quot;</code></pre>
+ZeroDivisionError: </code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> ZeroDivisionError(<span class="string">&#x27;分母不能为 0&#x27;</span>) <span class="comment"># 自定义提示信息</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-17-950b4accf1f2&gt; in &lt;module&gt;
+----&gt; 1 raise ZeroDivisionError(&#39;分母不能为 0&#39;) # 自定义提示信息
+
+
+ZeroDivisionError: 分母不能为 0</code></pre>
+<p>from 子句用于异常串连：如果有该子句，则第二个表达式必须为另一个异常类或实例，它将被关联到所引发的异常:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> IndexError(<span class="string">&quot;索引错误&quot;</span>) <span class="keyword">from</span> NameError(<span class="string">&#x27;名称错误&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+NameError: 名称错误
+
+
+The above exception was the direct cause of the following exception:
+
+
+IndexError                                Traceback (most recent call last)
+
+&lt;ipython-input-18-124f83b49e6f&gt; in &lt;module&gt;
+----&gt; 1 raise IndexError(&quot;索引错误&quot;) from NameError(&#39;名称错误&#39;)
+
+
+IndexError: 索引错误</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="number">1</span> / <span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">raise</span> RuntimeError(<span class="string">&quot;Something bad happened&quot;</span>) <span class="keyword">from</span> e</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-13-83aaca0b7e7f&gt; in &lt;module&gt;
+      1 try:
+----&gt; 2     print(1 / 0)
+      3 except Exception as e:
+
+
+ZeroDivisionError: division by zero
+
+
+The above exception was the direct cause of the following exception:
+
+
+RuntimeError                              Traceback (most recent call last)
+
+&lt;ipython-input-13-83aaca0b7e7f&gt; in &lt;module&gt;
+      2     print(1 / 0)
+      3 except Exception as e:
+----&gt; 4     raise RuntimeError(&quot;Something bad happened&quot;) from e
+
+
+RuntimeError: Something bad happened</code></pre>
+<p>如果一个异常在异常处理器或 finally 中被引发，类似的机制会隐式地发挥作用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="number">1</span> / <span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">raise</span> RuntimeError(<span class="string">&quot;Something bad happened&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-16-5576c5c08e42&gt; in &lt;module&gt;
+      1 try:
+----&gt; 2     print(1 / 0)
+      3 except:
+
+
+ZeroDivisionError: division by zero
+
+
+During handling of the above exception, another exception occurred:
+
+
+RuntimeError                              Traceback (most recent call last)
+
+&lt;ipython-input-16-5576c5c08e42&gt; in &lt;module&gt;
+      2     print(1 / 0)
+      3 except:
+----&gt; 4     raise RuntimeError(&quot;Something bad happened&quot;)
+
+
+RuntimeError: Something bad happened</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="number">1</span> / <span class="number">0</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="keyword">raise</span> RuntimeError(<span class="string">&quot;Something bad happened&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-15-8b172672db5a&gt; in &lt;module&gt;
+      1 try:
+----&gt; 2     print(1 / 0)
+      3 finally:
+
+
+ZeroDivisionError: division by zero
+
+
+During handling of the above exception, another exception occurred:
+
+
+RuntimeError                              Traceback (most recent call last)
+
+&lt;ipython-input-15-8b172672db5a&gt; in &lt;module&gt;
+      2     print(1 / 0)
+      3 finally:
+----&gt; 4     raise RuntimeError(&quot;Something bad happened&quot;)
+
+
+RuntimeError: Something bad happened</code></pre>
 
       
     </div>
@@ -437,9 +556,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -530,7 +646,6 @@
   
 
   
-
 
 </body>
 </html>

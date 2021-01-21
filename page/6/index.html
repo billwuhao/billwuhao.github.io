@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/10_scope-270e01ad9591/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/12_attribute_operation-a07d7d2d9358/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/16_class/10_scope-270e01ad9591/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/16_class/12_attribute_operation-a07d7d2d9358/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:50" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:50+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:42" itemprop="dateModified" datetime="2021-01-03T00:11:42+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:43" itemprop="dateModified" datetime="2021-01-03T00:11:43+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>3.7k</span>
+      <span>2.1k</span>
     </span>
 </div>
 
@@ -347,210 +345,136 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域定义了一个代码块中名称的可见性。如果代码块中定义了一个局部变量，则其作用域包含该代码块。如果定义发生于函数代码块中，则其作用域会扩展到该函数所包含的任何代码块，除非有某个被包含代码块引入了对该名称的不同绑定。</p>
-<p>当一个名称在代码块中被使用时，会由包含它的最近作用域来解析。对一个代码块可见的所有这种作用域的集合称为该代码块的环境。</p>
-<p>一个作用域是一个 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/16_class/09_namespace.ipynb">命名空间</a> 可直接访问的 Python 程序的文本区域。这里的 “可直接访问” 意味着对名称的非限定引用（限定引用指点号表达式例如 math.pi）会尝试在命名空间中查找名称。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局变量作用域为当前模块</span></span><br><span class="line">a = <span class="string">&#x27;全局变量&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="comment"># print 内置名称作用域包含全局</span></span><br><span class="line">    print(<span class="string">f&#x27;print 函数的命名空间可以访问：<span class="subst">&#123;a&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&#x27;f 的命名空间可以访问：<span class="subst">&#123;a&#125;</span>&#x27;</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(f())</span><br></pre></td></tr></table></figure>
-
-<pre><code>全局变量
-print 函数的命名空间可以访问：全局变量
-f 的命名空间可以访问：全局变量</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局变量作用域为当前模块</span></span><br><span class="line"><span class="comment"># 但被包含命名空间引入了同名的局部变量</span></span><br><span class="line">a = <span class="string">&#x27;全局变量&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="comment"># f 中定义的局部变量</span></span><br><span class="line">    <span class="comment"># 作用域为函数内部</span></span><br><span class="line">    a = <span class="string">&#x27;局部变量&#x27;</span></span><br><span class="line">    print(<span class="string">f&#x27;print 函数的命名空间可以访问：<span class="subst">&#123;a&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&#x27;f 的命名空间可以访问：<span class="subst">&#123;a&#125;</span>&#x27;</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(f())</span><br></pre></td></tr></table></figure>
-
-<pre><code>全局变量
-print 函数的命名空间可以访问：局部变量
-f 的命名空间可以访问：局部变量</code></pre>
-<p>虽然作用域是静态地确定的，但它们会被动态地使用。嵌套作用域的搜索顺序:</p>
-<ul>
-<li>最先搜索最内部作用域包含的局部名称</li>
-<li>从最近的封闭作用域开始搜索作用域包含的名称</li>
-<li>倒数第二个作用域包含当前模块的全局名称</li>
-<li>最外面的作用域（最后搜索）是包含内置名称的命名空间</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索最内部作用域名称 str</span></span><br><span class="line"><span class="comment"># 屏蔽上层作用域</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="built_in">str</span> = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">        <span class="built_in">str</span> = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span></span><br><span class="line">    <span class="keyword">return</span> f1()</span><br><span class="line"></span><br><span class="line">f(), <span class="built_in">str</span></span><br></pre></td></tr></table></figure>
+          <h2 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h2><p>Python 是动态语言，对象的属性不仅可以查看、访问、调用，还可以动态地增、删、改。</p>
+<p>下面定义一个没有自定义属性的类 A 举例：</p>
+<p>dir() 函数查看属性，双下划线 <code>__</code> 包围的属性是继承自 object 的特殊属性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个类，查看属性</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span>(A)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(1, str)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索最近封闭作用域名称 str</span></span><br><span class="line"><span class="comment"># 屏蔽上层作用域</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="built_in">str</span> = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span></span><br><span class="line">    <span class="keyword">return</span> f1()</span><br><span class="line"></span><br><span class="line">f(), <span class="built_in">str</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(0, str)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索当前模块作用域名称 str</span></span><br><span class="line"><span class="comment"># 屏蔽上层作用域</span></span><br><span class="line"><span class="built_in">str</span> = <span class="string">&#x27;当前模块str&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span></span><br><span class="line">    <span class="keyword">return</span> f1()</span><br><span class="line"></span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;当前模块str&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索最外面作用域名称 str</span></span><br><span class="line"><span class="comment"># 删除前面对 str 的绑定</span></span><br><span class="line"><span class="keyword">del</span> <span class="built_in">str</span></span><br><span class="line"><span class="comment"># 注意，运行多次会将内置名称 str 都删除</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span></span><br><span class="line">    <span class="keyword">return</span> f1()</span><br><span class="line"></span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>str</code></pre>
-<p>可见，当前模块中的全局名称，最好不要和内置名称相同，它会屏蔽掉内置名称，从而不可以直接使用内置功能。内置名称如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> builtins</span><br><span class="line"><span class="built_in">dir</span>(builtins)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;ArithmeticError&#39;,
- &#39;AssertionError&#39;,
- &#39;AttributeError&#39;,
- &#39;BaseException&#39;,
- &#39;BlockingIOError&#39;,
- &#39;BrokenPipeError&#39;,
- &#39;BufferError&#39;,
- &#39;BytesWarning&#39;,
- &#39;ChildProcessError&#39;,
- &#39;ConnectionAbortedError&#39;,
- &#39;ConnectionError&#39;,
- &#39;ConnectionRefusedError&#39;,
- &#39;ConnectionResetError&#39;,
- &#39;DeprecationWarning&#39;,
- &#39;EOFError&#39;,
- &#39;Ellipsis&#39;,
- &#39;EnvironmentError&#39;,
- &#39;Exception&#39;,
- &#39;False&#39;,
- &#39;FileExistsError&#39;,
- &#39;FileNotFoundError&#39;,
- &#39;FloatingPointError&#39;,
- &#39;FutureWarning&#39;,
- &#39;GeneratorExit&#39;,
- &#39;IOError&#39;,
- &#39;ImportError&#39;,
- &#39;ImportWarning&#39;,
- &#39;IndentationError&#39;,
- &#39;IndexError&#39;,
- &#39;InterruptedError&#39;,
- &#39;IsADirectoryError&#39;,
- &#39;KeyError&#39;,
- &#39;KeyboardInterrupt&#39;,
- &#39;LookupError&#39;,
- &#39;MemoryError&#39;,
- &#39;ModuleNotFoundError&#39;,
- &#39;NameError&#39;,
- &#39;None&#39;,
- &#39;NotADirectoryError&#39;,
- &#39;NotImplemented&#39;,
- &#39;NotImplementedError&#39;,
- &#39;OSError&#39;,
- &#39;OverflowError&#39;,
- &#39;PendingDeprecationWarning&#39;,
- &#39;PermissionError&#39;,
- &#39;ProcessLookupError&#39;,
- &#39;RecursionError&#39;,
- &#39;ReferenceError&#39;,
- &#39;ResourceWarning&#39;,
- &#39;RuntimeError&#39;,
- &#39;RuntimeWarning&#39;,
- &#39;StopAsyncIteration&#39;,
- &#39;StopIteration&#39;,
- &#39;SyntaxError&#39;,
- &#39;SyntaxWarning&#39;,
- &#39;SystemError&#39;,
- &#39;SystemExit&#39;,
- &#39;TabError&#39;,
- &#39;TimeoutError&#39;,
- &#39;True&#39;,
- &#39;TypeError&#39;,
- &#39;UnboundLocalError&#39;,
- &#39;UnicodeDecodeError&#39;,
- &#39;UnicodeEncodeError&#39;,
- &#39;UnicodeError&#39;,
- &#39;UnicodeTranslateError&#39;,
- &#39;UnicodeWarning&#39;,
- &#39;UserWarning&#39;,
- &#39;ValueError&#39;,
- &#39;Warning&#39;,
- &#39;WindowsError&#39;,
- &#39;ZeroDivisionError&#39;,
- &#39;__IPYTHON__&#39;,
- &#39;__build_class__&#39;,
- &#39;__debug__&#39;,
+<pre><code>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
  &#39;__doc__&#39;,
- &#39;__import__&#39;,
- &#39;__loader__&#39;,
- &#39;__name__&#39;,
- &#39;__package__&#39;,
- &#39;__spec__&#39;,
- &#39;abs&#39;,
- &#39;all&#39;,
- &#39;any&#39;,
- &#39;ascii&#39;,
- &#39;bin&#39;,
- &#39;bool&#39;,
- &#39;breakpoint&#39;,
- &#39;bytearray&#39;,
- &#39;bytes&#39;,
- &#39;callable&#39;,
- &#39;chr&#39;,
- &#39;classmethod&#39;,
- &#39;compile&#39;,
- &#39;complex&#39;,
- &#39;copyright&#39;,
- &#39;credits&#39;,
- &#39;delattr&#39;,
- &#39;dict&#39;,
- &#39;dir&#39;,
- &#39;display&#39;,
- &#39;divmod&#39;,
- &#39;enumerate&#39;,
- &#39;eval&#39;,
- &#39;exec&#39;,
- &#39;filter&#39;,
- &#39;float&#39;,
- &#39;format&#39;,
- &#39;frozenset&#39;,
- &#39;get_ipython&#39;,
- &#39;getattr&#39;,
- &#39;globals&#39;,
- &#39;hasattr&#39;,
- &#39;hash&#39;,
- &#39;help&#39;,
- &#39;hex&#39;,
- &#39;id&#39;,
- &#39;input&#39;,
- &#39;int&#39;,
- &#39;isinstance&#39;,
- &#39;issubclass&#39;,
- &#39;iter&#39;,
- &#39;len&#39;,
- &#39;license&#39;,
- &#39;list&#39;,
- &#39;locals&#39;,
- &#39;map&#39;,
- &#39;max&#39;,
- &#39;memoryview&#39;,
- &#39;min&#39;,
- &#39;next&#39;,
- &#39;object&#39;,
- &#39;oct&#39;,
- &#39;open&#39;,
- &#39;ord&#39;,
- &#39;pow&#39;,
- &#39;print&#39;,
- &#39;property&#39;,
- &#39;range&#39;,
- &#39;repr&#39;,
- &#39;reversed&#39;,
- &#39;round&#39;,
- &#39;set&#39;,
- &#39;setattr&#39;,
- &#39;slice&#39;,
- &#39;sorted&#39;,
- &#39;staticmethod&#39;,
- &#39;str&#39;,
- &#39;sum&#39;,
- &#39;super&#39;,
- &#39;tuple&#39;,
- &#39;type&#39;,
- &#39;vars&#39;,
- &#39;zip&#39;]</code></pre>
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 访问属性 __class__ 相当于调用 type() 函数</span></span><br><span class="line">A.__class__, A().__class__</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(type, __main__.A)</code></pre>
+<p>给类 A 及其实例动态添加属性，属性可以是数据属性和方法。类层级添加的属性，将作为所有实例的属性；实例添加的属性，只有对应的实例能访问。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加数据属性</span></span><br><span class="line">a1 = A()</span><br><span class="line">a2 = A()</span><br><span class="line">A.a = <span class="string">&#x27;类变量&#x27;</span></span><br><span class="line">a1.x = <span class="string">&#x27;a1 的属性&#x27;</span></span><br><span class="line">a2.y = <span class="string">&#x27;a2 的属性&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 类层级添加方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">    print(self.a)</span><br><span class="line"></span><br><span class="line">A.f = f</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 类 A 调用刚添加的属性</span></span><br><span class="line">A.f(a1)</span><br><span class="line">A.f(a2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>类变量
+类变量</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例调用刚添加的属性</span></span><br><span class="line">a1.f()</span><br><span class="line">a2.f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>类变量
+类变量</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例 a1 没有 y 属性</span></span><br><span class="line"><span class="comment"># 同理，a2 没有 x 属性</span></span><br><span class="line">a1.y </span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-44-178a7ac627a0&gt; in &lt;module&gt;
+      1 # 实例 a1 没有 y 属性
+      2 # 同理，a2 没有 x 属性
+----&gt; 3 a1.y
+
+
+AttributeError: &#39;A&#39; object has no attribute &#39;y&#39;</code></pre>
+<p>实例直接添加一个函数作为属性，将不会隐式地将自身作为第一个参数，而是和正常函数一样使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">p</span>(<span class="params">self</span>):</span></span><br><span class="line">    print(self)</span><br><span class="line"></span><br><span class="line">a1.p = p</span><br><span class="line">a1.p(<span class="string">&#x27;正常传参&#x27;</span>)</span><br><span class="line">a1.p()</span><br></pre></td></tr></table></figure>
+
+<pre><code>正常传参
+
+
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-45-4ebdece61250&gt; in &lt;module&gt;
+      4 a1.p = p
+      5 a1.p(&#39;正常传参&#39;)
+----&gt; 6 a1.p()
+
+
+TypeError: p() missing 1 required positional argument: &#39;self&#39;</code></pre>
+<p>如果要通过实例添加实例方法（第一个参数 self 即是自身的方法），可以通过 types 模块添加。添加的属性，类不可访问，只有对应的实例可访问：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改变了 a1 的上述 p 属性</span></span><br><span class="line">a1.p = MethodType(p, a1)</span><br><span class="line">a1.p()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;__main__.A object at 0x000001D40578D730&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.p</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-47-94cb580acfb0&gt; in &lt;module&gt;
+----&gt; 1 A.p
+
+
+AttributeError: type object &#39;A&#39; has no attribute &#39;p&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a2.p</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-48-29321b2aa581&gt; in &lt;module&gt;
+----&gt; 1 a2.p
+
+
+AttributeError: &#39;A&#39; object has no attribute &#39;p&#39;</code></pre>
+<p>删除属性使用 del 语句：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> a1.p</span><br><span class="line"></span><br><span class="line">a1.p()</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-49-9cf9b7e7dc86&gt; in &lt;module&gt;
+      1 del a1.p
+      2 
+----&gt; 3 a1.p()
+
+
+AttributeError: &#39;A&#39; object has no attribute &#39;p&#39;</code></pre>
 
       
     </div>
@@ -609,9 +533,6 @@ f 的命名空间可以访问：局部变量</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -702,7 +623,6 @@ f 的命名空间可以访问：局部变量</code></pre>
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/51_repr-57082d0ad0e2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/53_round-b3da53a89e3e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/51_repr-57082d0ad0e2/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/53_round-b3da53a89e3e/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>335</span>
+      <span>514</span>
     </span>
 </div>
 
@@ -347,41 +345,62 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="repr-返回对象的可打印字符串"><a href="#repr-返回对象的可打印字符串" class="headerlink" title="repr() 返回对象的可打印字符串"></a>repr() 返回对象的可打印字符串</h2><p>内置函数 repr()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">repr</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="round-数字舍入"><a href="#round-数字舍入" class="headerlink" title="round() 数字舍入"></a>round() 数字舍入</h2><p>内置函数 round()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">round</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function repr in module builtins:
+<pre><code>Help on built-in function round in module builtins:
 
-repr(obj, /)
-    Return the canonical string representation of the object.
+round(number, ndigits=None)
+    Round a number to a given precision in decimal digits.
 
-    For many object types, including most builtins, eval(repr(obj)) == obj.</code></pre>
-<p>返回包含一个对象的可打印表示形式的字符串。</p>
-<p>对于许多类型来说，该函数会尝试返回的字符串将会与该对象被传递给 eval() 时所生成的对象具有相同的值，在其他情况下表示形式会是一个括在尖括号中的字符串，其中包含对象类型的名称与通常包括对象名称和地址的附加信息。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">repr</span>(<span class="number">1</span>+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;2&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">repr</span>(<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
+    The return value is an integer if ndigits is omitted or None.  Otherwise
+    the return value has the same type as the number.  ndigits may be negative.</code></pre>
+<p>返回 number 舍入到小数点后 ndigits 位精度的值。如果 ndigits 被省略或为 None，则返回最接近输入值的整数。</p>
+<p>对于支持 round() 的内置类型，值会被舍入到最接近的 10 的负 ndigits 次幂的倍数；如果与两个倍数的距离相等，则选择偶数。</p>
+<p>任何整数值都可作为有效的 ndigits (正数、零或负数)。如果 ndigits 被省略或为 None 则返回值将为整数。否则返回值与 number 的类型相同。</p>
+<p>由于大多数十进制小数实际上都不能以浮点数精确地表示。返回值可能会不是预期的四舍五入结果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">3.14</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&quot;&lt;class &#39;int&#39;&gt;&quot;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="string">&#x27;python\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">3.14</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;python\n&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">repr</span>(<span class="string">&#x27;python\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>3.14</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">3.14</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&quot;&#39;python\\n&#39;&quot;</code></pre>
+<pre><code>3.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">13.14</span>,<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>10.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">2.5</span>), <span class="built_in">round</span>(<span class="number">-2.5</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2, -2)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">1.5</span>), <span class="built_in">round</span>(<span class="number">-1.5</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2, -2)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">2.675</span>, <span class="number">2</span>), <span class="built_in">round</span>(<span class="number">2.665</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2.67, 2.67)</code></pre>
 
       
     </div>
@@ -440,9 +459,6 @@ repr(obj, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -533,7 +549,6 @@ repr(obj, /)
   
 
   
-
 
 </body>
 </html>

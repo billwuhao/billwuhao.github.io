@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/10_list.pop-1a7a7fd85201/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/12_list.count-393923f676fe/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/03_list/10_list.pop-1a7a7fd85201/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/03_list/12_list.count-393923f676fe/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>472</span>
+      <span>152</span>
     </span>
 </div>
 
@@ -347,52 +345,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="list-pop-删除元素并返回"><a href="#list-pop-删除元素并返回" class="headerlink" title="list.pop 删除元素并返回"></a>list.pop 删除元素并返回</h2><p>列表方法 list.pop()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.pop)</span><br></pre></td></tr></table></figure>
+          <h2 id="list-count-统计元素出现次数"><a href="#list-count-统计元素出现次数" class="headerlink" title="list.count 统计元素出现次数"></a>list.count 统计元素出现次数</h2><p>列表方法 list.count()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.count)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-pop(self, index=-1, /)
-    Remove and return item at index (default last).
-
-    Raises IndexError if list is empty or index is out of range.</code></pre>
-<p>删除列表中给定位置的元素并返回它。如果没有给定位置，list.pop() 将会删除并返回列表中的最后一个元素。给定位置超出范围，抛出 IndexError 错误。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">_list.pop()</span><br></pre></td></tr></table></figure>
+count(self, value, /)
+    Return number of occurrences of value.</code></pre>
+<p>返回元素 value 在列表中出现的次数，没有出现为 0。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">_list.count(<span class="number">1</span>), _list.count([<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>4</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_list</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[1, 2, 3]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_list.pop(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_list</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[2, 3]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_list.pop(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-IndexError                                Traceback (most recent call last)
-
-&lt;ipython-input-4-efa5a84417c8&gt; in &lt;module&gt;
-----&gt; 1 _list.pop(5)
-
-
-IndexError: pop index out of range</code></pre>
+<pre><code>(2, 0)</code></pre>
 
       
     </div>
@@ -451,9 +417,6 @@ IndexError: pop index out of range</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -544,7 +507,6 @@ IndexError: pop index out of range</code></pre>
   
 
   
-
 
 </body>
 </html>

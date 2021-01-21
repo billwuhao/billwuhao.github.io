@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/14_list.copy-9f4dd5343e2c/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/04_tuple/01_tuple-0698666df6a8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/03_list/14_list.copy-9f4dd5343e2c/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/04_tuple/01_tuple-0698666df6a8/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>238</span>
+      <span>527</span>
     </span>
 </div>
 
@@ -347,36 +345,69 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="list-copy-列表的一个浅拷贝"><a href="#list-copy-列表的一个浅拷贝" class="headerlink" title="list.copy 列表的一个浅拷贝"></a>list.copy 列表的一个浅拷贝</h2><p>列表方法 list.copy()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.copy)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on method_descriptor:
-
-copy(self, /)
-    Return a shallow copy of the list.</code></pre>
-<p>返回列表的一个浅拷贝。相当于 a[:]（a 是一个列表）。浅拷贝得到新的列表，列表中有可变对象时，浅拷贝中的可变对象元素，是原列表中同一个对象的多次引用。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list_1 = [[<span class="number">1</span>],<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list_2 = list_1.copy()</span><br><span class="line">print(list_2)</span><br><span class="line"><span class="built_in">id</span>(list_1),<span class="built_in">id</span>(list_2)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[[1], 2, 3]
+          <h2 id="元组概述"><a href="#元组概述" class="headerlink" title="元组概述"></a>元组概述</h2><p>元组是不可变序列，通常用一对小括号包围元素，元素之间逗号隔开。元组的元素可以是任何对象。元组类型是 tuple：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>((<span class="number">1</span>,<span class="number">2</span>,[<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>]))</span><br></pre></td></tr></table></figure>
 
 
 
 
-
-(2622792783240, 2622792782728)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 同一个对象</span></span><br><span class="line"><span class="built_in">id</span>(list_1[<span class="number">0</span>]), <span class="built_in">id</span>(list_2[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(2622792782792, 2622792782792)</code></pre>
-<p>改变其中一个都会跟着改变：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list_1[<span class="number">0</span>][:] = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line">list_1, list_2</span><br></pre></td></tr></table></figure>
+<pre><code>tuple</code></pre>
+<p>空元组用一对圆括号表示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>([[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], 2, 3], [[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], 2, 3])</code></pre>
+<pre><code>()</code></pre>
+<p>单元组后面必须有一个逗号:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1,)</code></pre>
+<p>除了空元组，括号可以省略，因为决定生成元组的其实是逗号而不是圆括号，圆括号是可选的，但元组是更大的表达式的一部分或会产生语法歧义的情况，括号不能省略：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1,)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>, <span class="number">1</span>+<span class="number">1</span>, (<span class="string">&#x27;单元组&#x27;</span>,)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1, 2, (&#39;单元组&#39;,))</code></pre>
+<p>内置函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/62_tuple.ipynb">tuple()</a> 用来构造元组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tuple</span>(), <span class="built_in">tuple</span>(<span class="string">&#x27;123&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>((), (&#39;1&#39;, &#39;2&#39;, &#39;3&#39;))</code></pre>
+<p>当元组中包含可变对象（例如列表）时，元组本身不可变（不能增、删、改元组本身的元素），但包含的可变对象仍然具有它的可变性质及其操作，此时的元组不能再作为集合的元素或字典的键：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = ([<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="keyword">del</span> a[<span class="number">0</span>][:]</span><br><span class="line"><span class="built_in">id</span>(a), a</span><br></pre></td></tr></table></figure>
+
+<pre><code>2207053762176
+
+
+
+
+
+(2207053762176, ([], 3, 3))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;a&#125;</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-14-29dfa031a339&gt; in &lt;module&gt;
+----&gt; 1 &#123;a&#125;
+
+
+TypeError: unhashable type: &#39;list&#39;</code></pre>
 
       
     </div>
@@ -435,9 +466,6 @@ copy(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -528,7 +556,6 @@ copy(self, /)
   
 
   
-
 
 </body>
 </html>

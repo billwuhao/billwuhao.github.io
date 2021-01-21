@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/09_generator-66fc5b5fdcd5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/13_exception/02_handling-d20186248e3c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/12_function/09_generator-66fc5b5fdcd5/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/13_exception/02_handling-d20186248e3c/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -347,77 +345,70 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="生成器函数"><a href="#生成器函数" class="headerlink" title="生成器函数"></a>生成器函数</h2><p>函数定义中使用了 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/12_yield.ipynb">yield 语句</a>，该定义创建的函数是生成器函数。生成器函数通常也直接叫生成器。</p>
-<p>当一个生成器函数被调用的时候，它返回一个迭代器，也称为生成器（全称是生成器迭代器，下面所说生成器均指生成器迭代器）。然后通过这个生成器来控制生成器函数的执行。</p>
-<p>生成器是一个迭代器，也是一个可迭代对象。但一个生成器生成的 “元素” 只能被使用一次，原因如下：</p>
+          <h2 id="处理异常"><a href="#处理异常" class="headerlink" title="处理异常"></a>处理异常</h2><p>异常处理通过 try 语句（详细语法及使用规则见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/14_try.ipynb">try 语句</a>）来实现。</p>
+<p>通过 try 语句处理程序已经出现或可能出现异常，使代码能够继续执行，否则异常未被处理，程序终止执行。</p>
+<p>例如下列代码要求用户输入有效的整数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        x = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Please enter a number: &quot;</span>))</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        print(<span class="string">&quot;Oops! That was no valid number. Try again...&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Please enter a number:  3.14
+
+
+Oops! That was no valid number. Try again...
+
+
+Please enter a number:  314</code></pre>
+<p>try 语句的工作原理如下：</p>
 <ul>
-<li><p>迭代生成器的时候，生成器函数开始执行，执行到 yield，然后执行被挂起，给生成器的调用者返回 yield 之后的表达式的值。挂起后，所有局部状态都被保留下来，包括局部变量的当前绑定，指令指针，内部求值栈和任何异常处理的状态。</p>
+<li><p>首先执行 try 子句；</p>
 </li>
-<li><p>继续迭代生成器，生成器函数从挂起状态继续执行，执行到 yield，然后执行又被挂起，给生成器的调用者返回 yield 之后的表达式的值。</p>
+<li><p>如果没有异常发生，则跳过 except 子句并完成 try 语句的执行；</p>
 </li>
-<li><p>生成器迭代完成时，引发 StopIteration。</p>
+<li><p>如果在执行 try 子句时发生了异常，则跳过该子句中剩下的部分。然后，如果异常的类型和 except 关键字后面的异常匹配，则执行 except 子句，然后继续执行 try 语句之后的代码；</p>
+</li>
+<li><p>如果发生的异常和 except 子句中指定的异常不匹配，则将其传递到外部的 try 语句中；如果没有找到处理程序，则它是一个未处理异常，执行将停止并显示异常信息。</p>
 </li>
 </ul>
-<p>在一个生成器函数中，return 语句表示生成器已完成并将导致 StopIteration 被引发。返回值（如果有的话）会被当作一个参数用来构建 StopIteration 并成为 StopIteration.value 属性。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(g)</span><br></pre></td></tr></table></figure>
+<p>一个 try 语句可能有多个 except 子句，以指定不同异常的处理程序，但最多会执行一个处理程序。</p>
+<p>处理程序只处理相应的 try 子句中发生的异常。如果发生的异常和 except 子句中的类是同一个类或者是它的基类，则异常和 except 子句中的类是兼容的。如果首先处理了基类，子类不再被处理（子类也被基类处理了）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">Exception</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>(<span class="params">B</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>(<span class="params">C</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cls <span class="keyword">in</span> [B, C, D]:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">raise</span> cls()</span><br><span class="line">    <span class="keyword">except</span> D:</span><br><span class="line">        print(<span class="string">&quot;D&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> C:</span><br><span class="line">        print(<span class="string">&quot;C&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> B:</span><br><span class="line">        print(<span class="string">&quot;B&quot;</span>)</span><br></pre></td></tr></table></figure>
 
+<pre><code>B
+C
+D</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">Exception</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>(<span class="params">B</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>(<span class="params">C</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cls <span class="keyword">in</span> [B, C, D]:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">raise</span> cls()</span><br><span class="line">    <span class="keyword">except</span> B: <span class="comment"># 下列都是 B 的子类，不再被处理</span></span><br><span class="line">        print(<span class="string">&quot;B&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> C:</span><br><span class="line">        print(<span class="string">&quot;C&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> D:</span><br><span class="line">        print(<span class="string">&quot;D&quot;</span>)</span><br></pre></td></tr></table></figure>
 
+<pre><code>B
+B
+B</code></pre>
+<p>最后的 except 子句可以省略异常名，以用作通配符。但请谨慎使用，因为以这种方式很容易掩盖真正的编程错误！它还可用于打印错误消息，然后重新引发异常:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">3</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> v:</span><br><span class="line">    print(v)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">&quot;Unexpected error:&quot;</span>, sys.exc_info()[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
 
-
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">g = f(<span class="number">0</span>)</span><br><span class="line">print(f)</span><br><span class="line">print(g)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;function f at 0x000002480120ACA0&gt;
-&lt;generator object f at 0x000002480122E040&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(g) <span class="comment"># 迭代结束</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-StopIteration                             Traceback (most recent call last)
-
-&lt;ipython-input-3-c91425ed1388&gt; in &lt;module&gt;
-----&gt; 1 next(g) # 迭代结束
-
-
-StopIteration: </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    <span class="comment"># 生成器已完成，后面的不被执行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;end&#x27;</span></span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    </span><br><span class="line">g = f(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="built_in">next</span>(g))</span><br><span class="line">    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> s:</span><br><span class="line">        print(s.value) <span class="comment"># StopIteration.value 属性</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="comment"># 迭代结束，不能再次迭代生成器</span></span><br><span class="line"><span class="built_in">next</span>(g)</span><br></pre></td></tr></table></figure>
-
-<pre><code>0
-1
-2
-end
+<pre><code>Unexpected error: &lt;class &#39;ZeroDivisionError&#39;&gt;
 
 
 
 ---------------------------------------------------------------------------
 
-StopIteration                             Traceback (most recent call last)
+ZeroDivisionError                         Traceback (most recent call last)
 
-&lt;ipython-input-10-3ebb4e469fc1&gt; in &lt;module&gt;
-     19         break
-     20 # 迭代结束，不能再次迭代生成器
----&gt; 21 next(g)
-
-
-StopIteration: </code></pre>
-<p><code>yield from</code> 将可迭代对象中的每一项作为生成器的迭代项：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*args</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> args</span><br><span class="line"></span><br><span class="line">g = f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">next</span>(g),<span class="built_in">list</span>(g)</span><br></pre></td></tr></table></figure>
+&lt;ipython-input-13-f0b3e840c5ab&gt; in &lt;module&gt;
+      2 
+      3 try:
+----&gt; 4     3/0
+      5 except ValueError as v:
+      6     print(v)
 
 
+ZeroDivisionError: division by zero</code></pre>
+<p>可选的 else 子句，在使用时必须放在所有的 except 子句后面。对于在 try 子句不引发异常时必须执行的代码来说很有用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;../11_built-in_function/test.txt&#x27;</span>,</span><br><span class="line">             <span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> OSError:</span><br><span class="line">    print(<span class="string">&#x27;cannot open&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="built_in">len</span>(f.readlines()), <span class="string">&#x27;lines&#x27;</span>)</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure>
 
+<pre><code>3 lines</code></pre>
+<p>异常处理程序不仅处理 try 子句中遇到的异常，还处理 try 子句中调用（即使是间接地）的函数内部发生的异常。</p>
+<p>如果 try 子句中有多个可能的异常，只处理最先引发的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f() * <span class="built_in">int</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> v:</span><br><span class="line">    print(v)</span><br><span class="line"><span class="keyword">except</span>  ZeroDivisionError <span class="keyword">as</span> z:</span><br><span class="line">    print(z)</span><br></pre></td></tr></table></figure>
 
-<pre><code>(1, [2, 3])</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">arg</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> arg</span><br><span class="line"></span><br><span class="line">g = f(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line">print(<span class="built_in">list</span>(g))</span><br><span class="line"><span class="comment"># g 使用结束，再次使用什么也没有，创建了一个空列表</span></span><br><span class="line">print(<span class="built_in">list</span>(g))</span><br><span class="line"><span class="comment"># 如要再次使用可再创建一个生成器</span></span><br><span class="line"><span class="built_in">list</span>(f(<span class="string">&#x27;123&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]
-[]
-
-
-
-
-
-[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></pre>
+<pre><code>division by zero</code></pre>
 
       
     </div>
@@ -476,9 +467,6 @@ StopIteration: </code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -569,7 +557,6 @@ StopIteration: </code></pre>
   
 
   
-
 
 </body>
 </html>

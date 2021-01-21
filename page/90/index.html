@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/12_complex-607b524b27a6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/14_dict-8c6227f0ee7f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/12_complex-607b524b27a6/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/14_dict-8c6227f0ee7f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:36" itemprop="dateModified" datetime="2021-01-03T00:11:36+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:37" itemprop="dateModified" datetime="2021-01-03T00:11:37+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2.6k</span>
+      <span>2.8k</span>
     </span>
 </div>
 
@@ -347,45 +345,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="complex-创建复数"><a href="#complex-创建复数" class="headerlink" title="complex 创建复数"></a>complex 创建复数</h2><p>内置函数（类）complex，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="dict-创建字典"><a href="#dict-创建字典" class="headerlink" title="dict 创建字典"></a>dict 创建字典</h2><p>内置函数（类）dict，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class complex in module builtins:
+<pre><code>Help on class dict in module builtins:
 
-class complex(object)
- |  complex(real=0, imag=0)
- |  
- |  Create a complex number from a real part and an optional imaginary part.
- |  
- |  This is equivalent to (real + imag*1j) where imag defaults to 0.
+class dict(object)
+ |  dict() -&gt; new empty dictionary
+ |  dict(mapping) -&gt; new dictionary initialized from a mapping object&#39;s
+ |      (key, value) pairs
+ |  dict(iterable) -&gt; new dictionary initialized as if via:
+ |      d = &#123;&#125;
+ |      for k, v in iterable:
+ |          d[k] = v
+ |  dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+ |      in the keyword argument list.  For example:  dict(one=1, two=2)
  |  
  |  Methods defined here:
  |  
- |  __abs__(self, /)
- |      abs(self)
+ |  __contains__(self, key, /)
+ |      True if the dictionary has the specified key, else False.
  |  
- |  __add__(self, value, /)
- |      Return self+value.
- |  
- |  __bool__(self, /)
- |      self != 0
- |  
- |  __divmod__(self, value, /)
- |      Return divmod(self, value).
+ |  __delitem__(self, key, /)
+ |      Delete self[key].
  |  
  |  __eq__(self, value, /)
  |      Return self==value.
- |  
- |  __float__(self, /)
- |      float(self)
- |  
- |  __floordiv__(self, value, /)
- |      Return self//value.
- |  
- |  __format__(...)
- |      complex.__format__() -&gt; str
- |      
- |      Convert to a string according to format_spec.
  |  
  |  __ge__(self, value, /)
  |      Return self&gt;=value.
@@ -393,78 +378,81 @@ class complex(object)
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
  |  
- |  __getnewargs__(...)
+ |  __getitem__(...)
+ |      x.__getitem__(y) &lt;==&gt; x[y]
  |  
  |  __gt__(self, value, /)
  |      Return self&gt;value.
  |  
- |  __hash__(self, /)
- |      Return hash(self).
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
  |  
- |  __int__(self, /)
- |      int(self)
+ |  __iter__(self, /)
+ |      Implement iter(self).
  |  
  |  __le__(self, value, /)
  |      Return self&lt;=value.
  |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
  |  __lt__(self, value, /)
  |      Return self&lt;value.
- |  
- |  __mod__(self, value, /)
- |      Return self%value.
- |  
- |  __mul__(self, value, /)
- |      Return self*value.
  |  
  |  __ne__(self, value, /)
  |      Return self!=value.
  |  
- |  __neg__(self, /)
- |      -self
- |  
- |  __pos__(self, /)
- |      +self
- |  
- |  __pow__(self, value, mod=None, /)
- |      Return pow(self, value, mod).
- |  
- |  __radd__(self, value, /)
- |      Return value+self.
- |  
- |  __rdivmod__(self, value, /)
- |      Return divmod(value, self).
- |  
  |  __repr__(self, /)
  |      Return repr(self).
  |  
- |  __rfloordiv__(self, value, /)
- |      Return value//self.
+ |  __setitem__(self, key, value, /)
+ |      Set self[key] to value.
  |  
- |  __rmod__(self, value, /)
- |      Return value%self.
+ |  __sizeof__(...)
+ |      D.__sizeof__() -&gt; size of D in memory, in bytes
  |  
- |  __rmul__(self, value, /)
- |      Return value*self.
+ |  clear(...)
+ |      D.clear() -&gt; None.  Remove all items from D.
  |  
- |  __rpow__(self, value, mod=None, /)
- |      Return pow(value, self, mod).
+ |  copy(...)
+ |      D.copy() -&gt; a shallow copy of D
  |  
- |  __rsub__(self, value, /)
- |      Return value-self.
+ |  get(self, key, default=None, /)
+ |      Return the value for key if key is in the dictionary, else default.
  |  
- |  __rtruediv__(self, value, /)
- |      Return value/self.
+ |  items(...)
+ |      D.items() -&gt; a set-like object providing a view on D&#39;s items
  |  
- |  __sub__(self, value, /)
- |      Return self-value.
+ |  keys(...)
+ |      D.keys() -&gt; a set-like object providing a view on D&#39;s keys
  |  
- |  __truediv__(self, value, /)
- |      Return self/value.
+ |  pop(...)
+ |      D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
+ |      If key is not found, d is returned if given, otherwise KeyError is raised
  |  
- |  conjugate(...)
- |      complex.conjugate() -&gt; complex
+ |  popitem(...)
+ |      D.popitem() -&gt; (k, v), remove and return some (key, value) pair as a
+ |      2-tuple; but raise KeyError if D is empty.
+ |  
+ |  setdefault(self, key, default=None, /)
+ |      Insert key with a value of default if key is not in the dictionary.
  |      
- |      Return the complex conjugate of its argument. (3-4j).conjugate() == 3+4j.
+ |      Return the value for key if key is in the dictionary, else default.
+ |  
+ |  update(...)
+ |      D.update([E, ]**F) -&gt; None.  Update D from dict/iterable E and F.
+ |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+ |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+ |      In either case, this is followed by: for k in F:  D[k] = F[k]
+ |  
+ |  values(...)
+ |      D.values() -&gt; an object providing a view on D&#39;s values
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  fromkeys(iterable, value=None, /) from builtins.type
+ |      Create a new dictionary with keys from iterable and values set to value.
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
@@ -473,70 +461,52 @@ class complex(object)
  |      Create and return a new object.  See help(type) for accurate signature.
  |  
  |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
+ |  Data and other attributes defined here:
  |  
- |  imag
- |      the imaginary part of a complex number
- |  
- |  real
- |      the real part of a complex number</code></pre>
-<p>返回值为 real + imag*1j 的复数，或将字符串或数字转换为复数。</p>
+ |  __hash__ = None</code></pre>
+<p>创建一个新字典。参数说明：</p>
 <ul>
-<li>如果第一个形参是字符串，则它被解释为一个复数，并且函数调用时必须没有第二个形参。</li>
-<li>第二个形参不能是字符串。</li>
-<li>每个实参都可以是任意的数值类型（包括复数）。</li>
-<li>如果省略了 imag，则默认值为零，构造函数会像 int 和 float 一样进行数值转换。</li>
-<li>如果两个实参都省略，则返回 0j。</li>
-<li>当从字符串转换时，字符串在 + 或 - 的周围必须不能有空格。</li>
+<li>不传参数创建空字典；</li>
+<li>传递一个映射对象；</li>
+<li>传递一个可迭代对象；</li>
+<li>传递关键字参数。</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">dict</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">complex</span>(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(1+0j)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">complex</span>(<span class="string">&#x27;1+2j&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(1+2j)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">complex</span>(<span class="number">1j</span>, <span class="number">2j</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&#39;a&#39;: 1&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="built_in">zip</span>(<span class="string">&#x27;abc&#x27;</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">dict</span>(d)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(-2+1j)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">complex</span>(<span class="number">1j</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>([(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>)])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>1j</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">complex</span>()</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>(a=<span class="number">1</span>,b=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>0j</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">complex</span>(<span class="string">&#x27;1 + 2j&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-ValueError                                Traceback (most recent call last)
-
-&lt;ipython-input-7-fd0fa4b53d7c&gt; in &lt;module&gt;
-----&gt; 1 complex(&#39;1 + 2j&#39;)
-
-
-ValueError: complex() arg is a malformed string</code></pre>
+<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;</code></pre>
 
       
     </div>
@@ -595,9 +565,6 @@ ValueError: complex() arg is a malformed string</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -688,7 +655,6 @@ ValueError: complex() arg is a malformed string</code></pre>
   
 
   
-
 
 </body>
 </html>

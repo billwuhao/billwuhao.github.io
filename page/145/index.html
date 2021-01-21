@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/16_set.discard-0f246746b411/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/18_set.clear-b31d42e2b343/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/06_set/16_set.discard-0f246746b411/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/06_set/18_set.clear-b31d42e2b343/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>206</span>
+      <span>143</span>
     </span>
 </div>
 
@@ -347,30 +345,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="set-discard-删除元素"><a href="#set-discard-删除元素" class="headerlink" title="set.discard 删除元素"></a>set.discard 删除元素</h2><p>集合方法 set.discard()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.discard)</span><br></pre></td></tr></table></figure>
+          <h2 id="set-clear-清空集合元素"><a href="#set-clear-清空集合元素" class="headerlink" title="set.clear 清空集合元素"></a>set.clear 清空集合元素</h2><p>集合方法 set.clear()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.clear)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-discard(...)
-    Remove an element from a set if it is a member.
-
-    If the element is not a member, do nothing.</code></pre>
-<p>从集合中删除一个指定元素，元素不存在没有任何影响。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">a.discard(<span class="number">1</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+clear(...)
+    Remove all elements from this set.</code></pre>
+<p>清空集合所有元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;2&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">a.discard(<span class="number">3</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;1, 2&#125;</code></pre>
+<pre><code>set()</code></pre>
 <p>该方法是一个过程，就地修改集合，返回值为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">b = a.discard(<span class="number">1</span>)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">b = a.clear()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
 
 <pre><code>None</code></pre>
 
@@ -431,9 +421,6 @@ discard(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -524,7 +511,6 @@ discard(...)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics2-4cc5fc64703e/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics1-c52131cc9c3a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/statistics/statistics2-4cc5fc64703e/" class="post-title-link" itemprop="url">推断统计</a>
+            <a href="/statistics/statistics1-c52131cc9c3a/" class="post-title-link" itemprop="url">描述统计</a>
         </h2>
 
         <div class="post-meta-container">
@@ -327,7 +325,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-02 14:47:58" itemprop="dateModified" datetime="2021-01-02T14:47:58+08:00">2021-01-02</time>
+        <time title="修改时间：2021-01-02 14:56:51" itemprop="dateModified" datetime="2021-01-02T14:56:51+08:00">2021-01-02</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -345,7 +343,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>4.1k</span>
+      <span>2.8k</span>
     </span>
 </div>
 
@@ -359,114 +357,281 @@
           <blockquote>
 <p>内容主要来源：<strong>开课吧</strong>学习笔记整理。</p>
 </blockquote>
-<h2 id="三-推断统计"><a href="#三-推断统计" class="headerlink" title="三, 推断统计"></a>三, 推断统计</h2><p>推断统计, 通过样本推断总体的统计方法, 包括对总体的未知参数进行估计; 对关于参数的假设进行检查; 对总体进行预测预报等. 推断统计的基本问题可以分为两大类：一类是<strong>参数估计</strong>问题; 另一类是<strong>假设检验</strong>问题</p>
-<h3 id="1-总体-个体与样本"><a href="#1-总体-个体与样本" class="headerlink" title="1, 总体, 个体与样本"></a>1, 总体, 个体与样本</h3><p>总体, 要研究对象的所有数据, 获取通常比较困难. 总体中的某个数据, 就是个体. 从总体中抽取部分个体, 就构成了样本, 样本中的个体数, 称为样本容量.</p>
-<h3 id="2-参数估计"><a href="#2-参数估计" class="headerlink" title="2, 参数估计"></a>2, 参数估计</h3><p>参数估计, 用样本指标(统计量)估计总体指标(参数). 参数估计有<strong>点估计</strong>和<strong>区间估计</strong>两种</p>
-<h4 id="2-01-点估计"><a href="#2-01-点估计" class="headerlink" title="2.01, 点估计"></a>2.01, 点估计</h4><p>点估计是依据样本统计量估计总体中的未知参数. 通常它们是总体的某个特征值，如数学期望, 方差和相关系数等. 点估计问题就是要构造一个只依赖于样本的量，作为总体未知参数的估计值.</p>
-<h4 id="2-02-区间估计"><a href="#2-02-区间估计" class="headerlink" title="2.02, 区间估计"></a>2.02, 区间估计</h4><p>区间估计是根据样本的统计量, 计算出一个可能的区间(置信区间) 和 概率(置信度), 表示总体的未知参数有多少概率位于该区间. </p>
-<p><strong>注意:</strong><br>点估计使用一个值来作为总体参数值, 能给出具体值, 但易受随机抽样影响, 准确性不够<br>区间估计使用一个置信区间和置信度, 表示总体参数值有多少可能(置信度)会在该范围(置信区间)内, 能给出合理的范围和信心指数, 不能给出具体值</p>
-<h4 id="2-03-中心极限定理"><a href="#2-03-中心极限定理" class="headerlink" title="2.03, 中心极限定理"></a>2.03, 中心极限定理</h4><p>要确定置信区间与置信度, 我们先要知道总体与样本之间, 在分布上有着怎样的联系. 中心极限定理(独立同分布的中心极限定理)给出了它们之间的联系:</p>
-<p>如果总体均值为 $\mu$, 方差为 $\sigma^{2}$, 我们进行随机抽样, 样本容量为 n, 当 n 增大时，则样本均值 $\bar{X}$ 逐渐趋近服从均值为 $\mu$, 方差为 $\sigma^{2} / n$ 的正态分布：</p>
-<p>$$\bar{X} \sim N\left(\mu, \sigma^{2} / n\right)$$</p>
-<p><strong>说明:</strong><br>进行多次抽样，每次抽样会得到一个均值, 这些均值会围绕在总体均值左右，呈正态分布<br>当样本容量 n 足够大时, 抽样样本均值的均值 ≈ 样本均值 $\bar{X}$ ≈ 总体均值 $\mu$, 样本均值分布的标准差等于 $\sigma / \sqrt{n}$<br>样本均值分布的标准差, 称为标准误差, 简称标准误  </p>
-<p>模拟证明:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义非正态分布总体(也可以是正态分布)</span></span><br><span class="line">data = np.random.normal(<span class="number">20</span>, <span class="number">5</span>, size=<span class="number">10000</span>)</span><br><span class="line">data.sort()</span><br><span class="line">all_ = np.random.choice(data[<span class="number">0</span>:<span class="number">8000</span>], size=<span class="number">10000</span>)</span><br><span class="line">sns.distplot(all_, label=<span class="string">&#x27;总体分布&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将总体的均值和标准差设为已知条件</span></span><br><span class="line">print(<span class="string">&#x27;总体均值:&#x27;</span>, all_.mean(), <span class="string">&#x27;总体标准差:&#x27;</span>, all_.std())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建存放每次抽样的平均值的数组(初始值为 0)</span></span><br><span class="line">mean_arr = np.zeros(<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 循环抽取 1000 个样本, 每次抽 100 个</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(mean_arr)):</span><br><span class="line">    mean_arr[i] = np.random.choice(all_, size=<span class="number">100</span>, replace=<span class="literal">False</span>).mean()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证结果</span></span><br><span class="line">print(<span class="string">&#x27;样本均值:&#x27;</span>, mean_arr[<span class="number">1</span>], <span class="string">&#x27;样本均值的均值:&#x27;</span>, mean_arr.mean(), </span><br><span class="line">      <span class="string">&#x27;标准误差:&#x27;</span>, mean_arr.std(), <span class="string">&#x27;偏度:&#x27;</span>, pd.Series(mean_arr).skew(), sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">sns.distplot(mean_arr, label=<span class="string">&#x27;样本均值分布&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<pre><code>总体均值: 18.21972188896503 总体标准差: 3.746872923755833
-样本均值:
-18.227008580631708
-样本均值的均值:
-18.221448457496017
-标准误差:
-0.3638614618535304
-偏度:
--0.15476133964256097</code></pre>
-<p><img src="/images/mathematical-statistics/output_1_1.png" alt="png"></p>
-<h4 id="2-04-正态分布的特性"><a href="#2-04-正态分布的特性" class="headerlink" title="2.04, 正态分布的特性"></a>2.04, 正态分布的特性</h4><p>正态分布: $X \sim N\left(\mu, \sigma^{2}\right)$</p>
-<p><img src="/images/mathematical-statistics/zttx.png" alt="png"></p>
-<p>以均值为中心:<br>在 1 倍标准差内包含约 68.2% 的样本数据<br>在 2 倍标准差内包含约 95.4% 的样本数据<br>在 3 倍标准差内包含约 99.7% 的样本数据</p>
-<p>证明:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义标准差</span></span><br><span class="line">scale = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据</span></span><br><span class="line">x = np.random.normal(<span class="number">0</span>, scale, size=<span class="number">100000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算</span></span><br><span class="line"><span class="keyword">for</span> times <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">4</span>):</span><br><span class="line">    y = x[(x &gt; -times * scale) &amp; (x &lt; times * scale)]</span><br><span class="line">    print(<span class="string">f&#x27;<span class="subst">&#123;times&#125;</span>倍的标准差:&#x27;</span>)</span><br><span class="line">    print(<span class="string">f&#x27;<span class="subst">&#123;<span class="built_in">len</span>(y) * <span class="number">100</span> / <span class="built_in">len</span>(x)&#125;</span>%&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>1倍的标准差:
-68.075%
-2倍的标准差:
-95.446%
-3倍的标准差:
-99.737%</code></pre>
-<h4 id="2-05-重要结论"><a href="#2-05-重要结论" class="headerlink" title="2.05, 重要结论"></a>2.05, 重要结论</h4><p>根据中心极限定理和正态分布的特性, 如果总体标准差为$\sigma$, 对总体进行一次抽样, 如果样本足够大, 则样品均值 $\bar{X}$ 服从正态分布, 该均值约有 95.4% 的概率会在 2 倍的标准误差 ($\mu - 2\sigma / \sqrt{n}, \mu + 2\sigma / \sqrt{n}$) 范围内, 并且该样本均值约等于总体均值 $\mu$. 从而, 可以利用这一结论, 对总体均值进行区间估计.</p>
-<p><strong>结论验证:</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 随机生成总体均值, 其值未知</span></span><br><span class="line">mean = np.random.randint(<span class="number">0</span>, <span class="number">10000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 总体的标准差已知为 50</span></span><br><span class="line">std = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义总体数据</span></span><br><span class="line">all_ = np.random.normal(mean, std, size=<span class="number">100000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从总体抽取 100 个元素构成样本</span></span><br><span class="line">sample = np.random.choice(all_, size=<span class="number">100</span>, replace=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算样本均值</span></span><br><span class="line">sample_mean = sample.mean()</span><br><span class="line">print(<span class="string">&#x27;样本均值:&#x27;</span>, sample_mean)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算样本的标准误差</span></span><br><span class="line">se = std / np.sqrt(n)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算置信区间 95%置信度</span></span><br><span class="line">min_ = sample_mean - <span class="number">1.96</span> * se</span><br><span class="line">max_ = sample_mean + <span class="number">1.96</span> * se</span><br><span class="line">print(<span class="string">&#x27;置信区间(95%置信度):&#x27;</span>, (min_, max_))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 区间估计</span></span><br><span class="line">print(<span class="string">f&#x27;总体均值有 95% 的概率在<span class="subst">&#123;(min_, max_)&#125;</span>区间内&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;总体均值:&#x27;</span>, mean)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图辅助</span></span><br><span class="line">plt.plot(mean, <span class="number">0</span>, marker=<span class="string">&#x27;*&#x27;</span>, color=<span class="string">&#x27;orange&#x27;</span>, ms=<span class="number">12</span>, label=<span class="string">&#x27;总体均值&#x27;</span>)</span><br><span class="line">plt.plot(sample_mean, <span class="number">0</span>, marker=<span class="string">&#x27;o&#x27;</span>, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;样本均值&#x27;</span>)</span><br><span class="line">plt.hlines(<span class="number">0</span>, xmin=min_, xmax=max_, color=<span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;置信区间&#x27;</span>)</span><br><span class="line">plt.axvline(min_, <span class="number">0.4</span>, <span class="number">0.6</span>, color=<span class="string">&#x27;r&#x27;</span>, ls=<span class="string">&#x27;--&#x27;</span>, label=<span class="string">&#x27;左边界&#x27;</span>)</span><br><span class="line">plt.axvline(max_, <span class="number">0.4</span>, <span class="number">0.6</span>, color=<span class="string">&#x27;g&#x27;</span>, ls=<span class="string">&#x27;--&#x27;</span>, label=<span class="string">&#x27;右边界&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<pre><code>样品均值: 3792.704816801116
-置信区间(95%置信度): (3761.714495731466, 3823.6951378707663)
-总体均值有 95% 的概率在(3761.714495731466, 3823.6951378707663)区间内
-总体均值: 3789</code></pre>
-<p><img src="/images/mathematical-statistics/output_5_1.png" alt="png"></p>
-<h3 id="3-假设检验"><a href="#3-假设检验" class="headerlink" title="3, 假设检验"></a>3, 假设检验</h3><p>假设检验(显著性检验), 先对总体做出假设, 然后通过判断样本与总体之间是否存在显著性差异, 来验证总体的假设</p>
-<p>假设检验使用了一种类似于 “反证法” 的推理方法，它的特点是：</p>
+<p><font color=#00A600 >2020年6月4日更新</font></p>
+<h2 id="一-数理统计介绍"><a href="#一-数理统计介绍" class="headerlink" title="一, 数理统计介绍"></a>一, 数理统计介绍</h2><p>数理统计以概率论为基础, 研究大量随机现象的统计规律性. 分为<strong>描述统计</strong>和<strong>推断统计</strong>, 在数据分析领域具有非常重要的地位 </p>
+<h2 id="二-描述统计"><a href="#二-描述统计" class="headerlink" title="二, 描述统计"></a>二, 描述统计</h2><p>描述统计, 就是从总体数据中提取变量的主要信息(总和, 均值, 最大, 最多等), 从而从总体层面上, 对数据进行统计性描述. 通常配合绘制相关统计图进行辅助</p>
+<h3 id="2-01-统计学的变量类型"><a href="#2-01-统计学的变量类型" class="headerlink" title="2.01, 统计学的变量类型"></a>2.01, 统计学的变量类型</h3><p>统计学中的变量指研究对象的特征(属性), 每个变量都有变量值和类型, 类型可分为:</p>
+<p><strong>类别变量</strong>: 对研究对象定性, 分类</p>
+<p>类别变量又可分为: </p>
 <ul>
-<li><p>先对总体做出两个完全相反的假设, 原假设(设为真) 和 备择假设, 计算后导致不合理现象产生，则拒绝原假设, 接受备择假设, 反之接受原假设, 放弃备择假设</p>
+<li>有序类别变量: 描述对象等级或顺序等, 例如, 优良中差</li>
+<li>无序类别变量: 仅做分类, 例如 A, B 血型, 男女</li>
+</ul>
+<p><strong>数值变量</strong>: 对研究对象定量描述</p>
+<p>数值变量又可分为:</p>
+<ul>
+<li>离散变量: 取值只能用自然数或整数个单位计算, 例如统计人数</li>
+<li>连续变量: 在一定区间内可以任意取值, 例如计算身高</li>
+</ul>
+<p>数值变量对加, 减, 求平均等操作有意义, 而类别变量无意义</p>
+<h3 id="2-02-统计量"><a href="#2-02-统计量" class="headerlink" title="2.02, 统计量"></a>2.02, 统计量</h3><p>描述统计所提取的统计信息, 称为统计量, 主要包括: </p>
+<ul>
+<li>类别分析: 频数, 频率</li>
+<li>集中趋势分析: 均值, 中位数, 众数, 分位数</li>
+<li>离散程度分析: 极差, 方差, 标准差</li>
+<li>描述分布形状: 偏度, 峰度</li>
+</ul>
+<p>准备数据:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 正态分布</span></span><br><span class="line">data1 = np.around(np.random.normal(<span class="number">10</span>, <span class="number">3</span>, <span class="number">600</span>)).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 左偏</span></span><br><span class="line">t1 = np.random.randint(<span class="number">1</span>, <span class="number">21</span>, size=<span class="number">100</span>)</span><br><span class="line">t2 = np.random.randint(<span class="number">21</span>, <span class="number">31</span>, size=<span class="number">500</span>)</span><br><span class="line">left_data = np.concatenate([t1, t2]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 右偏</span></span><br><span class="line">t3 = np.random.randint(<span class="number">1</span>, <span class="number">11</span>, size=<span class="number">500</span>)</span><br><span class="line">t4 = np.random.randint(<span class="number">11</span>, <span class="number">21</span>, size=<span class="number">100</span>)</span><br><span class="line">right_data = np.concatenate([t3, t4]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类别</span></span><br><span class="line">type_data = np.random.randint(<span class="number">0</span>, <span class="number">2</span>, size=<span class="number">600</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">data = np.concatenate([data1, left_data, right_data, type_data], axis=<span class="number">1</span>)</span><br><span class="line">data = pd.DataFrame(data,</span><br><span class="line">                   columns=[<span class="string">&#x27;data1&#x27;</span>, <span class="string">&#x27;left_data&#x27;</span>, <span class="string">&#x27;right_data&#x27;</span>, <span class="string">&#x27;type_data&#x27;</span>])</span><br><span class="line"><span class="comment"># 随机取 10 条数据</span></span><br><span class="line">data.sample(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data1</th>
+      <th>left_data</th>
+      <th>right_data</th>
+      <th>type_data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>83</th>
+      <td>12.0</td>
+      <td>11.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>4.0</td>
+      <td>29.0</td>
+      <td>10.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>9.0</td>
+      <td>25.0</td>
+      <td>10.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>12.0</td>
+      <td>22.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>542</th>
+      <td>12.0</td>
+      <td>25.0</td>
+      <td>17.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>6.0</td>
+      <td>27.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>16.0</td>
+      <td>29.0</td>
+      <td>10.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>10.0</td>
+      <td>23.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>10.0</td>
+      <td>28.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="a-频数"><a href="#a-频数" class="headerlink" title="a, 频数"></a>a, 频数</h4><p>数据中某个类别出现的次数称为该类别的频数</p>
+<p>例如, 计算上述两个类别(<code>0.0</code> 和 <code>1.0</code>)出现的频数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">frequency = data[<span class="string">&#x27;type_data&#x27;</span>].value_counts()</span><br><span class="line">frequency</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.0    315
+1.0    285
+Name: type_data, dtype: int64</code></pre>
+<h4 id="b-频率"><a href="#b-频率" class="headerlink" title="b, 频率"></a>b, 频率</h4><p>数据中某个类别出现次数与总次数的比值称为该类别的频率</p>
+<p>例如, 计算上述两个类别(<code>0.0</code> 和 <code>1.0</code>)出现的频率:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">percentage = frequency * <span class="number">100</span> / <span class="built_in">len</span>(data)</span><br><span class="line">percentage</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.0    52.5
+1.0    47.5
+Name: type_data, dtype: float64</code></pre>
+<h4 id="c-均值"><a href="#c-均值" class="headerlink" title="c, 均值"></a>c, 均值</h4><p>平均值, 一组数据的总和除以数据的个数</p>
+<h4 id="d-中位数"><a href="#d-中位数" class="headerlink" title="d, 中位数"></a>d, 中位数</h4><p>将一组数据按顺序排列, 位于最中间位置的值, 即是中位数, 如果数据个数为偶数, 取中间两个的平均值</p>
+<h4 id="e-众数"><a href="#e-众数" class="headerlink" title="e, 众数"></a>e, 众数</h4><p>一组数据中出现次数最多的值</p>
+<p>通常三者的关系如下图所示:</p>
+<p><img src="/images/mathematical-statistics/fenbu.png"></p>
+<p><strong>注意点</strong>:<br>数值变量通常使用均值和中值表示集中趋势, 类别变量则通常使用众数<br>正态分布下, 数据量足够多, 三者相同<br>均值使用所有数据计算, 容易受极端值影响, 中位数和众数则不会<br>众数在一组数据中可能不唯一</p>
+<p>例, 计算字段 <code>data1</code> 的均值, 中位数和众数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mean = data[<span class="string">&#x27;data1&#x27;</span>].mean()</span><br><span class="line">median = data[<span class="string">&#x27;data1&#x27;</span>].median()</span><br><span class="line">mode = data[<span class="string">&#x27;data1&#x27;</span>].mode()</span><br><span class="line">print(<span class="string">f&#x27;均值:<span class="subst">&#123;mean&#125;</span> 中位数:<span class="subst">&#123;median&#125;</span>\n众数:\n<span class="subst">&#123;mode&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>均值:9.973333333333333 中位数:10.0
+众数:
+0    10.0
+dtype: float64</code></pre>
+<p>还可以使用 <code>scipy</code> 中的 <code>stats</code> 模块来求一组数据的众数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">stats.mode(data[<span class="string">&#x27;data1&#x27;</span>]).mode</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([10.])</code></pre>
+<p>求众数方法两者对比: 前者的返回值类型是 Serise, 后者的返回值类型是 array. 如果众数的值不唯一，前者都会显示，后者只显示一个</p>
+<h4 id="f-分位数"><a href="#f-分位数" class="headerlink" title="f, 分位数"></a>f, 分位数</h4><p>通过 n - 1 个分位, 将升序排列的数据分为 n 个区间, 使得每个区间数值个数相等(或近似相等), 则每个分位对应的数, 就是该 n 分位的分位数. 常用的有四分位数和百分位数</p>
+<p>以四分位数为例:<br>第一个分位称为 1/4 分位(下四分位), 第二个称为 2/4 分位(中四分位), 第三个称为 3/4 分位(上四分位), 其中中四分位数, 其实就是中位数</p>
+<p>求四分位的值:  </p>
+<ul>
+<li><p>首先计算各个分位的位置<br>index1 = (n - 1) * 0.25<br>index2 = (n - 1) * 0.5<br>index3 = (n - 1) * 0.75<br>(index 从 0 开始, n 为元素的个数)</p>
 </li>
-<li><p>这种 “反证法” 不同于一般的反证法. 所谓不合理现象产生，并非指形式逻辑上的绝对矛盾，而是基于小概率原理：概率很小的事件在一次试验中几乎是不可能发生的，若发生了，就是不合理的.   </p>
-</li>
-<li><p>怎样才算 “小概率”, 通常可将概率不超过 0.05 的事件称为 “小概率事件” ，也可视具体情形而取 0.1 或 0.01 等. 在假设检验中常记这个概率为 α，称为显著性水平</p>
+<li><p>根据位置计算各个分位的值<br>index 为整数, 值就是相应的 index 对应的元素<br>index 不为整数, 四分位位置介于 ceil(index) 和 floor(index) 之间, 加权计算分位值</p>
 </li>
 </ul>
-<p>假设检验可分为正态分布检验, 正态总体均值检验, 非参数检验三类, 本文只介绍<strong>正态总体均值检验</strong>, 包括 Z检验 和 t检验 两种情况</p>
-<h4 id="3-01-关键概念"><a href="#3-01-关键概念" class="headerlink" title="3.01, 关键概念:"></a>3.01, 关键概念:</h4><p>对总体参数做出两个完全对立的假设, 分别为:<br><strong>原假设(零假设) $H_{0}$<br>备择假设(对立假设) $H_{1}$</strong></p>
-<p><strong>双边假设检验</strong>:<br>$H_{0}: \mu=\mu_{0}, H_{1}: \mu \neq \mu_{0}$ </p>
-<p><strong>单边假设检验</strong>:<br>$H_{0}: \mu \geq \mu_{0}, H_{1}: \mu&lt;\mu_{0}$ (**左边检验**)<br>$H_{0}: \mu \leq \mu_{0}, H_{1}: \mu&gt;\mu_{0}$ (<strong>右边检验</strong>)<br>$\mu$ 为总体均值, $\mu_{0}$ 为假设均值 </p>
-<p><strong>显著性水平</strong>: 根据需要设定的小概率事件的概率 α (1 - α 为置信度)</p>
-<p><strong>检验统计量</strong>(Z 和 t): 用来判断样本均值与总体均值是否存在显著性差异</p>
-<p><strong>P值:</strong> 通过检验统计量计算而得的概率值, 表示原假设可被拒绝的最小值(或可支持原假设的概率):<br>P ≤ α, 原假设可被拒绝的最小值比显著性水平还低, 原假设可被拒绝, 则拒绝原假设<br>P &gt; α, 原假设可被拒绝的最小值大于显著性水平, 原假设不可被拒绝, 支持原假设</p>
-<h4 id="3-02-假设检验的步骤"><a href="#3-02-假设检验的步骤" class="headerlink" title="3.02, 假设检验的步骤"></a>3.02, 假设检验的步骤</h4><p>设置原假设与备择假设<br>设置显著性水平 α<br>根据问题选择假设检验的方式<br>计算统计量(Z 或 t)<br>计算 P值(Z 或 t 围成的分布面积)<br>根据 P值 与 α值, 决定接受原假设还是备择假设</p>
-<p>例, 某车间用一台包装机包装葡萄糖. 袋装糖的净重是一个随机变量，它服从正态分布. 当机器正常时，其均值为 0.5kg，标准差为 0.015kg. 某日开工后为检验包装机是否正常，随机地抽取它所包装的糖 9 袋，称得净重为(kg):<br>0.497, 0.506, 0.518, 0.524, 0.498, 0.511, 0.520, 0.515, 0.512<br>判断下面说法是否正确:<br>(1) 机器正常    </p>
-<p>例, 某车间用包装机包装葡萄糖. 袋装糖的净重是一个随机变量，它服从正态分布. 随机地抽取糖 9 袋，称得净重为(kg):<br>0.497, 0.506, 0.518, 0.524, 0.498, 0.511, 0.520, 0.515, 0.512<br>判断下面说法是否正确:<br>(2) 该车间袋装糖净重均值为 0.5kg<br>(3) 该车间袋装糖净重均值不少于 0.5kg<br>(4) 该车间袋装糖净重均值不多于 0.5kg</p>
-<h4 id="3-03-Z检验"><a href="#3-03-Z检验" class="headerlink" title="3.03, Z检验"></a>3.03, Z检验</h4><p>Z检验适用于: 总体正态分布且方差已知, 样本容量较大(一般 ≥ 30)</p>
-<p>Z统计量计算公式:</p>
-<p>$$Z=\frac{\bar{x}-\mu_{0}}{S_{\bar{x}}}=\frac{\bar{x}-\mu_{0}}{\sigma / \sqrt{n}}$$</p>
-<p>$\bar{x}$: 样本均值<br>$\mu_{0}$: 假设的总体均值<br>$S_{\bar{x}}$: 样本的标准误差<br>$\sigma$: 总体的标准差<br>$n$: 样本容量  </p>
-<p>检验说法(1): 机器正常 </p>
-<p>双边检验:<br>原假设机器正常: $H_{0}: \mu=\mu_{0}=0.5kg$<br>备择假设机器不正常: $H_{1}: \mu \neq \mu_{0} \neq 0.5kg$<br>设置显著性水平: α = 0.05</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"></span><br><span class="line"><span class="comment"># 样本已知</span></span><br><span class="line">a = np.array([<span class="number">0.497</span>, <span class="number">0.506</span>, <span class="number">0.518</span>, <span class="number">0.524</span>, <span class="number">0.498</span>, <span class="number">0.511</span>, <span class="number">0.520</span>, <span class="number">0.515</span>, <span class="number">0.512</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 总体均值和标准差已知</span></span><br><span class="line">mean, std = <span class="number">0.5</span>, <span class="number">0.015</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算样本均值</span></span><br><span class="line">sample_mean = a.mean()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算样本标准误差</span></span><br><span class="line">se = std / np.sqrt(<span class="built_in">len</span>(a))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算 Z统计量</span></span><br><span class="line">Z = (sample_mean - mean) / se</span><br><span class="line">print(<span class="string">&#x27;Z统计量:&#x27;</span>, Z)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算 P值, 双边检验: Z值与其右边曲线围成的面积的 2 倍</span></span><br><span class="line">P = <span class="number">2</span> * stats.norm.sf(<span class="built_in">abs</span>(Z))</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;P值:&#x27;</span> , P)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Z统计量: 2.244444444444471
-P值: 0.02480381963225589</code></pre>
-<p><img src="/images/mathematical-statistics/mianji.png"></p>
-<p>由结果可知, Z值 超过了 1.96, 由 Z值 与其右边曲线围成的面积的 2 倍, 必然小于 α(1.96 与其右边曲线围成的面积的 2 倍), 计算结果 P &lt; α, 因此拒绝原假设, 接受备择假设, 机器不正常</p>
-<h4 id="3-04-t检验"><a href="#3-04-t检验" class="headerlink" title="3.04, t检验"></a>3.04, t检验</h4><p>t检验适用于: 总体正态分布, 方差未知, 样本数量较少(一般 &lt; 30), 但是随着样本容量的增加, 分布逐渐趋于正态分布</p>
-<p><img src="/images/mathematical-statistics/tzyd.png"></p>
-<p>t统计量计算公式:</p>
-<p>$$t=\frac{\bar{x}-\mu_{0}}{S_{\bar{x}}}=\frac{\bar{x}-\mu_{0}}{S / \sqrt{n}}$$</p>
-<p>$\bar{x}$: 样本均值<br>$\mu_{0}$: 假设的总体均值<br>$S_{\bar{x}}$: 样本的标准误差<br>$S$: 样本的标准差<br>$n$: 样本容量  </p>
-<p><strong>双边检验</strong>:<br>检验说法(2): 该车间袋装糖净重均值为 0.5kg </p>
-<p>原假设, 该车间袋装糖净重均值为 0.5kg: $H_{0}: \mu=\mu_{0}=0.5kg$<br>备择假设, 该车间袋装糖净重均值不为 0.5kg: $H_{1}: \mu \neq \mu_{0} \neq 0.5kg$<br>设置显著性水平: α = 0.05</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 样本已知</span></span><br><span class="line">a = np.array([<span class="number">0.497</span>, <span class="number">0.506</span>, <span class="number">0.518</span>, <span class="number">0.524</span>, <span class="number">0.498</span>, <span class="number">0.511</span>, <span class="number">0.520</span>, <span class="number">0.515</span>, <span class="number">0.512</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 假设的总体均值已知</span></span><br><span class="line">mean = <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算样本均值</span></span><br><span class="line">sample_mean = a.mean()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算样本标准差</span></span><br><span class="line">std = a.std()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算 t统计量</span></span><br><span class="line">t = (sample_mean - mean) / ( std / np.sqrt(<span class="built_in">len</span>(a)))</span><br><span class="line">print(<span class="string">&#x27;t统计量:&#x27;</span>, t)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算 P值, df 是自由度: 样本变量可自由取值的个数</span></span><br><span class="line">P = <span class="number">2</span> * stats.t.sf(<span class="built_in">abs</span>(t), df=<span class="built_in">len</span>(a) - <span class="number">1</span>)</span><br><span class="line">print(<span class="string">&#x27;P值:&#x27;</span>, P)</span><br></pre></td></tr></table></figure>
-
-<pre><code>t统计量: 3.802382179137283
-P值: 0.005218925008708613</code></pre>
-<p>P &lt; α, 拒绝原假设, 接受备择假设: 该车间袋装糖净重均值不为 0.5kg</p>
-<p>还可以通过 scipy 提供的方法 <code>ttest_1samp</code> 来进行 t检验计算:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stats.ttest_1samp(a, <span class="number">0.5</span>)</span><br></pre></td></tr></table></figure>
+<p>例, 求 x 的四分位数:<br><strong>index 为整数</strong>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">9</span>)</span><br><span class="line">n = <span class="built_in">len</span>(x)</span><br><span class="line"></span><br><span class="line">index1 = (n - <span class="number">1</span>) * <span class="number">0.25</span></span><br><span class="line">index2 = (n - <span class="number">1</span>) * <span class="number">0.5</span>  </span><br><span class="line">index3 = (n - <span class="number">1</span>) * <span class="number">0.75</span>  </span><br><span class="line"></span><br><span class="line">index = np.array([index1, index2, index3]).astype(np.int32)</span><br><span class="line">x[index]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>Ttest_1sampResult(statistic=3.584920298041139, pvalue=0.007137006417828698)</code></pre>
-<p><strong>左边检验</strong>:<br>检验说法(3): 该车间袋装糖净重均值不少于 0.5kg  </p>
-<p>原假设, 该车间袋装糖净重均值不少于 0.5kg: $H_{0}: \mu \geq \mu_{0}$<br>备择假设, 该车间袋装糖净重均值少于 0.5kg: $H_{1}: \mu&lt;\mu_{0}$<br>设置显著性水平: α = 0.05  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># t统计量上述已经计算, 只需计算 P值: t统计量与其左边曲线围成的面积</span></span><br><span class="line">P = stats.t.cdf(t, df=<span class="built_in">len</span>(a) - <span class="number">1</span>)</span><br><span class="line">print(<span class="string">&#x27;P值:&#x27;</span>, P)</span><br></pre></td></tr></table></figure>
+<pre><code>array([2, 4, 6])</code></pre>
+<p><strong>index 不是整数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">10</span>)</span><br><span class="line">n = <span class="built_in">len</span>(x)</span><br><span class="line"></span><br><span class="line">index1 = (n - <span class="number">1</span>) * <span class="number">0.25</span></span><br><span class="line">index2 = (n - <span class="number">1</span>) * <span class="number">0.5</span>  </span><br><span class="line">index3 = (n - <span class="number">1</span>) * <span class="number">0.75</span>  </span><br><span class="line"></span><br><span class="line">index = np.array([index1, index2, index3])</span><br><span class="line">left = np.floor(index).astype(np.int32)</span><br><span class="line">right = np.ceil(index).astype(np.int32)</span><br><span class="line">weight, _ = np.modf(index) <span class="comment"># 获取 index 整数和小数部分</span></span><br><span class="line"></span><br><span class="line">result = x[left] * (<span class="number">1</span> - weight) + x[right] * weight</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
 
-<pre><code>P值: 0.9973905374956458</code></pre>
-<p>P &gt; α, 接受原假设, 该车间袋装糖净重均值不少于 0.5kg</p>
-<p><strong>右边检验</strong>:<br>检验说法(4): 该车间袋装糖净重均值不多于 0.5kg  </p>
-<p>原假设, 该车间袋装糖净重均值不多于 0.5kg: $H_{0}: \mu \leq \mu_{0}$<br>备择假设, 该车间袋装糖净重均值多于 0.5kg: $H_{1}: \mu&gt;\mu_{0}$<br>设置显著性水平: α = 0.05 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算 P值: t统计量与其右边曲线围成的面积</span></span><br><span class="line">P = stats.t.sf(t, df=<span class="built_in">len</span>(a) - <span class="number">1</span>)</span><br><span class="line">print(<span class="string">&#x27;P值:&#x27;</span>, P)</span><br></pre></td></tr></table></figure>
 
-<pre><code>P值: 0.0026094625043543065</code></pre>
-<p>P &lt; α, 拒绝原假设, 接受备择假设, 该车间袋装糖净重均值多于 0.5kg</p>
+
+
+<pre><code>array([2.25, 4.5 , 6.75])</code></pre>
+<p><strong>注意点:</strong><br>Numpy 中计算分位数可直接用方法 <code>np.quantile</code> 和 <code>np.percentile</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.quantile(x, q=[<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">0.75</span>]), np.percentile(x, q=[<span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(array([2.25, 4.5 , 6.75]), array([2.25, 4.5 , 6.75]))</code></pre>
+<p>Pandas 中计算分位数可利用 <code>describe</code> (默认 4 分位)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(x)</span><br><span class="line">s.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>count    10.00000
+mean      4.50000
+std       3.02765
+min       0.00000
+25%       2.25000
+50%       4.50000
+75%       6.75000
+max       9.00000
+dtype: float64</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.describe().iloc[<span class="number">4</span>:<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>25%    2.25
+50%    4.50
+75%    6.75
+dtype: float64</code></pre>
+<p>可自定义分位:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.describe(percentiles=[<span class="number">0.15</span>, <span class="number">0.4</span>, <span class="number">0.8</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>count    10.00000
+mean      4.50000
+std       3.02765
+min       0.00000
+15%       1.35000
+40%       3.60000
+50%       4.50000
+80%       7.20000
+max       9.00000
+dtype: float64</code></pre>
+<h4 id="g-极差"><a href="#g-极差" class="headerlink" title="g, 极差"></a>g, 极差</h4><p>一组数据中, 最大值与最小值之差</p>
+<h4 id="h-方差"><a href="#h-方差" class="headerlink" title="h, 方差"></a>h, 方差</h4><p>方差体现一组数据中, 每个元素与均值的偏离程度</p>
+<p>$$\sigma^{2}=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}$$</p>
+<p>$x_{i}:$ 数组中的每个元素<br>$n:$ 数组元素的个数<br>$\bar{x}:$ 数组中所有元素的均值  </p>
+<h4 id="i-标准差"><a href="#i-标准差" class="headerlink" title="i, 标准差"></a>i, 标准差</h4><p>标准差为方差的开方. 方差和标准差可以体现数据的分散性, 越大越分散, 越小越集中. 也可体现数据波动性(稳定性), 越大波动越大, 反之亦然  </p>
+<p>当数据足够多时, 可用 n 代替 n - 1</p>
+<p>例, 计算 <code>left_data</code> 字段的极差, 方差, 标准差:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sub = np.ptp(data[<span class="string">&#x27;left_data&#x27;</span>])</span><br><span class="line">var = data[<span class="string">&#x27;left_data&#x27;</span>].var()</span><br><span class="line">std = data[<span class="string">&#x27;left_data&#x27;</span>].std()</span><br><span class="line">sub, var, std</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(29.0, 41.241399554813675, 6.42194671068)</code></pre>
+<p>绘图对比 <code>data1</code> 和 <code>left_data</code> 的分散程度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">11</span>, <span class="number">1</span>))</span><br><span class="line">plt.ylim(<span class="number">-0.5</span>, <span class="number">1.5</span>)</span><br><span class="line">plt.plot(data[<span class="string">&#x27;data1&#x27;</span>], np.zeros(<span class="built_in">len</span>(data)), ls=<span class="string">&#x27;&#x27;</span>, marker=<span class="string">&#x27;o&#x27;</span>, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;data1&#x27;</span>)</span><br><span class="line">plt.plot(data[<span class="string">&#x27;left_data&#x27;</span>], np.ones(<span class="built_in">len</span>(data)), ls=<span class="string">&#x27;&#x27;</span>, marker=<span class="string">&#x27;o&#x27;</span>, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;left_data&#x27;</span>)</span><br><span class="line">plt.axvline(data[<span class="string">&#x27;data1&#x27;</span>].mean(), ls=<span class="string">&#x27;--&#x27;</span>, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;data1均值&#x27;</span>)</span><br><span class="line">plt.axvline(data[<span class="string">&#x27;left_data&#x27;</span>].mean(), ls=<span class="string">&#x27;--&#x27;</span>, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;left_data均值&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_25_0.png" alt="png"></p>
+<h4 id="j-偏度"><a href="#j-偏度" class="headerlink" title="j, 偏度"></a>j, 偏度</h4><p>统计数据分布偏斜方向和程度的度量, 统计数据分布非对称程度的数字特征, 偏度为 0 , 对称分布, 小于 0, 左偏分别, 大于 0, 右偏分布</p>
+<h4 id="k-峰度"><a href="#k-峰度" class="headerlink" title="k, 峰度"></a>k, 峰度</h4><p>表征概率密度分布曲线在平均值处峰值高低的特征数. 直观看来, 峰度反映了峰部的尖度, 峰度高意味着标准差增大是由低频度的大于或小于平均值的极端差值引起的. 在相同的标准差下，峰度越大，分布就有更多的极端值，那么其余值必然要更加集中在众数周围，其分布必然就更加陡峭</p>
+<p>样本的峰度是和正态分布相比较而言的统计量, 符合正态分布的峰度为 0</p>
+<p>例, 计算 <code>data</code> 中前三个字段的偏度, 峰度与标准差, 并绘图比较:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;偏度:&#x27;</span>, data[<span class="string">&#x27;data1&#x27;</span>].skew(), data[<span class="string">&#x27;left_data&#x27;</span>].skew(), data[<span class="string">&#x27;right_data&#x27;</span>].skew())</span><br><span class="line">print(<span class="string">&#x27;峰度:&#x27;</span>, data[<span class="string">&#x27;data1&#x27;</span>].kurt(), data[<span class="string">&#x27;left_data&#x27;</span>].kurt(), data[<span class="string">&#x27;right_data&#x27;</span>].kurt())</span><br><span class="line">print(<span class="string">&#x27;标准差:&#x27;</span>, data[<span class="string">&#x27;data1&#x27;</span>].std(), data[<span class="string">&#x27;left_data&#x27;</span>].std(), data[<span class="string">&#x27;right_data&#x27;</span>].std())</span><br></pre></td></tr></table></figure>
+
+<pre><code>偏度: 0.01863368573517327 -1.6482232780416728 0.8893682831648914
+峰度: 0.01734807363555335 2.3817050408202034 0.16006510575975996
+标准差: 3.0585748897401723 6.42194671068 4.940541290899053</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.kdeplot(data[<span class="string">&#x27;data1&#x27;</span>], shade=<span class="literal">True</span>, label=<span class="string">&#x27;正态&#x27;</span>)</span><br><span class="line">sns.kdeplot(data[<span class="string">&#x27;left_data&#x27;</span>], shade=<span class="literal">True</span>, label=<span class="string">&#x27;左偏&#x27;</span>)</span><br><span class="line">sns.kdeplot(data[<span class="string">&#x27;right_data&#x27;</span>], shade=<span class="literal">True</span>, label=<span class="string">&#x27;右偏&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/mathematical-statistics/output_28_0.png" alt="png"></p>
 <br>
+
 
       
     </div>
@@ -525,9 +690,6 @@ P值: 0.005218925008708613</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -662,7 +824,6 @@ P值: 0.005218925008708613</code></pre>
     
 
   
-
 
 </body>
 </html>

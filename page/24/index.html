@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/13_exception/04_user_defined-b5b1a5b00186/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/14_file/01_file_summary-d01fc64a461c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/13_exception/04_user_defined-b5b1a5b00186/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/14_file/01_file_summary-d01fc64a461c/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>516</span>
+      <span>1.1k</span>
     </span>
 </div>
 
@@ -347,23 +345,67 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><p>可以通过创建新的异常类来自定义代码执行错误引发的异常。许多标准模块定义了它们自己的异常，以报告它们定义的函数中可能出现的错误。</p>
-<p>异常通常应该直接或间接地从 Exception 类派生。定义的异常类，可以执行任何其他类可以执行的任何操作，但通常保持简单，只提供一些属性，这<br>些属性允许处理程序为异常提取有关错误的信息。</p>
-<p>在创建可能引发多个不同错误的模块时，通常的做法是为该模块定义的异常创建基类，并为不同错误条件创建特定异常类的子类。大多数异常都定义为名称以 <code>Error</code> 结尾，类似于标准异常的命名:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Error</span>(<span class="params">Exception</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;Base class for exceptions in this module.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputError</span>(<span class="params">Error</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;Exception raised for errors in the input.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Attributes:</span></span><br><span class="line"><span class="string">        expression -- input expression in which the error occurred</span></span><br><span class="line"><span class="string">        message -- explanation of the error</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, expression, message</span>):</span></span><br><span class="line">        self.expression = expression</span><br><span class="line">        self.message = message</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TransitionError</span>(<span class="params">Error</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;Raised when an operation attempts a state transition that&#x27;s not allowed.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Attributes:</span></span><br><span class="line"><span class="string">        previous -- state at beginning of transition</span></span><br><span class="line"><span class="string">        next -- attempted new state</span></span><br><span class="line"><span class="string">        message -- explanation of why the specific transition is not allowed</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, previous, <span class="built_in">next</span>, message</span>):</span></span><br><span class="line">        self.previous = previous</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="built_in">next</span></span><br><span class="line">        self.message = message</span><br><span class="line">        </span><br><span class="line"><span class="keyword">raise</span> InputError(<span class="number">3</span>/<span class="number">1</span>,<span class="string">&#x27;分母不能为 1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="文件对象概述"><a href="#文件对象概述" class="headerlink" title="文件对象概述"></a>文件对象概述</h2><p>文件对象是指对外提供面向文件 API 以使用下层资源的对象（带有 read() 或 write() 这样的方法），也被称作<strong>流</strong>或<strong>文件类对象</strong>。</p>
+<p>有三种类别的文件对象: 原始二进制文件, 缓冲二进制文件 以及<br>文本文件。三种类别下还有子类别，因创建方式的不同得到不同类别文件对象。它们的接口定义均在 io 模块中。创建文件对象的规范方式是使用 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/45_open.ipynb">open() 函数</a>。</p>
+<p>用户代码直接操作原始流的用法非常罕见。不过，可以通过在禁用缓冲的情况下以二进制模式打开文件来创建原始流：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;rb&quot;</span>, buffering=<span class="number">0</span>)</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;_io.FileIO name=&#39;test.txt&#39; mode=&#39;rb&#39; closefd=True&gt;</code></pre>
+<p>缓冲二进制流不执行编码、解码或换行转换。这种类型的流可以用于所有类型的非文本数据（例如图片，视频），并且还可以在需要手动控制文本数据的处理时使用。创建缓冲二进制流的最简单方法是使用 open()，并在模式中指定 ‘b’：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;_io.BufferedReader name=&#39;test.txt&#39;&gt;</code></pre>
+<p>文本流生成 str 对象。这意味着，无论何时后台存储是由字节组成的，数据的编码和解码都是透明的，并且可以选择转换特定于平台的换行符。创建文本流的最简单方法是使用 open()，可以选择指定编码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;_io.TextIOWrapper name=&#39;test.txt&#39; mode=&#39;r&#39; encoding=&#39;utf-8&#39;&gt;</code></pre>
+<p>所有流对提供给它们的数据类型都很敏感。例如将 str 对象给二进制流的 write() 方法会引发 TypeError。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;ab&quot;</span>)</span><br><span class="line">f.write(<span class="string">&#x27;写入内容&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 <pre><code>---------------------------------------------------------------------------
 
-InputError                                Traceback (most recent call last)
+TypeError                                 Traceback (most recent call last)
 
-&lt;ipython-input-2-d0c6938bc1c4&gt; in &lt;module&gt;
-     29         self.message = message
-     30 
----&gt; 31 raise InputError(3/1,&#39;分母不能为 1&#39;)
+&lt;ipython-input-19-a9efd264aca2&gt; in &lt;module&gt;
+      1 f = open(&quot;test.txt&quot;,&quot;ab&quot;)
+----&gt; 2 f.write(&#39;写入内容&#39;)
 
 
-InputError: (3.0, &#39;分母不能为 1&#39;)</code></pre>
+TypeError: a bytes-like object is required, not &#39;str&#39;</code></pre>
+<p>内存中的流也可以作为文件对象使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io</span><br><span class="line">f = io.StringIO(<span class="string">&quot;some initial text data&quot;</span>)</span><br><span class="line">print(f)</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;_io.StringIO object at 0x000001BE348D2040&gt;
+
+
+
+
+
+&#39;some initial text data&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = io.BytesIO(<span class="string">b&quot;some initial binary data: \x00\x01&quot;</span>)</span><br><span class="line">print(f)</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;_io.BytesIO object at 0x000001BE348D3310&gt;
+
+
+
+
+
+b&#39;some initial binary data: \x00\x01&#39;</code></pre>
+<p>open() 函数打开文件，创建流后，会使文件在一段不确定的时间内处于打开状态。这在简单脚本中不是问题，但对于较大的应用程序来说可能是个问题。此时用 close() 方法刷新并关闭流（或直接使用 with 语句打开）是明智的做法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">print(f.read())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<pre><code>为什么要掌握自学能力？
+未来还很长。</code></pre>
 
       
     </div>
@@ -422,9 +464,6 @@ InputError: (3.0, &#39;分母不能为 1&#39;)</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -515,7 +554,6 @@ InputError: (3.0, &#39;分母不能为 1&#39;)</code></pre>
   
 
   
-
 
 </body>
 </html>

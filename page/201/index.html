@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/35_str.swapcase-23e6ec4cb61a/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/37_str.translate-5e8ec22234e1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/35_str.swapcase-23e6ec4cb61a/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/37_str.translate-5e8ec22234e1/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>227</span>
+      <span>640</span>
     </span>
 </div>
 
@@ -347,44 +345,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-swapcase-大小写互转"><a href="#str-swapcase-大小写互转" class="headerlink" title="str.swapcase 大小写互转"></a>str.swapcase 大小写互转</h2><p>字符串方法 str.swapcase()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.swapcase)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-translate-按表转换"><a href="#str-translate-按表转换" class="headerlink" title="str.translate 按表转换"></a>str.translate 按表转换</h2><p>文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.translate)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-swapcase(self, /)
-    Convert uppercase characters to lowercase and lowercase characters to uppercase.</code></pre>
-<p>返回原字符串的副本，其中大写字符转换为小写，反之亦然。请注意 s.swapcase().swapcase() == s 并不一定为真值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;PythoN&#x27;</span>.swapcase()</span><br></pre></td></tr></table></figure>
+translate(self, table, /)
+    Replace each character in the string using the given translation table.
+
+      table
+        Translation table, which must be a mapping of Unicode ordinals to
+        Unicode ordinals, strings, or None.
+
+    The table must implement lookup/indexing via __getitem__, for instance a
+    dictionary or list.  If this operation raises LookupError, the character is
+    left untouched.  Characters mapped to None are deleted.</code></pre>
+<p>返回原字符串的副本，其中每个字符按给定的转换表进行映射。转换表必须是一个使用 <code>__getitem__()</code> 来实现索引操作的对象，通常为 mapping 或 sequence。当以 Unicode 码位序号（整数）为索引时，转换表对象可以做以下任何一种操作：返回 Unicode 序号或字符串，将字符映射为一个或多个字符；返回 None，将字符从结果字符串中删除；或引发 LookupError 异常，将字符映射为其自身。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;p&#x27;</span>),<span class="built_in">ord</span>(<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;pYTHOn&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;pYTHOn&#x27;</span>.swapcase()</span><br></pre></td></tr></table></figure>
+<pre><code>(112, 67)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.translate(&#123;<span class="number">112</span>:<span class="number">67</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;PythoN&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ß&#x27;</span>.swapcase() <span class="comment"># 德语的小写字母 ß 相当于 ss</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;Cython&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.translate(&#123;<span class="number">112</span>:<span class="string">&#x27;Cp&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;SS&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;SS&#x27;</span>.swapcase()</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;Cpython&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.translate(&#123;<span class="number">112</span>:<span class="literal">None</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;ss&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ß&#x27;</span>.swapcase().swapcase() == <span class="string">&#x27;ß&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;ython&#39;</code></pre>
+<p>你可以使用 str.maketrans() 基于不同格式的字符到字符映射来创建一个转换映射表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table = <span class="built_in">str</span>.maketrans(<span class="string">&#x27;pto&#x27;</span>,<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;python&#x27;</span>.translate(table)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>False</code></pre>
+<pre><code>&#39;1y2h3n&#39;</code></pre>
 
       
     </div>
@@ -443,9 +450,6 @@ swapcase(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -536,7 +540,6 @@ swapcase(self, /)
   
 
   
-
 
 </body>
 </html>

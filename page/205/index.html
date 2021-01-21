@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/31_str.casefold-fdb32d2a2859/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/33_str.title-85983721eba5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/31_str.casefold-fdb32d2a2859/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/33_str.title-85983721eba5/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>298</span>
+      <span>352</span>
     </span>
 </div>
 
@@ -347,33 +345,36 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-casefold-消除大小写"><a href="#str-casefold-消除大小写" class="headerlink" title="str.casefold 消除大小写"></a>str.casefold 消除大小写</h2><p>字符串方法 str.casefold()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.casefold)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-title-单词首字母大写"><a href="#str-title-单词首字母大写" class="headerlink" title="str.title 单词首字母大写"></a>str.title 单词首字母大写</h2><p>字符串方法 str.title()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.title)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-casefold(self, /)
-    Return a version of the string suitable for caseless comparisons.</code></pre>
-<p>返回原字符串消除大小写的副本。消除大小写的字符串可用于忽略大小写的匹配。</p>
-<p>消除大小写类似于转为小写，但是更加彻底一些，因为它会移除字符串中的所有大小写变化形式。例如，德语小写字母 ‘ß’ 相当于 “ss”，由于它已经是小写，lower() 不会对 ‘ß’ 做任何改变，而 casefold() 则会将其转换为 “ss”。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;pYthOn&#x27;</span>.casefold()</span><br></pre></td></tr></table></figure>
+title(self, /)
+    Return a version of the string where each word is titlecased.
+
+    More specifically, words start with uppercased characters and all remaining
+    cased characters have lower case.</code></pre>
+<p>返回原字符串的标题版本，其中每个单词第一个字母为大写，其余字母为小写。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;hi python&#x27;</span>.title()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;python&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ß&#x27;</span>.casefold()</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;Hi Python&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨python&#x27;</span>.title()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;ss&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ß&#x27;</span>.lower()</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;嗨Python&#39;</code></pre>
+<p>该算法使用一种简单的与语言无关的定义，将连续的字母组合视为单词。该定义在多数情况下都很有效，但它也意味着代表缩写形式与所有格的撇号也会成为单词边界，这可能导致不希望的结果:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;they&#x27;re bill&#x27;s friends from the UK&quot;</span>.title()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;ß&#39;</code></pre>
+<pre><code>&quot;They&#39;Re Bill&#39;S Friends From The Uk&quot;</code></pre>
 
       
     </div>
@@ -432,9 +433,6 @@ casefold(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -525,7 +523,6 @@ casefold(self, /)
   
 
   
-
 
 </body>
 </html>

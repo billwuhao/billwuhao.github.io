@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/03_any-fd7f78e6cea5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/05_bin-d4461ae49b7b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/03_any-fd7f78e6cea5/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/05_bin-d4461ae49b7b/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>228</span>
+      <span>211</span>
     </span>
 </div>
 
@@ -347,28 +345,29 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="any-有一个元素布尔值为真？"><a href="#any-有一个元素布尔值为真？" class="headerlink" title="any() 有一个元素布尔值为真？"></a>any() 有一个元素布尔值为真？</h2><p>内置函数 any()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">any</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="bin-整数的二进制形式"><a href="#bin-整数的二进制形式" class="headerlink" title="bin() 整数的二进制形式"></a>bin() 整数的二进制形式</h2><p>内置函数 bin()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">bin</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function any in module builtins:
+<pre><code>Help on built-in function bin in module builtins:
 
-any(iterable, /)
-    Return True if bool(x) is True for any x in the iterable.
+bin(number, /)
+    Return the binary representation of an integer.
 
-    If the iterable is empty, return False.</code></pre>
-<p>如果可迭代对象（iterable）的任一元素为真值则返回 True。如果可迭代对象为空，返回 False。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">any</span>([<span class="number">0</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">any</span>((<span class="literal">None</span>, [], <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">1</span>)))</span><br></pre></td></tr></table></figure>
+    &gt;&gt;&gt; bin(2796202)
+    &#39;0b1010101010101010101010&#39;</code></pre>
+<p>返回给定整数的二进制表示形式的字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bin</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>False</code></pre>
+<pre><code>&#39;0b1111011&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0b1111011</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>123</code></pre>
 
       
     </div>
@@ -427,9 +426,6 @@ any(iterable, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -520,7 +516,6 @@ any(iterable, /)
   
 
   
-
 
 </body>
 </html>

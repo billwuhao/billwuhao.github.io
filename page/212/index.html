@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/24_str.rjust-0c42a84ebf73/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/26_str.format_map-69c2b45c644d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/24_str.rjust-0c42a84ebf73/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/26_str.format_map-69c2b45c644d/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>304</span>
+      <span>345</span>
     </span>
 </div>
 
@@ -347,34 +345,42 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-rjust-右对齐"><a href="#str-rjust-右对齐" class="headerlink" title="str.rjust 右对齐"></a>str.rjust 右对齐</h2><p>字符串方法 str.rjust()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.rjust)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-format-map-格式化"><a href="#str-format-map-格式化" class="headerlink" title="str.format_map 格式化"></a>str.format_map 格式化</h2><p>字符串方法 str.format_map()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.format_map)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-rjust(self, width, fillchar=&#39; &#39;, /)
-    Return a right-justified string of length width.
+format_map(...)
+    S.format_map(mapping) -&gt; str
 
-    Padding is done using the specified fill character (default is a space).</code></pre>
-<p>返回长度为 width 的字符串，原字符串在其中靠右对齐。使用指定的 fillchar 填充空位 (默认使用 ASCII 空格符)。如果 width 小于等于字符串长度 len(str) 则返回原字符串的副本。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.rjust(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;python&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.rjust(<span class="number">10</span>,<span class="string">&#x27;~&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    Return a formatted version of S, using substitutions from mapping.
+    The substitutions are identified by braces (&#39;&#123;&#39; and &#39;&#125;&#39;).</code></pre>
+<p>类似于 str.format(**mapping)，不同之处在于 mapping 会被直接使用。适宜使用此方法的一个例子是当 mapping 为 dict 的子类的情况：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个字典子类型，当 键值对 不存在时，返回键</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Default</span>(<span class="params"><span class="built_in">dict</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__missing__</span>(<span class="params">self, key</span>):</span></span><br><span class="line">        <span class="keyword">return</span> key</span><br><span class="line">d = Default(a=<span class="number">1</span>)</span><br><span class="line">d[<span class="string">&#x27;a&#x27;</span>], d[<span class="string">&#x27;b&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;~~~~python&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.rjust(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(1, &#39;b&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># country 键值对不存在，所以直接格式化键 ‘country’</span></span><br><span class="line"><span class="string">&#x27;&#123;name&#125; was born in &#123;country&#125;&#x27;</span>.format_map(</span><br><span class="line">    Default(name=<span class="string">&#x27;Guido&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;    python&#39;</code></pre>
+<pre><code>&#39;Guido was born in country&#39;</code></pre>
+<p>与 format 格式化对比：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#123;a&#125; is &#123;age&#125;&#x27;</span>.format_map(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;A is 18&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#123;a&#125; is &#123;age&#125;&#x27;</span>.<span class="built_in">format</span>(**&#123;<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;A is 18&#39;</code></pre>
 
       
     </div>
@@ -433,9 +439,6 @@ rjust(self, width, fillchar=&#39; &#39;, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -526,7 +529,6 @@ rjust(self, width, fillchar=&#39; &#39;, /)
   
 
   
-
 
 </body>
 </html>

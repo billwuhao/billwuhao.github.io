@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/28_help-4fefe6976b02/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/30_id-df37995c8494/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/28_help-4fefe6976b02/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/30_id-df37995c8494/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2.3k</span>
+      <span>312</span>
     </span>
 </div>
 
@@ -347,102 +345,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="help-启动帮助系统"><a href="#help-启动帮助系统" class="headerlink" title="help 启动帮助系统"></a>help 启动帮助系统</h2><p>内置函数（帮助系统）help，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">help</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="id-返回对象的唯一标识"><a href="#id-返回对象的唯一标识" class="headerlink" title="id() 返回对象的唯一标识"></a>id() 返回对象的唯一标识</h2><p>内置函数 id()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">id</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on _Helper in module _sitebuiltins object:
+<pre><code>Help on built-in function id in module builtins:
 
-class _Helper(builtins.object)
- |  Define the builtin &#39;help&#39;.
- |  
- |  This is a wrapper around pydoc.help that provides a helpful message
- |  when &#39;help&#39; is typed at the Python interactive prompt.
- |  
- |  Calling help() at the Python prompt starts an interactive help session.
- |  Calling help(thing) prints help for the python object &#39;thing&#39;.
- |  
- |  Methods defined here:
- |  
- |  __call__(self, *args, **kwds)
- |      Call self as a function.
- |  
- |  __repr__(self)
- |      Return repr(self).
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)</code></pre>
-<p>启动内置的帮助系统（此函数主要在交互式中使用）。</p>
-<p>如果没有实参，解释器控制台里会启动交互式帮助系统。</p>
-<p>如果实参是一个字符串，则在模块、函数、类、方法、关键字或文档主题中搜索该字符串，并在控制台上打印帮助信息。</p>
-<p>如果实参是其他任意对象，则会生成该对象的帮助页。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">help</span>)</span><br></pre></td></tr></table></figure>
+id(obj, /)
+    Return the identity of an object.
+
+    This is guaranteed to be unique among simultaneously existing objects.
+    (CPython uses the object&#39;s memory address.)</code></pre>
+<p>返回对象的唯一标识。该标识是一个整数，在此对象的生命周期中保证是唯一且恒定的。</p>
+<p>CPython 中该标识是对象的内存地址。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">id</span>(<span class="number">1</span>), <span class="built_in">id</span>(<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>_sitebuiltins._Helper</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>()</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>Welcome to Python 3.8&#39;s help utility!
-
-If this is your first time using Python, you should definitely check out
-the tutorial on the Internet at https://docs.python.org/3.8/tutorial/.
-
-Enter the name of any module, keyword, or topic to get help on writing
-Python programs and using Python modules.  To quit this help utility and
-return to the interpreter, just type &quot;quit&quot;.
-
-To get a list of available modules, keywords, symbols, or topics, type
-&quot;modules&quot;, &quot;keywords&quot;, &quot;symbols&quot;, or &quot;topics&quot;.  Each module also comes
-with a one-line summary of what it does; to list the modules whose name
-or summary contain a given string such as &quot;spam&quot;, type &quot;modules spam&quot;.
+<pre><code>(140736642126656, 2785998726512)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
 
 
 
-help&gt;  print
 
-
-Help on built-in function print in module builtins:
-
-print(...)
-    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
-
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 两个变量引用了同一个值为 1 的对象</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="built_in">int</span>(<span class="string">&#x27;01&#x27;</span>)</span><br><span class="line"><span class="built_in">id</span>(a), <span class="built_in">id</span>(b)</span><br></pre></td></tr></table></figure>
 
 
 
-help&gt;  q
+
+<pre><code>(140736642126656, 140736642126656)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 两个值为 1000 的不同对象</span></span><br><span class="line">a = <span class="number">1000</span></span><br><span class="line">b = <span class="number">1000</span></span><br><span class="line"><span class="built_in">id</span>(a), <span class="built_in">id</span>(b)</span><br></pre></td></tr></table></figure>
 
 
 
-You are now leaving help and returning to the Python interpreter.
-If you want to ask for help on a particular object directly from the
-interpreter, you can type &quot;help(object)&quot;.  Executing &quot;help(&#39;string&#39;)&quot;
-has the same effect as typing a particular string at the help&gt; prompt.</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="string">&#x27;list.append&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on method_descriptor in list:
+<pre><code>(2785998745552, 2785998745360)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可变对象改变值，还是同一个对象</span></span><br><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">print(<span class="built_in">id</span>(_list),_list)</span><br><span class="line"><span class="keyword">del</span> _list[:]</span><br><span class="line">print(<span class="built_in">id</span>(_list),_list)</span><br></pre></td></tr></table></figure>
 
-list.append = append(self, object, /)
-    Append object to the end of the list.</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.append)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on method_descriptor:
-
-append(self, object, /)
-    Append object to the end of the list.</code></pre>
+<pre><code>2785999307336 [1, 2, 3]
+2785999307336 []</code></pre>
 
       
     </div>
@@ -501,9 +443,6 @@ append(self, object, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -594,7 +533,6 @@ append(self, object, /)
   
 
   
-
 
 </body>
 </html>

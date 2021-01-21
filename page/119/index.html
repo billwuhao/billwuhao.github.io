@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/03_if-dab3b5612fdd/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/05_while-09f06b11db11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/03_if-dab3b5612fdd/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/05_while-09f06b11db11/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>160</span>
+      <span>123</span>
     </span>
 </div>
 
@@ -347,33 +345,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="if-条件判断"><a href="#if-条件判断" class="headerlink" title="if 条件判断"></a>if 条件判断</h2><p>if 语句用于有条件的执行。语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if assignment_expression:</span><br><span class="line">    suite</span><br><span class="line">elif assignment_expression: # 可选子句</span><br><span class="line">    suite</span><br><span class="line">... # 可以多个 elif</span><br><span class="line">else: #可选子句</span><br><span class="line">    suite</span><br></pre></td></tr></table></figure>
-<p>对于简单语句，可以写为一行，但不推荐。</p>
-<p>它通过对表达式逐个求值直至找到一个真值。然后执行该 if 语句或子句体下的代码，从而 if 语句的其他部分不会被执行或求值。</p>
-<p>如果所有表达式均为假值，else 子句体如果存在就会被执行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:print(i)</span><br></pre></td></tr></table></figure>
+          <h2 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h2><p>while 语句用于在表达式保持为真的情况下重复地执行。语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while assignment_expression:</span><br><span class="line">    suite</span><br><span class="line">else: # 可选子句</span><br><span class="line">    suite</span><br></pre></td></tr></table></figure>
+
+<p>对于简单语句可以写为一行，但不推荐。</p>
+<p>这将重复地检验表达式，如果其值为真就执行其下的代码；表达式值为假则如果 else 子句存在就会被执行并终止循环。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">3</span>: print(i); i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <pre><code>0
-2
-4</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
+1
+2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">3</span>: </span><br><span class="line">    print(i)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>: <span class="comment"># i 为 3 时执行</span></span><br><span class="line">    print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>&#x27;</span>)</span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <pre><code>0
+1
 2
-4</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i,j = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> i &lt; <span class="number">0</span>: </span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">elif</span> i == <span class="number">0</span>:</span><br><span class="line">    print(i) <span class="comment"># 执行，下面的则不再执行</span></span><br><span class="line"><span class="keyword">elif</span> j == <span class="number">1</span>:</span><br><span class="line">    print(j)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j)</span><br></pre></td></tr></table></figure>
-
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i,j = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> i &lt; <span class="number">0</span>: </span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">elif</span> i == <span class="number">1</span>:</span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">elif</span> j == <span class="number">0</span>:</span><br><span class="line">    print(j) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j) <span class="comment"># 执行</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>0 1</code></pre>
-<p>多个 if 语句连用，则分别判断，互不影响：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">i,j = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> i &lt; <span class="number">0</span>: </span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j) <span class="comment"># 执行</span></span><br><span class="line"><span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">    print(i) <span class="comment"># 执行</span></span><br><span class="line"><span class="keyword">if</span> j == <span class="number">1</span>:</span><br><span class="line">    print(j) <span class="comment"># 执行</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j) <span class="comment"># 不执行</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>0 1
-0
-1</code></pre>
+i=3
+end</code></pre>
 
       
     </div>
@@ -432,9 +420,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -525,7 +510,6 @@
   
 
   
-
 
 </body>
 </html>

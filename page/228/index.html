@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/08_str.rsplit-350a058f2bc5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/10_str.rpartition-3588b7d23ed5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/08_str.rsplit-350a058f2bc5/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/10_str.rpartition-3588b7d23ed5/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>586</span>
+      <span>523</span>
     </span>
 </div>
 
@@ -347,55 +345,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-rsplit-拆分"><a href="#str-rsplit-拆分" class="headerlink" title="str.rsplit 拆分"></a>str.rsplit 拆分</h2><p>字符串方法 str.rsplit()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.rsplit)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-rpartition-拆分"><a href="#str-rpartition-拆分" class="headerlink" title="str.rpartition 拆分"></a>str.rpartition 拆分</h2><p>字符串方法 str.rpartition()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.rpartition)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-rsplit(self, /, sep=None, maxsplit=-1)
-    Return a list of the words in the string, using sep as the delimiter string.
+rpartition(self, sep, /)
+    Partition the string into three parts using the given separator.
 
-      sep
-        The delimiter according which to split the string.
-        None (the default value) means split according to any whitespace,
-        and discard empty strings from the result.
-      maxsplit
-        Maximum number of splits to do.
-        -1 (the default value) means no limit.
+    This will search for the separator in the string, starting at the end. If
+    the separator is found, returns a 3-tuple containing the part before the
+    separator, the separator itself, and the part after it.
 
-    Splits are done starting at the end of the string and working to the front.</code></pre>
-<p>返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。如果给出了 maxsplit，则最多进行 maxsplit 次拆分，从 最右边开始。如果 sep 未指定或为 None，任何空白字符串都会被作为分隔符。除了从右边开始拆分，rsplit() 的其他行为都类似于 split()。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;p\nyth   on &#x27;</span>.rsplit()</span><br></pre></td></tr></table></figure>
+    If the separator is not found, returns a 3-tuple containing two empty strings
+    and the original string.</code></pre>
+<p>在 sep 最后一次出现的位置拆分字符串，返回一个 3 元组，其中包含分隔符之前的部分、分隔符本身，以及分隔符之后的部分。如果分隔符未找到，则返回的 3 元组中包含两个空字符串以及字符串本身。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.rpartition(<span class="string">&#x27;n&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;p&#39;, &#39;yth&#39;, &#39;on&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;p\nyth on&#x27;</span>.rsplit(<span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;pytho&#39;, &#39;n&#39;, &#39;&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;pythhhon&#x27;</span>.rpartition(<span class="string">&#x27;hh&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;p\n&#39;, &#39;th on&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;p\nyth on&#x27;</span>.rsplit(maxsplit=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;pyth&#39;, &#39;hh&#39;, &#39;on&#39;)</code></pre>
+<p>分隔符未找到，则返回的 3 元组中 字符串本身 排在最后：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.rpartition(<span class="string">&#x27;ht&#x27;</span>) </span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;p\nyth&#39;, &#39;on&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;p\nyth   on &#x27;</span>.rsplit(maxsplit=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;p&#39;, &#39;yth&#39;, &#39;on&#39;]</code></pre>
-<p>多个分隔符在一起，则会解读为拆分空字符串：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\n\np\nyth on&#x27;</span>.rsplit(<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;&#39;, &#39;&#39;, &#39;p&#39;, &#39;yth on&#39;]</code></pre>
+<pre><code>(&#39;&#39;, &#39;&#39;, &#39;python&#39;)</code></pre>
 
       
     </div>
@@ -454,9 +437,6 @@ rsplit(self, /, sep=None, maxsplit=-1)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -547,7 +527,6 @@ rsplit(self, /, sep=None, maxsplit=-1)
   
 
   
-
 
 </body>
 </html>

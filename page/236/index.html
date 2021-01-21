@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/01_numeric/06_number_operations-660a13f6b5c0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/02_concatenated_string-00bdb592a89f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/01_numeric/06_number_operations-660a13f6b5c0/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/02_concatenated_string-00bdb592a89f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:11" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:11+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>294</span>
+      <span>177</span>
     </span>
 </div>
 
@@ -347,77 +345,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="数字运算"><a href="#数字运算" class="headerlink" title="数字运算"></a>数字运算</h2><p>所有数字类型都支持下列运算（复数不支持 // 和 %）：</p>
-<ul>
-<li><code>x + y</code>, x 和 y 的和</li>
-<li><code>x - y</code>, x 和 y 的差</li>
-<li><code>x * y</code>, x 和 y 的乘积</li>
-<li><code>x / y</code>, x 和 y 的商</li>
-<li><code>x // y</code>, x 和 y 的商数 </li>
-<li><code>x % y</code>, x / y 的余数 </li>
-<li><code>-x</code>, x 取反</li>
-<li><code>+x</code>, x 不变</li>
-<li><code>x ** y</code>, x 的 y 次幂 </li>
-</ul>
-<p>Python 完全支持数字的混合运算：当一个二元算术运算符的操作数有不同数值类型时，“较窄” 类型的操作数会拓宽到另一个操作数的类型。其中整数比浮点数窄，浮点数比复数窄。但整数除以整数得到浮点数。</p>
-<p>运算示例如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span> + <span class="number">1</span> + <span class="number">3.14</span></span><br></pre></td></tr></table></figure>
+          <h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><h3 id="空格拼接"><a href="#空格拼接" class="headerlink" title="空格拼接"></a>空格拼接</h3><p>相邻的两个字符串，无论中间隔了多少个空格（包括 0 个），都会自动连接到一起：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Py&#x27;</span><span class="string">&#x27;thon&#x27;</span>, <span class="string">&#x27;Py&#x27;</span>    <span class="string">&#x27;thon&#x27;</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>5.140000000000001</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span> + <span class="number">1</span> + <span class="number">3.14</span> + <span class="number">0j</span></span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;Python&#39;, &#39;Python&#39;)</code></pre>
+<p>甚至可以用 () 包围实现换行拼接，这在字符串（或正则表达式）很长时非常有用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&#x27;Py&#x27;</span></span><br><span class="line"><span class="string">f&#x27;thon<span class="subst">&#123;<span class="number">3</span>&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">r&#x27;\Go&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(5.140000000000001+0j)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>/<span class="number">3</span>, <span class="number">3</span>/<span class="number">1j</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;Python3\\Go&#39;</code></pre>
+<h3 id="运算符-拼接"><a href="#运算符-拼接" class="headerlink" title="运算符 + 拼接"></a>运算符 <code>+</code> 拼接</h3><p>运算符 <code>+</code> 拼接字符串，和空格类似，但 <code>+</code> 拼接字符串可以是变量的形式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;Py&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;thon&#x27;</span></span><br><span class="line"><span class="string">&#x27;Py&#x27;</span> + b, a + b</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(1.0, -3j)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>//<span class="number">2</span>, <span class="number">6</span>//<span class="number">2.0</span></span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;Python&#39;, &#39;Python&#39;)</code></pre>
+<p>运算符 <code>+</code> 还可以和赋值运算符 <code>=</code> 连用，拼接字符串的同时进行赋值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 a 和 b 拼接，赋值给 a</span></span><br><span class="line">a += b</span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># 将 b 和 a 拼接，赋值给 b</span></span><br><span class="line">b += a</span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+
+<pre><code>Python
 
 
 
 
-<pre><code>(3, 3.0)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>%<span class="number">4</span>, <span class="number">6</span>%<span class="number">3.0</span></span><br></pre></td></tr></table></figure>
 
-
-
-
-<pre><code>(2, 0.0)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>**<span class="number">2</span>, <span class="number">3</span>**<span class="number">2.0</span>, <span class="number">3</span>**<span class="number">0j</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(9, 9.0, (1+0j))</code></pre>
-<p>优先级升序排列如下：</p>
-<ul>
-<li><code>+, -</code> 加和减</li>
-<li><code>*, /, //, %</code> 乘，除，整除，取余 </li>
-<li><code>+x, -x</code> 正，负</li>
-<li><code>**</code> 乘方 </li>
-</ul>
-<p>幂运算符 ** 绑定的紧密程度低于在其右侧的算术:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">-20</span> * <span class="number">4</span>**<span class="number">-1</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>-4.0</code></pre>
-<p>为了易读，应该多使用小括号：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + (<span class="number">-20</span>) * <span class="number">4</span>**(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>-4.0</code></pre>
+&#39;thonPython&#39;</code></pre>
 
       
     </div>
@@ -476,9 +434,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -569,7 +524,6 @@
   
 
   
-
 
 </body>
 </html>

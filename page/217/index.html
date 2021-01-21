@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/19_str.join-9645109e9eb2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/21_str.endswith-d503645e6584/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/19_str.join-9645109e9eb2/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/21_str.endswith-d503645e6584/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>901</span>
+      <span>423</span>
     </span>
 </div>
 
@@ -347,67 +345,43 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-join-拼接字符串"><a href="#str-join-拼接字符串" class="headerlink" title="str.join 拼接字符串"></a>str.join 拼接字符串</h2><p>字符串方法 str.join()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.join)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-endswith-指定字符串结尾？"><a href="#str-endswith-指定字符串结尾？" class="headerlink" title="str.endswith 指定字符串结尾？"></a>str.endswith 指定字符串结尾？</h2><p>字符串方法 str.endswith()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.endswith)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-join(self, iterable, /)
-    Concatenate any number of strings.
+endswith(...)
+    S.endswith(suffix[, start[, end]]) -&gt; bool
 
-    The string whose method is called is inserted in between each given string.
-    The result is returned as a new string.
-
-    Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;</code></pre>
-<p>返回一个由 iterable 中的字符串拼接而成的字符串。如果 iterable 中存在任何非字符串值则会引发 TypeError。调用该方法的字符串将作为元素之间的分隔。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;~&#x27;</span>.join(<span class="string">&#x27;abc&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;a~b~c&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;acb&#x27;</span>.join([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br></pre></td></tr></table></figure>
+    Return True if S ends with the specified suffix, False otherwise.
+    With optional start, test S beginning at that position.
+    With optional end, stop comparing S at that position.
+    suffix can also be a tuple of strings to try.</code></pre>
+<p>如果字符串以指定的 suffix 结束返回 True，否则返回 False。suffix 也可以为由多个供查找的后缀构成的元组。如果有可选项 start，将从所指定位置开始检查。如果有可选项 end，将在所指定位置之前停止比较。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python.exe&#x27;</span>.endswith(<span class="string">&#x27;.exe&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;1acb2&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.join([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python.exe&#x27;</span>.endswith((<span class="string">&#x27;.exe&#x27;</span>,<span class="string">&#x27;.txt&#x27;</span>), <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;12&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;-&#x27;</span>.join(&#123;<span class="string">&#x27;1&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;2&#x27;</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python.exe&#x27;</span>.endswith((<span class="string">&#x27;.py&#x27;</span>,<span class="string">&#x27;.txt&#x27;</span>), <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;1-2&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;-&#x27;</span>.join([<span class="string">&#x27;1&#x27;</span>,<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python.exe&#x27;</span>.endswith((<span class="string">&#x27;.exe&#x27;</span>,<span class="string">&#x27;.txt&#x27;</span>), <span class="number">5</span>,<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
 
 
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-9-fc346e5ca62e&gt; in &lt;module&gt;
-----&gt; 1 &#39;-&#39;.join([&#39;1&#39;,2])
 
 
-TypeError: sequence item 1: expected str instance, int found</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;-&#x27;</span>.join(<span class="string">b&#x27;abc&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-8-9d04d7060926&gt; in &lt;module&gt;
-----&gt; 1 &#39;-&#39;.join(b&#39;abc&#39;)
-
-
-TypeError: sequence item 0: expected str instance, int found</code></pre>
+<pre><code>False</code></pre>
 
       
     </div>
@@ -466,9 +440,6 @@ TypeError: sequence item 0: expected str instance, int found</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -559,7 +530,6 @@ TypeError: sequence item 0: expected str instance, int found</code></pre>
   
 
   
-
 
 </body>
 </html>

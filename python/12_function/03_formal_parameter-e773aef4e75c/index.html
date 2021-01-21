@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="函数形参形参是函数定义中指定的参数名称。指定某个参数的形式，决定了该形参在函数调用时，可以接受实参的方式。关于实参详见 函数调用。 因而形参分为五种：  位置或关键字：指定一个可以作为 位置参数 传入也可以作为 关键字参数 传入的实参。这是默认的形参类型，但有默认值的形参必须置于无默认值的形参之后。  123456def f(a,b&#x3D;None):    print(f&amp;#x27;a&#x3D;&amp;#123;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="吴明文的站点">
+<meta property="og:url" content="http://example.com/python/12_function/03_formal_parameter-e773aef4e75c/">
+<meta property="og:site_name" content="吴明文的站点">
+<meta property="og:description" content="函数形参形参是函数定义中指定的参数名称。指定某个参数的形式，决定了该形参在函数调用时，可以接受实参的方式。关于实参详见 函数调用。 因而形参分为五种：  位置或关键字：指定一个可以作为 位置参数 传入也可以作为 关键字参数 传入的实参。这是默认的形参类型，但有默认值的形参必须置于无默认值的形参之后。  123456def f(a,b&#x3D;None):    print(f&amp;#x27;a&#x3D;&amp;#123;a">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-21T04:56:49.932Z">
+<meta property="article:modified_time" content="2021-01-02T16:11:40.251Z">
+<meta property="article:author" content="吴明文">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/python/12_function/03_formal_parameter-e773aef4e75c/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 吴明文的站点</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">吴明文的站点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">探索花花世界，追寻自己内心</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">298</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82"><span class="nav-number">1.</span> <span class="nav-text">函数形参</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吴明文"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">吴明文</p>
+  <div class="site-description" itemprop="description">探索花花世界，追寻自己内心</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">298</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-instagram fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.catb.org/~esr/faqs/hacker-howto.html" title="http:&#x2F;&#x2F;www.catb.org&#x2F;~esr&#x2F;faqs&#x2F;hacker-howto.html" rel="noopener" target="_blank">How To Become A Hacker</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.marxists.org/index.htm" title="https:&#x2F;&#x2F;www.marxists.org&#x2F;index.htm" rel="noopener" target="_blank">Marxists Internet Archive</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.gutenberg.org/wiki/Main_Page" title="https:&#x2F;&#x2F;www.gutenberg.org&#x2F;wiki&#x2F;Main_Page" rel="noopener" target="_blank">Project Gutenberg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.shi-ci.com/" title="https:&#x2F;&#x2F;www.shi-ci.com&#x2F;" rel="noopener" target="_blank">中华诗词</a>
+        </li>
+    </ul>
+  </div>
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/03_formal_parameter-e773aef4e75c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴明文">
+      <meta itemprop="description" content="探索花花世界，追寻自己内心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴明文的站点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表</span>
+
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新</span>
+        <time title="修改时间：2021-01-03 00:11:40" itemprop="dateModified" datetime="2021-01-03T00:11:40+08:00">2021-01-03</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="浏览" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">浏览：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">字数：</span>
+      <span>1.5k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="函数形参"><a href="#函数形参" class="headerlink" title="函数形参"></a>函数形参</h2><p>形参是函数定义中指定的参数名称。指定某个参数的形式，决定了该形参在函数调用时，可以接受实参的方式。关于实参详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/12_function/07_function_call.ipynb">函数调用</a>。</p>
+<p>因而形参分为五种：</p>
+<ul>
+<li>位置或关键字：指定一个可以作为 位置参数 传入也可以作为 关键字参数 传入的实参。这是默认的形参类型，但有默认值的形参必须置于无默认值的形参之后。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span></span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 位置实参传入</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 关键字实参传入</span></span><br><span class="line">f(b=<span class="number">2</span>,a=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2
+a=1,b=2</code></pre>
+<ul>
+<li>仅限位置：指定一个只能通过位置传入的参数。仅限位置形参通过在函数定义的形参之后包含一个 <code>/</code> 字符来定义。<code>/</code> 之前的参数为仅限位置形参，之后的形参为默认形参类型。有默认值的形参也必须置于无默认值的形参之后。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,/,c=<span class="literal">None</span></span>):</span> <span class="comment"># 因为 b 有默认值，c 必须要有默认值</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 按位置传参调用</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 关键字传参则不允许</span></span><br><span class="line">f(a=<span class="number">1</span>,b=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2,c=3
+
+
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-6-52b3afdaad4c&gt; in &lt;module&gt;
+      4 f(1,2,c=3)
+      5 # 关键字传参则不允许
+----&gt; 6 f(a=1,b=2)
+
+
+TypeError: f() got some positional-only arguments passed as keyword arguments: &#39;a, b&#39;</code></pre>
+<ul>
+<li>仅限关键字：指定一个只能通过关键字传入的参数。仅限关键字形参可通过在函数定义的形参中包含单个 可变位置形参 或者在形参之前放一个 <code>*</code> 来定义。可变位置形参 或 <code>*</code> 之后的参数为仅限关键字形参。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*a,b=<span class="literal">None</span>,c=<span class="literal">None</span></span>):</span> <span class="comment"># b 和 c 必须有默认值</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 位置传参将被解读为可变位置参数</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 关键字传参</span></span><br><span class="line">f(<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=(1, 2, 3),b=None,c=None
+a=(1,),b=2,c=3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*,a,b=<span class="literal">None</span>,c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># 关键字传参</span></span><br><span class="line">f(b=<span class="number">2</span>,a=<span class="number">1</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 位置传参不允许</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2,c=3
+
+
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-1-9d584fa28622&gt; in &lt;module&gt;
+      4 f(b=2,a=1,c=3)
+      5 # 位置传参不允许
+----&gt; 6 f(1,2,3)
+
+
+TypeError: f() takes 0 positional arguments but 3 were given</code></pre>
+<ul>
+<li>可变位置：指定一个可以接受任意数量的位置参数传入的参数。这种形参可通过在形参名称前加缀 <code>*</code> 来定义，并将接受到的参数封装成一个元组。该参数如果接受到了实参，它前面的参数必须为仅限位置参数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,*c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># c 没有接受参数</span></span><br><span class="line">f(<span class="number">1</span>); f(b=<span class="number">2</span>,a=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># c 接受到了参数</span></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=None,c=()
+a=1,b=2,c=()
+a=1,b=2,c=(3, 4, 5)</code></pre>
+<ul>
+<li>可变关键字：指定一个可以接受任意数量的关键字参数的参数。这种形参可通过在形参名称前加缀 <code>**</code> 来定义，并将接受到的参数封装成一个字典。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,**c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>,d=<span class="number">4</span>)</span><br><span class="line">f(d=<span class="number">4</span>,b=<span class="number">2</span>,a=<span class="number">1</span>,c=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=2,c=&#123;&#39;c&#39;: 3, &#39;d&#39;: 4&#125;
+a=1,b=2,c=&#123;&#39;d&#39;: 4, &#39;c&#39;: 3&#125;</code></pre>
+<p>带默认值的参数，可变位置参数和可变关键字参数，调用函数时可以不传参。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=<span class="number">1</span>,*b,c=<span class="number">3</span>,**d</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>,d=<span class="subst">&#123;d&#125;</span>&#x27;</span>)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>a=1,b=(),c=3,d=&#123;&#125;</code></pre>
+<p>默认值只会执行一次，这条规则很重要。如果参数有默认值且为可变对象，则需要做必要的限制：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=[]</span>):</span></span><br><span class="line">    print(<span class="built_in">id</span>(a))</span><br><span class="line">    a.append(<span class="number">1</span>)</span><br><span class="line">    print(a)</span><br><span class="line">f() <span class="comment"># 多次调用会引用参数指向的同一个对象</span></span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>2399568560064
+[1]
+2399568560064
+[1, 1]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以拷贝一个副本</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=[]</span>):</span></span><br><span class="line">    b = a.copy()</span><br><span class="line">    b.append(<span class="number">1</span>)</span><br><span class="line">    print(b)</span><br><span class="line">f()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1]
+[1]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 或者修改参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="literal">None</span>:</span><br><span class="line">        a = []</span><br><span class="line">        a.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a.append(<span class="number">1</span>)</span><br><span class="line">    print(a)</span><br><span class="line">    </span><br><span class="line">f()</span><br><span class="line">f([])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1]
+[1]</code></pre>
+<p>函数的形参可以使用标注，标注的语法是参数后面接一个冒号 <code>:</code>，然后接一个表达式（任意表达式），通常用来指明应该（不是必须）传递什么类型的参数等。标注提高了代码的可读性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a 标注为字符串类型，b 标注为整数，并设置默认值 2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a:<span class="built_in">str</span>,b:<span class="built_in">int</span>=<span class="number">2</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> a*b</span><br><span class="line">f(<span class="string">&#x27;Hi&#x27;</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;HiHiHi&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a:<span class="string">&#x27;字符串&#x27;</span>,b:<span class="string">&#x27;整数&#x27;</span>=<span class="number">2</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> a*b</span><br><span class="line">f(<span class="string">&#x27;Hi&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;HiHi&#39;</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/python/12_function/02_function_definition-f4d7c2e81fbb/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/python/12_function/04_return_value-2cdda3ae83c4/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴昊</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>总字数：</span>
+    <span title="总字数">298k</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

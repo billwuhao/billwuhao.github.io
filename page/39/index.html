@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/63_type-951e2573a43d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/65_zip-23ecc1f20588/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/63_type-951e2573a43d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/65_zip-23ecc1f20588/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:39" itemprop="dateModified" datetime="2021-01-03T00:11:39+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:40" itemprop="dateModified" datetime="2021-01-03T00:11:40+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2.6k</span>
+      <span>889</span>
     </span>
 </div>
 
@@ -347,139 +345,79 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="type-判断类型或创建类"><a href="#type-判断类型或创建类" class="headerlink" title="type 判断类型或创建类"></a>type 判断类型或创建类</h2><p>内置函数（类）type，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="zip-重组可迭代对象"><a href="#zip-重组可迭代对象" class="headerlink" title="zip 重组可迭代对象"></a>zip 重组可迭代对象</h2><p>内置函数（类）zip，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">zip</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class type in module builtins:
+<pre><code>Help on class zip in module builtins:
 
-class type(object)
- |  type(object_or_name, bases, dict)
- |  type(object) -&gt; the object&#39;s type
- |  type(name, bases, dict) -&gt; a new type
+class zip(object)
+ |  zip(iter1 [,iter2 [...]]) --&gt; zip object
+ |  
+ |  Return a zip object whose .__next__() method returns a tuple where
+ |  the i-th element comes from the i-th iterable argument.  The .__next__()
+ |  method continues until the shortest iterable in the argument sequence
+ |  is exhausted and then it raises StopIteration.
  |  
  |  Methods defined here:
- |  
- |  __call__(self, /, *args, **kwargs)
- |      Call self as a function.
- |  
- |  __delattr__(self, name, /)
- |      Implement delattr(self, name).
- |  
- |  __dir__(self, /)
- |      Specialized __dir__ implementation for types.
  |  
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
  |  
- |  __init__(self, /, *args, **kwargs)
- |      Initialize self.  See help(type(self)) for accurate signature.
+ |  __iter__(self, /)
+ |      Implement iter(self).
  |  
- |  __instancecheck__(self, instance, /)
- |      Check if an object is an instance.
+ |  __next__(self, /)
+ |      Implement next(self).
  |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __setattr__(self, name, value, /)
- |      Implement setattr(self, name, value).
- |  
- |  __sizeof__(self, /)
- |      Return memory consumption of the type object.
- |  
- |  __subclasscheck__(self, subclass, /)
- |      Check if a class is a subclass.
- |  
- |  __subclasses__(self, /)
- |      Return a list of immediate subclasses.
- |  
- |  mro(self, /)
- |      Return a type&#39;s method resolution order.
- |  
- |  ----------------------------------------------------------------------
- |  Class methods defined here:
- |  
- |  __prepare__(...)
- |      __prepare__() -&gt; dict
- |      used to create the namespace for the class statement
+ |  __reduce__(...)
+ |      Return state information for pickling.
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
  |  
- |  __new__(*args, **kwargs)
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  __abstractmethods__
- |  
- |  __dict__
- |  
- |  __text_signature__
- |  
- |  ----------------------------------------------------------------------
- |  Data and other attributes defined here:
- |  
- |  __base__ = &lt;class &#39;object&#39;&gt;
- |      The most base type
- |  
- |  __bases__ = (&lt;class &#39;object&#39;&gt;,)
- |  
- |  __basicsize__ = 864
- |  
- |  __dictoffset__ = 264
- |  
- |  __flags__ = -2146675712
- |  
- |  __itemsize__ = 40
- |  
- |  __mro__ = (&lt;class &#39;type&#39;&gt;, &lt;class &#39;object&#39;&gt;)
- |  
- |  __weakrefoffset__ = 368</code></pre>
-<p>传入一个参数时，返回对象的类型。推荐使用 isinstance() 内置函数来检测对象的类型，因为它会考虑子类的情况。</p>
-<p>传入三个参数时，返回一个新的 type 对象。这在本质上是 class 语句的一种动态形式。name 参数是字符串即类名并且会成为 <code>__name__</code> 属性；bases 元组列出基类并且会成为 <code>__bases__</code> 属性；而 dict 字典为包含类主体定义的命名空间并且会被复制到一个标准字典成为 <code>__dict__</code> 属性。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.</code></pre>
+<p>创建一个聚合了来自每个可迭代对象中的元素的迭代器。</p>
+<p>返回一个元组的迭代器，其中的第 i 个元组包含来自每个可迭代对象的第 i 个元素。</p>
+<p>当所输入可迭代对象中最短的一个被耗尽时，迭代器将停止迭代。</p>
+<p>当只有一个可迭代对象参数时，它将返回一个单元组的迭代器。</p>
+<p>不带参数时，它将返回一个空迭代器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">zip</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">int</span>), <span class="built_in">type</span>(<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">zip</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(type, type)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">int</span>, <span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;zip at 0x2ac600edac8&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>(<span class="string">&#x27;123&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">A.__name__, A.__bases__, A.__dict__</span><br></pre></td></tr></table></figure>
+<pre><code>[(&#39;1&#39;,), (&#39;2&#39;,), (&#39;3&#39;,)]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>(<span class="string">&#x27;123&#x27;</span>,&#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;))</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;A&#39;,
- (object,),
- mappingproxy(&#123;&#39;__module__&#39;: &#39;__main__&#39;,
-               &#39;a&#39;: 1,
-               &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;A&#39; objects&gt;,
-               &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;A&#39; objects&gt;,
-               &#39;__doc__&#39;: None&#125;))</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = <span class="built_in">type</span>(<span class="string">&#x27;A&#x27;</span>, (<span class="built_in">object</span>,), <span class="built_in">dict</span>(a=<span class="number">1</span>))</span><br><span class="line">A.__name__, A.__bases__, A.__dict__</span><br></pre></td></tr></table></figure>
+<pre><code>[(&#39;1&#39;, 1), (&#39;2&#39;, 2), (&#39;3&#39;, 3)]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>([<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>],(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>),<span class="string">&#x27;12&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;A&#39;,
- (object,),
- mappingproxy(&#123;&#39;a&#39;: 1,
-               &#39;__module__&#39;: &#39;__main__&#39;,
-               &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;A&#39; objects&gt;,
-               &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;A&#39; objects&gt;,
-               &#39;__doc__&#39;: None&#125;))</code></pre>
+<pre><code>[(3, 1, &#39;1&#39;), (2, 2, &#39;2&#39;)]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>(*[<span class="string">&#x27;abc&#x27;</span>,<span class="string">&#x27;123&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[(&#39;a&#39;, &#39;1&#39;), (&#39;b&#39;, &#39;2&#39;), (&#39;c&#39;, &#39;3&#39;)]</code></pre>
 
       
     </div>
@@ -538,9 +476,6 @@ class type(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -631,7 +566,6 @@ class type(object)
   
 
   
-
 
 </body>
 </html>

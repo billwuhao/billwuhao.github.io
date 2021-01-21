@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/05_import_code-e688cbfbea06/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/02_class_definition-91a8825aecc4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/15_module/05_import_code-e688cbfbea06/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/16_class/02_class_definition-91a8825aecc4/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.8k</span>
+      <span>492</span>
     </span>
 </div>
 
@@ -347,126 +345,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="导入操作"><a href="#导入操作" class="headerlink" title="导入操作"></a>导入操作</h2><p>导入操作使用 import 语句，详细的语法规则查看 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/18_import.ipynb">import 导入语句</a>。</p>
-<ul>
-<li><code>import ...</code> 只能导入模块：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="keyword">as</span> r, pandas.core <span class="keyword">as</span> pc</span><br><span class="line">r, pc</span><br></pre></td></tr></table></figure>
+          <h2 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h2><p>类是用来创建用户定义对象的模板，是抽象的对象（类对象）。例如我们说鱼类，指的就是一类抽象的对象，而具体到武昌鱼，鲈鱼，鲫鱼…… 就是具体的对象。</p>
+<p>定义了一个类，就可以用这个模块来创建它的具体对象（实例）。类定义的详细语法规则见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/13_class.ipynb">class 定义类</a>。</p>
+<p>创建一个类，需要继承另一个类。新创建的类是子类，继承的类是基类。如不指定，创建类默认继承自所有类的基类 object。</p>
+<p>下面是一个没有任何自定义属性的简单类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">A</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&lt;module &#39;random&#39; from &#39;F:\\anaconda\\lib\\random.py&#39;&gt;,
- &lt;module &#39;pandas.core&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入方法报错</span></span><br><span class="line"><span class="keyword">import</span> random.randint</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-ModuleNotFoundError                       Traceback (most recent call last)
-
-&lt;ipython-input-2-8d4ecd1fe339&gt; in &lt;module&gt;
-      1 # 导入方法报错
-----&gt; 2 import random.randint
-
-
-ModuleNotFoundError: No module named &#39;random.randint&#39;; &#39;random&#39; is not a package</code></pre>
-<ul>
-<li><code>from ... import ...</code> 从模块中导入子模块，类，函数等： </li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> core</span><br><span class="line">core</span><br></pre></td></tr></table></figure>
+<pre><code>__main__.A</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(A)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;module &#39;pandas.core&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame <span class="keyword">as</span> df</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.__bases__ <span class="comment"># 查看基类</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>pandas.core.frame.DataFrame</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line">randint</span><br></pre></td></tr></table></figure>
+<pre><code>(object,)</code></pre>
+<p>继承一个指定的类，可以对它进行定制化开发。需要注意参数 self, 它是约定名称（可自定义但不推荐），它就代表类创建的实例对象自身。</p>
+<p>例如创建一个自定义的列表类，增加 add() 方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mylist</span>(<span class="params"><span class="built_in">list</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self,value</span>):</span></span><br><span class="line">        self.append(value)</span><br><span class="line">        </span><br><span class="line">lst = Mylist(<span class="string">&#x27;123&#x27;</span>) <span class="comment"># 创建实例赋值给 lst</span></span><br><span class="line">lst.add(<span class="number">4</span>) <span class="comment"># lst 调用 add 方法，self 参数就是 lst</span></span><br><span class="line">lst</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;bound method Random.randint of &lt;random.Random object at 0x000001E44ED52020&gt;&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi</span><br><span class="line">pi</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, 4]</code></pre>
+<p>或者自定义一个字典，当访问的键不存在时，不报错，而是返回 None（<code>__missing__()</code> 是用来定义字典子类时找不到键如何处理的魔法方法）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mydict</span>(<span class="params"><span class="built_in">dict</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__missing__</span>(<span class="params">self, key</span>):</span></span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line">d = Mydict(a=<span class="number">1</span>,b=<span class="number">2</span>)</span><br><span class="line">d, d[<span class="string">&#x27;c&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>3.141592653589793</code></pre>
-<ul>
-<li><code>from ... import *</code> 将导入模块中所有的公有属性：</li>
-</ul>
-<p>例如，如果在文件 <code>mycode/__init__.py</code> 中我们定义了属性 <code>__all__</code> ，从包 <code>mycode</code> 导入则只能导入该属性中的名称；在文件 <code>mycode/mycode.py</code> 中，以下划线打头的属性名，从模块 <code>mycode.mycode</code> 导入时都不可导入。</p>
-<p>通常情况下不应使用这个功能，因为它在解释器中引入了一组未知的名称，而它们很可能会覆盖一些你已经定义过的名称。而且会导致代码的可读性很差。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mycode/__init__.py</span></span><br><span class="line">__all__ = [<span class="string">&#x27;mycode&#x27;</span>,<span class="string">&#x27;xue&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>(&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;, None)</code></pre>
+<p>我们也可以自定义任意的类，其中 <code>__init__()</code> 方法是创建实例时用来初始化实例对象的魔法方法，可以用它来增加一些自定义属性。没有该方法，创建实例时，将自动调用基类的该方法完成初始化。</p>
+<p>例如定义一个 “人” 类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="string">&#x27;这是人类&#x27;</span></span><br><span class="line">    <span class="comment"># 定义人的属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.ears = <span class="string">&#x27;耳朵&#x27;</span></span><br><span class="line">        self.brain = <span class="string">&#x27;大脑&#x27;</span></span><br><span class="line">        self.hands = <span class="string">&#x27;双手&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 人有生活</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">live</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span>用<span class="subst">&#123;self.ears&#125;</span>&#x27;</span></span><br><span class="line">              <span class="string">&#x27;听着音乐，&#x27;</span></span><br><span class="line">              <span class="string">&#x27;享受美好生活。&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 还有工作</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">work</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span>用<span class="subst">&#123;self.brain&#125;</span>和&#x27;</span></span><br><span class="line">              <span class="string">f&#x27;<span class="subst">&#123;self.hands&#125;</span>&#x27;</span></span><br><span class="line">               <span class="string">&#x27;勤劳致富。&#x27;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 造人</span></span><br><span class="line">xm = Person(<span class="string">&#x27;小明&#x27;</span>)</span><br><span class="line">xz = Person(<span class="string">&#x27;小张&#x27;</span>)</span><br><span class="line">xm.live() <span class="comment"># 小明在享受生活</span></span><br><span class="line">xz.work() <span class="comment"># 小张在努力工作</span></span><br></pre></td></tr></table></figure>
 
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mycode/mycode.py</span></span><br><span class="line">_a = <span class="string">&#x27;自学&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__f</span>():</span></span><br><span class="line">    print(_a)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;mycode&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mycode <span class="keyword">import</span> xue</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print(xue.msg)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mycode <span class="keyword">import</span> *</span><br><span class="line">mycode, xue</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&lt;module &#39;mycode.mycode&#39; from &#39;E:\\xue\\脚本\\kp_book\\15_module\\mycode\\mycode.py&#39;&gt;,
- &lt;module &#39;mycode.xue&#39; from &#39;E:\\xue\\脚本\\kp_book\\15_module\\mycode\\xue.py&#39;&gt;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mycode.mycode <span class="keyword">import</span> *</span><br><span class="line">_a</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-NameError                                 Traceback (most recent call last)
-
-&lt;ipython-input-14-e68848edb46a&gt; in &lt;module&gt;
-      1 from mycode.mycode import *
-----&gt; 2 _a
-
-
-NameError: name &#39;_a&#39; is not defined</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__f</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-NameError                                 Traceback (most recent call last)
-
-&lt;ipython-input-15-004321bbfec5&gt; in &lt;module&gt;
-----&gt; 1 __f
-
-
-NameError: name &#39;__f&#39; is not defined</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其他方式则可以导入</span></span><br><span class="line"><span class="keyword">from</span> mycode.mycode <span class="keyword">import</span> __f</span><br><span class="line">print(__f)</span><br><span class="line"><span class="keyword">del</span> __f</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;function __f at 0x000001E45129B430&gt;</code></pre>
-<ul>
-<li>相对导入：</li>
-</ul>
-<p>存在相对导入代码的模块，通常是不能直接执行的。因为直接执行，解释器认为该模块即为顶级模块，属性 <code>__package__</code> 的值为 None。但可以使用 <code>python -m 模块</code> 命令直接执行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__package__)</span><br></pre></td></tr></table></figure>
-
-<pre><code>None</code></pre>
-<p>例如，当前文件路径下，文件 <code>mycode/test.py</code> 中相对导入的代码可以使用 <code>python -m 模块</code> 命令直接执行，因为该命令将属性 <code>__package__</code> 重新设置为顶级模块的名称：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># xue.py 模块在 mycode 包中</span></span><br><span class="line"><span class="comment"># mycode/test.py</span></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> xue</span><br><span class="line">print(xue.msg)</span><br><span class="line">print(__package__)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%run -m mycode.test</span><br></pre></td></tr></table></figure>
-
-<pre><code>自学是门手艺
-mycode</code></pre>
-<p>模块导入之后，即可使用属性表示法调用模块中属性：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random, math</span><br><span class="line">random.randint, math.pi</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&lt;bound method Random.randint of &lt;random.Random object at 0x000002811CF98C80&gt;&gt;,
- 3.141592653589793)</code></pre>
+<pre><code>小明用耳朵听着音乐，享受美好生活。
+小张用大脑和双手勤劳致富。</code></pre>
 
       
     </div>
@@ -525,9 +446,6 @@ mycode</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -618,7 +536,6 @@ mycode</code></pre>
   
 
   
-
 
 </body>
 </html>

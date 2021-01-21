@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/01_expression-f8f1b15dc2a5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/03_if-1b6634cd9967/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/01_expression-f8f1b15dc2a5/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/03_if-1b6634cd9967/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>313</span>
+      <span>160</span>
     </span>
 </div>
 
@@ -347,105 +345,33 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="表达式语句"><a href="#表达式语句" class="headerlink" title="表达式语句"></a>表达式语句</h2><p>语句分为简单语句和复合语句，简单语句由一个单独的逻辑行构成。多条简单语句可以存在于同一行内并以分号分隔。表达式语句属于简单语句。</p>
-<p>表达式语句用于计算和写入值（大多是在交互模式下），或者调用一个过程 (过程就是不返回有意义结果的函数。在 Python 中，过程的返回值为 None)。</p>
-<p>表达式语句会对指定的表达式进行求值。</p>
-<p>在交互模式下，它会通过内置的 repr() 函数转换为一个字符串，该结果字符串将以单独一行的形式写入标准输出（例外情况是如果结果为 None，则该过程调用不产生任何输出）。</p>
-<p>以下均是一个表达式语句（可包含多个表达式）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="if-条件判断"><a href="#if-条件判断" class="headerlink" title="if 条件判断"></a>if 条件判断</h2><p>if 语句用于有条件的执行。语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if assignment_expression:</span><br><span class="line">    suite</span><br><span class="line">elif assignment_expression: # 可选子句</span><br><span class="line">    suite</span><br><span class="line">... # 可以多个 elif</span><br><span class="line">else: #可选子句</span><br><span class="line">    suite</span><br></pre></td></tr></table></figure>
+<p>对于简单语句，可以写为一行，但不推荐。</p>
+<p>它通过对表达式逐个求值直至找到一个真值。然后执行该 if 语句或子句体下的代码，从而 if 语句的其他部分不会被执行或求值。</p>
+<p>如果所有表达式均为假值，else 子句体如果存在就会被执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:print(i)</span><br></pre></td></tr></table></figure>
 
+<pre><code>0
+2
+4</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
 
+<pre><code>0
+2
+4</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i,j = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> i &lt; <span class="number">0</span>: </span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">elif</span> i == <span class="number">0</span>:</span><br><span class="line">    print(i) <span class="comment"># 执行，下面的则不再执行</span></span><br><span class="line"><span class="keyword">elif</span> j == <span class="number">1</span>:</span><br><span class="line">    print(j)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j)</span><br></pre></td></tr></table></figure>
 
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i,j = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> i &lt; <span class="number">0</span>: </span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">elif</span> i == <span class="number">1</span>:</span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">elif</span> j == <span class="number">0</span>:</span><br><span class="line">    print(j) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j) <span class="comment"># 执行</span></span><br></pre></td></tr></table></figure>
 
-<pre><code>&#39;python&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre><code>0 1</code></pre>
+<p>多个 if 语句连用，则分别判断，互不影响：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">i,j = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> i &lt; <span class="number">0</span>: </span><br><span class="line">    print(i) <span class="comment"># 不执行</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j) <span class="comment"># 执行</span></span><br><span class="line"><span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">    print(i) <span class="comment"># 执行</span></span><br><span class="line"><span class="keyword">if</span> j == <span class="number">1</span>:</span><br><span class="line">    print(j) <span class="comment"># 执行</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i,j) <span class="comment"># 不执行</span></span><br></pre></td></tr></table></figure>
 
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a := <span class="number">1</span>) <span class="comment"># 3.8 新功能，赋值表达式</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a\n&#x27;</span>,<span class="string">f&#x27;b<span class="subst">&#123;<span class="number">1</span>&#125;</span>&#x27;</span> <span class="comment"># 两个表达式</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;a\n&#39;, &#39;b1&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span> * <span class="number">3</span> / <span class="number">5</span>, <span class="literal">True</span> <span class="keyword">and</span> <span class="literal">False</span> <span class="comment"># 两个表达式</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(2.2, False)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> x: x**<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&lt;function __main__.&lt;lambda&gt;(x)&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="keyword">if</span> <span class="number">2</span>&gt;<span class="number">3</span> <span class="keyword">else</span> (<span class="number">1</span> <span class="keyword">if</span> <span class="number">5</span>&lt;<span class="number">6</span> <span class="keyword">else</span> <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] + [<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[1, 2, 3, 4]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].append(<span class="number">1</span>) <span class="comment"># 返回 None</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].append(<span class="number">1</span>) <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回值为 None，输出并不是表达式的值</span></span><br><span class="line">print(<span class="string">&#x27;非表达式的值&#x27;</span>)  <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>非表达式的值
-
-
-
-
-
-True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>(i <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>10</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>(<span class="string">&#x27;abc&#x27;</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]))[<span class="number">1</span>:]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[(&#39;b&#39;, 2), (&#39;c&#39;, 3)]</code></pre>
-<p>用分号分隔多个表达式语句，输出最后一个的值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>; print(<span class="string">&#x27;非表达式的值&#x27;</span>); <span class="number">1</span> + <span class="number">2</span> * <span class="number">3</span> / <span class="number">5</span>, <span class="literal">True</span> <span class="keyword">and</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>非表达式的值
-
-
-
-
-
-(2.2, False)</code></pre>
+<pre><code>0 1
+0
+1</code></pre>
 
       
     </div>
@@ -504,9 +430,6 @@ True</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -597,7 +520,6 @@ True</code></pre>
   
 
   
-
 
 </body>
 </html>

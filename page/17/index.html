@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/04_executable_file-dbf520f1b84c/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/01_class_summary-313cbd60571f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/15_module/04_executable_file-dbf520f1b84c/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/16_class/01_class_summary-313cbd60571f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>418</span>
+      <span>753</span>
     </span>
 </div>
 
@@ -347,41 +345,34 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="可执行文件"><a href="#可执行文件" class="headerlink" title="可执行文件"></a>可执行文件</h2><p>每一个 <code>.py</code> 文件模块，都是 Python 的可执行文件。文件内容可以为空，但执行什么也不发生。</p>
-<p>你可以在某些编辑工具里打开文件执行，也可以在命令行使用 <code>python 文件路径</code> 或 <code>python -m 模块</code> 的方式执行。这些方式都是主模块中直接执行文件。</p>
-<p>主模块（你正在运行代码的当前模块）的 <code>__name__</code> 属性总是 <code>&#39;__main__&#39;</code> （<code>__main__</code> 是一个在解释器启动时直接初始化的特殊模块），因此直接执行文件，<code>if __name__ == &#39;__main__&#39;:</code> 语句下的代码一定会被执行，而如果导入到其他模块则不会。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__name__</span><br></pre></td></tr></table></figure>
+          <h2 id="面向对象概述"><a href="#面向对象概述" class="headerlink" title="面向对象概述"></a>面向对象概述</h2><p>面向对象是一种对现实世界理解和抽象的方法，是计算机编程技术发展到一定阶段后的产物。它把相关的数据和方法组织为一个整体来看待，从更高的层次来进行系统建模，更贴近事物的自然运行模式。</p>
+<p>例如生活中我们会遇到各种数字及其运算，于是计算机科学家们就把数字抽象出来，成为一类对象。它们有别于其他事物（例如文字，图像）的特征，有自己的一套运算、操作方法。</p>
+<p>Python 中的数字当然非常类似数学中的数字，但也受限于计算机中的数字表示方法。</p>
+<p>为了方便，又把数字这一类对象，基本分成了整数，浮点数，复数三类对象。这对应 Python 中的 int，float，comlex 三种数字类型，三种数字类型下具体的整数，浮点数，复数也是对象。它们有共同的特征和计算方法，也有各自特有的特征和方法。例如都可以进行加减乘除，只有整数有按位运算。</p>
+<p>整数中，0 和 1 的特殊性，又使得可以将整数类中再分出一类对象，布尔类型对象。布尔类型的对象，只有两个对象，True 和 False。</p>
+<p>从数字类对象，到三类数字对象，到布尔类对象，到具体的数字对象以及 True 和 False 对象，层层细分，最终是具体的一个个对象，它们都是对象。这也是为什么称 Python 一切皆对象的原因。</p>
+<p>类似地，对数据，因为要实现的目的不同，将装数据的 “容器” 分为字符串，列表，元组，集合，字典等类型的对象。</p>
+<p>函数抽象出函数对象，模块又抽象出模块对象…… 甚至连空都是对象（None）。</p>
+<p>具体的对象，称为实例，它归属于某个类。而所有的类，又都是 object 对象的子类。各种类（类型），又统一归为类型对象（type)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="number">1</span>), <span class="built_in">isinstance</span>(<span class="number">1</span>,<span class="built_in">int</span>) <span class="comment"># 1 是 int 类的实例</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;__main__&#39;</code></pre>
-<p>下面举例说明：</p>
-<p>当前文件路径下，有一个 <code>mycode</code> 的包，包里有 <code>space.py</code>，<code>mycode.py</code> 和 <code>xue.py</code>，三个模块，内容如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># space.py 为空</span></span><br></pre></td></tr></table></figure>
+<pre><code>(int, True)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">issubclass</span>(<span class="built_in">int</span>,<span class="built_in">object</span>) <span class="comment"># int 类是 object 的子类</span></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mycode.py</span></span><br><span class="line">print(<span class="string">&#x27;mycode&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mycode <span class="keyword">import</span> xue</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print(xue.msg)</span><br></pre></td></tr></table></figure>
-
-<pre><code>mycode
-自学是门手艺</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># xue.py</span></span><br><span class="line">msg = <span class="string">&#x27;自学是门手艺&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>直接执行效果如上。下面使用命令执行（<code>%run</code> 是 jupyter 的魔法命令，终端请改为 <code>python</code>）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件路径必须带 .py，可以是相对或绝对路径</span></span><br><span class="line">%run mycode/space.py </span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%run mycode/mycode.py</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">int</span>), <span class="built_in">isinstance</span>(<span class="built_in">int</span>,<span class="built_in">type</span>) <span class="comment"># int 是 type 的实例</span></span><br></pre></td></tr></table></figure>
 
-<pre><code>mycode
-自学是门手艺</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings <span class="comment"># 忽略警告</span></span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 模块可以使用属性表示法，但不能有 .py</span></span><br><span class="line">%run -m mycode.mycode </span><br></pre></td></tr></table></figure>
 
-<pre><code>mycode
-自学是门手艺</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入则不会执行 if __name__ == &#x27;__main__&#x27;: 语句下的代码</span></span><br><span class="line"><span class="keyword">import</span> mycode.mycode</span><br></pre></td></tr></table></figure>
 
-<pre><code>mycode</code></pre>
+
+<pre><code>(type, True)</code></pre>
+<p>按照面向对象的思想，我们可以定义一个 “人” 类对象，然后很方便地给这个 “人” 加上现有的各种函数，类，以及模块的功能，造出更多更多有各种特异功能的 “人”。这是不是非常伟大的设计思想呢？</p>
 
       
     </div>
@@ -440,9 +431,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -533,7 +521,6 @@
   
 
   
-
 
 </body>
 </html>

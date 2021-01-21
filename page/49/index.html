@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/53_round-057dcf4123ee/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/55_setattr-2d591efa9c32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/53_round-057dcf4123ee/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/55_setattr-2d591efa9c32/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>514</span>
+      <span>288</span>
     </span>
 </div>
 
@@ -347,62 +345,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="round-数字舍入"><a href="#round-数字舍入" class="headerlink" title="round() 数字舍入"></a>round() 数字舍入</h2><p>内置函数 round()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">round</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="setattr-设置或新增属性"><a href="#setattr-设置或新增属性" class="headerlink" title="setattr() 设置或新增属性"></a>setattr() 设置或新增属性</h2><p>内置函数 setattr()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">setattr</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function round in module builtins:
+<pre><code>Help on built-in function setattr in module builtins:
 
-round(number, ndigits=None)
-    Round a number to a given precision in decimal digits.
+setattr(obj, name, value, /)
+    Sets the named attribute on the given object to the specified value.
 
-    The return value is an integer if ndigits is omitted or None.  Otherwise
-    the return value has the same type as the number.  ndigits may be negative.</code></pre>
-<p>返回 number 舍入到小数点后 ndigits 位精度的值。如果 ndigits 被省略或为 None，则返回最接近输入值的整数。</p>
-<p>对于支持 round() 的内置类型，值会被舍入到最接近的 10 的负 ndigits 次幂的倍数；如果与两个倍数的距离相等，则选择偶数。</p>
-<p>任何整数值都可作为有效的 ndigits (正数、零或负数)。如果 ndigits 被省略或为 None 则返回值将为整数。否则返回值与 number 的类型相同。</p>
-<p>由于大多数十进制小数实际上都不能以浮点数精确地表示。返回值可能会不是预期的四舍五入结果。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">3.14</span>)</span><br></pre></td></tr></table></figure>
+    setattr(x, &#39;y&#39;, v) is equivalent to ``x.y = v&#39;&#39;</code></pre>
+<p>参数为一个对象、一个字符串和一个任意值。字符串指定一个现有属性或者新增属性。函数会将值赋给该属性，只要对象允许这种操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    y = <span class="number">1</span></span><br><span class="line">x = A()</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>3</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">3.14</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为实例 x 新增属性</span></span><br><span class="line"><span class="built_in">setattr</span>(x, <span class="string">&#x27;y&#x27;</span>, <span class="number">10</span>)</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>3.14</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">3.14</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>10</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.y</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>3.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">13.14</span>,<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改类 A 的 y 属性</span></span><br><span class="line"><span class="built_in">setattr</span>(A, <span class="string">&#x27;y&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">A.y</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>10.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">2.5</span>), <span class="built_in">round</span>(<span class="number">-2.5</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>100</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.y</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(2, -2)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">1.5</span>), <span class="built_in">round</span>(<span class="number">-1.5</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(2, -2)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">2.675</span>, <span class="number">2</span>), <span class="built_in">round</span>(<span class="number">2.665</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(2.67, 2.67)</code></pre>
+<pre><code>10</code></pre>
 
       
     </div>
@@ -461,9 +443,6 @@ round(number, ndigits=None)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -554,7 +533,6 @@ round(number, ndigits=None)
   
 
   
-
 
 </body>
 </html>

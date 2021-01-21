@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/10_dict.clear-f6f5f3d6758a/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/12_dict.update-3f3d274296c7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/07_dictionary/10_dict.clear-f6f5f3d6758a/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/07_dictionary/12_dict.update-3f3d274296c7/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>146</span>
+      <span>373</span>
     </span>
 </div>
 
@@ -347,24 +345,44 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="dict-clear-清空字典元素"><a href="#dict-clear-清空字典元素" class="headerlink" title="dict.clear 清空字典元素"></a>dict.clear 清空字典元素</h2><p>字典方法 dict.clear()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.clear)</span><br></pre></td></tr></table></figure>
+          <h2 id="dict-update-更新字典"><a href="#dict-update-更新字典" class="headerlink" title="dict.update 更新字典"></a>dict.update 更新字典</h2><p>字典方法 dict.update()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.update)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-clear(...)
-    D.clear() -&gt; None.  Remove all items from D.</code></pre>
-<p>清空字典元素。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.clear()</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+update(...)
+    D.update([E, ]**F) -&gt; None.  Update D from dict/iterable E and F.
+    If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+    If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+    In either case, this is followed by: for k in F:  D[k] = F[k]</code></pre>
+<p>更新字典，键相同，则覆盖原有的值，不同，则增加 键值对 元素。有下列几种情况：</p>
+<ul>
+<li>以字典更新字典：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.update(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">10</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>&#125;)</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#125;</code></pre>
-<p>该方法是一个过程，返回值为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">print(d.clear())</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&#39;a&#39;: 10, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
+<ul>
+<li>以可迭代对象更新字典：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.update([(<span class="string">&#x27;a&#x27;</span>,<span class="number">10</span>),[<span class="string">&#x27;c&#x27;</span>,<span class="number">3</span>]])</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
 
-<pre><code>None</code></pre>
+
+
+
+<pre><code>&#123;&#39;a&#39;: 10, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
+<ul>
+<li>以关键字参数更新字典：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.update(a=<span class="number">10</span>, c=<span class="number">3</span>)</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;a&#39;: 10, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
 
       
     </div>
@@ -423,9 +441,6 @@ clear(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -516,7 +531,6 @@ clear(...)
   
 
   
-
 
 </body>
 </html>

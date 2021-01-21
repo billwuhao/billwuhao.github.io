@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/57_sorted-44954a832e2d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/59_str-880887137be6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/57_sorted-44954a832e2d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/59_str-880887137be6/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>531</span>
+      <span>11k</span>
     </span>
 </div>
 
@@ -347,45 +345,449 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="sorted-返回排序列表"><a href="#sorted-返回排序列表" class="headerlink" title="sorted() 返回排序列表"></a>sorted() 返回排序列表</h2><p>内置函数 sorted()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">sorted</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-创建字符串"><a href="#str-创建字符串" class="headerlink" title="str 创建字符串"></a>str 创建字符串</h2><p>内置函数（类）str，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function sorted in module builtins:
+<pre><code>Help on class str in module builtins:
 
-sorted(iterable, /, *, key=None, reverse=False)
-    Return a new list containing all items from the iterable in ascending order.
+class str(object)
+ |  str(object=&#39;&#39;) -&gt; str
+ |  str(bytes_or_buffer[, encoding[, errors]]) -&gt; str
+ |  
+ |  Create a new string object from the given object. If encoding or
+ |  errors is specified, then the object must expose a data buffer
+ |  that will be decoded using the given encoding and error handler.
+ |  Otherwise, returns the result of object.__str__() (if defined)
+ |  or repr(object).
+ |  encoding defaults to sys.getdefaultencoding().
+ |  errors defaults to &#39;strict&#39;.
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __format__(self, format_spec, /)
+ |      Return a formatted version of the string as described by format_spec.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(self, key, /)
+ |      Return self[key].
+ |  
+ |  __getnewargs__(...)
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mod__(self, value, /)
+ |      Return self%value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __rmod__(self, value, /)
+ |      Return value%self.
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __sizeof__(self, /)
+ |      Return the size of the string in memory, in bytes.
+ |  
+ |  __str__(self, /)
+ |      Return str(self).
+ |  
+ |  capitalize(self, /)
+ |      Return a capitalized version of the string.
+ |      
+ |      More specifically, make the first character have upper case and the rest lower
+ |      case.
+ |  
+ |  casefold(self, /)
+ |      Return a version of the string suitable for caseless comparisons.
+ |  
+ |  center(self, width, fillchar=&#39; &#39;, /)
+ |      Return a centered string of length width.
+ |      
+ |      Padding is done using the specified fill character (default is a space).
+ |  
+ |  count(...)
+ |      S.count(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the number of non-overlapping occurrences of substring sub in
+ |      string S[start:end].  Optional arguments start and end are
+ |      interpreted as in slice notation.
+ |  
+ |  encode(self, /, encoding=&#39;utf-8&#39;, errors=&#39;strict&#39;)
+ |      Encode the string using the codec registered for encoding.
+ |      
+ |      encoding
+ |        The encoding in which to encode the string.
+ |      errors
+ |        The error handling scheme to use for encoding errors.
+ |        The default is &#39;strict&#39; meaning that encoding errors raise a
+ |        UnicodeEncodeError.  Other possible values are &#39;ignore&#39;, &#39;replace&#39; and
+ |        &#39;xmlcharrefreplace&#39; as well as any other name registered with
+ |        codecs.register_error that can handle UnicodeEncodeErrors.
+ |  
+ |  endswith(...)
+ |      S.endswith(suffix[, start[, end]]) -&gt; bool
+ |      
+ |      Return True if S ends with the specified suffix, False otherwise.
+ |      With optional start, test S beginning at that position.
+ |      With optional end, stop comparing S at that position.
+ |      suffix can also be a tuple of strings to try.
+ |  
+ |  expandtabs(self, /, tabsize=8)
+ |      Return a copy where all tab characters are expanded using spaces.
+ |      
+ |      If tabsize is not given, a tab size of 8 characters is assumed.
+ |  
+ |  find(...)
+ |      S.find(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the lowest index in S where substring sub is found,
+ |      such that sub is contained within S[start:end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Return -1 on failure.
+ |  
+ |  format(...)
+ |      S.format(*args, **kwargs) -&gt; str
+ |      
+ |      Return a formatted version of S, using substitutions from args and kwargs.
+ |      The substitutions are identified by braces (&#39;&#123;&#39; and &#39;&#125;&#39;).
+ |  
+ |  format_map(...)
+ |      S.format_map(mapping) -&gt; str
+ |      
+ |      Return a formatted version of S, using substitutions from mapping.
+ |      The substitutions are identified by braces (&#39;&#123;&#39; and &#39;&#125;&#39;).
+ |  
+ |  index(...)
+ |      S.index(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the lowest index in S where substring sub is found, 
+ |      such that sub is contained within S[start:end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Raises ValueError when the substring is not found.
+ |  
+ |  isalnum(self, /)
+ |      Return True if the string is an alpha-numeric string, False otherwise.
+ |      
+ |      A string is alpha-numeric if all characters in the string are alpha-numeric and
+ |      there is at least one character in the string.
+ |  
+ |  isalpha(self, /)
+ |      Return True if the string is an alphabetic string, False otherwise.
+ |      
+ |      A string is alphabetic if all characters in the string are alphabetic and there
+ |      is at least one character in the string.
+ |  
+ |  isascii(self, /)
+ |      Return True if all characters in the string are ASCII, False otherwise.
+ |      
+ |      ASCII characters have code points in the range U+0000-U+007F.
+ |      Empty string is ASCII too.
+ |  
+ |  isdecimal(self, /)
+ |      Return True if the string is a decimal string, False otherwise.
+ |      
+ |      A string is a decimal string if all characters in the string are decimal and
+ |      there is at least one character in the string.
+ |  
+ |  isdigit(self, /)
+ |      Return True if the string is a digit string, False otherwise.
+ |      
+ |      A string is a digit string if all characters in the string are digits and there
+ |      is at least one character in the string.
+ |  
+ |  isidentifier(self, /)
+ |      Return True if the string is a valid Python identifier, False otherwise.
+ |      
+ |      Use keyword.iskeyword() to test for reserved identifiers such as &quot;def&quot; and
+ |      &quot;class&quot;.
+ |  
+ |  islower(self, /)
+ |      Return True if the string is a lowercase string, False otherwise.
+ |      
+ |      A string is lowercase if all cased characters in the string are lowercase and
+ |      there is at least one cased character in the string.
+ |  
+ |  isnumeric(self, /)
+ |      Return True if the string is a numeric string, False otherwise.
+ |      
+ |      A string is numeric if all characters in the string are numeric and there is at
+ |      least one character in the string.
+ |  
+ |  isprintable(self, /)
+ |      Return True if the string is printable, False otherwise.
+ |      
+ |      A string is printable if all of its characters are considered printable in
+ |      repr() or if it is empty.
+ |  
+ |  isspace(self, /)
+ |      Return True if the string is a whitespace string, False otherwise.
+ |      
+ |      A string is whitespace if all characters in the string are whitespace and there
+ |      is at least one character in the string.
+ |  
+ |  istitle(self, /)
+ |      Return True if the string is a title-cased string, False otherwise.
+ |      
+ |      In a title-cased string, upper- and title-case characters may only
+ |      follow uncased characters and lowercase characters only cased ones.
+ |  
+ |  isupper(self, /)
+ |      Return True if the string is an uppercase string, False otherwise.
+ |      
+ |      A string is uppercase if all cased characters in the string are uppercase and
+ |      there is at least one cased character in the string.
+ |  
+ |  join(self, iterable, /)
+ |      Concatenate any number of strings.
+ |      
+ |      The string whose method is called is inserted in between each given string.
+ |      The result is returned as a new string.
+ |      
+ |      Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;
+ |  
+ |  ljust(self, width, fillchar=&#39; &#39;, /)
+ |      Return a left-justified string of length width.
+ |      
+ |      Padding is done using the specified fill character (default is a space).
+ |  
+ |  lower(self, /)
+ |      Return a copy of the string converted to lowercase.
+ |  
+ |  lstrip(self, chars=None, /)
+ |      Return a copy of the string with leading whitespace removed.
+ |      
+ |      If chars is given and not None, remove characters in chars instead.
+ |  
+ |  partition(self, sep, /)
+ |      Partition the string into three parts using the given separator.
+ |      
+ |      This will search for the separator in the string.  If the separator is found,
+ |      returns a 3-tuple containing the part before the separator, the separator
+ |      itself, and the part after it.
+ |      
+ |      If the separator is not found, returns a 3-tuple containing the original string
+ |      and two empty strings.
+ |  
+ |  replace(self, old, new, count=-1, /)
+ |      Return a copy with all occurrences of substring old replaced by new.
+ |      
+ |        count
+ |          Maximum number of occurrences to replace.
+ |          -1 (the default value) means replace all occurrences.
+ |      
+ |      If the optional argument count is given, only the first count occurrences are
+ |      replaced.
+ |  
+ |  rfind(...)
+ |      S.rfind(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the highest index in S where substring sub is found,
+ |      such that sub is contained within S[start:end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Return -1 on failure.
+ |  
+ |  rindex(...)
+ |      S.rindex(sub[, start[, end]]) -&gt; int
+ |      
+ |      Return the highest index in S where substring sub is found,
+ |      such that sub is contained within S[start:end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |      
+ |      Raises ValueError when the substring is not found.
+ |  
+ |  rjust(self, width, fillchar=&#39; &#39;, /)
+ |      Return a right-justified string of length width.
+ |      
+ |      Padding is done using the specified fill character (default is a space).
+ |  
+ |  rpartition(self, sep, /)
+ |      Partition the string into three parts using the given separator.
+ |      
+ |      This will search for the separator in the string, starting at the end. If
+ |      the separator is found, returns a 3-tuple containing the part before the
+ |      separator, the separator itself, and the part after it.
+ |      
+ |      If the separator is not found, returns a 3-tuple containing two empty strings
+ |      and the original string.
+ |  
+ |  rsplit(self, /, sep=None, maxsplit=-1)
+ |      Return a list of the words in the string, using sep as the delimiter string.
+ |      
+ |        sep
+ |          The delimiter according which to split the string.
+ |          None (the default value) means split according to any whitespace,
+ |          and discard empty strings from the result.
+ |        maxsplit
+ |          Maximum number of splits to do.
+ |          -1 (the default value) means no limit.
+ |      
+ |      Splits are done starting at the end of the string and working to the front.
+ |  
+ |  rstrip(self, chars=None, /)
+ |      Return a copy of the string with trailing whitespace removed.
+ |      
+ |      If chars is given and not None, remove characters in chars instead.
+ |  
+ |  split(self, /, sep=None, maxsplit=-1)
+ |      Return a list of the words in the string, using sep as the delimiter string.
+ |      
+ |      sep
+ |        The delimiter according which to split the string.
+ |        None (the default value) means split according to any whitespace,
+ |        and discard empty strings from the result.
+ |      maxsplit
+ |        Maximum number of splits to do.
+ |        -1 (the default value) means no limit.
+ |  
+ |  splitlines(self, /, keepends=False)
+ |      Return a list of the lines in the string, breaking at line boundaries.
+ |      
+ |      Line breaks are not included in the resulting list unless keepends is given and
+ |      true.
+ |  
+ |  startswith(...)
+ |      S.startswith(prefix[, start[, end]]) -&gt; bool
+ |      
+ |      Return True if S starts with the specified prefix, False otherwise.
+ |      With optional start, test S beginning at that position.
+ |      With optional end, stop comparing S at that position.
+ |      prefix can also be a tuple of strings to try.
+ |  
+ |  strip(self, chars=None, /)
+ |      Return a copy of the string with leading and trailing whitespace remove.
+ |      
+ |      If chars is given and not None, remove characters in chars instead.
+ |  
+ |  swapcase(self, /)
+ |      Convert uppercase characters to lowercase and lowercase characters to uppercase.
+ |  
+ |  title(self, /)
+ |      Return a version of the string where each word is titlecased.
+ |      
+ |      More specifically, words start with uppercased characters and all remaining
+ |      cased characters have lower case.
+ |  
+ |  translate(self, table, /)
+ |      Replace each character in the string using the given translation table.
+ |      
+ |        table
+ |          Translation table, which must be a mapping of Unicode ordinals to
+ |          Unicode ordinals, strings, or None.
+ |      
+ |      The table must implement lookup/indexing via __getitem__, for instance a
+ |      dictionary or list.  If this operation raises LookupError, the character is
+ |      left untouched.  Characters mapped to None are deleted.
+ |  
+ |  upper(self, /)
+ |      Return a copy of the string converted to uppercase.
+ |  
+ |  zfill(self, width, /)
+ |      Pad a numeric string with zeros on the left, to fill a field of the given width.
+ |      
+ |      The string is never truncated.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  maketrans(x, y=None, z=None, /)
+ |      Return a translation table usable for str.translate().
+ |      
+ |      If there is only one argument, it must be a dictionary mapping Unicode
+ |      ordinals (integers) or characters to Unicode ordinals, strings or None.
+ |      Character keys will be then converted to ordinals.
+ |      If there are two arguments, they must be strings of equal length, and
+ |      in the resulting dictionary, each character in x will be mapped to the
+ |      character at the same position in y. If there is a third argument, it
+ |      must be a string, whose characters will be mapped to None in the result.</code></pre>
+<p>返回对象 object 的字符串形式。如果未提供 object 则返回空字符串。</p>
+<p>如果 encoding 或 errors 至少给出其中之一，则 bytes_or_buffer 应该是一个 bytes-like object (例如字节串或字节数组)。在此情况下，如果是一个字节串 (或字节数组) 对象，则 <code>str(bytes, encoding, errors)</code> 等价于 <code>bytes.decode(encoding, errors)</code>。否则的话，会在调用 <code>bytes.decode()</code> 之前获取缓冲区对象下层的 bytes 对象。</p>
+<p>将一个 bytes 对象传入 str() 而不给出 encoding 或 errors 参数，将直接转 bytes 对象为字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">str</span>)</span><br></pre></td></tr></table></figure>
 
-    A custom key function can be supplied to customize the sort order, and the
-    reverse flag can be set to request the result in descending order.</code></pre>
-<p>根据 iterable 中的项返回一个新的已排序列表。</p>
-<p>具有两个可选参数，它们都必须指定为关键字参数。</p>
-<p>key 指定带有单个参数的函数，应用于 iterable 中的每个元素，将计算结果用来对原 iterable 排序。默认值为 None (直接比较)。</p>
-<p>reverse 为一个布尔值。如果设为 True，则每个列表元素将按反向顺序比较进行排序。</p>
-<p>sorted() 排序确保是稳定的。如果一个排序确保不会改变比较结果相等的元素的相对顺序就称其为稳定的 — 这有利于进行多重排序。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>(&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;a&#x27;</span>:<span class="number">3</span>,<span class="string">&#x27;c&#x27;</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = [&#123;<span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>&#125;,&#123;<span class="string">&#x27;age&#x27;</span>:<span class="number">30</span>&#125;,&#123;<span class="string">&#x27;age&#x27;</span>:<span class="number">26</span>&#125;]</span><br><span class="line"><span class="built_in">sorted</span>(d,key=<span class="keyword">lambda</span> x:x[<span class="string">&#x27;age&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#123;&#39;age&#39;: 18&#125;, &#123;&#39;age&#39;: 26&#125;, &#123;&#39;age&#39;: 30&#125;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>([<span class="number">1.5</span>,<span class="string">&#x27;2.0&#x27;</span>,<span class="string">&#x27;1.5&#x27;</span>,<span class="number">3.14</span>], key=<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&quot;&lt;class &#39;int&#39;&gt;&quot;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1.5, &#39;1.5&#39;, &#39;2.0&#39;, 3.14]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>(<span class="string">&#x27;3123&#x27;</span>, reverse=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;[1, 2, 3]&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="string">b&#x27;\xe8\x87\xaa\xe5\xad\xa6&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;3&#39;, &#39;3&#39;, &#39;2&#39;, &#39;1&#39;]</code></pre>
+<pre><code>&#39;自学&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">b&#x27;\xe8\x87\xaa\xe5\xad\xa6&#x27;</span>.decode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;自学&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="string">b&#x27;\xe8\x87\xaa\xe5\xad\xa6&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&quot;b&#39;\\xe8\\x87\\xaa\\xe5\\xad\\xa6&#39;&quot;</code></pre>
 
       
     </div>
@@ -444,9 +846,6 @@ sorted(iterable, /, *, key=None, reverse=False)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -537,7 +936,6 @@ sorted(iterable, /, *, key=None, reverse=False)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/17_assert-8202b52c2174/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/19_global-e3e8ec73605d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/17_assert-8202b52c2174/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/19_global-e3e8ec73605d/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>574</span>
+      <span>558</span>
     </span>
 </div>
 
@@ -347,43 +345,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="assert-语句"><a href="#assert-语句" class="headerlink" title="assert 语句"></a>assert 语句</h2><p>assert 语句是在程序中插入调试性断言的简便方式。在表达式条件为 False 的时候触发异常。</p>
-<p>简单形式为：<code>assert expression</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> <span class="number">1</span> + <span class="number">1</span> == <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> <span class="number">1</span> + <span class="number">1</span> != <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-AssertionError                            Traceback (most recent call last)
-
-&lt;ipython-input-2-5cd89e6dd50b&gt; in &lt;module&gt;
-----&gt; 1 assert 1 + 1 != 2
-
-
-AssertionError: </code></pre>
-<p>扩展形式为：<code>assert expression1, expression2</code>。expression2 通常是提示信息。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> <span class="number">1</span> + <span class="number">1</span> != <span class="number">2</span>, <span class="string">&#x27;计算错误&#x27;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="global-语句"><a href="#global-语句" class="headerlink" title="global 语句"></a>global 语句</h2><p>global 语句作用于整个当前代码块，它后面所列出的标识符将被解读为全局变量。</p>
+<p>在 global 语句中列出的名称不得在同一代码块内该 global 语句之前的位置中使用。</p>
+<p>当前的实现虽然并未强制要求，但在 global 语句中列出的名称不得被定义为正式形参，不也得出现于 for 循环的控制目标、class 定义、函数定义、import 语句 或 变量标注之中。</p>
+<p>举例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">f() <span class="comment"># 调用函数，对 a 赋值</span></span><br><span class="line">a <span class="comment"># a 是局部变量，不可访问</span></span><br></pre></td></tr></table></figure>
 
 
 <pre><code>---------------------------------------------------------------------------
 
-AssertionError                            Traceback (most recent call last)
+NameError                                 Traceback (most recent call last)
 
-&lt;ipython-input-7-3b85a53ff241&gt; in &lt;module&gt;
-----&gt; 1 assert 1 + 1 != 2, &#39;计算错误&#39;
+&lt;ipython-input-5-251a24e05273&gt; in &lt;module&gt;
+      3 
+      4 f() # 调用函数，对 a 赋值
+----&gt; 5 a # a 是局部变量，不可访问
 
 
-AssertionError: 计算错误</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">assert</span> i % <span class="number">2</span> == <span class="number">0</span>, <span class="string">f&#x27;<span class="subst">&#123;i&#125;</span>是奇数&#x27;</span></span><br><span class="line">        print(i)</span><br><span class="line">    <span class="keyword">except</span> AssertionError <span class="keyword">as</span> a:</span><br><span class="line">        print(a)</span><br></pre></td></tr></table></figure>
+NameError: name &#39;a&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">global</span> a <span class="comment"># 将 a 声明为全局变量</span></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">f() <span class="comment"># 调用函数，对 a 赋值</span></span><br><span class="line">print(a) <span class="comment"># a 已经是全局变量</span></span><br><span class="line"><span class="keyword">del</span> a</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1是奇数
-2
-3是奇数
-4</code></pre>
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    a = <span class="number">1</span> <span class="comment"># 同一代码块中，不可在 global 前使用</span></span><br><span class="line">    <span class="keyword">global</span> a <span class="comment"># 将 a 声明为全局变量</span></span><br><span class="line">    a = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>  File &quot;&lt;ipython-input-9-51bc7826eb42&gt;&quot;, line 3
+    global a # 将 a 声明为全局变量
+    ^
+SyntaxError: name &#39;a&#39; is assigned to before global declaration</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span> <span class="comment"># 与 global 不在一个代码块</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">global</span> a, b <span class="comment"># 将 a, b 声明为全局变量</span></span><br><span class="line">    a = <span class="number">0</span> <span class="comment"># a 被重新赋值</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line">f() <span class="comment"># 调用函数，对 b 赋值，对 a 重新赋值</span></span><br><span class="line">print(a,b)</span><br><span class="line"><span class="keyword">del</span> a,b</span><br></pre></td></tr></table></figure>
+
+<pre><code>0 1</code></pre>
 
       
     </div>
@@ -442,9 +434,6 @@ AssertionError: 计算错误</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -535,7 +524,6 @@ AssertionError: 计算错误</code></pre>
   
 
   
-
 
 </body>
 </html>

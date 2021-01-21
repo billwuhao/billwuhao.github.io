@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/21_float-3e08485e1f50/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/23_frozenset-23eeb469f641/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/21_float-3e08485e1f50/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/23_frozenset-23eeb469f641/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>4.2k</span>
+      <span>2.1k</span>
     </span>
 </div>
 
@@ -347,41 +345,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="float-创建浮点数"><a href="#float-创建浮点数" class="headerlink" title="float 创建浮点数"></a>float 创建浮点数</h2><p>内置函数（类）float，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="frozenset-创建不可变集合"><a href="#frozenset-创建不可变集合" class="headerlink" title="frozenset 创建不可变集合"></a>frozenset 创建不可变集合</h2><p>内置函数（类）frozenset，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">frozenset</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class float in module builtins:
+<pre><code>Help on class frozenset in module builtins:
 
-class float(object)
- |  float(x=0, /)
+class frozenset(object)
+ |  frozenset() -&gt; empty frozenset object
+ |  frozenset(iterable) -&gt; frozenset object
  |  
- |  Convert a string or number to a floating point number, if possible.
+ |  Build an immutable unordered collection of unique elements.
  |  
  |  Methods defined here:
  |  
- |  __abs__(self, /)
- |      abs(self)
+ |  __and__(self, value, /)
+ |      Return self&amp;value.
  |  
- |  __add__(self, value, /)
- |      Return self+value.
- |  
- |  __bool__(self, /)
- |      self != 0
- |  
- |  __divmod__(self, value, /)
- |      Return divmod(self, value).
+ |  __contains__(...)
+ |      x.__contains__(y) &lt;==&gt; y in x.
  |  
  |  __eq__(self, value, /)
  |      Return self==value.
- |  
- |  __float__(self, /)
- |      float(self)
- |  
- |  __floordiv__(self, value, /)
- |      Return self//value.
- |  
- |  __format__(self, format_spec, /)
- |      Formats the float according to format_spec.
  |  
  |  __ge__(self, value, /)
  |      Return self&gt;=value.
@@ -389,236 +373,125 @@ class float(object)
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
  |  
- |  __getnewargs__(self, /)
- |  
  |  __gt__(self, value, /)
  |      Return self&gt;value.
  |  
  |  __hash__(self, /)
  |      Return hash(self).
  |  
- |  __int__(self, /)
- |      int(self)
+ |  __iter__(self, /)
+ |      Implement iter(self).
  |  
  |  __le__(self, value, /)
  |      Return self&lt;=value.
  |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
  |  __lt__(self, value, /)
  |      Return self&lt;value.
- |  
- |  __mod__(self, value, /)
- |      Return self%value.
- |  
- |  __mul__(self, value, /)
- |      Return self*value.
  |  
  |  __ne__(self, value, /)
  |      Return self!=value.
  |  
- |  __neg__(self, /)
- |      -self
+ |  __or__(self, value, /)
+ |      Return self|value.
  |  
- |  __pos__(self, /)
- |      +self
+ |  __rand__(self, value, /)
+ |      Return value&amp;self.
  |  
- |  __pow__(self, value, mod=None, /)
- |      Return pow(self, value, mod).
- |  
- |  __radd__(self, value, /)
- |      Return value+self.
- |  
- |  __rdivmod__(self, value, /)
- |      Return divmod(value, self).
+ |  __reduce__(...)
+ |      Return state information for pickling.
  |  
  |  __repr__(self, /)
  |      Return repr(self).
  |  
- |  __rfloordiv__(self, value, /)
- |      Return value//self.
- |  
- |  __rmod__(self, value, /)
- |      Return value%self.
- |  
- |  __rmul__(self, value, /)
- |      Return value*self.
- |  
- |  __round__(self, ndigits=None, /)
- |      Return the Integral closest to x, rounding half toward even.
- |      
- |      When an argument is passed, work like built-in round(x, ndigits).
- |  
- |  __rpow__(self, value, mod=None, /)
- |      Return pow(value, self, mod).
+ |  __ror__(self, value, /)
+ |      Return value|self.
  |  
  |  __rsub__(self, value, /)
  |      Return value-self.
  |  
- |  __rtruediv__(self, value, /)
- |      Return value/self.
+ |  __rxor__(self, value, /)
+ |      Return value^self.
  |  
- |  __str__(self, /)
- |      Return str(self).
+ |  __sizeof__(...)
+ |      S.__sizeof__() -&gt; size of S in memory, in bytes
  |  
  |  __sub__(self, value, /)
  |      Return self-value.
  |  
- |  __truediv__(self, value, /)
- |      Return self/value.
+ |  __xor__(self, value, /)
+ |      Return self^value.
  |  
- |  __trunc__(self, /)
- |      Return the Integral closest to x between 0 and x.
+ |  copy(...)
+ |      Return a shallow copy of a set.
  |  
- |  as_integer_ratio(self, /)
- |      Return integer ratio.
+ |  difference(...)
+ |      Return the difference of two or more sets as a new set.
  |      
- |      Return a pair of integers, whose ratio is exactly equal to the original float
- |      and with a positive denominator.
- |      
- |      Raise OverflowError on infinities and a ValueError on NaNs.
- |      
- |      &gt;&gt;&gt; (10.0).as_integer_ratio()
- |      (10, 1)
- |      &gt;&gt;&gt; (0.0).as_integer_ratio()
- |      (0, 1)
- |      &gt;&gt;&gt; (-.25).as_integer_ratio()
- |      (-1, 4)
+ |      (i.e. all elements that are in this set but not the others.)
  |  
- |  conjugate(self, /)
- |      Return self, the complex conjugate of any float.
+ |  intersection(...)
+ |      Return the intersection of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in both sets.)
  |  
- |  hex(self, /)
- |      Return a hexadecimal representation of a floating-point number.
- |      
- |      &gt;&gt;&gt; (-0.1).hex()
- |      &#39;-0x1.999999999999ap-4&#39;
- |      &gt;&gt;&gt; 3.14159.hex()
- |      &#39;0x1.921f9f01b866ep+1&#39;
+ |  isdisjoint(...)
+ |      Return True if two sets have a null intersection.
  |  
- |  is_integer(self, /)
- |      Return True if the float is an integer.
+ |  issubset(...)
+ |      Report whether another set contains this set.
  |  
- |  ----------------------------------------------------------------------
- |  Class methods defined here:
+ |  issuperset(...)
+ |      Report whether this set contains another set.
  |  
- |  __getformat__(typestr, /) from builtins.type
- |      You probably don&#39;t want to use this function.
+ |  symmetric_difference(...)
+ |      Return the symmetric difference of two sets as a new set.
  |      
- |        typestr
- |          Must be &#39;double&#39; or &#39;float&#39;.
- |      
- |      It exists mainly to be used in Python&#39;s test suite.
- |      
- |      This function returns whichever of &#39;unknown&#39;, &#39;IEEE, big-endian&#39; or &#39;IEEE,
- |      little-endian&#39; best describes the format of floating point numbers used by the
- |      C type named by typestr.
+ |      (i.e. all elements that are in exactly one of the sets.)
  |  
- |  __set_format__(typestr, fmt, /) from builtins.type
- |      You probably don&#39;t want to use this function.
+ |  union(...)
+ |      Return the union of sets as a new set.
  |      
- |        typestr
- |          Must be &#39;double&#39; or &#39;float&#39;.
- |        fmt
- |          Must be one of &#39;unknown&#39;, &#39;IEEE, big-endian&#39; or &#39;IEEE, little-endian&#39;,
- |          and in addition can only be one of the latter two if it appears to
- |          match the underlying C reality.
- |      
- |      It exists mainly to be used in Python&#39;s test suite.
- |      
- |      Override the automatic determination of C-level floating point type.
- |      This affects how floats are converted to and from binary strings.
- |  
- |  fromhex(string, /) from builtins.type
- |      Create a floating-point number from a hexadecimal string.
- |      
- |      &gt;&gt;&gt; float.fromhex(&#39;0x1.ffffp10&#39;)
- |      2047.984375
- |      &gt;&gt;&gt; float.fromhex(&#39;-0x1p-1074&#39;)
- |      -5e-324
+ |      (i.e. all elements that are in either set.)
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
  |  
  |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  imag
- |      the imaginary part of a complex number
- |  
- |  real
- |      the real part of a complex number</code></pre>
-<p>返回从数字或字符串 x 生成的浮点数。</p>
-<p>如果实参是字符串:</p>
-<ul>
-<li>它必须是包含十进制数字的字符串;</li>
-<li>通常是 Python 整数或浮点数的字符串形式；</li>
-<li>也可以是 ‘NaN’（非数字）、表示正负无穷大的字符串（”Infinity” 或 “inf”）。字母大小写随意；</li>
-<li>字符串前后可以有空白字符。</li>
-</ul>
-<p>如果实参是整数或浮点数，则返回具有相同值（在 Python 浮点精度范围内）的浮点数。如果实参在 Python 浮点精度范围外，则会触发OverflowError。</p>
-<p>如果没有实参，则返回 0.0 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
+ |      Create and return a new object.  See help(type) for accurate signature.</code></pre>
+<p>将可迭代对象转换为集合，返回一个新的 frozenset 集合对象。可迭代对象为空，或不传参数，得到一个空集合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">frozenset</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">frozenset</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>0.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>frozenset()</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">frozenset</span>([])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>1.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(-  <span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>frozenset()</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">frozenset</span>(<span class="string">&#x27;0123&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>-1.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27; -1.0 \n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>frozenset(&#123;&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;&#125;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">frozenset</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>-1.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27; 01_2.1_4 &#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>12.14</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;0001&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;3.14e02&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>314.0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;-naN&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>nan</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;-inf&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>-inf</code></pre>
+<pre><code>frozenset(&#123;&#39;a&#39;, &#39;b&#39;&#125;)</code></pre>
 
       
     </div>
@@ -677,9 +550,6 @@ class float(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -770,7 +640,6 @@ class float(object)
   
 
   
-
 
 </body>
 </html>

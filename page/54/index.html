@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/48_print-70b02886d2d8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/50_range-298285b2e70f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/48_print-70b02886d2d8/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/50_range-298285b2e70f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:38" itemprop="dateModified" datetime="2021-01-03T00:11:38+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:39" itemprop="dateModified" datetime="2021-01-03T00:11:39+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>758</span>
+      <span>1.7k</span>
     </span>
 </div>
 
@@ -347,40 +345,123 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="print-打印对象"><a href="#print-打印对象" class="headerlink" title="print() 打印对象"></a>print() 打印对象</h2><p>内置函数 print()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">print</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="range-创建-range-序列"><a href="#range-创建-range-序列" class="headerlink" title="range 创建 range 序列"></a>range 创建 range 序列</h2><p>内置函数（类）range，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">range</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function print in module builtins:
+<pre><code>Help on class range in module builtins:
 
-print(...)
-    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+class range(object)
+ |  range(stop) -&gt; range object
+ |  range(start, stop[, step]) -&gt; range object
+ |  
+ |  Return an object that produces a sequence of integers from start (inclusive)
+ |  to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+ |  start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+ |  These are exactly the valid indices for a list of 4 elements.
+ |  When step is given, it specifies the increment (or decrement).
+ |  
+ |  Methods defined here:
+ |  
+ |  __bool__(self, /)
+ |      self != 0
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(self, key, /)
+ |      Return self[key].
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __reduce__(...)
+ |      Helper for pickle.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __reversed__(...)
+ |      Return a reverse iterator.
+ |  
+ |  count(...)
+ |      rangeobject.count(value) -&gt; integer -- return number of occurrences of value
+ |  
+ |  index(...)
+ |      rangeobject.index(value, [start, [stop]]) -&gt; integer -- return index of value.
+ |      Raise ValueError if the value is not present.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  start
+ |  
+ |  step
+ |  
+ |  stop</code></pre>
+<p>虽然被称为函数，但 range 实际上是一个不可变的序列类型，参见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/05_sequence/02_range.ipynb">range 对象</a>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">range</span>)</span><br></pre></td></tr></table></figure>
 
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.</code></pre>
-<p>将 value … 打印到 file 指定的文本流，以 sep 分隔并在末尾加上 end。sep, end, file 和 flush 如果存在，它们必须以关键字参数的形式给出。</p>
-<p>所有非关键字参数都会被转换为字符串，就像是执行了 str() 一样，并会被写入到流。sep 和 end 都必须为字符串。sep 默认为一个空格 ‘ ‘，end 默认为换行 ‘\n’。</p>
-<p>如果没有给出 value …，则 print() 将只打印 end。</p>
-<p>file 参数必须是一个具有 <code>write(string)</code> 方法的对象。如果参数不指定，则将使用解释器用于标准输出的文件对象 sys.stdout。</p>
-<p>输出是否被缓存通常决定于 file，但如果 flush 关键字参数为真值，流会被强制刷新。</p>
-<p>该函数返回值为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">1</span>+<span class="number">1</span>)</span><br><span class="line">print(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>2
-a b</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;a&#x27;</span>,<span class="number">1</span>,<span class="built_in">int</span>, sep=<span class="string">&#x27;-&#x27;</span>, end=<span class="string">&#x27;end&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>a-1-&lt;class &#39;int&#39;&gt;end</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(end=<span class="string">&#x27;end&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>end</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p = print(<span class="string">&#x27;end&#x27;</span>)</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure>
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
 
-<pre><code>end
-None</code></pre>
+
+
+
+<pre><code>[0, 1, 2]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">-5</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, 3]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">0</span>,<span class="number">-5</span>,<span class="number">-1</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[0, -1, -2, -3, -4]</code></pre>
 
       
     </div>
@@ -439,9 +520,6 @@ None</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -532,7 +610,6 @@ None</code></pre>
   
 
   
-
 
 </body>
 </html>

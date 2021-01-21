@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/09_namespace-414da572c46b/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/11_create_instance-b76dac7cac16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/16_class/09_namespace-414da572c46b/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/16_class/11_create_instance-b76dac7cac16/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:50" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:50+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>443</span>
+      <span>348</span>
     </span>
 </div>
 
@@ -347,58 +345,63 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><p>命名空间是存放变量的场所。命名空间有局部、全局和内置的，还有对象中的嵌套命名空间。不同命名空间中的变量没有关系。</p>
-<p>命名空间通过防止命名冲突来支持模块化。例如，函数 builtins.open 与 os.open 可通过各自的命名空间来区分。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数的局部命名空间，在函数调用时创建</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="string">&#x27;函数 f 命名空间中的变量 x&#x27;</span></span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局命名空间</span></span><br><span class="line">x = <span class="string">&#x27;全局命名空间中的变量 x&#x27;</span></span><br><span class="line"><span class="comment"># 调用函数 f，与全局命名空间中的 x 无关</span></span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
-
-<pre><code>函数 f 命名空间中的变量 x</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模块 random 导入创建它自己的局部命名空间</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="comment"># 定义一个全局变量 randint</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randint</span>():</span></span><br><span class="line">    print(<span class="string">&#x27;全局 randint&#x27;</span>)</span><br><span class="line"><span class="comment"># random 局部命名空间中的 randint </span></span><br><span class="line"><span class="comment"># 与全局变量 randint 无关</span></span><br><span class="line">randint()</span><br><span class="line">random.randint(<span class="number">0</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>全局 randint
+          <h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><p>直接调用类对象，即可创建该类的实例对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>() <span class="comment"># 调用 int 类</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-
-1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 上述定义的变量 f, x, randint，导入的变量 random，</span></span><br><span class="line"><span class="comment"># 都存放在了当前全局命名空间中</span></span><br><span class="line">f, x, random, randint</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&lt;function __main__.f()&gt;,
- &#39;全局命名空间中的变量 x&#39;,
- &lt;module &#39;random&#39; from &#39;C:\\ProgramData\\Anaconda3\\lib\\random.py&#39;&gt;,
- &lt;function __main__.randint()&gt;)</code></pre>
-<p>内置命名空间是在 Python 解释器启动时创建，存放的变量包括内置函数、异常等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局命名空间中定义变量 str，</span></span><br><span class="line"><span class="comment"># 将屏蔽内置命名空间中的 str</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&#x27;x = <span class="subst">&#123;x&#125;</span>&#x27;</span></span><br><span class="line"><span class="built_in">str</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="string">&#x27;123&#x27;</span>) <span class="comment"># 传参调用 list 类</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;x = 123&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 但可以在 builtins 中继续调用</span></span><br><span class="line"><span class="keyword">import</span> builtins</span><br><span class="line"></span><br><span class="line">builtins.<span class="built_in">str</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line">    </span><br><span class="line">A(<span class="string">&#x27;实例1&#x27;</span>), A(<span class="string">&#x27;实例2&#x27;</span>) <span class="comment"># 调用自定义类</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;123&#39;</code></pre>
-<p>递归函数，每次递归调用，都会有一个新的命名空间。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">f&#x27;x=<span class="subst">&#123;x&#125;</span>调用，x-1=<span class="subst">&#123;x<span class="number">-1</span>&#125;</span>继续调用&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">f&#x27;x=<span class="subst">&#123;x&#125;</span>,调用结束&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 以 x-1 作为参数调用函数 f</span></span><br><span class="line">        <span class="keyword">return</span> f(x<span class="number">-1</span>)</span><br><span class="line">f(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(实例1, 实例2)</code></pre>
+<p>实例对象是由特殊方法 <code>__new__()</code> 创建，<code>__init__()</code> 定制完成。两个方法是隐式地完成创建和定制的，当然也可以显式地创建并定制。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.name = <span class="string">&#x27;实例&#x27;</span></span><br><span class="line">        </span><br><span class="line">A <span class="comment"># 类对象 A</span></span><br></pre></td></tr></table></figure>
 
-<pre><code>x=3调用，x-1=2继续调用
-x=2调用，x-1=1继续调用
-x=1调用，x-1=0继续调用
-x=0,调用结束</code></pre>
-<p>嵌套的命名空间：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;全局变量 a&#x27;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    a = <span class="string">&#x27;类变量 a&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">        a = <span class="string">&#x27;函数局部变量 a&#x27;</span></span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(A.a)</span><br><span class="line">print(A().f())</span><br></pre></td></tr></table></figure>
 
-<pre><code>全局变量 a
-类变量 a
-函数局部变量 a</code></pre>
+
+
+<pre><code>__main__.A</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显式地创建类 A 的一个实例 a</span></span><br><span class="line">a = <span class="built_in">object</span>.__new__(A)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;__main__.A at 0x20d23e95d30&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 未初始化，无属性</span></span><br><span class="line">a.name</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-36-b3a4d04d98fc&gt; in &lt;module&gt;
+      1 # 未初始化，无属性
+----&gt; 2 a.name
+
+
+AttributeError: &#39;A&#39; object has no attribute &#39;name&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 也可以使用 a.__init__(), </span></span><br><span class="line"><span class="comment"># 它会自动将实例作为第一个参数完成初始化</span></span><br><span class="line">A.__init__(a)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;__main__.A at 0x20d23e95d30&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.name</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;实例&#39;</code></pre>
 
       
     </div>
@@ -457,9 +460,6 @@ x=0,调用结束</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -550,7 +550,6 @@ x=0,调用结束</code></pre>
   
 
   
-
 
 </body>
 </html>

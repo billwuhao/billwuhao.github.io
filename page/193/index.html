@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/43_str.isnumeric-71389fee12c6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/45_str.isupper-3ce8c446a83b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/43_str.isnumeric-71389fee12c6/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/45_str.isupper-3ce8c446a83b/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>457</span>
+      <span>297</span>
     </span>
 </div>
 
@@ -347,55 +345,35 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-isnumeric-是数值字符？"><a href="#str-isnumeric-是数值字符？" class="headerlink" title="str.isnumeric 是数值字符？"></a>str.isnumeric 是数值字符？</h2><p>字符串方法 str.isnumeric()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isnumeric)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-isupper-是大写？"><a href="#str-isupper-是大写？" class="headerlink" title="str.isupper 是大写？"></a>str.isupper 是大写？</h2><p>字符串方法 str.isupper()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isupper)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-isnumeric(self, /)
-    Return True if the string is a numeric string, False otherwise.
+isupper(self, /)
+    Return True if the string is an uppercase string, False otherwise.
 
-    A string is numeric if all characters in the string are numeric and there is at
-    least one character in the string.</code></pre>
-<p>如果字符串中至少有一个字符且所有字符均为数值字符则返回 True，否则返回 False。</p>
-<p>数值字符包括数字字符，以及所有在 Unicode 中设置了数值特性属性的字符，例如 U+2155, VUL-GAR FRACTION ONE FIFTH。正式的定义为：数值字符就是具有特征属性值 Numeric_Type=Digit, Numeric_Type=Decimal 或 Numeric_Type=Numeric 的字符。</p>
-<p>此处所指数字包括罗马数字，汉字数字等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;②&#x27;</span>.isnumeric()</span><br></pre></td></tr></table></figure>
+    A string is uppercase if all cased characters in the string are uppercase and
+    there is at least one cased character in the string.</code></pre>
+<p>如果字符串中至少有一个区分大小写的字符且此类字符均为大写则返回 True，否则返回 False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Γ&#x27;</span>.isupper()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;3.14&#x27;</span>.isnumeric()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 AB&#x27;</span>.isupper()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 Ab&#x27;</span>.isupper()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;5²&#x27;</span>.isnumeric()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Ⅷ&#x27;</span>.isnumeric()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;一&#x27;</span>.isnumeric()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;壹&#x27;</span>.isnumeric()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
 
       
     </div>
@@ -454,9 +432,6 @@ isnumeric(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -547,7 +522,6 @@ isnumeric(self, /)
   
 
   
-
 
 </body>
 </html>

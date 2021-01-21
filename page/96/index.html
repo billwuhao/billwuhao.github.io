@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/06_bool-5c5098537317/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/08_callable-a68c42feeee0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/06_bool-5c5098537317/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/08_callable-a68c42feeee0/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>5k</span>
+      <span>342</span>
     </span>
 </div>
 
@@ -347,282 +345,43 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="bool-返回对象的布尔值"><a href="#bool-返回对象的布尔值" class="headerlink" title="bool 返回对象的布尔值"></a>bool 返回对象的布尔值</h2><p>内置函数（类） bool，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">bool</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="callable-是可调用对象？"><a href="#callable-是可调用对象？" class="headerlink" title="callable() 是可调用对象？"></a>callable() 是可调用对象？</h2><p>内置函数 callable()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">callable</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class bool in module builtins:
+<pre><code>Help on built-in function callable in module builtins:
 
-class bool(int)
- |  bool(x) -&gt; bool
- |  
- |  Returns True when the argument x is true, False otherwise.
- |  The builtins True and False are the only two instances of the class bool.
- |  The class bool is a subclass of the class int, and cannot be subclassed.
- |  
- |  Method resolution order:
- |      bool
- |      int
- |      object
- |  
- |  Methods defined here:
- |  
- |  __and__(self, value, /)
- |      Return self&amp;value.
- |  
- |  __or__(self, value, /)
- |      Return self|value.
- |  
- |  __rand__(self, value, /)
- |      Return value&amp;self.
- |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __ror__(self, value, /)
- |      Return value|self.
- |  
- |  __rxor__(self, value, /)
- |      Return value^self.
- |  
- |  __str__(self, /)
- |      Return str(self).
- |  
- |  __xor__(self, value, /)
- |      Return self^value.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Methods inherited from int:
- |  
- |  __abs__(self, /)
- |      abs(self)
- |  
- |  __add__(self, value, /)
- |      Return self+value.
- |  
- |  __bool__(self, /)
- |      self != 0
- |  
- |  __ceil__(...)
- |      Ceiling of an Integral returns itself.
- |  
- |  __divmod__(self, value, /)
- |      Return divmod(self, value).
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __float__(self, /)
- |      float(self)
- |  
- |  __floor__(...)
- |      Flooring an Integral returns itself.
- |  
- |  __floordiv__(self, value, /)
- |      Return self//value.
- |  
- |  __format__(self, format_spec, /)
- |      Default object formatter.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __getnewargs__(self, /)
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __hash__(self, /)
- |      Return hash(self).
- |  
- |  __index__(self, /)
- |      Return self converted to an integer, if self is suitable for use as an index into a list.
- |  
- |  __int__(self, /)
- |      int(self)
- |  
- |  __invert__(self, /)
- |      ~self
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __lshift__(self, value, /)
- |      Return self&lt;&lt;value.
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __mod__(self, value, /)
- |      Return self%value.
- |  
- |  __mul__(self, value, /)
- |      Return self*value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
- |  
- |  __neg__(self, /)
- |      -self
- |  
- |  __pos__(self, /)
- |      +self
- |  
- |  __pow__(self, value, mod=None, /)
- |      Return pow(self, value, mod).
- |  
- |  __radd__(self, value, /)
- |      Return value+self.
- |  
- |  __rdivmod__(self, value, /)
- |      Return divmod(value, self).
- |  
- |  __rfloordiv__(self, value, /)
- |      Return value//self.
- |  
- |  __rlshift__(self, value, /)
- |      Return value&lt;&lt;self.
- |  
- |  __rmod__(self, value, /)
- |      Return value%self.
- |  
- |  __rmul__(self, value, /)
- |      Return value*self.
- |  
- |  __round__(...)
- |      Rounding an Integral returns itself.
- |      Rounding with an ndigits argument also returns an integer.
- |  
- |  __rpow__(self, value, mod=None, /)
- |      Return pow(value, self, mod).
- |  
- |  __rrshift__(self, value, /)
- |      Return value&gt;&gt;self.
- |  
- |  __rshift__(self, value, /)
- |      Return self&gt;&gt;value.
- |  
- |  __rsub__(self, value, /)
- |      Return value-self.
- |  
- |  __rtruediv__(self, value, /)
- |      Return value/self.
- |  
- |  __sizeof__(self, /)
- |      Returns size in memory, in bytes.
- |  
- |  __sub__(self, value, /)
- |      Return self-value.
- |  
- |  __truediv__(self, value, /)
- |      Return self/value.
- |  
- |  __trunc__(...)
- |      Truncating an Integral returns itself.
- |  
- |  bit_length(self, /)
- |      Number of bits necessary to represent self in binary.
- |      
- |      &gt;&gt;&gt; bin(37)
- |      &#39;0b100101&#39;
- |      &gt;&gt;&gt; (37).bit_length()
- |      6
- |  
- |  conjugate(...)
- |      Returns self, the complex conjugate of any int.
- |  
- |  to_bytes(self, /, length, byteorder, *, signed=False)
- |      Return an array of bytes representing an integer.
- |      
- |      length
- |        Length of bytes object to use.  An OverflowError is raised if the
- |        integer is not representable with the given number of bytes.
- |      byteorder
- |        The byte order used to represent the integer.  If byteorder is &#39;big&#39;,
- |        the most significant byte is at the beginning of the byte array.  If
- |        byteorder is &#39;little&#39;, the most significant byte is at the end of the
- |        byte array.  To request the native byte order of the host system, use
- |        `sys.byteorder&#39; as the byte order value.
- |      signed
- |        Determines whether two&#39;s complement is used to represent the integer.
- |        If signed is False and a negative integer is given, an OverflowError
- |        is raised.
- |  
- |  ----------------------------------------------------------------------
- |  Class methods inherited from int:
- |  
- |  from_bytes(bytes, byteorder, *, signed=False) from builtins.type
- |      Return the integer represented by the given array of bytes.
- |      
- |      bytes
- |        Holds the array of bytes to convert.  The argument must either
- |        support the buffer protocol or be an iterable object producing bytes.
- |        Bytes and bytearray are examples of built-in objects that support the
- |        buffer protocol.
- |      byteorder
- |        The byte order used to represent the integer.  If byteorder is &#39;big&#39;,
- |        the most significant byte is at the beginning of the byte array.  If
- |        byteorder is &#39;little&#39;, the most significant byte is at the end of the
- |        byte array.  To request the native byte order of the host system, use
- |        `sys.byteorder&#39; as the byte order value.
- |      signed
- |        Indicates whether two&#39;s complement is used to represent the integer.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from int:
- |  
- |  denominator
- |      the denominator of a rational number in lowest terms
- |  
- |  imag
- |      the imaginary part of a complex number
- |  
- |  numerator
- |      the numerator of a rational number in lowest terms
- |  
- |  real
- |      the real part of a complex number</code></pre>
-<p>返回对象 x 的布尔值。省略 x 则返回 False。对象的真值、假值规则如下：</p>
-<p>一个对象在默认情况下均被视为真值，除非当该对象被调用时其所属类定义了 <code>__bool__()</code> 方法且返回 False 或是定义了 <code>__len__()</code> 方法且返回零。</p>
-<p>下面基本完整地列出了会被视为假值的内置对象:</p>
-<ul>
-<li>被定义为假值的常量: None 和 False。</li>
-<li>任何数值类型的零: 0, 0.0, 0j, Decimal(0), Fraction(0, 1)</li>
-<li>空的序列和多项集: ‘’, (), [], {}, set(), range(0)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">bool</span>)</span><br></pre></td></tr></table></figure>
+callable(obj, /)
+    Return whether the object is callable (i.e., some kind of function).
 
-
-
-
-<pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span>()</span><br></pre></td></tr></table></figure>
+    Note that classes are callable, as are instances of classes with a
+    __call__() method.</code></pre>
+<p>如果 obj 是可调用对象就返回 True，否则返回 False。如果返回 True，调用仍可能失败，但如果返回 False，则调用将肯定不会成功。</p>
+<p>函数、方法、类以及实现了 <code>__call__()</code> 方法的类的实例是可调用的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">callable</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span>(<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span>(<span class="string">&#x27;0&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">callable</span>(<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span>(<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myint</span>(<span class="params"><span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">num = Myint(<span class="number">1</span>)</span><br><span class="line">num</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">callable</span>(num)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">callable</span>(<span class="keyword">lambda</span>: <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -686,9 +445,6 @@ class bool(int)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -779,7 +535,6 @@ class bool(int)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/11_set.intersection_update-01481557a3ff/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/13_set.symmetric_difference_update-780c8b074599/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/06_set/11_set.intersection_update-01481557a3ff/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/06_set/13_set.symmetric_difference_update-780c8b074599/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>270</span>
+      <span>230</span>
     </span>
 </div>
 
@@ -347,28 +345,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="set-intersection-update-交集更新"><a href="#set-intersection-update-交集更新" class="headerlink" title="set.intersection_update 交集更新"></a>set.intersection_update 交集更新</h2><p>集合方法 set.intersection_update()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.intersection_update)</span><br></pre></td></tr></table></figure>
+          <h2 id="set-other-对称差集更新"><a href="#set-other-对称差集更新" class="headerlink" title="set ^= other 对称差集更新"></a>set ^= other 对称差集更新</h2><p>集合的对称差集更新操作，相当于集合方法 set.symmetric_difference_update，其文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.symmetric_difference_update)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-intersection_update(...)
-    Update a set with the intersection of itself and another.</code></pre>
-<p>该方法接收任意的位置参数，更新集合，只保留在其他所有集合中都存在的元素。相当于 a &amp;= b &amp; …（a，b 是集合），但方法的参数可以是可迭代对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">a.intersection_update((<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>),&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+symmetric_difference_update(...)
+    Update a set with the symmetric difference of itself and another.</code></pre>
+<p>更新集合，只保留两个集合中非共同部分。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">a.symmetric_difference_update([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;1&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">a &amp;= &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>&#125; &amp; &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;1, 4&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">a ^= &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;1&#125;</code></pre>
+<pre><code>&#123;1, 4&#125;</code></pre>
 <p>该方法是一个过程，就地修改集合，返回值为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">b = a.intersection_update()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">b = a.symmetric_difference_update([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
 
 <pre><code>None</code></pre>
 
@@ -429,9 +427,6 @@ intersection_update(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -522,7 +517,6 @@ intersection_update(...)
   
 
   
-
 
 </body>
 </html>

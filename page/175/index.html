@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/09_list.reverse-67471d3c69fe/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/11_list.remove-43ca38edc680/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/03_list/09_list.reverse-67471d3c69fe/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/03_list/11_list.remove-43ca38edc680/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>176</span>
+      <span>491</span>
     </span>
 </div>
 
@@ -347,22 +345,36 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="list-reverse-反转列表中元素"><a href="#list-reverse-反转列表中元素" class="headerlink" title="list.reverse 反转列表中元素"></a>list.reverse 反转列表中元素</h2><p>列表方法 list.reverse()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.reverse)</span><br></pre></td></tr></table></figure>
+          <h2 id="list-remove-移除一个元素"><a href="#list-remove-移除一个元素" class="headerlink" title="list.remove 移除一个元素"></a>list.remove 移除一个元素</h2><p>列表方法 list.remove()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.remove)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-reverse(self, /)
-    Reverse *IN PLACE*.</code></pre>
-<p>反转列表中的元素。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">_list.reverse()</span><br><span class="line">_list</span><br></pre></td></tr></table></figure>
+remove(self, value, /)
+    Remove first occurrence of value.
+
+    Raises ValueError if the value is not present.</code></pre>
+<p>移除列表中第一个值为 value 的元素。如果没有这样的元素，则抛出 ValueError 异常。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">_list.remove(<span class="number">3</span>)</span><br><span class="line">_list</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[3, 2, 1]</code></pre>
+<pre><code>[1, 2, 3]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_list.remove(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-3-5747ddae04fe&gt; in &lt;module&gt;
+----&gt; 1 _list.remove(4)
+
+
+ValueError: list.remove(x): x not in list</code></pre>
 <p>该方法是一个过程 (过程就是不返回有意义结果的函数；在 Python 中，过程的返回值为 None), 直接对原列表进行修改：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">a = _list.reverse()</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">a = _list.remove(<span class="number">3</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
 
 <pre><code>None</code></pre>
 
@@ -423,9 +435,6 @@ reverse(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -516,7 +525,6 @@ reverse(self, /)
   
 
   
-
 
 </body>
 </html>

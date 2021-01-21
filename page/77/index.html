@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/25_globals-ddcd01bad432/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/27_hash-3366d3144b1b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/25_globals-ddcd01bad432/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/27_hash-3366d3144b1b/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.6k</span>
+      <span>538</span>
     </span>
 </div>
 
@@ -347,47 +345,55 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="globals-返回全局变量字典"><a href="#globals-返回全局变量字典" class="headerlink" title="globals() 返回全局变量字典"></a>globals() 返回全局变量字典</h2><p>内置函数 globals()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">globals</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="hash-返回对象的哈希值"><a href="#hash-返回对象的哈希值" class="headerlink" title="hash() 返回对象的哈希值"></a>hash() 返回对象的哈希值</h2><p>内置函数 hash()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">hash</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function globals in module builtins:
+<pre><code>Help on built-in function hash in module builtins:
 
-globals()
-    Return the dictionary containing the current scope&#39;s global variables.
+hash(obj, /)
+    Return the hash value for the given object.
 
-    NOTE: Updates to this dictionary *will* affect name lookups in the current
-    global scope and vice-versa.</code></pre>
-<p>返回包含当前作用域的全局变量字典。这总是当前模块的字典（在函数或方法中，不是调用它的模块，而是定义它的模块）。</p>
-<p>更新此字典 <em>将</em> 影响当前全局范围内的名称查找，反之亦然。</p>
-<p>globals() 和 locals() 函数各自返回当前的全局和本地字典，因此可以将它们传递给 eval() 或 exec() 来使用。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">globals</span>()</span><br></pre></td></tr></table></figure>
-
+    Two objects that compare equal must also have the same hash value, but the
+    reverse is not necessarily true.</code></pre>
+<p>返回对象的哈希值（如果它有的话）。哈希值是整数。它们在集合或字典查找元素时用来快速比较集合的元素或字典的键。相同大小的数字有相同的哈希值。</p>
+<p>可哈希对象必须具有相同的哈希值比较结果才会相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>(<span class="number">1</span>) == <span class="built_in">hash</span>(<span class="number">1.0</span>) == <span class="built_in">hash</span>(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 
 
 
-<pre><code>&#123;&#39;__name__&#39;: &#39;__main__&#39;,
- &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;,
- &#39;__package__&#39;: None,
- &#39;__loader__&#39;: None,
- &#39;__spec__&#39;: None,
- &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;,
- &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;,
- &#39;_ih&#39;: [&#39;&#39;, &#39;help(globals)&#39;, &#39;globals()&#39;],
- &#39;_oh&#39;: &#123;&#125;,
- &#39;_dh&#39;: [&#39;D:\\Jupyter\\xuecn_books\\books\\xue_python_kp\\11_built-in_function&#39;],
- &#39;In&#39;: [&#39;&#39;, &#39;help(globals)&#39;, &#39;globals()&#39;],
- &#39;Out&#39;: &#123;&#125;,
- &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x000001E15E70D748&gt;&gt;,
- &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall at 0x1e160f63978&gt;,
- &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall at 0x1e160f63978&gt;,
- &#39;_&#39;: &#39;&#39;,
- &#39;__&#39;: &#39;&#39;,
- &#39;___&#39;: &#39;&#39;,
- &#39;_i&#39;: &#39;help(globals)&#39;,
- &#39;_ii&#39;: &#39;&#39;,
- &#39;_iii&#39;: &#39;&#39;,
- &#39;_i1&#39;: &#39;help(globals)&#39;,
- &#39;_i2&#39;: &#39;globals()&#39;&#125;</code></pre>
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="number">1.0</span> == <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>(<span class="string">&#x27;abc&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2812132477407752679</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>((<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>529344067295497451</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-5-35e31e935e9e&gt; in &lt;module&gt;
+----&gt; 1 hash([1,2,3])
+
+
+TypeError: unhashable type: &#39;list&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>((<span class="number">1</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -446,9 +452,6 @@ globals()
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -539,7 +542,6 @@ globals()
   
 
   
-
 
 </body>
 </html>

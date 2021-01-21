@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/44_str.islower-cc2c76bc81bc/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/46_str.istitle-c99cce6950be/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/44_str.islower-cc2c76bc81bc/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/46_str.istitle-c99cce6950be/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>296</span>
+      <span>333</span>
     </span>
 </div>
 
@@ -347,35 +345,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-islower-是小写？"><a href="#str-islower-是小写？" class="headerlink" title="str.islower 是小写？"></a>str.islower 是小写？</h2><p>字符串方法 str.islower()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.islower)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-istitle-是标题字符串？"><a href="#str-istitle-是标题字符串？" class="headerlink" title="str.istitle 是标题字符串？"></a>str.istitle 是标题字符串？</h2><p>字符串方法 str.istitle()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.istitle)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-islower(self, /)
-    Return True if the string is a lowercase string, False otherwise.
+istitle(self, /)
+    Return True if the string is a title-cased string, False otherwise.
 
-    A string is lowercase if all cased characters in the string are lowercase and
-    there is at least one cased character in the string.</code></pre>
-<p>如果字符串中至少有一个区分大小写的字符且此类字符均为小写则返回 True，否则返回 False。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨&#x27;</span>.islower()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 Abc&#x27;</span>.islower()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 abc&#x27;</span>.islower()</span><br></pre></td></tr></table></figure>
+    In a title-cased string, upper- and title-case characters may only
+    follow uncased characters and lowercase characters only cased ones.</code></pre>
+<p>如果字符串中至少有一个字符且为标题字符串则返回 True，例如大写字符之后只能带非大写字符而小写字符必须有大写字符打头。否则返回 False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Abc Py&#x27;</span>.istitle()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 A11&#x27;</span>.istitle()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 Abc&#x27;</span>.istitle()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;嗨 ABC&#x27;</span>.istitle()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
 
       
     </div>
@@ -434,9 +438,6 @@ islower(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -527,7 +528,6 @@ islower(self, /)
   
 
   
-
 
 </body>
 </html>

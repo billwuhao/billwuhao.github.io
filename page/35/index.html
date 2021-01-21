@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/02_function_definition-aab099b8bb7e/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/04_return_value-2cdda3ae83c4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/12_function/02_function_definition-aab099b8bb7e/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/12_function/04_return_value-2cdda3ae83c4/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>337</span>
+      <span>284</span>
     </span>
 </div>
 
@@ -347,66 +345,71 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h2><p>函数定义有两种方式，def 语句定义有名字的函数（详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/10_def.ipynb">def 定义函数</a>），lambda 表达式定义匿名函数（详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/12_function/08_lambda.ipynb">lambda 函数</a>）。</p>
-<p>定义一个函数，即是创建了一个函数可执行代码的包装器，他将函数想要实现的功能包装起来。然后通过调用它来实现其功能。def 语句 详细介绍了定义函数的语法规则，下面看看如何将一个功能包装起来。</p>
-<p>例如下列函数，实现了将列表中的 字符串整数 以及 整数 相加求和的功能，以后只要遇到这种情况，都可以用它来求和：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sumpro([<span class="number">1</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>])</span><br></pre></td></tr></table></figure>
+          <h2 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h2><p>函数返回值通过 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/11_return.ipynb">return 语句</a> 来实现，调用函数时，返回 return 语句之后表达式的值，没有 return 语句或 return 语句之后为空的函数，调用函数默认返回 None。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>6</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># def 定义</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumpro</span>(<span class="params">lst</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(<span class="built_in">int</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> lst)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sumpro([<span class="string">&#x27;1 &#x27;</span>,<span class="string">&#x27; 2&#x27;</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>4</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">f() <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>6</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lambda 表达式定义</span></span><br><span class="line"><span class="keyword">lambda</span> lst: <span class="built_in">sum</span>(<span class="built_in">int</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> lst)</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<p>函数执行到 return 语句，则结束当前函数的调用，可以通过条件判断，返回特定结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> <span class="comment"># 使用默认值调用函数，接下来的代码将不被执行</span></span><br><span class="line">    print(<span class="string">f&#x27;x=<span class="subst">&#123;x&#125;</span>&#x27;</span>) </span><br><span class="line">    <span class="keyword">if</span> x != <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&#x27;x²=<span class="subst">&#123;x**<span class="number">2</span>&#125;</span>&#x27;</span></span><br><span class="line">    </span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;function __main__.&lt;lambda&gt;(lst)&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lst = [[<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;8&#x27;</span>],[<span class="string">&#x27;3&#x27;</span>,<span class="string">&#x27;4&#x27;</span>]]</span><br><span class="line"><span class="built_in">sorted</span>(lst,key=<span class="keyword">lambda</span> lst: <span class="built_in">sum</span>(<span class="built_in">int</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> lst))</span><br></pre></td></tr></table></figure>
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>x=2
 
 
 
 
-<pre><code>[[&#39;3&#39;, &#39;4&#39;], [&#39;2&#39;, &#39;8&#39;]]</code></pre>
-<p>函数定义，也可以定义为实现功能，但没有返回值（默认返回 None）的过程。</p>
-<p>例如下列函数，实现了将列表中的字符串整数都转换为整数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_to_numb</span>(<span class="params">lst</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lst)):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">type</span>(lst[i]) != <span class="built_in">int</span>:</span><br><span class="line">            lst[i] = <span class="built_in">int</span>(lst[i])</span><br></pre></td></tr></table></figure>
 
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="string">&#x27;1&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;3&#x27;</span>]</span><br><span class="line">n = convert_to_numb(lst)</span><br><span class="line">lst, n <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+&#39;x²=4&#39;</code></pre>
+<p>return 之后的表达式可以是多个表达式用逗号隔开（其实是一个元组），可用赋值语句分别接收返回值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(x), <span class="built_in">max</span>(x), <span class="built_in">min</span>(x)</span><br><span class="line">f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>([1, 2, 3], True)</code></pre>
-<p>函数定义所使用的函数名称，不能与当前作用域中以定义的名称相同，这会屏蔽掉已存在的名称，或将自定义的函数对象重新赋值给了该名称。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(10, 4, 1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum_x, max_x, min_x = f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">sum_x, max_x, min_x</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;123&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&#x27;x=<span class="subst">&#123;x&#125;</span>&#x27;</span></span><br><span class="line"><span class="built_in">str</span>(<span class="number">123</span>) <span class="comment"># 屏蔽掉了内置名称 str</span></span><br></pre></td></tr></table></figure>
+<pre><code>(10, 4, 1)</code></pre>
+<p>返回值可以是任何值。如果 return 之后的表达式中包含函数自身的调用，则该函数称为递归函数。详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/12_function/05_recursion.ipynb">递归函数</a>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回函数自身</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    print(x)</span><br><span class="line">    <span class="keyword">return</span> f</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1
+2
+3
 
 
 
 
-<pre><code>&#39;x=123&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">f <span class="comment"># f 被重新赋值</span></span><br></pre></td></tr></table></figure>
+
+&lt;function __main__.f(x)&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回函数自身的调用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(x<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> f(x<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line">f(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>2
+1
+0
 
 
 
 
-<pre><code>&lt;function __main__.f()&gt;</code></pre>
+
+0</code></pre>
 
       
     </div>
@@ -465,9 +468,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -558,7 +558,6 @@
   
 
   
-
 
 </body>
 </html>

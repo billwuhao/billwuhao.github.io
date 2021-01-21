@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/07_function_call-ec681c412f4d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/09_generator-df69a72591b5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/12_function/07_function_call-ec681c412f4d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/12_function/09_generator-df69a72591b5/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.2k</span>
+      <span>1.1k</span>
     </span>
 </div>
 
@@ -347,72 +345,77 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>函数名之后带一个圆括号，圆括号内，根据形参的类型（详见<a href="xue/%E8%84%9A%E6%9C%AC/kp_book/12_function/03_formal_parameter.ipynb">函数形参</a>），给函数传递相应的实参，即可调用函数，执行函数体中的代码。</p>
-<p>函数调用传递的实参分为：<strong>位置参数</strong>和<strong>关键字参数</strong>。</p>
+          <h2 id="生成器函数"><a href="#生成器函数" class="headerlink" title="生成器函数"></a>生成器函数</h2><p>函数定义中使用了 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/12_yield.ipynb">yield 语句</a>，该定义创建的函数是生成器函数。生成器函数通常也直接叫生成器。</p>
+<p>当一个生成器函数被调用的时候，它返回一个迭代器，也称为生成器（全称是生成器迭代器，下面所说生成器均指生成器迭代器）。然后通过这个生成器来控制生成器函数的执行。</p>
+<p>生成器是一个迭代器，也是一个可迭代对象。但一个生成器生成的 “元素” 只能被使用一次，原因如下：</p>
 <ul>
-<li>位置参数: 调用函数时，不带标识符（例如 name=）直接按形参位置传递给函数的参数。位置参数可使用 <code>*</code> 将可迭代对象的元素拆包传入函数，但元素个数不能多于可接收位置参数的形参个数，除非有接收多个位置参数的可变位置形参。</li>
+<li><p>迭代生成器的时候，生成器函数开始执行，执行到 yield，然后执行被挂起，给生成器的调用者返回 yield 之后的表达式的值。挂起后，所有局部状态都被保留下来，包括局部变量的当前绑定，指令指针，内部求值栈和任何异常处理的状态。</p>
+</li>
+<li><p>继续迭代生成器，生成器函数从挂起状态继续执行，执行到 yield，然后执行又被挂起，给生成器的调用者返回 yield 之后的表达式的值。</p>
+</li>
+<li><p>生成器迭代完成时，引发 StopIteration。</p>
+</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,*c,d=<span class="literal">None</span></span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>,d=<span class="subst">&#123;d&#125;</span>&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">f(*[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]) <span class="comment"># d 只能接收关键字参数</span></span><br></pre></td></tr></table></figure>
+<p>在一个生成器函数中，return 语句表示生成器已完成并将导致 StopIteration 被引发。返回值（如果有的话）会被当作一个参数用来构建 StopIteration 并成为 StopIteration.value 属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(g)</span><br></pre></td></tr></table></figure>
 
-<pre><code>a=1,b=2,c=(3, 4, 5),d=None</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,*,c=<span class="literal">None</span></span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment"># c 只能接收关键字参数</span></span><br></pre></td></tr></table></figure>
 
-<pre><code>a=1,b=2,c=None
+
+
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">g = f(<span class="number">0</span>)</span><br><span class="line">print(f)</span><br><span class="line">print(g)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;function f at 0x000002480120ACA0&gt;
+&lt;generator object f at 0x000002480122E040&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(g) <span class="comment"># 迭代结束</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+StopIteration                             Traceback (most recent call last)
+
+&lt;ipython-input-3-c91425ed1388&gt; in &lt;module&gt;
+----&gt; 1 next(g) # 迭代结束
+
+
+StopIteration: </code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    <span class="comment"># 生成器已完成，后面的不被执行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;end&#x27;</span></span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> n</span><br><span class="line">    </span><br><span class="line">g = f(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="built_in">next</span>(g))</span><br><span class="line">    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> s:</span><br><span class="line">        print(s.value) <span class="comment"># StopIteration.value 属性</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="comment"># 迭代结束，不能再次迭代生成器</span></span><br><span class="line"><span class="built_in">next</span>(g)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0
+1
+2
+end
 
 
 
 ---------------------------------------------------------------------------
 
-TypeError                                 Traceback (most recent call last)
+StopIteration                             Traceback (most recent call last)
 
-&lt;ipython-input-2-9cc318bcfef7&gt; in &lt;module&gt;
-      2     print(f&#39;a=&#123;a&#125;,b=&#123;b&#125;,c=&#123;c&#125;&#39;)
-      3 f(1,2)
-----&gt; 4 f(1,2,3)
+&lt;ipython-input-10-3ebb4e469fc1&gt; in &lt;module&gt;
+     19         break
+     20 # 迭代结束，不能再次迭代生成器
+---&gt; 21 next(g)
 
 
-TypeError: f() takes from 1 to 2 positional arguments but 3 were given</code></pre>
-<ul>
-<li>关键字参数: 函数调用中前面带有标识符（例如 name=）传递给函数的参数。关键字参数可以使用 <code>**</code> 将字典里的元素传入函数，但元素个数不能多于可接收关键字参数的形参个数。关键字参数的标识符或字典的键，必须与可接收关键字参数的形参的名称相同，除非有可接收任意关键字参数的可变关键字形参。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,/,b=<span class="literal">None</span>,*,c=<span class="literal">None</span></span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">f(<span class="number">1</span>,c=<span class="number">3</span>,b=<span class="number">2</span>) <span class="comment"># a 仅限位置传参</span></span><br><span class="line">f(a=<span class="number">1</span>,c=<span class="number">3</span>,b=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>a=1,b=2,c=3
+StopIteration: </code></pre>
+<p><code>yield from</code> 将可迭代对象中的每一项作为生成器的迭代项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">*args</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> args</span><br><span class="line"></span><br><span class="line">g = f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">next</span>(g),<span class="built_in">list</span>(g)</span><br></pre></td></tr></table></figure>
 
 
 
----------------------------------------------------------------------------
 
-TypeError                                 Traceback (most recent call last)
+<pre><code>(1, [2, 3])</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">arg</span>):</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> arg</span><br><span class="line"></span><br><span class="line">g = f(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line">print(<span class="built_in">list</span>(g))</span><br><span class="line"><span class="comment"># g 使用结束，再次使用什么也没有，创建了一个空列表</span></span><br><span class="line">print(<span class="built_in">list</span>(g))</span><br><span class="line"><span class="comment"># 如要再次使用可再创建一个生成器</span></span><br><span class="line"><span class="built_in">list</span>(f(<span class="string">&#x27;123&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
-&lt;ipython-input-7-3c39aaeac558&gt; in &lt;module&gt;
-      3 
-      4 f(1,c=3,b=2) # a 仅限位置传参
-----&gt; 5 f(a=1,c=3,b=2)
+<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]
+[]
 
 
-TypeError: f() got some positional-only arguments passed as keyword arguments: &#39;a&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,/,b=<span class="literal">None</span>,**c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># a 仅限位置，b 没有对应的名称，因此全部传给 c</span></span><br><span class="line">f(<span class="number">1</span>,**&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;d&#x27;</span>:<span class="number">4</span>,<span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<pre><code>a=1,b=None,c=&#123;&#39;a&#39;: 1, &#39;d&#39;: 4, &#39;c&#39;: 3&#125;</code></pre>
-<p>位置参数必须在关键字参数前面：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,**c</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">f(b=<span class="number">2</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 
-<pre><code>  File &quot;&lt;ipython-input-13-59f3b615f9f3&gt;&quot;, line 4
-    f(b=2,1)
-          ^
-SyntaxError: positional argument follows keyword argument</code></pre>
-<p>位置参数的位置不能传错，关键字参数的则可以任意位置：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a,b=<span class="literal">None</span>,/,c=<span class="literal">None</span>,**d</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;a=<span class="subst">&#123;a&#125;</span>,b=<span class="subst">&#123;b&#125;</span>,c=<span class="subst">&#123;c&#125;</span>,d=<span class="subst">&#123;d&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>,d=<span class="number">4</span>)</span><br><span class="line">f(<span class="number">2</span>,<span class="number">1</span>,d=<span class="number">4</span>,c=<span class="number">3</span>,e=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>a=1,b=2,c=3,d=&#123;&#39;d&#39;: 4&#125;
-a=2,b=1,c=3,d=&#123;&#39;d&#39;: 4, &#39;e&#39;: 5&#125;</code></pre>
-<p>标注并不影响传参规则，但按照标注传参是更明智的做法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">a:<span class="built_in">int</span>,b:<span class="built_in">str</span>=<span class="string">&#x27;b&#x27;</span></span>)-&gt; str:</span></span><br><span class="line">    print(a*b)</span><br><span class="line">    </span><br><span class="line">f(<span class="number">2</span>,<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line">f(<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>hihi
-6</code></pre>
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></pre>
 
       
     </div>
@@ -471,9 +474,6 @@ a=2,b=1,c=3,d=&#123;&#39;d&#39;: 4, &#39;e&#39;: 5&#125;</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -564,7 +564,6 @@ a=2,b=1,c=3,d=&#123;&#39;d&#39;: 4, &#39;e&#39;: 5&#125;</code></pre>
   
 
   
-
 
 </body>
 </html>

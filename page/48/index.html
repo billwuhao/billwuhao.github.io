@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/54_set-adc414e1e2fd/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/56_slice-e955f87942b2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/54_set-adc414e1e2fd/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/56_slice-e955f87942b2/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>3k</span>
+      <span>1.4k</span>
     </span>
 </div>
 
@@ -347,24 +345,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="set-创建集合"><a href="#set-创建集合" class="headerlink" title="set 创建集合"></a>set 创建集合</h2><p>内置函数（类）set，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="slice-创建切片对象"><a href="#slice-创建切片对象" class="headerlink" title="slice 创建切片对象"></a>slice 创建切片对象</h2><p>内置函数（类）slice，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">slice</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class set in module builtins:
+<pre><code>Help on class slice in module builtins:
 
-class set(object)
- |  set() -&gt; new empty set object
- |  set(iterable) -&gt; new set object
+class slice(object)
+ |  slice(stop)
+ |  slice(start, stop[, step])
  |  
- |  Build an unordered collection of unique elements.
+ |  Create a slice object.  This is used for extended slicing (e.g. a[0:10:2]).
  |  
  |  Methods defined here:
- |  
- |  __and__(self, value, /)
- |      Return self&amp;value.
- |  
- |  __contains__(...)
- |      x.__contains__(y) &lt;==&gt; y in x.
  |  
  |  __eq__(self, value, /)
  |      Return self==value.
@@ -378,29 +370,8 @@ class set(object)
  |  __gt__(self, value, /)
  |      Return self&gt;value.
  |  
- |  __iand__(self, value, /)
- |      Return self&amp;=value.
- |  
- |  __init__(self, /, *args, **kwargs)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  __ior__(self, value, /)
- |      Return self|=value.
- |  
- |  __isub__(self, value, /)
- |      Return self-=value.
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __ixor__(self, value, /)
- |      Return self^=value.
- |  
  |  __le__(self, value, /)
  |      Return self&lt;=value.
- |  
- |  __len__(self, /)
- |      Return len(self).
  |  
  |  __lt__(self, value, /)
  |      Return self&lt;value.
@@ -408,101 +379,19 @@ class set(object)
  |  __ne__(self, value, /)
  |      Return self!=value.
  |  
- |  __or__(self, value, /)
- |      Return self|value.
- |  
- |  __rand__(self, value, /)
- |      Return value&amp;self.
- |  
  |  __reduce__(...)
  |      Return state information for pickling.
  |  
  |  __repr__(self, /)
  |      Return repr(self).
  |  
- |  __ror__(self, value, /)
- |      Return value|self.
- |  
- |  __rsub__(self, value, /)
- |      Return value-self.
- |  
- |  __rxor__(self, value, /)
- |      Return value^self.
- |  
- |  __sizeof__(...)
- |      S.__sizeof__() -&gt; size of S in memory, in bytes
- |  
- |  __sub__(self, value, /)
- |      Return self-value.
- |  
- |  __xor__(self, value, /)
- |      Return self^value.
- |  
- |  add(...)
- |      Add an element to a set.
+ |  indices(...)
+ |      S.indices(len) -&gt; (start, stop, stride)
  |      
- |      This has no effect if the element is already present.
- |  
- |  clear(...)
- |      Remove all elements from this set.
- |  
- |  copy(...)
- |      Return a shallow copy of a set.
- |  
- |  difference(...)
- |      Return the difference of two or more sets as a new set.
- |      
- |      (i.e. all elements that are in this set but not the others.)
- |  
- |  difference_update(...)
- |      Remove all elements of another set from this set.
- |  
- |  discard(...)
- |      Remove an element from a set if it is a member.
- |      
- |      If the element is not a member, do nothing.
- |  
- |  intersection(...)
- |      Return the intersection of two sets as a new set.
- |      
- |      (i.e. all elements that are in both sets.)
- |  
- |  intersection_update(...)
- |      Update a set with the intersection of itself and another.
- |  
- |  isdisjoint(...)
- |      Return True if two sets have a null intersection.
- |  
- |  issubset(...)
- |      Report whether another set contains this set.
- |  
- |  issuperset(...)
- |      Report whether this set contains another set.
- |  
- |  pop(...)
- |      Remove and return an arbitrary set element.
- |      Raises KeyError if the set is empty.
- |  
- |  remove(...)
- |      Remove an element from a set; it must be a member.
- |      
- |      If the element is not a member, raise a KeyError.
- |  
- |  symmetric_difference(...)
- |      Return the symmetric difference of two sets as a new set.
- |      
- |      (i.e. all elements that are in exactly one of the sets.)
- |  
- |  symmetric_difference_update(...)
- |      Update a set with the symmetric difference of itself and another.
- |  
- |  union(...)
- |      Return the union of sets as a new set.
- |      
- |      (i.e. all elements that are in either set.)
- |  
- |  update(...)
- |      Update a set with the union of itself and others.
+ |      Assuming a sequence of length len, calculate the start and stop
+ |      indices, and the stride length of the extended slice described by
+ |      S. Out of bounds indices are clipped in a manner consistent with the
+ |      handling of normal slices.
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
@@ -511,40 +400,50 @@ class set(object)
  |      Create and return a new object.  See help(type) for accurate signature.
  |  
  |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  start
+ |  
+ |  step
+ |  
+ |  stop
+ |  
+ |  ----------------------------------------------------------------------
  |  Data and other attributes defined here:
  |  
  |  __hash__ = None</code></pre>
-<p>将一个可迭代对象转换为集合。可迭代对象为空，或不传参数，将得到空集合。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">set</span>)</span><br></pre></td></tr></table></figure>
+<p>返回一个表示由 range(start, stop, step) 指定索引集的 slice 对象。其中 start 和 step 参数默认为 None。</p>
+<p>切片对象具有仅会返回对应参数值（或其默认值）的只读数据属性 start, stop 和 step。它们没有其他的显式功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">slice</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>([])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">slice</span>(<span class="number">3</span>)</span><br><span class="line">s</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>set()</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+<pre><code>slice(None, 3, None)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">5</span>))</span><br><span class="line">a[s]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>set()</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(<span class="string">&#x27;1231&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[0, 1, 2]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">slice</span>(<span class="number">2</span>,<span class="number">8</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#39;1&#39;, &#39;2&#39;, &#39;3&#39;&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(&#123;<span class="string">&#x27;1&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;2&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;3&#x27;</span>:<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code>slice(2, 8, 2)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>)[<span class="built_in">slice</span>(<span class="number">2</span>,<span class="number">8</span>,<span class="number">2</span>)])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#39;1&#39;, &#39;2&#39;, &#39;3&#39;&#125;</code></pre>
+<pre><code>[2, 4, 6]</code></pre>
 
       
     </div>
@@ -603,9 +502,6 @@ class set(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -696,7 +592,6 @@ class set(object)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/09_chr-7c105cc8d9a1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/11_compile-fa483b43b6fd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/09_chr-7c105cc8d9a1/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/11_compile-fa483b43b6fd/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>482</span>
+      <span>1.1k</span>
     </span>
 </div>
 
@@ -347,44 +345,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="chr-返回-Unicode-码位值对应字符"><a href="#chr-返回-Unicode-码位值对应字符" class="headerlink" title="chr() 返回 Unicode 码位值对应字符"></a>chr() 返回 Unicode 码位值对应字符</h2><p>内置函数 chr()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">chr</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="compile-创建代码对象"><a href="#compile-创建代码对象" class="headerlink" title="compile() 创建代码对象"></a>compile() 创建代码对象</h2><p>内置函数 compile()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">compile</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function chr in module builtins:
+<pre><code>Help on built-in function compile in module builtins:
 
-chr(i, /)
-    Return a Unicode string of one character with ordinal i; 0 &lt;= i &lt;= 0x10ffff.</code></pre>
-<p>返回 Unicode 码位对应的字符的字符串格式。码位范围是 0~1114111（16 进制表示是 0x10FFFF），超过这个范围，会触发 ValueError 异常。该函数是 ord() 的逆函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)</span><br></pre></td></tr></table></figure>
+compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
+    Compile source into a code object that can be executed by exec() or eval().
 
-
-
-
-<pre><code>&#39;a&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>97</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chr</span>(<span class="number">1114111</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;\U0010ffff&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chr</span>(<span class="number">1114112</span>)</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-ValueError                                Traceback (most recent call last)
-
-&lt;ipython-input-5-4857faf08086&gt; in &lt;module&gt;
-----&gt; 1 chr(1114112)
+    The source code may represent a Python module, statement or expression.
+    The filename will be used for run-time error messages.
+    The mode must be &#39;exec&#39; to compile a module, &#39;single&#39; to compile a
+    single (interactive) statement, or &#39;eval&#39; to compile an expression.
+    The flags argument, if present, controls which future statements influence
+    the compilation of the code.
+    The dont_inherit argument, if true, stops the compilation inheriting
+    the effects of any future statements in effect in the code calling
+    compile; if absent or false these statements do influence the compilation,
+    in addition to any features explicitly specified.</code></pre>
+<p>将 source 编译成代码或 AST 对象。代码对象可以被 exec() 或 eval() 执行。</p>
+<p>参数说明：</p>
+<ul>
+<li>source，要编译的资源，可以是字符串、字节或 AST 对象。</li>
+<li>filename，源所来自的文件的名称。如果代码不需要从文件中读取，可以传入一些可辨识的值（经常会使用字符串）。</li>
+<li>mode，指定了编译代码必须用的模式。如果 source 是语句序列，可以是 ‘exec’；如果是单一表达式，可以是 ‘eval’；如果是单个交互式语句，可以是 ‘single’。</li>
+<li>flags    和 dont-inherit，控制在编译 source 时要用到哪个 future 语句。</li>
+<li>optimize，指定编译器的优化级别；默认值 -1 选择与解释器的 -O 选项相同的优化级别。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source = <span class="string">&#x27;for i in range(3):print(i)&#x27;</span></span><br><span class="line">code = <span class="built_in">compile</span>(source,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;exec&#x27;</span>)</span><br><span class="line">code</span><br></pre></td></tr></table></figure>
 
 
-ValueError: chr() arg not in range(0x110000)</code></pre>
+
+
+<pre><code>&lt;code object &lt;module&gt; at 0x000001E999B07780, file &quot;null&quot;, line 1&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec(code)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0
+1
+2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(code)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0
+1
+2</code></pre>
 
       
     </div>
@@ -443,9 +446,6 @@ ValueError: chr() arg not in range(0x110000)</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -536,7 +536,6 @@ ValueError: chr() arg not in range(0x110000)</code></pre>
   
 
   
-
 
 </body>
 </html>

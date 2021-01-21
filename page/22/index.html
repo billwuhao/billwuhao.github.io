@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/14_file/01_file_summary-e1bc2c7ff872/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/14_file/03_write-ec6410c6fc35/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/14_file/01_file_summary-e1bc2c7ff872/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/14_file/03_write-ec6410c6fc35/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:40" itemprop="dateModified" datetime="2021-01-03T00:11:40+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:41" itemprop="dateModified" datetime="2021-01-03T00:11:41+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.1k</span>
+      <span>776</span>
     </span>
 </div>
 
@@ -347,67 +345,94 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="文件对象概述"><a href="#文件对象概述" class="headerlink" title="文件对象概述"></a>文件对象概述</h2><p>文件对象是指对外提供面向文件 API 以使用下层资源的对象（带有 read() 或 write() 这样的方法），也被称作<strong>流</strong>或<strong>文件类对象</strong>。</p>
-<p>有三种类别的文件对象: 原始二进制文件, 缓冲二进制文件 以及<br>文本文件。三种类别下还有子类别，因创建方式的不同得到不同类别文件对象。它们的接口定义均在 io 模块中。创建文件对象的规范方式是使用 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/45_open.ipynb">open() 函数</a>。</p>
-<p>用户代码直接操作原始流的用法非常罕见。不过，可以通过在禁用缓冲的情况下以二进制模式打开文件来创建原始流：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;rb&quot;</span>, buffering=<span class="number">0</span>)</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+          <h2 id="文件写入内容"><a href="#文件写入内容" class="headerlink" title="文件写入内容"></a>文件写入内容</h2><p>打开方式不同，会创建不同类型的文件对象（流），不同类型的文件对象，可能有不同的属性或方法。</p>
+<p>打开模式不同，写入内容的方式也会不同，详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/45_open.ipynb">open() 打开文件</a>。</p>
+<p>下列检查或写入内容的属性或方法，是多数文件对象通用的：</p>
+<ul>
+<li>writable() 如果流支持写入则返回 True。如为 False，则 write() 将引发 OSError。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,<span class="string">&#x27;a&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.writable()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;_io.FileIO name=&#39;test.txt&#39; mode=&#39;rb&#39; closefd=True&gt;</code></pre>
-<p>缓冲二进制流不执行编码、解码或换行转换。这种类型的流可以用于所有类型的非文本数据（例如图片，视频），并且还可以在需要手动控制文本数据的处理时使用。创建缓冲二进制流的最简单方法是使用 open()，并在模式中指定 ‘b’：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&lt;_io.BufferedReader name=&#39;test.txt&#39;&gt;</code></pre>
-<p>文本流生成 str 对象。这意味着，无论何时后台存储是由字节组成的，数据的编码和解码都是透明的，并且可以选择转换特定于平台的换行符。创建文本流的最简单方法是使用 open()，可以选择指定编码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&lt;_io.TextIOWrapper name=&#39;test.txt&#39; mode=&#39;r&#39; encoding=&#39;utf-8&#39;&gt;</code></pre>
-<p>所有流对提供给它们的数据类型都很敏感。例如将 str 对象给二进制流的 write() 方法会引发 TypeError。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;ab&quot;</span>)</span><br><span class="line">f.write(<span class="string">&#x27;写入内容&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">f.writable()</span><br><span class="line">f.write(<span class="string">&#x27;这世界进步得太快，&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 <pre><code>---------------------------------------------------------------------------
 
-TypeError                                 Traceback (most recent call last)
+UnsupportedOperation                      Traceback (most recent call last)
 
-&lt;ipython-input-19-a9efd264aca2&gt; in &lt;module&gt;
-      1 f = open(&quot;test.txt&quot;,&quot;ab&quot;)
-----&gt; 2 f.write(&#39;写入内容&#39;)
-
-
-TypeError: a bytes-like object is required, not &#39;str&#39;</code></pre>
-<p>内存中的流也可以作为文件对象使用：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io</span><br><span class="line">f = io.StringIO(<span class="string">&quot;some initial text data&quot;</span>)</span><br><span class="line">print(f)</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;_io.StringIO object at 0x000001BE348D2040&gt;
+&lt;ipython-input-1-7bf449cf8958&gt; in &lt;module&gt;
+      1 f = open(&#39;test.txt&#39;)
+      2 f.writable()
+----&gt; 3 f.write(&#39;这世界进步得太快，&#39;)
 
 
-
-
-
-&#39;some initial text data&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = io.BytesIO(<span class="string">b&quot;some initial binary data: \x00\x01&quot;</span>)</span><br><span class="line">print(f)</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;_io.BytesIO object at 0x000001BE348D3310&gt;
+UnsupportedOperation: not writable</code></pre>
+<ul>
+<li>write() 将字符串或字节串写入到流并返回写入的字符或字节数。对于阻塞流（需要刷新才能将内容写入文件），写入内容在缓冲区（打开文件看不到写入的内容）。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,<span class="string">&#x27;a+&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.write(<span class="string">&#x27;\n这世界进步得太快，&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
+<pre><code>10</code></pre>
+<ul>
+<li>flush() 刷新流的写入缓冲区（打开文件将看到写入的内容）。这对只读和非阻塞流不起作用。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.flush()</span><br></pre></td></tr></table></figure>
 
-b&#39;some initial binary data: \x00\x01&#39;</code></pre>
-<p>open() 函数打开文件，创建流后，会使文件在一段不确定的时间内处于打开状态。这在简单脚本中不是问题，但对于较大的应用程序来说可能是个问题。此时用 close() 方法刷新并关闭流（或直接使用 with 语句打开）是明智的做法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">print(f.read())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>writelines(lines) 将行列表写入到流。不会添加行分隔符，因此通常所提供的每一行都带有末尾行分隔符。对于阻塞流，写入内容在缓冲区。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,<span class="string">&#x27;a+&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.writelines([<span class="string">&#x27;\n没有自学能力，\n&#x27;</span>, <span class="string">&#x27;没有未来。&#x27;</span>])</span><br></pre></td></tr></table></figure>
 
-<pre><code>为什么要掌握自学能力？
-未来还很长。</code></pre>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.tell() <span class="comment"># 流的位置在末尾</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>137</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 从末尾读取内容为空</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.seek(<span class="number">0</span>, <span class="number">0</span>) <span class="comment"># 重设流的位置为开头</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;为什么一定要掌握自学能力？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
+<ul>
+<li>closed 如果流已关闭，则返回 True。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.closed</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<ul>
+<li>close() 刷新并关闭此流。无论读写操作，最后都应该关闭流。如果文件已经关闭，则此方法无效。文件关闭后，对文件的任何操作（例如读取或写入）都会引发 ValueError 。为方便起见，允许多次调用此方法。但是，只有第一个调用才会生效。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f.close()</span><br><span class="line">f.close()</span><br><span class="line">f.closed</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
 
       
     </div>
@@ -466,9 +491,6 @@ b&#39;some initial binary data: \x00\x01&#39;</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -559,7 +581,6 @@ b&#39;some initial binary data: \x00\x01&#39;</code></pre>
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/50_str.isspace-d7d34357149b/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/52_str.removesuffix-6cdcecb80238/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/50_str.isspace-d7d34357149b/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/52_str.removesuffix-6cdcecb80238/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>283</span>
+      <span>145</span>
     </span>
 </div>
 
@@ -347,41 +345,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-isspace-是空白字符？"><a href="#str-isspace-是空白字符？" class="headerlink" title="str.isspace 是空白字符？"></a>str.isspace 是空白字符？</h2><p>字符串方法 str.isspace()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isspace)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on method_descriptor:
-
-isspace(self, /)
-    Return True if the string is a whitespace string, False otherwise.
-
-    A string is whitespace if all characters in the string are whitespace and there
-    is at least one character in the string.</code></pre>
-<p>如果字符串中只有空白字符且至少有一个字符则返回 True，否则返回 False。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; &#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\n\t\r\f&#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; \\&#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
+          <h2 id="str-removesuffix-移除后缀"><a href="#str-removesuffix-移除后缀" class="headerlink" title="str.removesuffix 移除后缀"></a>str.removesuffix 移除后缀</h2><p>字符串方法 str.removesuffix()。</p>
+<p>3.9 版本新功能。</p>
+<p>str.removesuffix(suffix, /)，如果字符串以 后缀字符串 suffix 结尾，并且后缀非空，返回 string[:-len(suffix)]，否则，返回原始字符串的副本。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;MiscTests&#x27;</span>.removesuffix(<span class="string">&#x27;Tests&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;Misc&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;TmpDirMixin&#x27;</span>.removesuffix(<span class="string">&#x27;Tests&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;TmpDirMixin&#x27;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -440,9 +407,6 @@ isspace(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -533,7 +497,6 @@ isspace(self, /)
   
 
   
-
 
 </body>
 </html>

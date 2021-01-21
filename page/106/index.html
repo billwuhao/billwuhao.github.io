@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/16_with-2b7874d36228/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/18_import-ab6e2344b614/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/16_with-2b7874d36228/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/18_import-ab6e2344b614/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>756</span>
+      <span>2.5k</span>
     </span>
 </div>
 
@@ -347,44 +345,130 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="with-语句"><a href="#with-语句" class="headerlink" title="with 语句"></a>with 语句</h2><p>with 语句用于包装代码块的执行，代码块带有使用上下文管理器定义的函数或方法。语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with expression as target, expression as target, ...:</span><br><span class="line">    suite</span><br></pre></td></tr></table></figure>
+          <h2 id="import-导入语句"><a href="#import-导入语句" class="headerlink" title="import 导入语句"></a>import 导入语句</h2><p>import 语句用于从模块中导入子模块，类，函数等。语法大致有三种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 第一种</span><br><span class="line">import module as name, module as name, ...</span><br><span class="line"></span><br><span class="line"># 第二种</span><br><span class="line"># import 之后可以置于一个元组</span><br><span class="line">from module import identifier as name, identifier as name, ...</span><br><span class="line"></span><br><span class="line"># 第三种</span><br><span class="line">from module import *</span><br></pre></td></tr></table></figure>
 
-<p>带有一个表达式 expression 的 with 语句的执行过程如下:</p>
-<ol>
-<li>对上下文表达式求值以获得一个上下文管理器。</li>
-<li>载入上下文管理器的 <code>__enter__()</code> 以便后续使用。</li>
-<li>载入上下文管理器的 <code>__exit__()</code> 以便后续使用。</li>
-<li>发起调用上下文管理器的 <code>__enter__()</code> 方法。</li>
-<li>如果 with 语句中包含目标 target，来自 <code>__enter__()</code> 的返回值将被赋值给它。</li>
-<li>执行语句体。</li>
-<li>发起调用上下文管理器的 <code>__exit__()</code> 方法。</li>
-</ol>
-<p>with 语句会保证如果 <code>__enter__()</code> 方法返回时未发生错误，则 <code>__exit__()</code> 将总是被调用。因此，如果在对目标赋值期间发生错误，则会将其视为在语句体内部发生的错误。</p>
-<p>如果语句体的退出是由异常导致的，则其类型、值和回溯信息将被作为参数传递给 <code>__exit__()</code>。否则的话，将提供三个 None 参数（相当于无异常地退出）。</p>
-<p>如果语句体的退出是由异常导致的，并且来自 <code>__exit__()</code> 方法的返回值为真，则该异常会被抑制，并会继续执行 with 语句之后的语句。如果返回值为假，则该异常会被重新引发（<code>__exit__()</code> 方法不应该重新引发被传入的异常，这是调用者的责任）。</p>
-<p>如果语句体由于异常以外的任何原因退出，则来自 <code>__exit__()</code> 的返回值会被忽略，并会在该类退出正常的发生位置继续执行。</p>
-<p>以下代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with EXPRESSION as TARGET:</span><br><span class="line">    SUITE</span><br></pre></td></tr></table></figure>
+<p>模块 <code>module</code> 可以是高层级到低层级用属性表示法引用的模块，例如 <code>pandas.core.series</code>。</p>
+<p><code>as</code> 及其后的别名 <code>name</code> 是可选的。</p>
+<p>语句可以导入单个或多个对象，用逗号分隔实际是多个子句。</p>
+<p>第一种导入方法，如果成功获取到模块，则可以通过以下方式之一在 import 语句所在命名空间中使用它：</p>
+<ul>
+<li>如果被导入模块是最高层级模块，模块名被绑定；</li>
+<li>如果导入的模块不是最高层级的模块，则该模块的最高层级模块名被绑定，该模块必须使用完整限定名访问；</li>
+<li>如果有 as，则 as 之后的别名被绑定，模块名不绑定。</li>
+</ul>
+<p>如果没有指定模块，引发 ModuleNotFoundError。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">pandas</span><br></pre></td></tr></table></figure>
 
-<p>在语义上等价于:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">manager &#x3D; (EXPRESSION)</span><br><span class="line">enter &#x3D; type(manager).__enter__</span><br><span class="line">exit &#x3D; type(manager).__exit__</span><br><span class="line">value &#x3D; enter(manager)</span><br><span class="line">hit_except &#x3D; False # False 表示正常执行</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    TARGET &#x3D; value</span><br><span class="line">    SUITE</span><br><span class="line">except:</span><br><span class="line">    hit_except &#x3D; True # 发生了异常</span><br><span class="line">    # 忽略或抑制异常，继续退出；或退出并引发异常</span><br><span class="line">    if not exit(manager, *sys.exc_info()):</span><br><span class="line">        raise</span><br><span class="line">finally:</span><br><span class="line">    if not hit_except: # 正常执行</span><br><span class="line">        # 正常退出</span><br><span class="line">        exit(manager, None, None, None)</span><br></pre></td></tr></table></figure>
 
-<p>可见使用 with 语句，无论有没有发生异常，都会 “清理” 程序（保存和恢复各种全局状态，锁定和解锁资源，关闭打开的文件等等）。</p>
-<p>有多个表达式，则会视作存在多个 with 语句嵌套来处理多个上下文管理器:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">with A() as a, B() as b:</span><br><span class="line">    SUITE</span><br><span class="line"></span><br><span class="line"># 在语义上等价于:</span><br><span class="line">with A() as a:</span><br><span class="line">    with B() as b:</span><br><span class="line">        SUITE</span><br></pre></td></tr></table></figure>
 
-<p>with 语句常用来打开文件而不需要显式地关闭文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;../11_built-in_function/test.txt&#x27;</span>,</span><br><span class="line">          <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.read())</span><br></pre></td></tr></table></figure>
 
-<pre><code>xue.cn
+<pre><code>&lt;module &#39;pandas&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\__init__.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> pandas</span><br><span class="line"><span class="keyword">import</span> pandas.core.series</span><br><span class="line">pandas, pandas.core, pandas.core.series</span><br></pre></td></tr></table></figure>
 
-自学是门手艺</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 相当于</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;../11_built-in_function/test.txt&#x27;</span>,</span><br><span class="line">         <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">print(f.read())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
 
-<pre><code>xue.cn
 
-自学是门手艺</code></pre>
+
+<pre><code>(&lt;module &#39;pandas&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\__init__.py&#39;&gt;,
+ &lt;module &#39;pandas.core&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;,
+ &lt;module &#39;pandas.core.series&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\series.py&#39;&gt;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">series <span class="comment"># 必须完成限定名访问</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-6-2859777d6f2b&gt; in &lt;module&gt;
+----&gt; 1 series
+
+
+NameError: name &#39;series&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> pandas</span><br><span class="line"><span class="keyword">import</span> pandas.core.series <span class="keyword">as</span> pds</span><br><span class="line">pds</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;module &#39;pandas.core.series&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\series.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandas <span class="comment"># 只能使用别名访问</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-8-609b6d5922fb&gt; in &lt;module&gt;
+----&gt; 1 pandas
+
+
+NameError: name &#39;pandas&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">import</span> pandas <span class="comment"># 局部命名空间导入</span></span><br><span class="line">pandas <span class="comment"># 全局命名空间不能访问</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-10-0b76d1984901&gt; in &lt;module&gt;
+      1 def f():
+      2     import pandas # 局部命名空间导入
+----&gt; 3 pandas
+
+
+NameError: name &#39;pandas&#39; is not defined</code></pre>
+<p>第二种导入方法，如果成功获取到模块，from 之后的模块名不会被绑定，对于 import 子句导入的属性或子模块，如果有 as 子句，则只能使用其指定的别名使用它，否则使用该属性或子模块的名称 identifier 使用它。</p>
+<p>如果属性或子模块不存在，或不能导入，引发 ImportError。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas.core <span class="keyword">import</span> base</span><br><span class="line">base</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;module &#39;pandas.core.base&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\base.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandas.core <span class="comment"># 只导入了该模块下的子模块 base</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-2-37462de79a89&gt; in &lt;module&gt;
+----&gt; 1 pandas.core
+
+
+NameError: name &#39;pandas&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入多个可置于元组中</span></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> (random <span class="keyword">as</span> r1,</span><br><span class="line">                    randint <span class="keyword">as</span> r2,)</span><br><span class="line">r1, r2</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&lt;function Random.random()&gt;,
+ &lt;bound method Random.randint of &lt;random.Random object at 0x000001E531A14580&gt;&gt;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pandas 下没有 base，导入错误</span></span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> base </span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ImportError                               Traceback (most recent call last)
+
+&lt;ipython-input-7-7903c4949085&gt; in &lt;module&gt;
+----&gt; 1 from pandas import base
+
+
+ImportError: cannot import name &#39;base&#39; from &#39;pandas&#39; (F:\anaconda\lib\site-packages\pandas\__init__.py)</code></pre>
+<p>第三种导入方法，则在模块中定义的全部公有名称都将绑定到 import 语句所在的命名空间。</p>
+<p>公有名称是由在模块的命名空间中检测一个名为 <code>__all__</code> 的变量来确定的；如果 <code>__all__</code> 没有被定义，则公有名称的集合将包含模块的命名空间中找到的所有不以下划线字符 <code>_</code> 打头的名称。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> *</span><br><span class="line">randint</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;bound method Random.randint of &lt;random.Random object at 0x0000025E1DCC8180&gt;&gt;</code></pre>
+<p>当指定要导入哪个模块时，你不必指定模块的绝对名称。当一个模块或包被包含在另一个包之中时，可以在同一个最高层级包中进行相对导入，而不必提及包名称。</p>
+<p>通过在 from 之后指定的模块或包中使用前缀点号，你可以在不指定确切名称的情况下指明在<strong>当前包</strong>层级结构中要上溯多少级。一个前缀点号表示是执行导入的模块所在的当前包，两个点号表示上溯一个包层级。三个点号表示上溯两级，依此类推。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package&#x2F;</span><br><span class="line">    __init__.py</span><br><span class="line">    subpackage1&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">        moduleX.py</span><br><span class="line">        moduleY.py</span><br><span class="line">    subpackage2&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">        moduleZ.py</span><br><span class="line">    moduleA.py</span><br></pre></td></tr></table></figure>
+<p>假设当前位置是 <code> subpackage1/moduleX.py</code>，则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from .moduleY import spam</span><br><span class="line">from . import moduleY</span><br><span class="line">from ..subpackage1 import moduleY</span><br><span class="line">from ..subpackage2.moduleZ import eggs</span><br><span class="line">from ..moduleA import foo</span><br></pre></td></tr></table></figure>
+<p>都是有效的。</p>
 
       
     </div>
@@ -443,9 +527,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -536,7 +617,6 @@
   
 
   
-
 
 </body>
 </html>

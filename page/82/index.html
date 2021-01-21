@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/20_filter-38f555ffb770/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/22_format-409d172a13f3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/20_filter-38f555ffb770/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/22_format-409d172a13f3/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>781</span>
+      <span>423</span>
     </span>
 </div>
 
@@ -347,68 +345,61 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="filter-真值元素筛选"><a href="#filter-真值元素筛选" class="headerlink" title="filter 真值元素筛选"></a>filter 真值元素筛选</h2><p>内置函数（类）filter，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">filter</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="format-格式化"><a href="#format-格式化" class="headerlink" title="format() 格式化"></a>format() 格式化</h2><p>内置函数 format()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">format</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class filter in module builtins:
+<pre><code>Help on built-in function format in module builtins:
 
-class filter(object)
- |  filter(function or None, iterable) --&gt; filter object
- |  
- |  Return an iterator yielding those items of iterable for which function(item)
- |  is true. If function is None, return the items that are true.
- |  
- |  Methods defined here:
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __next__(self, /)
- |      Implement next(self).
- |  
- |  __reduce__(...)
- |      Return state information for pickling.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.</code></pre>
-<p>返回可迭代对象（iterable）中那些传递给函数 function 计算之后，布尔值仍然为真的元素组成的迭代器。</p>
-<p>如果 function 是 None，则会假设它是一个身份函数，即 iterable<br>中所有布尔值为假的元素会被移除。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">filter</span>)</span><br></pre></td></tr></table></figure>
+format(value, format_spec=&#39;&#39;, /)
+    Return value.__format__(format_spec)
+
+    format_spec defaults to the empty string.
+    See the Format Specification Mini-Language section of help(&#39;FORMATTING&#39;) for
+    details.</code></pre>
+<p>将 value 转换为 format_spec 控制的 “格式化” 表示。format_spec 的解释取决于 value 实参的类型，但是大多数内置类型使用标准格式化语法：格式化迷你语言。详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/02_string/25_str.format.ipynb">str.format 格式化</a>。</p>
+<p>默认的 format_spec 是一个空字符串，它通常和调用 str(value) 的结果相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="string">&#x27;嗨&#x27;</span>,<span class="string">&#x27;&gt;10&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">filter</span>(<span class="literal">None</span>,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">list</span>(f)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;         嗨&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="string">&#x27;嗨&#x27;</span>,<span class="string">&#x27;~^10&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, 2, 1]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">filter</span>(<span class="keyword">lambda</span> x: x<span class="number">-1</span>, [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">list</span>(f)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;~~~~嗨~~~~~&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="number">1</span>,<span class="string">&#x27;05&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[0, 2]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">filter</span>(<span class="literal">None</span>,<span class="string">&#x27;0120&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;00001&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="number">3.14</span>,<span class="string">&#x27;.3f&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;0&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">filter</span>(<span class="built_in">int</span>,<span class="string">&#x27;0120&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;3.140&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="number">123456789</span>,<span class="string">&#x27;_&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;1&#39;, &#39;2&#39;]</code></pre>
+<pre><code>&#39;123_456_789&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="number">123456789</span>,<span class="string">&#x27;.2e&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;1.23e+08&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span>(<span class="number">123456789</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;123456789&#39;</code></pre>
 
       
     </div>
@@ -467,9 +458,6 @@ class filter(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -560,7 +548,6 @@ class filter(object)
   
 
   
-
 
 </body>
 </html>

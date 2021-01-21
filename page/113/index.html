@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/09_pass-f296da399288/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/11_return-fe6dac1d73cd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/09_pass-f296da399288/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/11_return-fe6dac1d73cd/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>67</span>
+      <span>213</span>
     </span>
 </div>
 
@@ -347,12 +345,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="pass-语句"><a href="#pass-语句" class="headerlink" title="pass 语句"></a>pass 语句</h2><p>pass 是一个空操作 —— 当它被执行时，什么都不发生。</p>
-<p>它适合当语法上需要一条语句但并不需要执行任何代码时用来临时占位，例如:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+          <h2 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a>return 语句</h2><p>return 在语法上只会出现于函数定义所嵌套的代码，不会出现于类定义所嵌套的代码。</p>
+<p>如果提供了表达式，它将被求值，否则以 None 替代（类似省略 return 语句结果）。</p>
+<p>return 会离开当前函数调用，并以表达式的值 (或 None) 作为返回值。</p>
+<p>当 return 将控制流传出一个带有 finally 子句的 try 语句时，该 finally 子句会先被执行然后再真正离开该函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span>():</span></span><br><span class="line">    x =<span class="number">1</span></span><br><span class="line">print(f2())</span><br></pre></td></tr></table></figure>
+
+<pre><code>None</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span>():</span></span><br><span class="line">    x = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">print(f1())</span><br></pre></td></tr></table></figure>
+
+<pre><code>None</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># return 结束函数调用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>) <span class="comment"># retrun 结束函数调用，不会被执行</span></span><br><span class="line">f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 什么也不做的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span><span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 没有任何自定义属性的类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span><span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>4</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># finally 总是被执行再结束函数调用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span>/x</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="keyword">return</span> x, x**<span class="number">2</span></span><br><span class="line">f(<span class="number">0</span>),f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>division by zero
+
+
+
+
+
+((0, 0), (2, 4))</code></pre>
 
       
     </div>
@@ -411,9 +428,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -504,7 +518,6 @@
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/04_tuple/03_tuple.index-6d5bbe60a590/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/05_sequence/01_sequence-1471877459de/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/04_tuple/03_tuple.index-6d5bbe60a590/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/05_sequence/01_sequence-1471877459de/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>547</span>
+      <span>591</span>
     </span>
 </div>
 
@@ -347,41 +345,52 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="tuple-index-查找元素索引"><a href="#tuple-index-查找元素索引" class="headerlink" title="tuple.index 查找元素索引"></a>tuple.index 查找元素索引</h2><p>元组方法 tuple.index()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">tuple</span>.index)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on method_descriptor:
-
-index(self, value, start=0, stop=9223372036854775807, /)
-    Return first index of value.
-
-    Raises ValueError if the value is not present.</code></pre>
-<p>返回列表中第一个值为 value 的元素从零开始的索引。如果没有这样的元素将会抛出 ValueError 异常。</p>
-<p>可选参数 start 和 stop 是切片符号，用于将搜索限制为元组的特定子序列。返回的是相对于整个序列开始计算的索引，而不是相对于 start 参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>).index(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="序列类型概述"><a href="#序列类型概述" class="headerlink" title="序列类型概述"></a>序列类型概述</h2><p>序列类型有列表，元组，range，字符串，字节串等。之所以称为序列类型，因为它们中的元素是按顺序排列的，可以使用下标索引或切片取值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line">c = <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line">d = <span class="string">&#x27;123&#x27;</span></span><br><span class="line">e = <span class="string">b&#x27;123&#x27;</span></span><br><span class="line">a[<span class="number">0</span>],b[<span class="number">0</span>],c[<span class="number">0</span>],d[<span class="number">0</span>],e[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>).index(<span class="number">1</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(1, 1, 1, &#39;1&#39;, 49)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chr</span>(<span class="number">49</span>) <span class="comment"># 字节串索引取到的是 Unicode 码位值</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>4</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>).index(<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;1&#39;</code></pre>
+<p>序列类型又分为可变和不可变两种，列表是可变序列类型，元组，range，字符串，字节串是不可变序列类型。不可变序列类型普遍实现而可变序列类型未实现的唯一操作就是对 hash() 内置函数的支持。</p>
+<p>这种支持允许不可变类型，例如元组被用作字典的键，以及存储在集合中。</p>
+<p>尝试对包含有不可哈希值的不可变序列进行哈希运算将会导致 TypeError。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>((<span class="number">1</span>,<span class="number">2</span>)), <span class="built_in">hash</span>(<span class="string">&#x27;12&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(-3550055125485641917, -480100434937186025)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;(<span class="number">1</span>,<span class="number">2</span>), <span class="string">&#x27;12&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;(1, 2), &#39;12&#39;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;([<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>),<span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
 <pre><code>---------------------------------------------------------------------------
 
-ValueError                                Traceback (most recent call last)
+TypeError                                 Traceback (most recent call last)
 
-&lt;ipython-input-4-c6a812394eea&gt; in &lt;module&gt;
-----&gt; 1 (1,2,3,4,1).index(1,1,3)
+&lt;ipython-input-10-b847264454c5&gt; in &lt;module&gt;
+----&gt; 1 &#123;([1,2],3),4&#125;
 
 
-ValueError: tuple.index(x): x not in tuple</code></pre>
+TypeError: unhashable type: &#39;list&#39;</code></pre>
+<p>可变序列类型，可以就地进行元素的增、删、改，而不可变序列类型不可以，有时看起来像，但其实是创建了新对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a, b = [<span class="number">1</span>,<span class="number">2</span>], (<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">print(<span class="built_in">id</span>(a),<span class="built_in">id</span>(b))</span><br><span class="line">a += [<span class="number">3</span>] <span class="comment"># 将元素 3 加入列表中，相当于 a.extend([3])</span></span><br><span class="line">b += (<span class="number">3</span>,) <span class="comment"># 将元组 b 与元组 (3,) 拼接赋值给 b</span></span><br><span class="line">print(a,b)</span><br><span class="line">print(<span class="built_in">id</span>(a), <span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
+
+<pre><code>2058115879744 2058115232576
+[1, 2, 3] (1, 2, 3)
+2058115879744 2058115884416</code></pre>
 
       
     </div>
@@ -440,9 +449,6 @@ ValueError: tuple.index(x): x not in tuple</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -533,7 +539,6 @@ ValueError: tuple.index(x): x not in tuple</code></pre>
   
 
   
-
 
 </body>
 </html>

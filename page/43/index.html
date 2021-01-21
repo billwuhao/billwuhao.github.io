@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/59_str-7fafd987c87b/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/61_super-67ce0cb0e744/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/59_str-7fafd987c87b/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/61_super-67ce0cb0e744/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>11k</span>
+      <span>2.1k</span>
     </span>
 </div>
 
@@ -347,387 +345,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-创建字符串"><a href="#str-创建字符串" class="headerlink" title="str 创建字符串"></a>str 创建字符串</h2><p>内置函数（类）str，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="super-调用委托给父类或兄弟类"><a href="#super-调用委托给父类或兄弟类" class="headerlink" title="super 调用委托给父类或兄弟类"></a>super 调用委托给父类或兄弟类</h2><p>内置函数（类）super，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">super</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class str in module builtins:
+<pre><code>Help on class super in module builtins:
 
-class str(object)
- |  str(object=&#39;&#39;) -&gt; str
- |  str(bytes_or_buffer[, encoding[, errors]]) -&gt; str
- |  
- |  Create a new string object from the given object. If encoding or
- |  errors is specified, then the object must expose a data buffer
- |  that will be decoded using the given encoding and error handler.
- |  Otherwise, returns the result of object.__str__() (if defined)
- |  or repr(object).
- |  encoding defaults to sys.getdefaultencoding().
- |  errors defaults to &#39;strict&#39;.
+class super(object)
+ |  super() -&gt; same as super(__class__, &lt;first argument&gt;)
+ |  super(type) -&gt; unbound super object
+ |  super(type, obj) -&gt; bound super object; requires isinstance(obj, type)
+ |  super(type, type2) -&gt; bound super object; requires issubclass(type2, type)
+ |  Typical use to call a cooperative superclass method:
+ |  class C(B):
+ |      def meth(self, arg):
+ |          super().meth(arg)
+ |  This works for class methods too:
+ |  class C(B):
+ |      @classmethod
+ |      def cmeth(cls, arg):
+ |          super().cmeth(arg)
  |  
  |  Methods defined here:
  |  
- |  __add__(self, value, /)
- |      Return self+value.
- |  
- |  __contains__(self, key, /)
- |      Return key in self.
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __format__(self, format_spec, /)
- |      Return a formatted version of the string as described by format_spec.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
+ |  __get__(self, instance, owner, /)
+ |      Return an attribute of instance, which is of type owner.
  |  
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
  |  
- |  __getitem__(self, key, /)
- |      Return self[key].
- |  
- |  __getnewargs__(...)
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __hash__(self, /)
- |      Return hash(self).
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __len__(self, /)
- |      Return len(self).
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __mod__(self, value, /)
- |      Return self%value.
- |  
- |  __mul__(self, value, /)
- |      Return self*value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
  |  
  |  __repr__(self, /)
  |      Return repr(self).
- |  
- |  __rmod__(self, value, /)
- |      Return value%self.
- |  
- |  __rmul__(self, value, /)
- |      Return value*self.
- |  
- |  __sizeof__(self, /)
- |      Return the size of the string in memory, in bytes.
- |  
- |  __str__(self, /)
- |      Return str(self).
- |  
- |  capitalize(self, /)
- |      Return a capitalized version of the string.
- |      
- |      More specifically, make the first character have upper case and the rest lower
- |      case.
- |  
- |  casefold(self, /)
- |      Return a version of the string suitable for caseless comparisons.
- |  
- |  center(self, width, fillchar=&#39; &#39;, /)
- |      Return a centered string of length width.
- |      
- |      Padding is done using the specified fill character (default is a space).
- |  
- |  count(...)
- |      S.count(sub[, start[, end]]) -&gt; int
- |      
- |      Return the number of non-overlapping occurrences of substring sub in
- |      string S[start:end].  Optional arguments start and end are
- |      interpreted as in slice notation.
- |  
- |  encode(self, /, encoding=&#39;utf-8&#39;, errors=&#39;strict&#39;)
- |      Encode the string using the codec registered for encoding.
- |      
- |      encoding
- |        The encoding in which to encode the string.
- |      errors
- |        The error handling scheme to use for encoding errors.
- |        The default is &#39;strict&#39; meaning that encoding errors raise a
- |        UnicodeEncodeError.  Other possible values are &#39;ignore&#39;, &#39;replace&#39; and
- |        &#39;xmlcharrefreplace&#39; as well as any other name registered with
- |        codecs.register_error that can handle UnicodeEncodeErrors.
- |  
- |  endswith(...)
- |      S.endswith(suffix[, start[, end]]) -&gt; bool
- |      
- |      Return True if S ends with the specified suffix, False otherwise.
- |      With optional start, test S beginning at that position.
- |      With optional end, stop comparing S at that position.
- |      suffix can also be a tuple of strings to try.
- |  
- |  expandtabs(self, /, tabsize=8)
- |      Return a copy where all tab characters are expanded using spaces.
- |      
- |      If tabsize is not given, a tab size of 8 characters is assumed.
- |  
- |  find(...)
- |      S.find(sub[, start[, end]]) -&gt; int
- |      
- |      Return the lowest index in S where substring sub is found,
- |      such that sub is contained within S[start:end].  Optional
- |      arguments start and end are interpreted as in slice notation.
- |      
- |      Return -1 on failure.
- |  
- |  format(...)
- |      S.format(*args, **kwargs) -&gt; str
- |      
- |      Return a formatted version of S, using substitutions from args and kwargs.
- |      The substitutions are identified by braces (&#39;&#123;&#39; and &#39;&#125;&#39;).
- |  
- |  format_map(...)
- |      S.format_map(mapping) -&gt; str
- |      
- |      Return a formatted version of S, using substitutions from mapping.
- |      The substitutions are identified by braces (&#39;&#123;&#39; and &#39;&#125;&#39;).
- |  
- |  index(...)
- |      S.index(sub[, start[, end]]) -&gt; int
- |      
- |      Return the lowest index in S where substring sub is found, 
- |      such that sub is contained within S[start:end].  Optional
- |      arguments start and end are interpreted as in slice notation.
- |      
- |      Raises ValueError when the substring is not found.
- |  
- |  isalnum(self, /)
- |      Return True if the string is an alpha-numeric string, False otherwise.
- |      
- |      A string is alpha-numeric if all characters in the string are alpha-numeric and
- |      there is at least one character in the string.
- |  
- |  isalpha(self, /)
- |      Return True if the string is an alphabetic string, False otherwise.
- |      
- |      A string is alphabetic if all characters in the string are alphabetic and there
- |      is at least one character in the string.
- |  
- |  isascii(self, /)
- |      Return True if all characters in the string are ASCII, False otherwise.
- |      
- |      ASCII characters have code points in the range U+0000-U+007F.
- |      Empty string is ASCII too.
- |  
- |  isdecimal(self, /)
- |      Return True if the string is a decimal string, False otherwise.
- |      
- |      A string is a decimal string if all characters in the string are decimal and
- |      there is at least one character in the string.
- |  
- |  isdigit(self, /)
- |      Return True if the string is a digit string, False otherwise.
- |      
- |      A string is a digit string if all characters in the string are digits and there
- |      is at least one character in the string.
- |  
- |  isidentifier(self, /)
- |      Return True if the string is a valid Python identifier, False otherwise.
- |      
- |      Use keyword.iskeyword() to test for reserved identifiers such as &quot;def&quot; and
- |      &quot;class&quot;.
- |  
- |  islower(self, /)
- |      Return True if the string is a lowercase string, False otherwise.
- |      
- |      A string is lowercase if all cased characters in the string are lowercase and
- |      there is at least one cased character in the string.
- |  
- |  isnumeric(self, /)
- |      Return True if the string is a numeric string, False otherwise.
- |      
- |      A string is numeric if all characters in the string are numeric and there is at
- |      least one character in the string.
- |  
- |  isprintable(self, /)
- |      Return True if the string is printable, False otherwise.
- |      
- |      A string is printable if all of its characters are considered printable in
- |      repr() or if it is empty.
- |  
- |  isspace(self, /)
- |      Return True if the string is a whitespace string, False otherwise.
- |      
- |      A string is whitespace if all characters in the string are whitespace and there
- |      is at least one character in the string.
- |  
- |  istitle(self, /)
- |      Return True if the string is a title-cased string, False otherwise.
- |      
- |      In a title-cased string, upper- and title-case characters may only
- |      follow uncased characters and lowercase characters only cased ones.
- |  
- |  isupper(self, /)
- |      Return True if the string is an uppercase string, False otherwise.
- |      
- |      A string is uppercase if all cased characters in the string are uppercase and
- |      there is at least one cased character in the string.
- |  
- |  join(self, iterable, /)
- |      Concatenate any number of strings.
- |      
- |      The string whose method is called is inserted in between each given string.
- |      The result is returned as a new string.
- |      
- |      Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;
- |  
- |  ljust(self, width, fillchar=&#39; &#39;, /)
- |      Return a left-justified string of length width.
- |      
- |      Padding is done using the specified fill character (default is a space).
- |  
- |  lower(self, /)
- |      Return a copy of the string converted to lowercase.
- |  
- |  lstrip(self, chars=None, /)
- |      Return a copy of the string with leading whitespace removed.
- |      
- |      If chars is given and not None, remove characters in chars instead.
- |  
- |  partition(self, sep, /)
- |      Partition the string into three parts using the given separator.
- |      
- |      This will search for the separator in the string.  If the separator is found,
- |      returns a 3-tuple containing the part before the separator, the separator
- |      itself, and the part after it.
- |      
- |      If the separator is not found, returns a 3-tuple containing the original string
- |      and two empty strings.
- |  
- |  replace(self, old, new, count=-1, /)
- |      Return a copy with all occurrences of substring old replaced by new.
- |      
- |        count
- |          Maximum number of occurrences to replace.
- |          -1 (the default value) means replace all occurrences.
- |      
- |      If the optional argument count is given, only the first count occurrences are
- |      replaced.
- |  
- |  rfind(...)
- |      S.rfind(sub[, start[, end]]) -&gt; int
- |      
- |      Return the highest index in S where substring sub is found,
- |      such that sub is contained within S[start:end].  Optional
- |      arguments start and end are interpreted as in slice notation.
- |      
- |      Return -1 on failure.
- |  
- |  rindex(...)
- |      S.rindex(sub[, start[, end]]) -&gt; int
- |      
- |      Return the highest index in S where substring sub is found,
- |      such that sub is contained within S[start:end].  Optional
- |      arguments start and end are interpreted as in slice notation.
- |      
- |      Raises ValueError when the substring is not found.
- |  
- |  rjust(self, width, fillchar=&#39; &#39;, /)
- |      Return a right-justified string of length width.
- |      
- |      Padding is done using the specified fill character (default is a space).
- |  
- |  rpartition(self, sep, /)
- |      Partition the string into three parts using the given separator.
- |      
- |      This will search for the separator in the string, starting at the end. If
- |      the separator is found, returns a 3-tuple containing the part before the
- |      separator, the separator itself, and the part after it.
- |      
- |      If the separator is not found, returns a 3-tuple containing two empty strings
- |      and the original string.
- |  
- |  rsplit(self, /, sep=None, maxsplit=-1)
- |      Return a list of the words in the string, using sep as the delimiter string.
- |      
- |        sep
- |          The delimiter according which to split the string.
- |          None (the default value) means split according to any whitespace,
- |          and discard empty strings from the result.
- |        maxsplit
- |          Maximum number of splits to do.
- |          -1 (the default value) means no limit.
- |      
- |      Splits are done starting at the end of the string and working to the front.
- |  
- |  rstrip(self, chars=None, /)
- |      Return a copy of the string with trailing whitespace removed.
- |      
- |      If chars is given and not None, remove characters in chars instead.
- |  
- |  split(self, /, sep=None, maxsplit=-1)
- |      Return a list of the words in the string, using sep as the delimiter string.
- |      
- |      sep
- |        The delimiter according which to split the string.
- |        None (the default value) means split according to any whitespace,
- |        and discard empty strings from the result.
- |      maxsplit
- |        Maximum number of splits to do.
- |        -1 (the default value) means no limit.
- |  
- |  splitlines(self, /, keepends=False)
- |      Return a list of the lines in the string, breaking at line boundaries.
- |      
- |      Line breaks are not included in the resulting list unless keepends is given and
- |      true.
- |  
- |  startswith(...)
- |      S.startswith(prefix[, start[, end]]) -&gt; bool
- |      
- |      Return True if S starts with the specified prefix, False otherwise.
- |      With optional start, test S beginning at that position.
- |      With optional end, stop comparing S at that position.
- |      prefix can also be a tuple of strings to try.
- |  
- |  strip(self, chars=None, /)
- |      Return a copy of the string with leading and trailing whitespace remove.
- |      
- |      If chars is given and not None, remove characters in chars instead.
- |  
- |  swapcase(self, /)
- |      Convert uppercase characters to lowercase and lowercase characters to uppercase.
- |  
- |  title(self, /)
- |      Return a version of the string where each word is titlecased.
- |      
- |      More specifically, words start with uppercased characters and all remaining
- |      cased characters have lower case.
- |  
- |  translate(self, table, /)
- |      Replace each character in the string using the given translation table.
- |      
- |        table
- |          Translation table, which must be a mapping of Unicode ordinals to
- |          Unicode ordinals, strings, or None.
- |      
- |      The table must implement lookup/indexing via __getitem__, for instance a
- |      dictionary or list.  If this operation raises LookupError, the character is
- |      left untouched.  Characters mapped to None are deleted.
- |  
- |  upper(self, /)
- |      Return a copy of the string converted to uppercase.
- |  
- |  zfill(self, width, /)
- |      Pad a numeric string with zeros on the left, to fill a field of the given width.
- |      
- |      The string is never truncated.
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
@@ -735,61 +385,51 @@ class str(object)
  |  __new__(*args, **kwargs) from builtins.type
  |      Create and return a new object.  See help(type) for accurate signature.
  |  
- |  maketrans(x, y=None, z=None, /)
- |      Return a translation table usable for str.translate().
- |      
- |      If there is only one argument, it must be a dictionary mapping Unicode
- |      ordinals (integers) or characters to Unicode ordinals, strings or None.
- |      Character keys will be then converted to ordinals.
- |      If there are two arguments, they must be strings of equal length, and
- |      in the resulting dictionary, each character in x will be mapped to the
- |      character at the same position in y. If there is a third argument, it
- |      must be a string, whose characters will be mapped to None in the result.</code></pre>
-<p>返回对象 object 的字符串形式。如果未提供 object 则返回空字符串。</p>
-<p>如果 encoding 或 errors 至少给出其中之一，则 bytes_or_buffer 应该是一个 bytes-like object (例如字节串或字节数组)。在此情况下，如果是一个字节串 (或字节数组) 对象，则 <code>str(bytes, encoding, errors)</code> 等价于 <code>bytes.decode(encoding, errors)</code>。否则的话，会在调用 <code>bytes.decode()</code> 之前获取缓冲区对象下层的 bytes 对象。</p>
-<p>将一个 bytes 对象传入 str() 而不给出 encoding 或 errors 参数，将直接转 bytes 对象为字符串。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">str</span>)</span><br></pre></td></tr></table></figure>
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __self__
+ |      the instance invoking super(); may be None
+ |  
+ |  __self_class__
+ |      the type of the instance invoking super(); may be None
+ |  
+ |  __thisclass__
+ |      the class invoking super()</code></pre>
+<p>返回一个代理对象，它会将方法调用委托给类 type 的父类或兄弟类。这对于访问已在类中被重载的继承方法很有用。</p>
+<ul>
+<li><code>super()</code> 和 <code>super(__class__, &lt;first argument&gt;)</code> 一样。</li>
+<li>如果省略第二个参数，则返回的超类对象是未绑定的。</li>
+<li>如果第二个参数为一个对象，则 isinstance(obj, type) 必须为真值。</li>
+<li>如果第二个参数为一个类型，则 issubclass(type2, type) 必须为真值（这适用于类方法）。</li>
+</ul>
+<p>super 有两个典型用例：</p>
+<ul>
+<li>在具有单继承的类层级结构中，super 可用来引用父类而不必显式地指定它们的名称，从而令代码更易维护。</li>
+<li>第二个用例是在动态执行环境中支持协作多重继承。此用例为 Python 所独有。这使得实现 “菱形图” 成为可能，在这时会有多个基类实现相同的方法。好的设计强制要求这种方法在每个情况下具有相同的调用签名（因为调用顺序是在运行时确定的，也因为该顺序要适应类层级结构的更改，还因为该顺序可能包含在运行时之前未知的兄弟类）。</li>
+</ul>
+<p>类或方法的 <code>__mro__</code> 属性列出了 getattr() 和 super() 所共同使用的方法解析顺序（MRO）。该属性是动态的，可以在任何继承层级结构发生更新的时候被改变。</p>
+<p>除了方法查找之外，super() 也可用于属性查找。一个可能的应用场合是在上级或同级类中调用描述器。</p>
+<p>请注意 super() 是作为显式加点属性查找的绑定过程的一部分来实现的，例如 <code>super().__getitem__(name)</code>。它做到这一点是通过实现自己的 <code>__getattribute__()</code> 方法，这样就能以可预测的顺序搜索类，并且支持协作多重继承。</p>
+<p>还要注意的是，除了零个参数的形式以外，super() 并不限于在方法内部使用。两个参数的形式明确指定参数并进行相应的引用。零个参数的形式仅适用于类定义内部，因为编译器需要填入必要的细节以正确地检索到被定义的类，还需要让普通方法访问当前实例。</p>
+<p>方法调用委托给父类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">super</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        y = x + x</span><br><span class="line">        print(y)</span><br><span class="line">            </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().add(x) <span class="comment"># super() 等价于 super(B,self)</span></span><br><span class="line">        </span><br><span class="line">b = B()</span><br><span class="line">b.add(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
+<pre><code>10</code></pre>
+<p>初始化委托给父类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="string">&#x27;父类A&#x27;</span></span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">self,a</span>):</span></span><br><span class="line">        <span class="built_in">print</span> (<span class="string">f&#x27;<span class="subst">&#123;a&#125;</span>来自A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># super(B, self) 可写为 super()</span></span><br><span class="line">        <span class="built_in">super</span>(B, self).__init__() </span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">self,b</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().print_msg(b)</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">f&#x27;<span class="subst">&#123;b&#125;</span>来自B&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span> (self.a)</span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.print_msg(<span class="string">&#x27;HelloWorld&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-
-
-<pre><code>&#39;&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&quot;&lt;class &#39;int&#39;&gt;&quot;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;[1, 2, 3]&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="string">b&#x27;\xe8\x87\xaa\xe5\xad\xa6&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;自学&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">b&#x27;\xe8\x87\xaa\xe5\xad\xa6&#x27;</span>.decode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;自学&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="string">b&#x27;\xe8\x87\xaa\xe5\xad\xa6&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&quot;b&#39;\\xe8\\x87\\xaa\\xe5\\xad\\xa6&#39;&quot;</code></pre>
+<pre><code>A
+B
+HelloWorld来自A
+HelloWorld来自B
+父类A</code></pre>
 
       
     </div>
@@ -848,9 +488,6 @@ class str(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -941,7 +578,6 @@ class str(object)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/31_input-898a0318db8f/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/33_isinstance-13f7fc2e1df6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/31_input-898a0318db8f/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/33_isinstance-13f7fc2e1df6/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>360</span>
+      <span>442</span>
     </span>
 </div>
 
@@ -347,36 +345,61 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="input-接受输入返回字符串"><a href="#input-接受输入返回字符串" class="headerlink" title="input() 接受输入返回字符串"></a>input() 接受输入返回字符串</h2><p>内置函数 input()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="isinstance-是给定类的实例？"><a href="#isinstance-是给定类的实例？" class="headerlink" title="isinstance() 是给定类的实例？"></a>isinstance() 是给定类的实例？</h2><p>内置函数 isinstance()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">isinstance</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on method raw_input in module ipykernel.kernelbase:
+<pre><code>Help on built-in function isinstance in module builtins:
 
-raw_input(prompt=&#39;&#39;) method of ipykernel.ipkernel.IPythonKernel instance
-    Forward raw_input to frontends
+isinstance(obj, class_or_tuple, /)
+    Return whether an object is an instance of a class or of a subclass thereof.
 
-    Raises
-    ------
-    StdinNotImplentedError if active frontend doesn&#39;t support stdin.</code></pre>
-<p>如果存在 prompt 实参，则作为提示信息输出。接下来，该函数将输入转换为字符串并返回。无输入则返回空字符串。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&#x27;输入提示：&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>输入提示： 1+1
-
+    A tuple, as in ``isinstance(x, (A, B, ...))``, may be given as the target to
+    check against. This is equivalent to ``isinstance(x, A) or isinstance(x, B)
+    or ...`` etc.</code></pre>
+<p>如果对象 obj 是给定类的实例或者是其 (直接、间接或虚拟) 子类的实例则返回 True，不是则返回 False。给定的不是类则引发 TypeError 异常。</p>
+<p>给定类可以以元组形式传参，obj 是其中任何一个类型的实例就返回 True。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>, <span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-&#39;1+1&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&#x27;输入提示：&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>输入提示： 
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="string">&#x27;abc&#x27;</span>, (<span class="built_in">float</span>, <span class="built_in">complex</span>))</span><br></pre></td></tr></table></figure>
 
 
 
 
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bool 是 int 的子类型，但不是实例</span></span><br><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">bool</span>, <span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
 
-&#39;&#39;</code></pre>
+
+
+
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># True 是 int 的子类的实例</span></span><br><span class="line"><span class="built_in">isinstance</span>(<span class="literal">True</span>, <span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bool 的实例只有 True 和 False</span></span><br><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>, <span class="built_in">bool</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有的对象都是 object 的实例</span></span><br><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">object</span>, <span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="comment"># 模块</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span><span class="keyword">pass</span> <span class="comment"># 自定义类</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>, <span class="built_in">object</span>),\</span><br><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">int</span>, <span class="built_in">object</span>),\</span><br><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">list</span>, <span class="built_in">object</span>),\</span><br><span class="line"><span class="built_in">isinstance</span>(random, <span class="built_in">object</span>),\</span><br><span class="line"><span class="built_in">isinstance</span>(A, <span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(True, True, True, True, True)</code></pre>
 
       
     </div>
@@ -435,9 +458,6 @@ raw_input(prompt=&#39;&#39;) method of ipykernel.ipkernel.IPythonKernel instance
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -528,7 +548,6 @@ raw_input(prompt=&#39;&#39;) method of ipykernel.ipkernel.IPythonKernel instance
   
 
   
-
 
 </body>
 </html>

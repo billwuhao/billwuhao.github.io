@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/61_super-ea732330065d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/63_type-e4bd0e1cf0f7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/61_super-ea732330065d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/63_type-e4bd0e1cf0f7/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2.1k</span>
+      <span>2.6k</span>
     </span>
 </div>
 
@@ -347,30 +345,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="super-调用委托给父类或兄弟类"><a href="#super-调用委托给父类或兄弟类" class="headerlink" title="super 调用委托给父类或兄弟类"></a>super 调用委托给父类或兄弟类</h2><p>内置函数（类）super，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">super</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="type-判断类型或创建类"><a href="#type-判断类型或创建类" class="headerlink" title="type 判断类型或创建类"></a>type 判断类型或创建类</h2><p>内置函数（类）type，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class super in module builtins:
+<pre><code>Help on class type in module builtins:
 
-class super(object)
- |  super() -&gt; same as super(__class__, &lt;first argument&gt;)
- |  super(type) -&gt; unbound super object
- |  super(type, obj) -&gt; bound super object; requires isinstance(obj, type)
- |  super(type, type2) -&gt; bound super object; requires issubclass(type2, type)
- |  Typical use to call a cooperative superclass method:
- |  class C(B):
- |      def meth(self, arg):
- |          super().meth(arg)
- |  This works for class methods too:
- |  class C(B):
- |      @classmethod
- |      def cmeth(cls, arg):
- |          super().cmeth(arg)
+class type(object)
+ |  type(object_or_name, bases, dict)
+ |  type(object) -&gt; the object&#39;s type
+ |  type(name, bases, dict) -&gt; a new type
  |  
  |  Methods defined here:
  |  
- |  __get__(self, instance, owner, /)
- |      Return an attribute of instance, which is of type owner.
+ |  __call__(self, /, *args, **kwargs)
+ |      Call self as a function.
+ |  
+ |  __delattr__(self, name, /)
+ |      Implement delattr(self, name).
+ |  
+ |  __dir__(self, /)
+ |      Specialized __dir__ implementation for types.
  |  
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
@@ -378,60 +372,112 @@ class super(object)
  |  __init__(self, /, *args, **kwargs)
  |      Initialize self.  See help(type(self)) for accurate signature.
  |  
+ |  __instancecheck__(self, instance, /)
+ |      Check if an object is an instance.
+ |  
  |  __repr__(self, /)
  |      Return repr(self).
+ |  
+ |  __setattr__(self, name, value, /)
+ |      Implement setattr(self, name, value).
+ |  
+ |  __sizeof__(self, /)
+ |      Return memory consumption of the type object.
+ |  
+ |  __subclasscheck__(self, subclass, /)
+ |      Check if a class is a subclass.
+ |  
+ |  __subclasses__(self, /)
+ |      Return a list of immediate subclasses.
+ |  
+ |  mro(self, /)
+ |      Return a type&#39;s method resolution order.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  __prepare__(...)
+ |      __prepare__() -&gt; dict
+ |      used to create the namespace for the class statement
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
  |  
- |  __new__(*args, **kwargs) from builtins.type
+ |  __new__(*args, **kwargs)
  |      Create and return a new object.  See help(type) for accurate signature.
  |  
  |  ----------------------------------------------------------------------
  |  Data descriptors defined here:
  |  
- |  __self__
- |      the instance invoking super(); may be None
+ |  __abstractmethods__
  |  
- |  __self_class__
- |      the type of the instance invoking super(); may be None
+ |  __dict__
  |  
- |  __thisclass__
- |      the class invoking super()</code></pre>
-<p>返回一个代理对象，它会将方法调用委托给类 type 的父类或兄弟类。这对于访问已在类中被重载的继承方法很有用。</p>
-<ul>
-<li><code>super()</code> 和 <code>super(__class__, &lt;first argument&gt;)</code> 一样。</li>
-<li>如果省略第二个参数，则返回的超类对象是未绑定的。</li>
-<li>如果第二个参数为一个对象，则 isinstance(obj, type) 必须为真值。</li>
-<li>如果第二个参数为一个类型，则 issubclass(type2, type) 必须为真值（这适用于类方法）。</li>
-</ul>
-<p>super 有两个典型用例：</p>
-<ul>
-<li>在具有单继承的类层级结构中，super 可用来引用父类而不必显式地指定它们的名称，从而令代码更易维护。</li>
-<li>第二个用例是在动态执行环境中支持协作多重继承。此用例为 Python 所独有。这使得实现 “菱形图” 成为可能，在这时会有多个基类实现相同的方法。好的设计强制要求这种方法在每个情况下具有相同的调用签名（因为调用顺序是在运行时确定的，也因为该顺序要适应类层级结构的更改，还因为该顺序可能包含在运行时之前未知的兄弟类）。</li>
-</ul>
-<p>类或方法的 <code>__mro__</code> 属性列出了 getattr() 和 super() 所共同使用的方法解析顺序（MRO）。该属性是动态的，可以在任何继承层级结构发生更新的时候被改变。</p>
-<p>除了方法查找之外，super() 也可用于属性查找。一个可能的应用场合是在上级或同级类中调用描述器。</p>
-<p>请注意 super() 是作为显式加点属性查找的绑定过程的一部分来实现的，例如 <code>super().__getitem__(name)</code>。它做到这一点是通过实现自己的 <code>__getattribute__()</code> 方法，这样就能以可预测的顺序搜索类，并且支持协作多重继承。</p>
-<p>还要注意的是，除了零个参数的形式以外，super() 并不限于在方法内部使用。两个参数的形式明确指定参数并进行相应的引用。零个参数的形式仅适用于类定义内部，因为编译器需要填入必要的细节以正确地检索到被定义的类，还需要让普通方法访问当前实例。</p>
-<p>方法调用委托给父类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">super</span>)</span><br></pre></td></tr></table></figure>
+ |  __text_signature__
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __base__ = &lt;class &#39;object&#39;&gt;
+ |      The most base type
+ |  
+ |  __bases__ = (&lt;class &#39;object&#39;&gt;,)
+ |  
+ |  __basicsize__ = 864
+ |  
+ |  __dictoffset__ = 264
+ |  
+ |  __flags__ = -2146675712
+ |  
+ |  __itemsize__ = 40
+ |  
+ |  __mro__ = (&lt;class &#39;type&#39;&gt;, &lt;class &#39;object&#39;&gt;)
+ |  
+ |  __weakrefoffset__ = 368</code></pre>
+<p>传入一个参数时，返回对象的类型。推荐使用 isinstance() 内置函数来检测对象的类型，因为它会考虑子类的情况。</p>
+<p>传入三个参数时，返回一个新的 type 对象。这在本质上是 class 语句的一种动态形式。name 参数是字符串即类名并且会成为 <code>__name__</code> 属性；bases 元组列出基类并且会成为 <code>__bases__</code> 属性；而 dict 字典为包含类主体定义的命名空间并且会被复制到一个标准字典成为 <code>__dict__</code> 属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        y = x + x</span><br><span class="line">        print(y)</span><br><span class="line">            </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().add(x) <span class="comment"># super() 等价于 super(B,self)</span></span><br><span class="line">        </span><br><span class="line">b = B()</span><br><span class="line">b.add(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">int</span>), <span class="built_in">type</span>(<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>10</code></pre>
-<p>初始化委托给父类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="string">&#x27;父类A&#x27;</span></span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">self,a</span>):</span></span><br><span class="line">        <span class="built_in">print</span> (<span class="string">f&#x27;<span class="subst">&#123;a&#125;</span>来自A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># super(B, self) 可写为 super()</span></span><br><span class="line">        <span class="built_in">super</span>(B, self).__init__() </span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">self,b</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().print_msg(b)</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">f&#x27;<span class="subst">&#123;b&#125;</span>来自B&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span> (self.a)</span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.print_msg(<span class="string">&#x27;HelloWorld&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>A
-B
-HelloWorld来自A
-HelloWorld来自B
-父类A</code></pre>
+
+
+<pre><code>(type, type)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">int</span>, <span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">A.__name__, A.__bases__, A.__dict__</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;A&#39;,
+ (object,),
+ mappingproxy(&#123;&#39;__module__&#39;: &#39;__main__&#39;,
+               &#39;a&#39;: 1,
+               &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;A&#39; objects&gt;,
+               &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;A&#39; objects&gt;,
+               &#39;__doc__&#39;: None&#125;))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = <span class="built_in">type</span>(<span class="string">&#x27;A&#x27;</span>, (<span class="built_in">object</span>,), <span class="built_in">dict</span>(a=<span class="number">1</span>))</span><br><span class="line">A.__name__, A.__bases__, A.__dict__</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;A&#39;,
+ (object,),
+ mappingproxy(&#123;&#39;a&#39;: 1,
+               &#39;__module__&#39;: &#39;__main__&#39;,
+               &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;A&#39; objects&gt;,
+               &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;A&#39; objects&gt;,
+               &#39;__doc__&#39;: None&#125;))</code></pre>
 
       
     </div>
@@ -490,9 +536,6 @@ HelloWorld来自B
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -583,7 +626,6 @@ HelloWorld来自B
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/02_concatenated_string-b7bb31af49f7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/04_str.count-02f328c3609e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/02_concatenated_string-b7bb31af49f7/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/04_str.count-02f328c3609e/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>177</span>
+      <span>450</span>
     </span>
 </div>
 
@@ -347,37 +345,43 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><h3 id="空格拼接"><a href="#空格拼接" class="headerlink" title="空格拼接"></a>空格拼接</h3><p>相邻的两个字符串，无论中间隔了多少个空格（包括 0 个），都会自动连接到一起：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Py&#x27;</span><span class="string">&#x27;thon&#x27;</span>, <span class="string">&#x27;Py&#x27;</span>    <span class="string">&#x27;thon&#x27;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="str-count-统计"><a href="#str-count-统计" class="headerlink" title="str.count 统计"></a>str.count 统计</h2><p>字符串方法 str.count()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.count)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Help on method_descriptor:
+
+count(...)
+    S.count(sub[, start[, end]]) -&gt; int
+
+    Return the number of non-overlapping occurrences of substring sub in
+    string S[start:end].  Optional arguments start and end are
+    interpreted as in slice notation.</code></pre>
+<p>返回回子字符串 sub 在 [start, end] 范围内非重叠出现的次数。可选参数 start 与 end 会被解读为切片表示法。</p>
+<p>只给定 sub 一个参数的话，于是从第一个字符开始搜索到字符串结束；如果，随后给定了一个可选参数的话，那么它是 start，于是从 start 开始，搜索到字符串结束；如果 start 之后还有参数的话，那么它是 end；于是从 start 开始，搜索到 end - 1 结束（即不包含索引值为 end 的那个字符）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.count(<span class="string">&#x27;0&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;Python&#39;, &#39;Python&#39;)</code></pre>
-<p>甚至可以用 () 包围实现换行拼接，这在字符串（或正则表达式）很长时非常有用：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&#x27;Py&#x27;</span></span><br><span class="line"><span class="string">f&#x27;thon<span class="subst">&#123;<span class="number">3</span>&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">r&#x27;\Go&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;pyyython&#x27;</span>.count(<span class="string">&#x27;yy&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;Python3\\Go&#39;</code></pre>
-<h3 id="运算符-拼接"><a href="#运算符-拼接" class="headerlink" title="运算符 + 拼接"></a>运算符 <code>+</code> 拼接</h3><p>运算符 <code>+</code> 拼接字符串，和空格类似，但 <code>+</code> 拼接字符串可以是变量的形式：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;Py&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;thon&#x27;</span></span><br><span class="line"><span class="string">&#x27;Py&#x27;</span> + b, a + b</span><br></pre></td></tr></table></figure>
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;pythonpythonn&#x27;</span>.count(<span class="string">&#x27;n&#x27;</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;Python&#39;, &#39;Python&#39;)</code></pre>
-<p>运算符 <code>+</code> 还可以和赋值运算符 <code>=</code> 连用，拼接字符串的同时进行赋值：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 a 和 b 拼接，赋值给 a</span></span><br><span class="line">a += b</span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># 将 b 和 a 拼接，赋值给 b</span></span><br><span class="line">b += a</span><br><span class="line">b</span><br></pre></td></tr></table></figure>
-
-<pre><code>Python
+<pre><code>3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;pythonpythonn&#x27;</span>.count(<span class="string">&#x27;n&#x27;</span>,<span class="number">5</span>,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-
-&#39;thonPython&#39;</code></pre>
+<pre><code>1</code></pre>
 
       
     </div>
@@ -436,9 +440,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -529,7 +530,6 @@
   
 
   
-
 
 </body>
 </html>

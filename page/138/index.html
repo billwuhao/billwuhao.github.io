@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/05_dict.get-27c6bb71448c/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/07_dict.pop-34c04582c3ba/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/07_dictionary/05_dict.get-27c6bb71448c/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/07_dictionary/07_dict.pop-34c04582c3ba/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:33" itemprop="dateModified" datetime="2021-01-03T00:11:33+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:34" itemprop="dateModified" datetime="2021-01-03T00:11:34+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>204</span>
+      <span>531</span>
     </span>
 </div>
 
@@ -347,29 +345,42 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="dict-get-获取某个键的值"><a href="#dict-get-获取某个键的值" class="headerlink" title="dict.get 获取某个键的值"></a>dict.get 获取某个键的值</h2><p>字典方法 dict.get()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.get)</span><br></pre></td></tr></table></figure>
+          <h2 id="dict-pop-删除元素并返回值"><a href="#dict-pop-删除元素并返回值" class="headerlink" title="dict.pop 删除元素并返回值"></a>dict.pop 删除元素并返回值</h2><p>字典方法 dict.pop()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.pop)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-get(self, key, default=None, /)
-    Return the value for key if key is in the dictionary, else default.</code></pre>
-<p>获取字典的项目，如果 key 存在于字典中则返回 key 的值，否则返回 default 指定的值，默认为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.get(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
+pop(...)
+    D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
+    If key is not found, d is returned if given, otherwise KeyError is raised</code></pre>
+<p>如果字典的键 k 存在，则移除 k 对应的 键值对，并返回 值；</p>
+<p>如果 k 不存在，但指定了可选参数 d，则返回 d；</p>
+<p>如果 k 不存在且未指定 d，则引发 KeyError。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.pop(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(d.get(<span class="string">&#x27;c&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>None</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.get(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.pop(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.pop(<span class="string">&#x27;c&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-4-1e5ab2c0b86c&gt; in &lt;module&gt;
+      1 d = &#123;&#39;a&#39;:1, &#39;b&#39;:2&#125;
+----&gt; 2 d.pop(&#39;c&#39;)
+
+
+KeyError: &#39;c&#39;</code></pre>
 
       
     </div>
@@ -428,9 +439,6 @@ get(self, key, default=None, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -521,7 +529,6 @@ get(self, key, default=None, /)
   
 
   
-
 
 </body>
 </html>

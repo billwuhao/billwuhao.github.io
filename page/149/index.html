@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/12_set.difference_update-52b35e00a06d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/14_set.add-59f536d6bd0c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/06_set/12_set.difference_update-52b35e00a06d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/06_set/14_set.add-59f536d6bd0c/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>246</span>
+      <span>186</span>
     </span>
 </div>
 
@@ -347,28 +345,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="set-difference-update-差集更新"><a href="#set-difference-update-差集更新" class="headerlink" title="set.difference_update 差集更新"></a>set.difference_update 差集更新</h2><p>集合方法 set.difference_update()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.difference_update)</span><br></pre></td></tr></table></figure>
+          <h2 id="set-add-添加元素"><a href="#set-add-添加元素" class="headerlink" title="set.add 添加元素"></a>set.add 添加元素</h2><p>集合方法 set.add()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.add)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-difference_update(...)
-    Remove all elements of another set from this set.</code></pre>
-<p>该方法接收任意的位置参数，更新集合，移除在其他集合中也存在的元素。相当于 a -= b | …（a，b 是集合），但方法的参数可以是可迭代对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">a.difference_update((<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>),[<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+add(...)
+    Add an element to a set.
+
+    This has no effect if the element is already present.</code></pre>
+<p>集合中增加一个元素，如果元素已经存在，没有任何影响。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">a.add(<span class="number">3</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;2&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">a -= &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125; | &#123;<span class="number">4</span>,<span class="number">5</span>&#125;</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;1, 2, 3&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">a.add(<span class="number">1</span>)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;2&#125;</code></pre>
+<pre><code>&#123;1, 2&#125;</code></pre>
 <p>该方法是一个过程，就地修改集合，返回值为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">b = a.difference_update([<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">b = a.add(<span class="number">3</span>)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
 
 <pre><code>None</code></pre>
 
@@ -429,9 +429,6 @@ difference_update(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -522,7 +519,6 @@ difference_update(...)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/05_sequence/01_sequence-5b8fbae6d7b8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/05_sequence/03_index_slice-5601c0662ae0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/05_sequence/01_sequence-5b8fbae6d7b8/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/05_sequence/03_index_slice-5601c0662ae0/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>591</span>
+      <span>488</span>
     </span>
 </div>
 
@@ -347,52 +345,87 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="序列类型概述"><a href="#序列类型概述" class="headerlink" title="序列类型概述"></a>序列类型概述</h2><p>序列类型有列表，元组，range，字符串，字节串等。之所以称为序列类型，因为它们中的元素是按顺序排列的，可以使用下标索引或切片取值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line">c = <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line">d = <span class="string">&#x27;123&#x27;</span></span><br><span class="line">e = <span class="string">b&#x27;123&#x27;</span></span><br><span class="line">a[<span class="number">0</span>],b[<span class="number">0</span>],c[<span class="number">0</span>],d[<span class="number">0</span>],e[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+          <h2 id="序列索引和切片"><a href="#序列索引和切片" class="headerlink" title="序列索引和切片"></a>序列索引和切片</h2><p>序列类型都可以使用下标进行索引或切片取值，这是序列类型通用操作。可变序列类型比较特殊，例如列表，可以利用索引或切片进行元素增、删、改，详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/03_list/03_list_indexes_and_slices.ipynb">列表的索引和切片</a>。</p>
+<p>下标从前往后，则以 0 开始，从后往前，则从 -1 开始，双向索引：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)</span><br><span class="line">  0    1    2    3</span><br><span class="line"> -4   -3   -2   -1</span><br></pre></td></tr></table></figure>
 
-
-
-
-<pre><code>(1, 1, 1, &#39;1&#39;, 49)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chr</span>(<span class="number">49</span>) <span class="comment"># 字节串索引取到的是 Unicode 码位值</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;1&#39;</code></pre>
-<p>序列类型又分为可变和不可变两种，列表是可变序列类型，元组，range，字符串，字节串是不可变序列类型。不可变序列类型普遍实现而可变序列类型未实现的唯一操作就是对 hash() 内置函数的支持。</p>
-<p>这种支持允许不可变类型，例如元组被用作字典的键，以及存储在集合中。</p>
-<p>尝试对包含有不可哈希值的不可变序列进行哈希运算将会导致 TypeError。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>((<span class="number">1</span>,<span class="number">2</span>)), <span class="built_in">hash</span>(<span class="string">&#x27;12&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(-3550055125485641917, -480100434937186025)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;(<span class="number">1</span>,<span class="number">2</span>), <span class="string">&#x27;12&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;(1, 2), &#39;12&#39;&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;([<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>),<span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>下标索引，直接取出对应索引下的值，超出范围则报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">a[<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
 
 
 <pre><code>---------------------------------------------------------------------------
 
-TypeError                                 Traceback (most recent call last)
+IndexError                                Traceback (most recent call last)
 
-&lt;ipython-input-10-b847264454c5&gt; in &lt;module&gt;
-----&gt; 1 &#123;([1,2],3),4&#125;
+&lt;ipython-input-18-5680bb375980&gt; in &lt;module&gt;
+      1 a = [1,2,3,4]
+----&gt; 2 a[10]
 
 
-TypeError: unhashable type: &#39;list&#39;</code></pre>
-<p>可变序列类型，可以就地进行元素的增、删、改，而不可变序列类型不可以，有时看起来像，但其实是创建了新对象：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a, b = [<span class="number">1</span>,<span class="number">2</span>], (<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">print(<span class="built_in">id</span>(a),<span class="built_in">id</span>(b))</span><br><span class="line">a += [<span class="number">3</span>] <span class="comment"># 将元素 3 加入列表中，相当于 a.extend([3])</span></span><br><span class="line">b += (<span class="number">3</span>,) <span class="comment"># 将元组 b 与元组 (3,) 拼接赋值给 b</span></span><br><span class="line">print(a,b)</span><br><span class="line">print(<span class="built_in">id</span>(a), <span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
+IndexError: list index out of range</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">a[<span class="number">0</span>], a[<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
 
-<pre><code>2058115879744 2058115232576
-[1, 2, 3] (1, 2, 3)
-2058115879744 2058115884416</code></pre>
+
+
+
+<pre><code>(1, 3)</code></pre>
+<p>下标切片取值规则：[起始:结束:步长]，不包含结束。</p>
+<ul>
+<li>没有指定起始，则默认为 0；</li>
+<li>没有指定结束则默认到最后一个元素结束；</li>
+<li>下标可以双向混合使用；</li>
+<li>没有指定步长，则默认为 1；</li>
+<li>步长为负数，则反向取值，-1 开始。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, 2, 3]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">3</span>:]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[4, 5, 6, 7]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">1</span>:<span class="number">-3</span>], a[<span class="number">-6</span>:<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([2, 3, 4], [2, 3, 4])</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[::<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, 3, 5, 7]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[::<span class="number">-2</span>] <span class="comment"># 默认 -1 开始取</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[7, 5, 3, 1]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">0</span>:<span class="number">7</span>:<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">-1</span>:<span class="number">0</span>:<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[7, 5, 3]</code></pre>
+<p>切片范围可以无限大，范围内没有元素，则得到空的容器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">5</span>:<span class="number">100</span>], a[<span class="number">1</span>:<span class="number">1</span>], a[<span class="number">5</span>:<span class="number">-10</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([6, 7], [], [])</code></pre>
 
       
     </div>
@@ -451,9 +484,6 @@ TypeError: unhashable type: &#39;list&#39;</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -544,7 +574,6 @@ TypeError: unhashable type: &#39;list&#39;</code></pre>
   
 
   
-
 
 </body>
 </html>

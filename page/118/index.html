@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/04_for-0acc5f0755d3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/10_statement/06_break-5805f154286d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/10_statement/04_for-0acc5f0755d3/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/10_statement/06_break-5805f154286d/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>404</span>
+      <span>309</span>
     </span>
 </div>
 
@@ -347,39 +345,45 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h2><p>for 语句用于对可迭代对象中的元素进行迭代。语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for target_list in expression_list:</span><br><span class="line">    suite</span><br><span class="line">else: # 可选子句</span><br><span class="line">    suite</span><br></pre></td></tr></table></figure>
+          <h2 id="break-语句"><a href="#break-语句" class="headerlink" title="break 语句"></a>break 语句</h2><p>break 在语法上只会出现于 for 或 while 循环所嵌套的代码。</p>
+<p>它会终结最近的外层循环，如果循环有可选的 else 子句，也会跳过该子句。</p>
+<p>如果一个 for 循环被 break 所终结，该循环的控制变量会保持其当前值。</p>
+<p>当 break 将控制流传出一个带有 finally 子句的 try 语句时，该  finally 子句会先被执行然后再真正离开该循环。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        <span class="keyword">if</span> i**<span class="number">2</span> == j:</span><br><span class="line">            print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)            </span><br></pre></td></tr></table></figure>
 
-<p>对于简单语句可以写为一行，但不推荐。</p>
-<p>表达式 expression_list 被求值一次，它应该产生一个可迭代对象。系统将为 expression_list 的结果创建一个迭代器，然后每一项会按标准赋值规则（详见见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/02_assignment.ipynb">赋值语句</a>）被依次赋值给 target_list，每赋值一次执行一次语句下的代码。</p>
-<p>当所有项被耗尽时，else 子句如果存在将会被执行，并终止循环。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>i=0,j=0
+i=1,j=1
+i=2,j=4
+i=5,j=5</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        <span class="keyword">if</span> i**<span class="number">2</span> == j:</span><br><span class="line">            print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)  </span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">zip</span>(<span class="string">&#x27;123&#x27;</span>,<span class="string">&#x27;abc&#x27;</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>i=0,j=0
+i=5,j=0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        <span class="keyword">if</span> i**<span class="number">2</span> == j:</span><br><span class="line">            print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span> <span class="comment"># 控制内层循环</span></span><br><span class="line">    <span class="keyword">else</span>: <span class="comment"># 不会执行</span></span><br><span class="line">        print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)  </span><br></pre></td></tr></table></figure>
 
-<pre><code>(&#39;1&#39;, &#39;a&#39;)
-(&#39;2&#39;, &#39;b&#39;)
-(&#39;3&#39;, &#39;c&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> <span class="built_in">zip</span>(<span class="string">&#x27;123&#x27;</span>,<span class="string">&#x27;abc&#x27;</span>):</span><br><span class="line">    print(<span class="string">f&#x27;<span class="subst">&#123;i&#125;</span>-&gt;<span class="subst">&#123;j&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&#x27;end&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>i=0,j=0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        <span class="keyword">if</span> i**<span class="number">2</span> == j:</span><br><span class="line">            print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>: <span class="comment"># 属于外层循环，会执行</span></span><br><span class="line">    print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>,j=<span class="subst">&#123;j&#125;</span>&#x27;</span>)  </span><br></pre></td></tr></table></figure>
 
-<pre><code>1-&gt;a
-2-&gt;b
-3-&gt;c
-end</code></pre>
-<p>for 循环会对 target_list 中的变量进行赋值。这将覆盖之前对这些变量的所有赋值，包括在 for 循环体中的赋值。</p>
-<p>变量在循环结束时不会被删除，但如果序列为空，则它们根本不会被循环所赋值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="string">&#x27;a&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    print(i)</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>i=0,j=0
+i=5,j=0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="string">f&#x27;3/i=<span class="subst">&#123;<span class="number">3</span>/i&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2
-2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>):</span><br><span class="line">    print(i)</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>division by zero
+i=0
+3/i=3.0
+i=1
+3/i=1.5
+i=2
+3/i=1.0
+i=3
+3/i=0.75
+i=4</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引发异常直接跳过 break</span></span><br><span class="line"><span class="comment"># 无异常则继续执行完 finally 才终止循环</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(<span class="string">f&#x27;3/i=<span class="subst">&#123;<span class="number">3</span>/i&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        print(<span class="string">f&#x27;i=<span class="subst">&#123;i&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>2</code></pre>
+<pre><code>division by zero
+i=0
+3/i=3.0
+i=1</code></pre>
 
       
     </div>
@@ -438,9 +442,6 @@ end</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -531,7 +532,6 @@ end</code></pre>
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/04_return_value-6a412f5fcca6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/12_function/06_doc-20ce6cd30ddb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/12_function/04_return_value-6a412f5fcca6/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/12_function/06_doc-20ce6cd30ddb/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>284</span>
+      <span>949</span>
     </span>
 </div>
 
@@ -347,71 +345,51 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h2><p>函数返回值通过 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/11_return.ipynb">return 语句</a> 来实现，调用函数时，返回 return 语句之后表达式的值，没有 return 语句或 return 语句之后为空的函数，调用函数默认返回 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="函数文档"><a href="#函数文档" class="headerlink" title="函数文档"></a>函数文档</h2><p>关键字 def 引入一个函数定义。构成函数体的语句从下一行开始，并且必须缩进。</p>
+<p>函数体的第一个语句可以是字符串文字（可选的），这个字符串文字即是函数的文档字符串。有些工具使用文档字符串自动生成在线或印刷文档，或者让用户以交互式的形式浏览代码。在你编写的代码中包含文档字符串是一种很好的做法，所以要养成习惯。</p>
+<p>文档字符串的内容和格式的约定：</p>
+<ul>
+<li><p>第一行应该是函数目的的简要概述。为简洁起见，它不应显式声明对象的名称或类型，因为这些可通过其他方式获得（除非名称恰好是描述函数操作的动词）。这一行应以大写字母开头，以句点结尾。</p>
+</li>
+<li><p>如果文档字符串中有更多行，则第二行应为空白，从而在视觉上将摘要与其余描述分开。后面几行应该是一个或多个段落，描述对象的调用约定，它的副作用等。</p>
+</li>
+</ul>
+<p>可以使用函数的 <code>__doc__</code> 属性或 help() 函数查看函数文档。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(my_function)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Help on function my_function in module __main__:
+
+my_function()
+    Do nothing, but document it.</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_function</span>():</span></span><br><span class="line">    <span class="string">&#x27;Do nothing, but document it.&#x27;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">my_function.__doc__</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>4</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">f() <span class="keyword">is</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;Do nothing, but document it.&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多行的函数文档</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_func</span>():</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;Do nothing, but document it.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    No, really, it doesn&#x27;t do anything.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">print(my_func.__doc__)</span><br></pre></td></tr></table></figure>
 
+<pre><code>Do nothing, but document it.
 
+    No, really, it doesn&#39;t do anything.</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(my_func)</span><br></pre></td></tr></table></figure>
 
+<pre><code>Help on function my_func in module __main__:
 
-<pre><code>True</code></pre>
-<p>函数执行到 return 语句，则结束当前函数的调用，可以通过条件判断，返回特定结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> <span class="comment"># 使用默认值调用函数，接下来的代码将不被执行</span></span><br><span class="line">    print(<span class="string">f&#x27;x=<span class="subst">&#123;x&#125;</span>&#x27;</span>) </span><br><span class="line">    <span class="keyword">if</span> x != <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&#x27;x²=<span class="subst">&#123;x**<span class="number">2</span>&#125;</span>&#x27;</span></span><br><span class="line">    </span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+my_func()
+    Do nothing, but document it.
 
+    No, really, it doesn&#39;t do anything.</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">print</span>.__doc__)</span><br></pre></td></tr></table></figure>
 
+<pre><code>print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
 
-
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>x=2
-
-
-
-
-
-&#39;x²=4&#39;</code></pre>
-<p>return 之后的表达式可以是多个表达式用逗号隔开（其实是一个元组），可用赋值语句分别接收返回值：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(x), <span class="built_in">max</span>(x), <span class="built_in">min</span>(x)</span><br><span class="line">f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(10, 4, 1)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum_x, max_x, min_x = f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">sum_x, max_x, min_x</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(10, 4, 1)</code></pre>
-<p>返回值可以是任何值。如果 return 之后的表达式中包含函数自身的调用，则该函数称为递归函数。详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/12_function/05_recursion.ipynb">递归函数</a>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回函数自身</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    print(x)</span><br><span class="line">    <span class="keyword">return</span> f</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>1
-2
-3
-
-
-
-
-
-&lt;function __main__.f(x)&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回函数自身的调用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(x<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> f(x<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line">f(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>2
-1
-0
-
-
-
-
-
-0</code></pre>
+Prints the values to a stream, or to sys.stdout by default.
+Optional keyword arguments:
+file:  a file-like object (stream); defaults to the current sys.stdout.
+sep:   string inserted between values, default a space.
+end:   string appended after the last value, default a newline.
+flush: whether to forcibly flush the stream.</code></pre>
 
       
     </div>
@@ -470,9 +448,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -563,7 +538,6 @@
   
 
   
-
 
 </body>
 </html>

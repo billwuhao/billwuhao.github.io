@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/17_enumerate-b342e6b5842b/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/19_exec-124cb5381bb4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/17_enumerate-b342e6b5842b/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/19_exec-124cb5381bb4/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>921</span>
+      <span>791</span>
     </span>
 </div>
 
@@ -347,73 +345,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="enumerate-枚举"><a href="#enumerate-枚举" class="headerlink" title="enumerate 枚举"></a>enumerate 枚举</h2><p>内置函数（类）enumerate，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">enumerate</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="exec-解析字符串或代码并求值"><a href="#exec-解析字符串或代码并求值" class="headerlink" title="exec() 解析字符串或代码并求值"></a>exec() 解析字符串或代码并求值</h2><p>内置函数 exec()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">exec</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class enumerate in module builtins:
+<pre><code>Help on built-in function exec in module builtins:
 
-class enumerate(object)
- |  enumerate(iterable, start=0)
- |  
- |  Return an enumerate object.
- |  
- |    iterable
- |      an object supporting iteration
- |  
- |  The enumerate object yields pairs containing a count (from start, which
- |  defaults to zero) and a value yielded by the iterable argument.
- |  
- |  enumerate is useful for obtaining an indexed list:
- |      (0, seq[0]), (1, seq[1]), (2, seq[2]), ...
- |  
- |  Methods defined here:
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __next__(self, /)
- |      Implement next(self).
- |  
- |  __reduce__(...)
- |      Return state information for pickling.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.</code></pre>
-<p>返回一个可迭代对象（iterable）的枚举对象。枚举对象是一个迭代器，迭代出来是一个个元组，里面包含一个计数值（从 start 开始，默认为 0）和通过迭代 iterable 获得的值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">enumerate</span>)</span><br></pre></td></tr></table></figure>
+exec(source, globals=None, locals=None, /)
+    Execute the given source in the context of globals and locals.
 
+    The source may be a string representing one or more Python statements
+    or a code object as returned by compile().
+    The globals must be a dictionary and locals can be any mapping,
+    defaulting to the current globals and locals.
+    If only globals is given, locals defaults to it.</code></pre>
+<p>这个函数支持动态执行 Python 代码。source 必须是字符串或者代码对象。</p>
+<p>如果是字符串，那么该字符串将被解析为一系列 Python 语句并执行（除非发生语法错误）。</p>
+<p>如果是代码对象，它将被直接执行。</p>
+<p>该函数返回值为 None。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(exec(<span class="string">&#x27;&#123;1 + 1&#125;&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
+<pre><code>None</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;for i in range(3):print(i)&#x27;</span></span><br><span class="line">code = <span class="built_in">compile</span>(s,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;exec&#x27;</span>)</span><br><span class="line">exec(code)</span><br></pre></td></tr></table></figure>
 
+<pre><code>0
+1
+2</code></pre>
+<p>参数 globals 和 locals 作为 source 的全局和局部命名空间。如果省略 locals 字典则其默认值为 globals 字典。如果两个字典同时省略，则表达式执行时会使用 eval() 被调用的环境中的全局和局部名称。</p>
+<p>如果 globals 字典存在且不包含以 <code>__builtins__</code> 为键的值，则将为该键插入对内建 builtins 模块字典的引用。因此，在将执行的代码传递给 exec() 之前，可以通过将自己的 <code>__builtins__</code> 字典插入到 globals 中来控制可以使用哪些内置代码。</p>
+<p>globals 实参必须是一个字典。locals 可以是任何映射对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="number">2</span></span><br><span class="line">    code = <span class="string">&quot;for i in range(x):print(i)&quot;</span></span><br><span class="line">    exec(code,&#123;<span class="string">&#x27;x&#x27;</span>:<span class="number">3</span>&#125;,&#123;<span class="string">&#x27;x&#x27;</span>:<span class="number">4</span>&#125;)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 
-<pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = <span class="built_in">enumerate</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>&#125;)</span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+<pre><code>0
+1
+2
+3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="number">2</span></span><br><span class="line">    code = <span class="string">&quot;for i in range(x):print(i)&quot;</span></span><br><span class="line">    exec(code,&#123;<span class="string">&#x27;x&#x27;</span>:<span class="number">3</span>&#125;)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 
+<pre><code>0
+1
+2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="number">2</span></span><br><span class="line">    code = <span class="string">&quot;for i in range(x):print(i)&quot;</span></span><br><span class="line">    exec(code)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 
-
-
-<pre><code>&lt;enumerate at 0x200ccb71240&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(e)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(0, &#39;a&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> e:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(1, &#39;b&#39;)
-(2, &#39;c&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = <span class="built_in">enumerate</span>(<span class="string">&#x27;abc&#x27;</span>, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">list</span>(e)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]</code></pre>
+<pre><code>0
+1</code></pre>
 
       
     </div>
@@ -472,9 +446,6 @@ class enumerate(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -565,7 +536,6 @@ class enumerate(object)
   
 
   
-
 
 </body>
 </html>

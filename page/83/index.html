@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/19_exec-b6b6737ce6c1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/21_float-a182ef4146c6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/19_exec-b6b6737ce6c1/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/21_float-a182ef4146c6/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>791</span>
+      <span>4.2k</span>
     </span>
 </div>
 
@@ -347,49 +345,278 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="exec-解析字符串或代码并求值"><a href="#exec-解析字符串或代码并求值" class="headerlink" title="exec() 解析字符串或代码并求值"></a>exec() 解析字符串或代码并求值</h2><p>内置函数 exec()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">exec</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="float-创建浮点数"><a href="#float-创建浮点数" class="headerlink" title="float 创建浮点数"></a>float 创建浮点数</h2><p>内置函数（类）float，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function exec in module builtins:
+<pre><code>Help on class float in module builtins:
 
-exec(source, globals=None, locals=None, /)
-    Execute the given source in the context of globals and locals.
+class float(object)
+ |  float(x=0, /)
+ |  
+ |  Convert a string or number to a floating point number, if possible.
+ |  
+ |  Methods defined here:
+ |  
+ |  __abs__(self, /)
+ |      abs(self)
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __bool__(self, /)
+ |      self != 0
+ |  
+ |  __divmod__(self, value, /)
+ |      Return divmod(self, value).
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __float__(self, /)
+ |      float(self)
+ |  
+ |  __floordiv__(self, value, /)
+ |      Return self//value.
+ |  
+ |  __format__(self, format_spec, /)
+ |      Formats the float according to format_spec.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getnewargs__(self, /)
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __int__(self, /)
+ |      int(self)
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mod__(self, value, /)
+ |      Return self%value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __neg__(self, /)
+ |      -self
+ |  
+ |  __pos__(self, /)
+ |      +self
+ |  
+ |  __pow__(self, value, mod=None, /)
+ |      Return pow(self, value, mod).
+ |  
+ |  __radd__(self, value, /)
+ |      Return value+self.
+ |  
+ |  __rdivmod__(self, value, /)
+ |      Return divmod(value, self).
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __rfloordiv__(self, value, /)
+ |      Return value//self.
+ |  
+ |  __rmod__(self, value, /)
+ |      Return value%self.
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __round__(self, ndigits=None, /)
+ |      Return the Integral closest to x, rounding half toward even.
+ |      
+ |      When an argument is passed, work like built-in round(x, ndigits).
+ |  
+ |  __rpow__(self, value, mod=None, /)
+ |      Return pow(value, self, mod).
+ |  
+ |  __rsub__(self, value, /)
+ |      Return value-self.
+ |  
+ |  __rtruediv__(self, value, /)
+ |      Return value/self.
+ |  
+ |  __str__(self, /)
+ |      Return str(self).
+ |  
+ |  __sub__(self, value, /)
+ |      Return self-value.
+ |  
+ |  __truediv__(self, value, /)
+ |      Return self/value.
+ |  
+ |  __trunc__(self, /)
+ |      Return the Integral closest to x between 0 and x.
+ |  
+ |  as_integer_ratio(self, /)
+ |      Return integer ratio.
+ |      
+ |      Return a pair of integers, whose ratio is exactly equal to the original float
+ |      and with a positive denominator.
+ |      
+ |      Raise OverflowError on infinities and a ValueError on NaNs.
+ |      
+ |      &gt;&gt;&gt; (10.0).as_integer_ratio()
+ |      (10, 1)
+ |      &gt;&gt;&gt; (0.0).as_integer_ratio()
+ |      (0, 1)
+ |      &gt;&gt;&gt; (-.25).as_integer_ratio()
+ |      (-1, 4)
+ |  
+ |  conjugate(self, /)
+ |      Return self, the complex conjugate of any float.
+ |  
+ |  hex(self, /)
+ |      Return a hexadecimal representation of a floating-point number.
+ |      
+ |      &gt;&gt;&gt; (-0.1).hex()
+ |      &#39;-0x1.999999999999ap-4&#39;
+ |      &gt;&gt;&gt; 3.14159.hex()
+ |      &#39;0x1.921f9f01b866ep+1&#39;
+ |  
+ |  is_integer(self, /)
+ |      Return True if the float is an integer.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  __getformat__(typestr, /) from builtins.type
+ |      You probably don&#39;t want to use this function.
+ |      
+ |        typestr
+ |          Must be &#39;double&#39; or &#39;float&#39;.
+ |      
+ |      It exists mainly to be used in Python&#39;s test suite.
+ |      
+ |      This function returns whichever of &#39;unknown&#39;, &#39;IEEE, big-endian&#39; or &#39;IEEE,
+ |      little-endian&#39; best describes the format of floating point numbers used by the
+ |      C type named by typestr.
+ |  
+ |  __set_format__(typestr, fmt, /) from builtins.type
+ |      You probably don&#39;t want to use this function.
+ |      
+ |        typestr
+ |          Must be &#39;double&#39; or &#39;float&#39;.
+ |        fmt
+ |          Must be one of &#39;unknown&#39;, &#39;IEEE, big-endian&#39; or &#39;IEEE, little-endian&#39;,
+ |          and in addition can only be one of the latter two if it appears to
+ |          match the underlying C reality.
+ |      
+ |      It exists mainly to be used in Python&#39;s test suite.
+ |      
+ |      Override the automatic determination of C-level floating point type.
+ |      This affects how floats are converted to and from binary strings.
+ |  
+ |  fromhex(string, /) from builtins.type
+ |      Create a floating-point number from a hexadecimal string.
+ |      
+ |      &gt;&gt;&gt; float.fromhex(&#39;0x1.ffffp10&#39;)
+ |      2047.984375
+ |      &gt;&gt;&gt; float.fromhex(&#39;-0x1p-1074&#39;)
+ |      -5e-324
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  imag
+ |      the imaginary part of a complex number
+ |  
+ |  real
+ |      the real part of a complex number</code></pre>
+<p>返回从数字或字符串 x 生成的浮点数。</p>
+<p>如果实参是字符串:</p>
+<ul>
+<li>它必须是包含十进制数字的字符串;</li>
+<li>通常是 Python 整数或浮点数的字符串形式；</li>
+<li>也可以是 ‘NaN’（非数字）、表示正负无穷大的字符串（”Infinity” 或 “inf”）。字母大小写随意；</li>
+<li>字符串前后可以有空白字符。</li>
+</ul>
+<p>如果实参是整数或浮点数，则返回具有相同值（在 Python 浮点精度范围内）的浮点数。如果实参在 Python 浮点精度范围外，则会触发OverflowError。</p>
+<p>如果没有实参，则返回 0.0 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
 
-    The source may be a string representing one or more Python statements
-    or a code object as returned by compile().
-    The globals must be a dictionary and locals can be any mapping,
-    defaulting to the current globals and locals.
-    If only globals is given, locals defaults to it.</code></pre>
-<p>这个函数支持动态执行 Python 代码。source 必须是字符串或者代码对象。</p>
-<p>如果是字符串，那么该字符串将被解析为一系列 Python 语句并执行（除非发生语法错误）。</p>
-<p>如果是代码对象，它将被直接执行。</p>
-<p>该函数返回值为 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(exec(<span class="string">&#x27;&#123;1 + 1&#125;&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
-<pre><code>None</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;for i in range(3):print(i)&#x27;</span></span><br><span class="line">code = <span class="built_in">compile</span>(s,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;exec&#x27;</span>)</span><br><span class="line">exec(code)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2</code></pre>
-<p>参数 globals 和 locals 作为 source 的全局和局部命名空间。如果省略 locals 字典则其默认值为 globals 字典。如果两个字典同时省略，则表达式执行时会使用 eval() 被调用的环境中的全局和局部名称。</p>
-<p>如果 globals 字典存在且不包含以 <code>__builtins__</code> 为键的值，则将为该键插入对内建 builtins 模块字典的引用。因此，在将执行的代码传递给 exec() 之前，可以通过将自己的 <code>__builtins__</code> 字典插入到 globals 中来控制可以使用哪些内置代码。</p>
-<p>globals 实参必须是一个字典。locals 可以是任何映射对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="number">2</span></span><br><span class="line">    code = <span class="string">&quot;for i in range(x):print(i)&quot;</span></span><br><span class="line">    exec(code,&#123;<span class="string">&#x27;x&#x27;</span>:<span class="number">3</span>&#125;,&#123;<span class="string">&#x27;x&#x27;</span>:<span class="number">4</span>&#125;)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2
-3</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="number">2</span></span><br><span class="line">    code = <span class="string">&quot;for i in range(x):print(i)&quot;</span></span><br><span class="line">    exec(code,&#123;<span class="string">&#x27;x&#x27;</span>:<span class="number">3</span>&#125;)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<pre><code>type</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>()</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1
-2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    x = <span class="number">2</span></span><br><span class="line">    code = <span class="string">&quot;for i in range(x):print(i)&quot;</span></span><br><span class="line">    exec(code)</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 
-<pre><code>0
-1</code></pre>
+
+
+<pre><code>0.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(-  <span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>-1.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27; -1.0 \n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>-1.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27; 01_2.1_4 &#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>12.14</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;0001&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;3.14e02&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>314.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;-naN&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>nan</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">&#x27;-inf&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>-inf</code></pre>
 
       
     </div>
@@ -448,9 +675,6 @@ exec(source, globals=None, locals=None, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -541,7 +765,6 @@ exec(source, globals=None, locals=None, /)
   
 
   
-
 
 </body>
 </html>

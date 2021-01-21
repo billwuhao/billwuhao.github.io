@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/14_inheritance-7f8cae695208/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics-9ac0e1160c0b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/16_class/14_inheritance-7f8cae695208/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/statistics/statistics-9ac0e1160c0b/" class="post-title-link" itemprop="url">Python 数理统计和机器学习入门</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:50" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:50+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:43" itemprop="dateModified" datetime="2021-01-03T00:11:43+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-02 17:34:04" itemprop="dateModified" datetime="2021-01-02T17:34:04+08:00">2021-01-02</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>859</span>
+      <span>70</span>
     </span>
 </div>
 
@@ -347,44 +345,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="类继承"><a href="#类继承" class="headerlink" title="类继承"></a>类继承</h2><p>所有的类都继承自 object。被继承的类称为基类（或父类，超类），继承者称为子类。</p>
-<p>对于多数应用来说，在最简单的情况下，你可以认为搜索从父类所继承属性的操作是<strong>深度优先、从左至右</strong>的，当层次结构中存在重叠时不会在同一个类中搜索两次。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span>(<span class="params">C, B, D</span>):</span>  <span class="comment"># C -&gt; B -&gt; A -&gt; D</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">e = E()</span><br><span class="line">e.show()</span><br></pre></td></tr></table></figure>
+          <p><a target="_blank" rel="noopener" href="https://billwuhao.com/" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
+<br>
 
-<pre><code>A</code></pre>
-<p>真实情况比这个更复杂一些；方法解析顺序会动态改变以支持对 super() 的协同调用。这种方式在某些其他多重继承型语言中被称为 后续方法调用，它比单继承型语言中的 super 调用更强大。</p>
-<p>动态改变顺序是有必要的，因为所有多重继承的情况都会显示出一个或更多的菱形关联（即至少有一个父类可通过多条路径被最底层类所访问）。例如，所有类都是继承自 object，因此任何多重继承的情况都提供了一条以上的路径可以通向 object。为了确保基类不会被访问一次以上，动态算法会用一种特殊方式将搜索顺序线性化，保留每个类所指定的从左至右的顺序，只调用每个父类一次，并且保持单调（即一个类可以被子类化而不影响其父类的优先顺序）。</p>
-<p>总而言之，这些特性使得设计具有多重继承的可靠且可扩展的类成为可能。</p>
-<p>一个基类如果有 <code>__init__()</code> 方法，则其所派生的类如果也有 <code>__init__()</code> 方法，就必须显式地调用它以确保实例基类部分的正确初始化：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(self.a)</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.b = <span class="string">&#x27;B&#x27;</span></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.f() <span class="comment"># 基类未初始化，属性 a 不可调用</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-AttributeError                            Traceback (most recent call last)
-
-&lt;ipython-input-5-cda60db4451f&gt; in &lt;module&gt;
-     11 
-     12 b = B()
----&gt; 13 b.f()
-
-
-&lt;ipython-input-5-cda60db4451f&gt; in f(self)
-      4 
-      5     def f(self):
-----&gt; 6         print(self.a)
-      7 
-      8 class B(A):
-
-
-AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A.__init__(b) <span class="comment"># 将实例 b 传给 A 初始化</span></span><br><span class="line">b.f()</span><br></pre></td></tr></table></figure>
-
-<pre><code>A</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 或者直接用 super()</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.a = <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(self.a)</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.b = <span class="string">&#x27;B&#x27;</span></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.f()</span><br></pre></td></tr></table></figure>
-
-<pre><code>A</code></pre>
-
+<blockquote>
+<p>内容主要来源：<strong>开课吧</strong>学习笔记整理。</p>
+</blockquote>
+<h2 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics1-c52131cc9c3a/" title="&lt;font color&#x3D;#AE6011 &gt;描述统计&lt;&#x2F;font&gt;"><font color=#AE6011 >描述统计</font></a></h2><h2 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics2-4cc5fc64703e/" title="&lt;font color&#x3D;#AE6011 &gt;推断统计&lt;&#x2F;font&gt;"><font color=#AE6011 >推断统计</font></a></h2><h2 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics3-65786bb614a2/" title="&lt;font color&#x3D;#AE6011 &gt;线性回归&lt;&#x2F;font&gt;"><font color=#AE6011 >线性回归</font></a></h2><h2 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics4-548ae340f960/" title="&lt;font color&#x3D;#AE6011 &gt;逻辑回归&lt;&#x2F;font&gt;"><font color=#AE6011 >逻辑回归</font></a></h2><h2 id="⚫-4"><a href="#⚫-4" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics5-718e604fdfd5/" title="&lt;font color&#x3D;#AE6011 &gt;分类模型评估&lt;&#x2F;font&gt;"><font color=#AE6011 >分类模型评估</font></a></h2><h2 id="⚫-5"><a href="#⚫-5" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics6-7e2ca84cd5fe/" title="&lt;font color&#x3D;#AE6011 &gt;KNN 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >KNN 算法</font></a></h2><h2 id="⚫-6"><a href="#⚫-6" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics7-c1988cb61792/" title="&lt;font color&#x3D;#AE6011 &gt;朴素贝叶斯&lt;&#x2F;font&gt;"><font color=#AE6011 >朴素贝叶斯</font></a></h2><h2 id="⚫-7"><a href="#⚫-7" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics8-144b84551481/" title="&lt;font color&#x3D;#AE6011 &gt;决策树&lt;&#x2F;font&gt;"><font color=#AE6011 >决策树</font></a></h2><h2 id="⚫-8"><a href="#⚫-8" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics9-1d958e8e187b/" title="&lt;font color&#x3D;#AE6011 &gt;K-Means 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >K-Means 算法</font></a></h2>
       
     </div>
 
@@ -442,9 +409,6 @@ AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -535,7 +499,6 @@ AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;</code></pre>
   
 
   
-
 
 </body>
 </html>

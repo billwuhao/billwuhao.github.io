@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/13_delattr-325d1cb1ad28/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/15_dir-820417c91bd7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/13_delattr-325d1cb1ad28/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/15_dir-820417c91bd7/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:36" itemprop="dateModified" datetime="2021-01-03T00:11:36+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:37" itemprop="dateModified" datetime="2021-01-03T00:11:37+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>530</span>
+      <span>4.6k</span>
     </span>
 </div>
 
@@ -347,37 +345,246 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="delattr-删除对象属性"><a href="#delattr-删除对象属性" class="headerlink" title="delattr() 删除对象属性"></a>delattr() 删除对象属性</h2><p>内置函数 delattr()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">delattr</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="dir-返回对象属性列表"><a href="#dir-返回对象属性列表" class="headerlink" title="dir() 返回对象属性列表"></a>dir() 返回对象属性列表</h2><p>内置函数 dir()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dir</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function delattr in module builtins:
+<pre><code>Help on built-in function dir in module builtins:
 
-delattr(obj, name, /)
-    Deletes the named attribute from the given object.
+dir(...)
+    dir([object]) -&gt; list of strings
 
-    delattr(x, &#39;y&#39;) is equivalent to ``del x.y&#39;&#39;</code></pre>
-<p>实参是一个对象和一个字符串。该字符串必须是对象的某个属性。如果对象允许，该函数将删除指定的属性。<code>delattr(x, &#39;y&#39;)</code> 等价于 <code>del x.y</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    y = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">x = A</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">delattr</span>(x,<span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.y</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-AttributeError                            Traceback (most recent call last)
-
-&lt;ipython-input-12-3552434a3e61&gt; in &lt;module&gt;
-----&gt; 1 x.y
+    If called without an argument, return the names in the current scope.
+    Else, return an alphabetized list of names comprising (some of) the attributes
+    of the given object, and of attributes reachable from it.
+    If the object supplies a method named __dir__, it will be used; otherwise
+    the default dir() logic is used and returns:
+      for a module object: the module&#39;s attributes.
+      for a class object:  its attributes, and recursively the attributes
+        of its bases.
+      for any other object: its attributes, its class&#39;s attributes, and
+        recursively the attributes of its class&#39;s base classes.</code></pre>
+<p>如果没有实参，则返回当前作用域中的名称列表。如果有实参，它会尝试返回该对象的有效属性列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span>()</span><br></pre></td></tr></table></figure>
 
 
-AttributeError: type object &#39;A&#39; has no attribute &#39;y&#39;</code></pre>
+
+
+<pre><code>[&#39;In&#39;,
+ &#39;Out&#39;,
+ &#39;_&#39;,
+ &#39;__&#39;,
+ &#39;___&#39;,
+ &#39;__builtin__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_dh&#39;,
+ &#39;_i&#39;,
+ &#39;_i1&#39;,
+ &#39;_i2&#39;,
+ &#39;_ih&#39;,
+ &#39;_ii&#39;,
+ &#39;_iii&#39;,
+ &#39;_oh&#39;,
+ &#39;exit&#39;,
+ &#39;get_ipython&#39;,
+ &#39;quit&#39;]</code></pre>
+<p>如果对象有一个名为 <code>__dir__()</code> 的方法，那么该方法将被调用，并且必须返回一个属性列表。这允许实现自定义 dir() 来报告它的属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__dir__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&#x27;area&#x27;</span>, <span class="string">&#x27;perimeter&#x27;</span>, <span class="string">&#x27;location&#x27;</span>]</span><br><span class="line">a = A()</span><br><span class="line"><span class="built_in">dir</span>(a)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;area&#39;, &#39;location&#39;, &#39;perimeter&#39;]</code></pre>
+<p>如果对象不提供 <code>__dir__()</code>，默认的 dir() 机制对不同类型的对象行为不同，它会试图返回最相关而不是最全的信息：</p>
+<ul>
+<li>如果对象是模块对象，则列表包含模块的属性名称;</li>
+<li>如果对象是类对象，则列表包含它们的属性名称，并且递归查找所有基类的属性;</li>
+<li>如果对象是实例对象，则列表包含实例的属性名称，它的类的属性名称，并且递归查找它的类的所有基类的属性。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="built_in">dir</span>(string)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;Formatter&#39;,
+ &#39;Template&#39;,
+ &#39;_ChainMap&#39;,
+ &#39;_TemplateMetaclass&#39;,
+ &#39;__all__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_re&#39;,
+ &#39;_string&#39;,
+ &#39;ascii_letters&#39;,
+ &#39;ascii_lowercase&#39;,
+ &#39;ascii_uppercase&#39;,
+ &#39;capwords&#39;,
+ &#39;digits&#39;,
+ &#39;hexdigits&#39;,
+ &#39;octdigits&#39;,
+ &#39;printable&#39;,
+ &#39;punctuation&#39;,
+ &#39;whitespace&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span>(<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;__abs__&#39;,
+ &#39;__add__&#39;,
+ &#39;__and__&#39;,
+ &#39;__bool__&#39;,
+ &#39;__ceil__&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__divmod__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__float__&#39;,
+ &#39;__floor__&#39;,
+ &#39;__floordiv__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__index__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__int__&#39;,
+ &#39;__invert__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lshift__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__neg__&#39;,
+ &#39;__new__&#39;,
+ &#39;__or__&#39;,
+ &#39;__pos__&#39;,
+ &#39;__pow__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__rand__&#39;,
+ &#39;__rdivmod__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rfloordiv__&#39;,
+ &#39;__rlshift__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__ror__&#39;,
+ &#39;__round__&#39;,
+ &#39;__rpow__&#39;,
+ &#39;__rrshift__&#39;,
+ &#39;__rshift__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__rtruediv__&#39;,
+ &#39;__rxor__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__truediv__&#39;,
+ &#39;__trunc__&#39;,
+ &#39;__xor__&#39;,
+ &#39;bit_length&#39;,
+ &#39;conjugate&#39;,
+ &#39;denominator&#39;,
+ &#39;from_bytes&#39;,
+ &#39;imag&#39;,
+ &#39;numerator&#39;,
+ &#39;real&#39;,
+ &#39;to_bytes&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;__abs__&#39;,
+ &#39;__add__&#39;,
+ &#39;__and__&#39;,
+ &#39;__bool__&#39;,
+ &#39;__ceil__&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__divmod__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__float__&#39;,
+ &#39;__floor__&#39;,
+ &#39;__floordiv__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__index__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__int__&#39;,
+ &#39;__invert__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lshift__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__neg__&#39;,
+ &#39;__new__&#39;,
+ &#39;__or__&#39;,
+ &#39;__pos__&#39;,
+ &#39;__pow__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__rand__&#39;,
+ &#39;__rdivmod__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rfloordiv__&#39;,
+ &#39;__rlshift__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__ror__&#39;,
+ &#39;__round__&#39;,
+ &#39;__rpow__&#39;,
+ &#39;__rrshift__&#39;,
+ &#39;__rshift__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__rtruediv__&#39;,
+ &#39;__rxor__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__truediv__&#39;,
+ &#39;__trunc__&#39;,
+ &#39;__xor__&#39;,
+ &#39;bit_length&#39;,
+ &#39;conjugate&#39;,
+ &#39;denominator&#39;,
+ &#39;from_bytes&#39;,
+ &#39;imag&#39;,
+ &#39;numerator&#39;,
+ &#39;real&#39;,
+ &#39;to_bytes&#39;]</code></pre>
 
       
     </div>
@@ -436,9 +643,6 @@ AttributeError: type object &#39;A&#39; has no attribute &#39;y&#39;</code></pre
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -529,7 +733,6 @@ AttributeError: type object &#39;A&#39; has no attribute &#39;y&#39;</code></pre
   
 
   
-
 
 </body>
 </html>

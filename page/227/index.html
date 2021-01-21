@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/09_str.partition-b72b27183ce2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/11_str.splitlines-af5f925aff05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/09_str.partition-b72b27183ce2/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/11_str.splitlines-af5f925aff05/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>475</span>
+      <span>473</span>
     </span>
 </div>
 
@@ -347,39 +345,62 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-partition-拆分"><a href="#str-partition-拆分" class="headerlink" title="str.partition 拆分"></a>str.partition 拆分</h2><p>字符串方法 str.partition()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.partition)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-splitlines-按行拆分"><a href="#str-splitlines-按行拆分" class="headerlink" title="str.splitlines 按行拆分"></a>str.splitlines 按行拆分</h2><p>字符串方法 str.splitlines()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.splitlines)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-partition(self, sep, /)
-    Partition the string into three parts using the given separator.
+splitlines(self, /, keepends=False)
+    Return a list of the lines in the string, breaking at line boundaries.
 
-    This will search for the separator in the string.  If the separator is found,
-    returns a 3-tuple containing the part before the separator, the separator
-    itself, and the part after it.
-
-    If the separator is not found, returns a 3-tuple containing the original string
-    and two empty strings.</code></pre>
-<p>在 sep 首次出现的位置拆分字符串，返回一个 3 元组，其中包含分隔符之前的部分、分隔符本身，以及分隔符之后的部分。如果分隔符未找到，则返回的 3 元组中包含字符本身以及两个空字符串。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.partition(<span class="string">&#x27;m&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;python&#39;, &#39;&#39;, &#39;&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.partition(<span class="string">&#x27;th&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;py&#39;, &#39;th&#39;, &#39;on&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;python&#x27;</span>.partition(<span class="string">&#x27;ht&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    Line breaks are not included in the resulting list unless keepends is given and
+    true.</code></pre>
+<p>返回由原字符串中各行组成的列表，在行边界的位置拆分。结果列表中不包含行边界，除非给出了 keepends 且为真值。</p>
+<p>此方法会以下列行边界进行拆分。特别地，行边界是 universal newlines 的一个超集。</p>
+<ul>
+<li><code>\n</code> 换行</li>
+<li><code>\r</code> 回车</li>
+<li><code>\r\n</code> 回车 + 换行</li>
+<li><code>\v</code> 或 <code>\x0b</code> 行制表符</li>
+<li><code>\f</code> 或 <code>\x0c</code> 换表单</li>
+<li><code>\x1c</code> 文件分隔符</li>
+<li><code>\x1d</code> 组分隔符</li>
+<li><code>\x1e</code> 记录分隔符</li>
+<li><code>\x85</code> 下一行</li>
+<li><code>\u2028</code> 行分隔符</li>
+<li><code>\u2029</code> 段分隔符</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ab c\n\nde fg\rkl\r\n&#x27;</span>.splitlines()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(&#39;python&#39;, &#39;&#39;, &#39;&#39;)</code></pre>
+<pre><code>[&#39;ab c&#39;, &#39;&#39;, &#39;de fg&#39;, &#39;kl&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ab c\n\nde fg\rkl\r\n&#x27;</span>.splitlines(keepends=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;ab c\n&#39;, &#39;\n&#39;, &#39;de fg\r&#39;, &#39;kl\r\n&#39;]</code></pre>
+<p>分隔空字符串此方法将返回一个空列表；末尾的换行不会令结果中增加额外的空字符串:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.splitlines()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;One line\nTwo lines\n&quot;</span>.splitlines()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;One line&#39;, &#39;Two lines&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;One line\nTwo lines\n&#x27;</span>.split(<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;One line&#39;, &#39;Two lines&#39;, &#39;&#39;]</code></pre>
 
       
     </div>
@@ -438,9 +459,6 @@ partition(self, sep, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -531,7 +549,6 @@ partition(self, sep, /)
   
 
   
-
 
 </body>
 </html>

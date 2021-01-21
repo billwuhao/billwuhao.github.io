@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/02_create_module-b0b6e7b9a825/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/05_import_code-ba2a46fd0843/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/15_module/02_create_module-b0b6e7b9a825/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/15_module/05_import_code-ba2a46fd0843/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2k</span>
+      <span>1.8k</span>
     </span>
 </div>
 
@@ -347,68 +345,126 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h2><p>创建一个模块非常简单，有两种方式：</p>
+          <h2 id="导入操作"><a href="#导入操作" class="headerlink" title="导入操作"></a>导入操作</h2><p>导入操作使用 import 语句，详细的语法规则查看 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/10_statement/18_import.ipynb">import 导入语句</a>。</p>
 <ul>
-<li><p>创建一个 <code>.py</code> 文件，即可创建一个模块；</p>
-</li>
-<li><p>创建一个文件夹，则该文件夹也是一个模块（包）。</p>
-</li>
+<li><code>import ...</code> 只能导入模块：</li>
 </ul>
-<p>模块中可以无任何内容。但模块是用来组织代码，实现处理各类问题或完成各种功能的，这更便于应用或开发。例如正则模块 re，科学计算库 pandas 等。</p>
-<p>创建一个文件夹，如果文件夹中包含一个 <code>__init__.py</code> 模块，则该文件夹是一个常规包；否则是一个命名空间包。包中还可以再创建子包或子模块。</p>
-<p><code>__init__.py</code> 文件中可以无任何内容，但因为当一个常规包被导入时，这个 <code>__init__.py</code> 文件会隐式地被执行，所以通常用来写入一些导入包即可执行的代码，或导入子包，或导入子包中模块的属性等，从而可以直接调用某些属性，例如 pandas 包的文档描述属性 <code>__doc__</code> 和 DataFrame 数据结构。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> folder <span class="comment"># 空文件夹</span></span><br><span class="line">folder</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="keyword">as</span> r, pandas.core <span class="keyword">as</span> pc</span><br><span class="line">r, pc</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;module &#39;folder&#39; (namespace)&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">print(pd.__doc__)</span><br></pre></td></tr></table></figure>
+<pre><code>(&lt;module &#39;random&#39; from &#39;F:\\anaconda\\lib\\random.py&#39;&gt;,
+ &lt;module &#39;pandas.core&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入方法报错</span></span><br><span class="line"><span class="keyword">import</span> random.randint</span><br></pre></td></tr></table></figure>
 
 
-<pre><code>pandas - a powerful data analysis and manipulation library for Python
-=====================================================================
+<pre><code>---------------------------------------------------------------------------
 
-**pandas** is a Python package providing fast, flexible, and expressive data
-structures designed to make working with &quot;relational&quot; or &quot;labeled&quot; data both
-easy and intuitive. It aims to be the fundamental high-level building block for
-doing practical, **real world** data analysis in Python. Additionally, it has
-the broader goal of becoming **the most powerful and flexible open source data
-analysis / manipulation tool available in any language**. It is already well on
-its way toward this goal.
+ModuleNotFoundError                       Traceback (most recent call last)
 
-Main Features
--------------
-Here are just a few of the things that pandas does well:
+&lt;ipython-input-2-8d4ecd1fe339&gt; in &lt;module&gt;
+      1 # 导入方法报错
+----&gt; 2 import random.randint
 
-  - Easy handling of missing data in floating point as well as non-floating
-    point data.
-  - Size mutability: columns can be inserted and deleted from DataFrame and
-    higher dimensional objects
-  - Automatic and explicit data alignment: objects can be explicitly aligned
-    to a set of labels, or the user can simply ignore the labels and let
-    `Series`, `DataFrame`, etc. automatically align the data for you in
-    computations.
-  - Powerful, flexible group by functionality to perform split-apply-combine
-    operations on data sets, for both aggregating and transforming data.
-  - Make it easy to convert ragged, differently-indexed data in other Python
-    and NumPy data structures into DataFrame objects.
-  - Intelligent label-based slicing, fancy indexing, and subsetting of large
-    data sets.
-  - Intuitive merging and joining data sets.
-  - Flexible reshaping and pivoting of data sets.
-  - Hierarchical labeling of axes (possible to have multiple labels per tick).
-  - Robust IO tools for loading data from flat files (CSV and delimited),
-    Excel files, databases, and saving/loading data from the ultrafast HDF5
-    format.
-  - Time series-specific functionality: date range generation and frequency
-    conversion, moving window statistics, date shifting and lagging.</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接调用子包 core 中模块 frame 的属性 DataFrame</span></span><br><span class="line">pd.DataFrame</span><br></pre></td></tr></table></figure>
+
+ModuleNotFoundError: No module named &#39;random.randint&#39;; &#39;random&#39; is not a package</code></pre>
+<ul>
+<li><code>from ... import ...</code> 从模块中导入子模块，类，函数等： </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> core</span><br><span class="line">core</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;module &#39;pandas.core&#39; from &#39;F:\\anaconda\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame <span class="keyword">as</span> df</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>pandas.core.frame.DataFrame</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line">randint</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;bound method Random.randint of &lt;random.Random object at 0x000001E44ED52020&gt;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi</span><br><span class="line">pi</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>3.141592653589793</code></pre>
+<ul>
+<li><code>from ... import *</code> 将导入模块中所有的公有属性：</li>
+</ul>
+<p>例如，如果在文件 <code>mycode/__init__.py</code> 中我们定义了属性 <code>__all__</code> ，从包 <code>mycode</code> 导入则只能导入该属性中的名称；在文件 <code>mycode/mycode.py</code> 中，以下划线打头的属性名，从模块 <code>mycode.mycode</code> 导入时都不可导入。</p>
+<p>通常情况下不应使用这个功能，因为它在解释器中引入了一组未知的名称，而它们很可能会覆盖一些你已经定义过的名称。而且会导致代码的可读性很差。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mycode/__init__.py</span></span><br><span class="line">__all__ = [<span class="string">&#x27;mycode&#x27;</span>,<span class="string">&#x27;xue&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mycode/mycode.py</span></span><br><span class="line">_a = <span class="string">&#x27;自学&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__f</span>():</span></span><br><span class="line">    print(_a)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;mycode&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mycode <span class="keyword">import</span> xue</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print(xue.msg)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mycode <span class="keyword">import</span> *</span><br><span class="line">mycode, xue</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&lt;module &#39;mycode.mycode&#39; from &#39;E:\\xue\\脚本\\kp_book\\15_module\\mycode\\mycode.py&#39;&gt;,
+ &lt;module &#39;mycode.xue&#39; from &#39;E:\\xue\\脚本\\kp_book\\15_module\\mycode\\xue.py&#39;&gt;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mycode.mycode <span class="keyword">import</span> *</span><br><span class="line">_a</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-14-e68848edb46a&gt; in &lt;module&gt;
+      1 from mycode.mycode import *
+----&gt; 2 _a
+
+
+NameError: name &#39;_a&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__f</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-15-004321bbfec5&gt; in &lt;module&gt;
+----&gt; 1 __f
+
+
+NameError: name &#39;__f&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其他方式则可以导入</span></span><br><span class="line"><span class="keyword">from</span> mycode.mycode <span class="keyword">import</span> __f</span><br><span class="line">print(__f)</span><br><span class="line"><span class="keyword">del</span> __f</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;function __f at 0x000001E45129B430&gt;</code></pre>
+<ul>
+<li>相对导入：</li>
+</ul>
+<p>存在相对导入代码的模块，通常是不能直接执行的。因为直接执行，解释器认为该模块即为顶级模块，属性 <code>__package__</code> 的值为 None。但可以使用 <code>python -m 模块</code> 命令直接执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__package__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>None</code></pre>
+<p>例如，当前文件路径下，文件 <code>mycode/test.py</code> 中相对导入的代码可以使用 <code>python -m 模块</code> 命令直接执行，因为该命令将属性 <code>__package__</code> 重新设置为顶级模块的名称：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># xue.py 模块在 mycode 包中</span></span><br><span class="line"><span class="comment"># mycode/test.py</span></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> xue</span><br><span class="line">print(xue.msg)</span><br><span class="line">print(__package__)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%run -m mycode.test</span><br></pre></td></tr></table></figure>
+
+<pre><code>自学是门手艺
+mycode</code></pre>
+<p>模块导入之后，即可使用属性表示法调用模块中属性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random, math</span><br><span class="line">random.randint, math.pi</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&lt;bound method Random.randint of &lt;random.Random object at 0x000002811CF98C80&gt;&gt;,
+ 3.141592653589793)</code></pre>
 
       
     </div>
@@ -467,9 +523,6 @@ Here are just a few of the things that pandas does well:
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -560,7 +613,6 @@ Here are just a few of the things that pandas does well:
   
 
   
-
 
 </body>
 </html>

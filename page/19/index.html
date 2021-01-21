@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/01_module_summary-892bae6ca31d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/04_executable_file-c3365f12ffd1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/15_module/01_module_summary-892bae6ca31d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/15_module/04_executable_file-c3365f12ffd1/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2.1k</span>
+      <span>418</span>
     </span>
 </div>
 
@@ -347,111 +345,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="模块概述"><a href="#模块概述" class="headerlink" title="模块概述"></a>模块概述</h2><p>模块是 Python 代码的一种组织单位，也是一种对象。各模块具有独立的命名空间，可包含任意 Python 对象。</p>
-<p>一个 <code>.py</code> 文件是一个模块；一个文件夹是一个模块（包）；文件夹（包）中还可以再有 <code>.py</code> 文件（子模块）和文件夹（子包）。例如 内置模块 random，和第三方包 pandas。</p>
-<p>文件夹中包含一个 <code>__init__.py</code> 文件的包是常规包；无 <code>__init__.py</code> 文件的是命名空间包，仅被用作子包的容器。</p>
-<p>模块无论是用 Python、C 还是别的语言实现均可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random, pandas</span><br><span class="line"><span class="built_in">type</span>(random), <span class="built_in">type</span>(pandas)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(module, module)</code></pre>
-<p>所有包都是模块，但并非所有模块都是包。或者换句话说，包只是一种特殊的模块。</p>
-<p>可以使用属性 <code>__packge__</code> 查看包名，如果只是模块不是包，该属性为空字符串。</p>
-<p><code>__name__</code> 属性是模块的名字。</p>
-<p>特别地，主模块（你正在运行代码的当前模块）的 <code>__packge__</code> 属性总是 None；<code>__name__</code> 属性总是 <code>&#39;__main__&#39;</code> （<code>__main__</code> 是一个在解释器启动时直接初始化的特殊模块），这可以控制当前模块能够执行，而导入到其他模块不能被执行的代码，然后用来测试当前模块。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.__package__, pandas.__package__</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;&#39;, &#39;pandas&#39;)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__package__)</span><br></pre></td></tr></table></figure>
-
-<pre><code>None</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.__name__, pandas.__name__</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#39;random&#39;, &#39;pandas&#39;)</code></pre>
+          <h2 id="可执行文件"><a href="#可执行文件" class="headerlink" title="可执行文件"></a>可执行文件</h2><p>每一个 <code>.py</code> 文件模块，都是 Python 的可执行文件。文件内容可以为空，但执行什么也不发生。</p>
+<p>你可以在某些编辑工具里打开文件执行，也可以在命令行使用 <code>python 文件路径</code> 或 <code>python -m 模块</code> 的方式执行。这些方式都是主模块中直接执行文件。</p>
+<p>主模块（你正在运行代码的当前模块）的 <code>__name__</code> 属性总是 <code>&#39;__main__&#39;</code> （<code>__main__</code> 是一个在解释器启动时直接初始化的特殊模块），因此直接执行文件，<code>if __name__ == &#39;__main__&#39;:</code> 语句下的代码一定会被执行，而如果导入到其他模块则不会。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__name__</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>&#39;__main__&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span> + <span class="number">2</span> - <span class="number">5</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    print(a+<span class="number">1</span>)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 以下代码导入其他模块不会执行</span></span><br><span class="line">    print(a == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>0
-True</code></pre>
-<p>使用 import 语句将其他模块导入当前模块；使用属性表示法调用模块中的属性。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">pd.core</span><br></pre></td></tr></table></figure>
+<p>下面举例说明：</p>
+<p>当前文件路径下，有一个 <code>mycode</code> 的包，包里有 <code>space.py</code>，<code>mycode.py</code> 和 <code>xue.py</code>，三个模块，内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># space.py 为空</span></span><br></pre></td></tr></table></figure>
 
 
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mycode.py</span></span><br><span class="line">print(<span class="string">&#x27;mycode&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mycode <span class="keyword">import</span> xue</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print(xue.msg)</span><br></pre></td></tr></table></figure>
+
+<pre><code>mycode
+自学是门手艺</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># xue.py</span></span><br><span class="line">msg = <span class="string">&#x27;自学是门手艺&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>直接执行效果如上。下面使用命令执行（<code>%run</code> 是 jupyter 的魔法命令，终端请改为 <code>python</code>）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件路径必须带 .py，可以是相对或绝对路径</span></span><br><span class="line">%run mycode/space.py </span><br></pre></td></tr></table></figure>
 
 
-<pre><code>&lt;module &#39;pandas.core&#39; from &#39;C:\\ProgramData\\Anaconda3\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.core.series.Series</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%run mycode/mycode.py</span><br></pre></td></tr></table></figure>
 
+<pre><code>mycode
+自学是门手艺</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings <span class="comment"># 忽略警告</span></span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 模块可以使用属性表示法，但不能有 .py</span></span><br><span class="line">%run -m mycode.mycode </span><br></pre></td></tr></table></figure>
 
+<pre><code>mycode
+自学是门手艺</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入则不会执行 if __name__ == &#x27;__main__&#x27;: 语句下的代码</span></span><br><span class="line"><span class="keyword">import</span> mycode.mycode</span><br></pre></td></tr></table></figure>
 
-
-<pre><code>pandas.core.series.Series</code></pre>
-<p>还可以以脚本的方式执行不属于包的模块（此时 <code>__name__</code> 属性为 <code>&quot;__main__&quot;</code>）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> this</span><br><span class="line">this</span><br></pre></td></tr></table></figure>
-
-<pre><code>The Zen of Python, by Tim Peters
-
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren&#39;t special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you&#39;re Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it&#39;s a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let&#39;s do more of those!
-
-
-
-
-
-&lt;module &#39;this&#39; from &#39;C:\\ProgramData\\Anaconda3\\lib\\this.py&#39;&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># %run 是 jupyter 的魔法命令，在终端使用 python 命令</span></span><br><span class="line"><span class="comment"># F:\anaconda\lib\this.py 根据自己电脑的路径调整</span></span><br><span class="line">%run F:\anaconda\lib\this.py</span><br></pre></td></tr></table></figure>
-
-<pre><code>The Zen of Python, by Tim Peters
-
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren&#39;t special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you&#39;re Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it&#39;s a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
+<pre><code>mycode</code></pre>
 
       
     </div>
@@ -510,9 +438,6 @@ Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -603,7 +528,6 @@ Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/42_next-1bf70953aa15/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/44_oct-1db602c415af/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/42_next-1bf70953aa15/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/44_oct-1db602c415af/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>303</span>
+      <span>195</span>
     </span>
 </div>
 
@@ -347,47 +345,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="next-返回迭代器下一个元素"><a href="#next-返回迭代器下一个元素" class="headerlink" title="next() 返回迭代器下一个元素"></a>next() 返回迭代器下一个元素</h2><p>内置函数 next()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">next</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="oct-整数的八进制形式"><a href="#oct-整数的八进制形式" class="headerlink" title="oct() 整数的八进制形式"></a>oct() 整数的八进制形式</h2><p>内置函数 oct()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">oct</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function next in module builtins:
+<pre><code>Help on built-in function oct in module builtins:
 
-next(...)
-    next(iterator[, default])
+oct(number, /)
+    Return the octal representation of an integer.
 
-    Return the next item from the iterator. If default is given and the iterator
-    is exhausted, it is returned instead of raising StopIteration.</code></pre>
-<p>返回迭代器（iterator）的下一个元素。如果迭代器耗尽，则返回给定的 default，如果没有默认值则触发 StopIteration。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="built_in">iter</span>(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line"><span class="built_in">next</span>(i,<span class="string">&#x27;迭代结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;1&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(i,<span class="string">&#x27;迭代结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    &gt;&gt;&gt; oct(342391)
+    &#39;0o1234567&#39;</code></pre>
+<p>将一个整数转换为八进制整数的字符串形式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">oct</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;2&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(i,<span class="string">&#x27;迭代结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;0o173&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0o173</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;3&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(i,<span class="string">&#x27;迭代结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>123</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">oct</span>(<span class="number">0x12</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;迭代结束&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">next</span>(i,<span class="string">&#x27;迭代结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;0o22&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0x12</span>, <span class="number">0o22</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;迭代结束&#39;</code></pre>
+<pre><code>(18, 18)</code></pre>
 
       
     </div>
@@ -446,9 +438,6 @@ next(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -539,7 +528,6 @@ next(...)
   
 
   
-
 
 </body>
 </html>

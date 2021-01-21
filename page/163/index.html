@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/05_sequence/02_range-53c99923ad4b/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/05_sequence/04_common_operations-d633fd2df6c3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/05_sequence/02_range-53c99923ad4b/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/05_sequence/04_common_operations-d633fd2df6c3/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>393</span>
+      <span>384</span>
     </span>
 </div>
 
@@ -347,61 +345,81 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="range-对象"><a href="#range-对象" class="headerlink" title="range 对象"></a>range 对象</h2><p>range 对象是一个整数等差数列，用内置函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/50_range.ipynb">range()</a> 构造得到，类型是 range：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">range</span>(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+          <h2 id="序列通用操作"><a href="#序列通用操作" class="headerlink" title="序列通用操作"></a>序列通用操作</h2><p>序列类型有许多通用的操作，在各个知识点都有详细的介绍，下面将他们综合起来比较。</p>
+<p>序列类型都可以使用操作符 <code>+</code> 进行拼接，使用 <code>+=</code> 拼接并赋值（range 除外），但对于可变序列类型，使用 <code>+=</code> 是原地修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">print(<span class="built_in">id</span>(a))</span><br><span class="line">a += [<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="built_in">id</span>(a), a</span><br></pre></td></tr></table></figure>
+
+<pre><code>2612604344328
 
 
 
 
-<pre><code>range</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">range</span>(<span class="number">-1</span>,<span class="number">5</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+(2612604344328, [1, 2, 3, 4])</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;12&#x27;</span>+<span class="string">&#x27;34&#x27;</span>, [<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">3</span>,<span class="number">4</span>], (<span class="number">1</span>,<span class="number">2</span>)+(<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>range(-1, 5, 2)</code></pre>
-<p>range 通常用于在 for 循环中循环指定的次数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    print(<span class="string">&#x27;重要的事情说三遍&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>重要的事情说三遍
-重要的事情说三遍
-重要的事情说三遍</code></pre>
-<p>range 对象可以指定起始值（默认 0），结束值（不包含），和等差数列的公差（默认 1）。</p>
-<p>指定一个大于 0 的值则默认从 0 开始，公差为 1，到指定值之前一个整数结束：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;1234&#39;, [1, 2, 3, 4], (1, 2, 3, 4))</code></pre>
+<p>序列类型都可以使用操作符 <code>*</code> 进行重复并拼接，使用 <code>*=</code> 拼接并赋值（range 除外），但对于可变序列类型，使用 <code>*=</code> 是原地修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;1&#x27;</span>*<span class="number">2</span>, <span class="number">2</span>*[<span class="number">1</span>], (<span class="number">1</span>,)*<span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[0, 1, 2, 3, 4]</code></pre>
-<p>因为公差默认为 1，指定一个小于等于 0 的值则得到空 range：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">-5</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;11&#39;, [1, 1], (1, 1))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>]</span><br><span class="line">print(<span class="built_in">id</span>(a))</span><br><span class="line">a *= <span class="number">2</span></span><br><span class="line"><span class="built_in">id</span>(a), a</span><br></pre></td></tr></table></figure>
+
+<pre><code>2612603190024
 
 
 
 
-<pre><code>[]</code></pre>
-<p>起始值，结束值，公差都指定，则得到相应等差数列：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+(2612603190024, [1, 1])</code></pre>
+<p>序列类型都可以使用 <code>*</code> 进行拆包，拆包之后需要包含在列表，元组，集合中，或用于函数传参：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[*(<span class="number">1</span>,<span class="number">2</span>)], (*[<span class="number">1</span>,<span class="number">2</span>],), &#123;*<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">3</span>)&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, 2, 3, 4]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">-5</span>,<span class="number">-1</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>([1, 2], (1, 2), &#123;1, 2&#125;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(*<span class="string">&#x27;123&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1 2 3</code></pre>
+<p>序列类型都可以使用索引或切片操作取值，但对于可变序列类型，还可以使用索引或切片操作进行内容的增、删、改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;1234&#x27;</span></span><br><span class="line">b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">c = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">d = <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">a[<span class="number">0</span>], b[<span class="number">0</span>], c[<span class="number">0</span>], d[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, 0, -1, -2, -3, -4]</code></pre>
-<p>range 类型相比常规 list 或 tuple，优势在于一个 range 对象总是占用固定的（较小）内存，不论其所表示的范围有多大。因为 range 类型只保存了 start, stop 和 step 值，并会根据需要计算具体单项或子范围的值。</p>
-<p>除了拆包可以使用操作符<code>*</code>，range 对象不可以像列表，元组等一样，使用 <code>+</code>，<code>*</code>，<code>+=</code>，<code>*=</code>进行拼接或重复：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(*<span class="built_in">range</span>(<span class="number">3</span>),)</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;1&#39;, 1, 1, 1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">1</span>:<span class="number">3</span>], b[<span class="number">1</span>:<span class="number">3</span>], c[<span class="number">1</span>:<span class="number">3</span>], d[<span class="number">1</span>:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(0, 1, 2)</code></pre>
+<pre><code>(&#39;23&#39;, [2, 3], (2, 3), range(2, 4))</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b[<span class="number">1</span>:<span class="number">3</span>] = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 4]</code></pre>
+<p>序列类型都有方法 index 和 count，但字符串和字节串的 count 方法可以指定范围（具体详见各知识点的方法）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;1234&#x27;</span>.index(<span class="string">&#x27;23&#x27;</span>),\</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].index(<span class="number">2</span>),\</span><br><span class="line"><span class="built_in">range</span>(<span class="number">1</span>,<span class="number">4</span>).index(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1, 1, 1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;1231&#x27;</span>.count(<span class="string">&#x27;1&#x27;</span>,<span class="number">1</span>,<span class="number">3</span>),\</span><br><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>).count(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(0, 2)</code></pre>
 
       
     </div>
@@ -460,9 +478,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -553,7 +568,6 @@
   
 
   
-
 
 </body>
 </html>

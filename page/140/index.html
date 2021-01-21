@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/03_dict.values-1290030db908/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/05_dict.get-626864b9ba1d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/07_dictionary/03_dict.values-1290030db908/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/07_dictionary/05_dict.get-626864b9ba1d/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>205</span>
+      <span>204</span>
     </span>
 </div>
 
@@ -347,30 +345,29 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="dict-values-值视图"><a href="#dict-values-值视图" class="headerlink" title="dict.values 值视图"></a>dict.values 值视图</h2><p>字典方法 dict.values()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.values)</span><br></pre></td></tr></table></figure>
+          <h2 id="dict-get-获取某个键的值"><a href="#dict-get-获取某个键的值" class="headerlink" title="dict.get 获取某个键的值"></a>dict.get 获取某个键的值</h2><p>字典方法 dict.get()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.get)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-values(...)
-    D.values() -&gt; an object providing a view on D&#39;s values</code></pre>
-<p>返回由字典的值组成的动态视图。字典的视图支持成员检测，可以被迭代。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d_view = d.values()</span><br><span class="line">print(d_view)</span><br><span class="line">d[<span class="string">&#x27;c&#x27;</span>] = <span class="number">3</span> <span class="comment"># 添加元素，视图也动态变化</span></span><br><span class="line">print(d_view)</span><br></pre></td></tr></table></figure>
-
-<pre><code>dict_values([1, 2])
-dict_values([1, 2, 3])</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">in</span> d_view</span><br></pre></td></tr></table></figure>
+get(self, key, default=None, /)
+    Return the value for key if key is in the dictionary, else default.</code></pre>
+<p>获取字典的项目，如果 key 存在于字典中则返回 key 的值，否则返回 default 指定的值，默认为 None。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.get(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> d_view]</span><br></pre></td></tr></table></figure>
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(d.get(<span class="string">&#x27;c&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>None</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.get(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, 2, 3]</code></pre>
+<pre><code>3</code></pre>
 
       
     </div>
@@ -429,9 +426,6 @@ dict_values([1, 2, 3])</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -522,7 +516,6 @@ dict_values([1, 2, 3])</code></pre>
   
 
   
-
 
 </body>
 </html>

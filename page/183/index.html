@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/01_list-bf66bd9d5d93/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/03_list_indexes_and_slices-7ea73d16e47d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/03_list/01_list-bf66bd9d5d93/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/03_list/03_list_indexes_and_slices-7ea73d16e47d/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>243</span>
+      <span>623</span>
     </span>
 </div>
 
@@ -347,72 +345,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="列表概述"><a href="#列表概述" class="headerlink" title="列表概述"></a>列表概述</h2><p>列表对象 list 是高级数据结构的一种，通过方括号括起、逗号分隔的一组值得到。类型是 list。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+          <h2 id="列表的索引和切片"><a href="#列表的索引和切片" class="headerlink" title="列表的索引和切片"></a>列表的索引和切片</h2><p>列表是序列类型中的可变类型，它的索引和切片操作，和通用的序列操作比较，有许多不一样的地方，主要体现在利用索引和切片对列表元素进行增、删、改。</p>
+<p>索引和切片是序列类型通用操作，详细的规则和用法，见<a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/05_sequence/03_index_slice.ipynb">序列索引和切片</a>。</p>
+<p>列表可以利用索引替换某一个元素：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">_list[<span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">_list</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>list</code></pre>
-<p>列表是可变序列，通常用于存放同类项目的集合。但没做限制，可以存放任意对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="string">&#x27;a&#x27;</span>,<span class="built_in">int</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>[1, 0, 3]</code></pre>
+<p>利用切片将切片中的元素替换为可迭代对象中的元素：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">_list[<span class="number">1</span>:<span class="number">3</span>] = <span class="string">&#x27;123&#x27;</span></span><br><span class="line">_list</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, &#39;a&#39;, int]</code></pre>
-<p>列表是可变的，分别创建两个值相同的列表，一定是不同的对象；而同一个列表对象中的元素是可以改变的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = [<span class="number">1</span>,<span class="number">2</span>], [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">a == b</span><br></pre></td></tr></table></figure>
+<pre><code>[1, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 该替换,切片长度和可迭代对象长度必须相等</span></span><br><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">_list[<span class="number">1</span>:<span class="number">5</span>:<span class="number">2</span>] = <span class="string">&#x27;24&#x27;</span></span><br><span class="line">_list</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">id</span>(a), <span class="built_in">id</span>(b)</span><br></pre></td></tr></table></figure>
+<pre><code>[1, &#39;2&#39;, 3, &#39;4&#39;, 5]</code></pre>
+<p>需要注意，替换并没有改变原来的列表对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list_1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">print(<span class="built_in">id</span>(list_1),list_1)</span><br><span class="line">list_1[<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line">print(<span class="built_in">id</span>(list_1),list_1)</span><br><span class="line">list_1[:] = <span class="built_in">range</span>(<span class="number">5</span>)</span><br><span class="line">print(<span class="built_in">id</span>(list_1),list_1)</span><br><span class="line">list_1[::<span class="number">2</span>] = (<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">print(<span class="built_in">id</span>(list_1),list_1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>2065281773704 [1, 2, 3]
+2065281773704 [1, 2, 0]
+2065281773704 [0, 1, 2, 3, 4]
+2065281773704 [&#39;a&#39;, 1, &#39;b&#39;, 3, &#39;c&#39;]</code></pre>
+<p>可以利用切片在列表中任意位置插入数据片段：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment"># 在前面插入两个 0</span></span><br><span class="line">_list[:<span class="number">0</span>] = (<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">print(_list)</span><br><span class="line"><span class="comment"># 在索引为 2 的元素前面插入 &#x27;a&#x27;,&#x27;b&#x27;</span></span><br><span class="line">_list[<span class="number">2</span>:<span class="number">2</span>] = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">_list</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0, 0, 1, 2, 3]
 
 
 
 
-<pre><code>(2004948061384, 2004947934152)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">0</span>] = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">a, <span class="built_in">id</span>(a)</span><br></pre></td></tr></table></figure>
 
+[0, 0, &#39;a&#39;, &#39;b&#39;, 1, 2, 3]</code></pre>
+<p>列由切片浅拷贝列表，生成新的列表，但列表中有可变对象时，新列表中的可变对象和对应的原来列表中的可变对象是同一个对象的多次引用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">list_1 = [[<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">list_2 = list_1[:]</span><br><span class="line">print(<span class="string">&#x27;原列表：&#x27;</span>,<span class="built_in">id</span>(list_1),<span class="string">&#x27;新列表：&#x27;</span>,<span class="built_in">id</span>(list_2))</span><br><span class="line">print(<span class="string">&#x27;原列表中的可变对象：&#x27;</span>,</span><br><span class="line">      <span class="built_in">id</span>(list_1[<span class="number">0</span>]),</span><br><span class="line">      <span class="string">&#x27;\n新列表中对应的可变对象：&#x27;</span>,<span class="built_in">id</span>(list_2[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
 
+<pre><code>原列表： 2065281774536 新列表： 2065281774664
+原列表中的可变对象： 2065281383112 
+新列表中对应的可变对象： 2065281383112</code></pre>
+<p>改变其中一个，都会跟着改变。需要注意区分修改列表中元素的元素，和修改列表元素的区别：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list_1[<span class="number">0</span>][<span class="number">0</span>] = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">print(list_1, list_2)</span><br><span class="line">list_1[<span class="number">0</span>] = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">print(list_1, list_2)</span><br></pre></td></tr></table></figure>
 
-
-<pre><code>([&#39;a&#39;, 2], 2004948061384)</code></pre>
-<p>列表创建方法有：直接用一对方括号表示；<a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/03_list/02_list_comprehension.ipynb">列表推导式</a>；或使用内建函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/37_list.ipynbb">list()</a>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[], [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>([], [1, 2])</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[0, 1, 2]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="string">&#x27;abc&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
-<p>列表的所有切片都将得到一个新列表，这意味着以下切片操作会返回列表的一个浅拷贝:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list_1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list_2 = list_1[:]</span><br><span class="line"><span class="built_in">id</span>(list_1), <span class="built_in">id</span>(list_2)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(2004947038600, 2004948064968)</code></pre>
-<p>然而，列表可以利用切片改变自身的内容，列表仍然是原来的列表：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list_1[:] = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line">list_1, <span class="built_in">id</span>(list_1)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], 2004947038600)</code></pre>
+<pre><code>[[&#39;a&#39;, 2], 3, 4] [[&#39;a&#39;, 2], 3, 4]
+[&#39;a&#39;, 3, 4] [[&#39;a&#39;, 2], 3, 4]</code></pre>
 
       
     </div>
@@ -471,9 +453,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -564,7 +543,6 @@
   
 
   
-
 
 </body>
 </html>

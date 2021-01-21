@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/03_instance-ac3088450ffc/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/05_name-ef1a09230831/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/16_class/03_instance-ac3088450ffc/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/16_class/05_name-ef1a09230831/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>302</span>
+      <span>2.5k</span>
     </span>
 </div>
 
@@ -347,73 +345,213 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>实例是调用类对象创建的具体对象。例如调用内置类型 int，创建的所有整数，都是 int 类的实例。可通过内置函数 isinstance() 进行实例检查。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p>名称（标识符）用于指代对象。当名称被绑定到一个对象时，对该名称求值将返回相应对象。当名称未被绑定时，尝试对其求值将引发 NameError 异常。Python 的保留字或称关键字是特殊的名称，不可被用作普通名称，例如函数名，模块名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 1 绑定名称 a</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>,<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将自定义类对象绑定到名称 A</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>__main__.A</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将模块 random 绑定到名称 r</span></span><br><span class="line"><span class="keyword">import</span> random <span class="keyword">as</span> r</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;module &#39;random&#39; from &#39;F:\\anaconda\\lib\\random.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 迭代的每一项循环绑定到名称 i</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&#x27;xue&#x27;</span>:</span><br><span class="line">    display(i)</span><br><span class="line"></span><br><span class="line">i</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>&#39;x&#39;
+
+
+
+&#39;u&#39;
+
+
+
+&#39;e&#39;
+
+
+
+
+
+&#39;e&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 未绑定的名称 m</span></span><br><span class="line">m</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-4-2469ef96c490&gt; in &lt;module&gt;
+      1 # 未绑定的名称 m
+----&gt; 2 m
+
+
+NameError: name &#39;m&#39; is not defined</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="string">&#x27;keywords&#x27;</span>) <span class="comment"># 保留字</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 </code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">False</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>  File &quot;&lt;ipython-input-9-223dbc74e028&gt;&quot;, line 1
+    False = 0
+    ^
+SyntaxError: cannot assign to False</code></pre>
+<p>检查一个名称是否有效可用字符串方法 str.isidentifier()：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;for&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<p>Python 中所有的实例对象，都是 object 的实例。所有的类都是 object 的子类，也被视为 object 的实例；所有的类也被视为默认的元类（创建类的类）type 的实例。</p>
-<p>如果一个实例对象应该视为某个类的实例，可以通过魔法方法 <code>__instancecheck__()</code> 来重载 isinstance() 函数，自定义实例检查行为。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="number">1</span>,<span class="built_in">object</span>), <span class="built_in">isinstance</span>([],<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(True, True)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">int</span>,<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;my_name&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(<span class="built_in">int</span>,<span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;函数&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<p>下面定义一个 “人” 类，来对实例进行说明：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="string">&#x27;这是人类&#x27;</span></span><br><span class="line">    <span class="comment"># 定义人的属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.ears = <span class="string">&#x27;耳朵&#x27;</span></span><br><span class="line">        self.brain = <span class="string">&#x27;大脑&#x27;</span></span><br><span class="line">        self.hands = <span class="string">&#x27;双手&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 人有生活</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">live</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span>用<span class="subst">&#123;self.ears&#125;</span>&#x27;</span></span><br><span class="line">              <span class="string">&#x27;听着音乐，&#x27;</span></span><br><span class="line">              <span class="string">&#x27;享受美好生活。&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 还有工作</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">work</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span>用<span class="subst">&#123;self.brain&#125;</span>和&#x27;</span></span><br><span class="line">              <span class="string">f&#x27;<span class="subst">&#123;self.hands&#125;</span>&#x27;</span></span><br><span class="line">               <span class="string">&#x27;勤劳致富。&#x27;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 造人</span></span><br><span class="line">xm = Person(<span class="string">&#x27;小明&#x27;</span>)</span><br><span class="line">xz = Person(<span class="string">&#x27;小张&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>上述 “人” 类对象 Person 是类对象，调用类对象创建的 xm 和 xz，是两个具体的 “人”，是实例对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>__main__.Person</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xm</span><br></pre></td></tr></table></figure>
+<p>普通名称命名规则：</p>
+<ul>
+<li>可以使用大部分非标点符号的 Unicode 字符，但请使用 ASCII 范围内 (U+0001..U+007F) 的字符；</li>
+<li>习惯使用大写和小写字母 A 至 Z，下划线 _ 以及数字 0 至 9，但不可以数字打头；</li>
+<li>长度没有限制，对大小写敏感。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数字一 = <span class="number">1</span></span><br><span class="line">数字一</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;__main__.Person at 0x24cf9ef6d68&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xz</span><br></pre></td></tr></table></figure>
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">函数</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;__main__.Person at 0x24cf9ef6d30&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(xm, Person), <span class="built_in">isinstance</span>(xz, Person)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;function __main__.函数()&gt;</code></pre>
+<p>命名模式以下划线字符打头和结尾，有特殊含义的名称（<code>*</code> 代表任意数量可用名称字符）:</p>
+<ul>
+<li><p><code>_*</code> 不会被 <code>from module import *</code> 导入。特殊标识符 <code>_</code> 在交互式解释器中被用来存放最近一次求值结果；它保存在 builtins 模块中。当不处于交互模式时，<code>_</code> 无特殊含义也没有预定义。</p>
+</li>
+<li><p><code>__*__</code> 系统定义的名称，这些名称是由解释器及其实现（包括标准库）定义的特殊属性和方法名称。未来的 Python 版本中还将定义更多此类名称。任何情况下任何不遵循文档所显式指明的 <code>__*__</code> 名称使用方式都可能导致无警告的错误。</p>
+</li>
+<li><p><code>__*</code> 类的私有名称。这种名称在类定义中使用时，会以一种混合形式重写以避免在基类及派生类的 “私有” 属性之间出现名称冲突。例如，出现在一个名为 <code>Ham</code> 的类中的名称 <code>__spam</code> 会被转换为 <code>_Ham__spam</code>。如果类名仅由下划线组成，则不会进行转换。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">100</span></span><br><span class="line">b</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(True, True)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isinstance</span>(Person, <span class="built_in">object</span>), <span class="built_in">isinstance</span>(Person, <span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>100</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(True, True)</code></pre>
+<pre><code>100</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span>(<span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">    __b = <span class="number">0</span></span><br><span class="line"><span class="built_in">dir</span>(B)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;_B__b&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;]</code></pre>
+<p>del 语句可删除名称绑定：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">3</span></span><br><span class="line">print(<span class="string">f&#x27;c=<span class="subst">&#123;c&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="keyword">del</span> c</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
+
+<pre><code>c=3
+
+
+
+---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-23-5ba97d2f3254&gt; in &lt;module&gt;
+      2 print(f&#39;c=&#123;c&#125;&#39;)
+      3 del c
+----&gt; 4 c
+
+
+NameError: name &#39;c&#39; is not defined</code></pre>
 
       
     </div>
@@ -472,9 +610,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -565,7 +700,6 @@
   
 
   
-
 
 </body>
 </html>

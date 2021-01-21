@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/55_setattr-5b051fe155ba/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/57_sorted-9cd59184cf14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/55_setattr-5b051fe155ba/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/57_sorted-9cd59184cf14/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>288</span>
+      <span>531</span>
     </span>
 </div>
 
@@ -347,46 +345,45 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="setattr-设置或新增属性"><a href="#setattr-设置或新增属性" class="headerlink" title="setattr() 设置或新增属性"></a>setattr() 设置或新增属性</h2><p>内置函数 setattr()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">setattr</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="sorted-返回排序列表"><a href="#sorted-返回排序列表" class="headerlink" title="sorted() 返回排序列表"></a>sorted() 返回排序列表</h2><p>内置函数 sorted()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">sorted</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function setattr in module builtins:
+<pre><code>Help on built-in function sorted in module builtins:
 
-setattr(obj, name, value, /)
-    Sets the named attribute on the given object to the specified value.
+sorted(iterable, /, *, key=None, reverse=False)
+    Return a new list containing all items from the iterable in ascending order.
 
-    setattr(x, &#39;y&#39;, v) is equivalent to ``x.y = v&#39;&#39;</code></pre>
-<p>参数为一个对象、一个字符串和一个任意值。字符串指定一个现有属性或者新增属性。函数会将值赋给该属性，只要对象允许这种操作。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    y = <span class="number">1</span></span><br><span class="line">x = A()</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为实例 x 新增属性</span></span><br><span class="line"><span class="built_in">setattr</span>(x, <span class="string">&#x27;y&#x27;</span>, <span class="number">10</span>)</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>10</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.y</span><br></pre></td></tr></table></figure>
+    A custom key function can be supplied to customize the sort order, and the
+    reverse flag can be set to request the result in descending order.</code></pre>
+<p>根据 iterable 中的项返回一个新的已排序列表。</p>
+<p>具有两个可选参数，它们都必须指定为关键字参数。</p>
+<p>key 指定带有单个参数的函数，应用于 iterable 中的每个元素，将计算结果用来对原 iterable 排序。默认值为 None (直接比较)。</p>
+<p>reverse 为一个布尔值。如果设为 True，则每个列表元素将按反向顺序比较进行排序。</p>
+<p>sorted() 排序确保是稳定的。如果一个排序确保不会改变比较结果相等的元素的相对顺序就称其为稳定的 — 这有利于进行多重排序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>(&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;a&#x27;</span>:<span class="number">3</span>,<span class="string">&#x27;c&#x27;</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改类 A 的 y 属性</span></span><br><span class="line"><span class="built_in">setattr</span>(A, <span class="string">&#x27;y&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">A.y</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = [&#123;<span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>&#125;,&#123;<span class="string">&#x27;age&#x27;</span>:<span class="number">30</span>&#125;,&#123;<span class="string">&#x27;age&#x27;</span>:<span class="number">26</span>&#125;]</span><br><span class="line"><span class="built_in">sorted</span>(d,key=<span class="keyword">lambda</span> x:x[<span class="string">&#x27;age&#x27;</span>])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>100</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.y</span><br></pre></td></tr></table></figure>
+<pre><code>[&#123;&#39;age&#39;: 18&#125;, &#123;&#39;age&#39;: 26&#125;, &#123;&#39;age&#39;: 30&#125;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>([<span class="number">1.5</span>,<span class="string">&#x27;2.0&#x27;</span>,<span class="string">&#x27;1.5&#x27;</span>,<span class="number">3.14</span>], key=<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>10</code></pre>
+<pre><code>[1.5, &#39;1.5&#39;, &#39;2.0&#39;, 3.14]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>(<span class="string">&#x27;3123&#x27;</span>, reverse=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;3&#39;, &#39;3&#39;, &#39;2&#39;, &#39;1&#39;]</code></pre>
 
       
     </div>
@@ -445,9 +442,6 @@ setattr(obj, name, value, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -538,7 +532,6 @@ setattr(obj, name, value, /)
   
 
   
-
 
 </body>
 </html>

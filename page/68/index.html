@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/34_issubclass-c50b56922b48/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/36_len-5ebab417e525/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/34_issubclass-c50b56922b48/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/36_len-5ebab417e525/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>668</span>
+      <span>213</span>
     </span>
 </div>
 
@@ -347,49 +345,44 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="issubclass-是给定类的子类吗？"><a href="#issubclass-是给定类的子类吗？" class="headerlink" title="issubclass() 是给定类的子类吗？"></a>issubclass() 是给定类的子类吗？</h2><p>内置函数 issubclass()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">issubclass</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="len-返回元素个数"><a href="#len-返回元素个数" class="headerlink" title="len() 返回元素个数"></a>len() 返回元素个数</h2><p>内置函数 len()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">len</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function issubclass in module builtins:
+<pre><code>Help on built-in function len in module builtins:
 
-issubclass(cls, class_or_tuple, /)
-    Return whether &#39;cls&#39; is a derived from another class or is the same class.
-
-    A tuple, as in ``issubclass(x, (A, B, ...))``, may be given as the target to
-    check against. This is equivalent to ``issubclass(x, A) or issubclass(x, B)
-    or ...`` etc.</code></pre>
-<p>如果类 cls 是给定类的 (直接、间接或虚拟) 子类则返回 True，不是则返回 False。给定的不是类则引发 TypeError 异常。</p>
-<p>给定类可以以元组形式传参，cls 是其中任何一个类的子类就返回 True。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">issubclass</span>(<span class="number">1</span>, <span class="built_in">int</span>) <span class="comment"># 1 不是类</span></span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-2-257e7a8dbb04&gt; in &lt;module&gt;
-----&gt; 1 issubclass(1, int)
-
-
-TypeError: issubclass() arg 1 must be a class</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">issubclass</span>(<span class="built_in">bool</span>, <span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
+len(obj, /)
+    Return the number of items in a container.</code></pre>
+<p>返回对象的长度（元素个数）。实参可以是序列（如 str、bytes、tuple、list 或 range 等的实例），集合（set 或 frozenset 的实例），或字典（dict 的实例）等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(<span class="string">&#x27;123&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">issubclass</span>(<span class="built_in">bool</span>, (<span class="built_in">set</span>, <span class="built_in">str</span>, <span class="built_in">list</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(<span class="string">&#x27;嗨&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有的类都是 object 的子类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span><span class="keyword">pass</span></span><br><span class="line"><span class="built_in">issubclass</span>(A, <span class="built_in">object</span>),\</span><br><span class="line"><span class="built_in">issubclass</span>(<span class="built_in">str</span>, <span class="built_in">object</span>),\</span><br><span class="line"><span class="built_in">issubclass</span>(<span class="built_in">object</span>, <span class="built_in">object</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(<span class="string">&#x27;嗨&#x27;</span>.encode())</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(True, True, True)</code></pre>
+<pre><code>3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>3</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2</code></pre>
 
       
     </div>
@@ -448,9 +441,6 @@ TypeError: issubclass() arg 1 must be a class</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -541,7 +531,6 @@ TypeError: issubclass() arg 1 must be a class</code></pre>
   
 
   
-
 
 </body>
 </html>

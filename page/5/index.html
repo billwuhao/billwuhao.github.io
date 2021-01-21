@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/11_create_instance-fca67d2bbd4b/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/16_class/13_method_operation-cba4485cf5b7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/16_class/11_create_instance-fca67d2bbd4b/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/16_class/13_method_operation-cba4485cf5b7/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:13" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:13+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:50" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:50+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:42" itemprop="dateModified" datetime="2021-01-03T00:11:42+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:43" itemprop="dateModified" datetime="2021-01-03T00:11:43+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>348</span>
+      <span>358</span>
     </span>
 </div>
 
@@ -347,63 +345,59 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><p>直接调用类对象，即可创建该类的实例对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>() <span class="comment"># 调用 int 类</span></span><br></pre></td></tr></table></figure>
+          <h2 id="方法操作"><a href="#方法操作" class="headerlink" title="方法操作"></a>方法操作</h2><p>一个从父类继承过来的方法，如果不满足子类的需求，可以进行重写，重写的方法将屏蔽父类的方法，但可以显示地调用，或使用 super() 委托给父类调用，实现父类、子类的方法都可调用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self,x</span>):</span></span><br><span class="line">        y = x + x</span><br><span class="line">        print(y)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self,x</span>):</span></span><br><span class="line">        y = (x + x)**<span class="number">2</span> </span><br><span class="line">        print(y)</span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>16</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示地调用</span></span><br><span class="line">A.f(b, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>4</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self,x</span>):</span></span><br><span class="line">        y = x + x</span><br><span class="line">        print(y)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self,x</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().f(x)</span><br><span class="line">        y = (x + x)**<span class="number">2</span> </span><br><span class="line">        print(y)</span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>4
+16</code></pre>
+<p>还可使用装饰器修改方法，或添加丰富功能等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将方法定义为静态方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">value</span>):</span></span><br><span class="line">        print(value)</span><br><span class="line">c = C()</span><br><span class="line">c.f(<span class="string">&#x27;必须传参调用&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>必须传参调用</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将私有属性定义为只读，</span></span><br><span class="line"><span class="comment"># 直接用不带下划线的名称访问</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__name = <span class="string">&#x27;私有属性&#x27;</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.__name</span><br><span class="line">c = C()</span><br><span class="line">c.name</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="string">&#x27;123&#x27;</span>) <span class="comment"># 传参调用 list 类</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line">    </span><br><span class="line">A(<span class="string">&#x27;实例1&#x27;</span>), A(<span class="string">&#x27;实例2&#x27;</span>) <span class="comment"># 调用自定义类</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(实例1, 实例2)</code></pre>
-<p>实例对象是由特殊方法 <code>__new__()</code> 创建，<code>__init__()</code> 定制完成。两个方法是隐式地完成创建和定制的，当然也可以显式地创建并定制。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.name = <span class="string">&#x27;实例&#x27;</span></span><br><span class="line">        </span><br><span class="line">A <span class="comment"># 类对象 A</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>__main__.A</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显式地创建类 A 的一个实例 a</span></span><br><span class="line">a = <span class="built_in">object</span>.__new__(A)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&lt;__main__.A at 0x20d23e95d30&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 未初始化，无属性</span></span><br><span class="line">a.name</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;私有属性&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 尝试修改不被允许</span></span><br><span class="line">c.name = <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
 
 <pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
 
-&lt;ipython-input-36-b3a4d04d98fc&gt; in &lt;module&gt;
-      1 # 未初始化，无属性
-----&gt; 2 a.name
+&lt;ipython-input-11-c0f354f546f5&gt; in &lt;module&gt;
+      1 # 尝试修改不被允许
+----&gt; 2 c.name = 0
 
 
-AttributeError: &#39;A&#39; object has no attribute &#39;name&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 也可以使用 a.__init__(), </span></span><br><span class="line"><span class="comment"># 它会自动将实例作为第一个参数完成初始化</span></span><br><span class="line">A.__init__(a)</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&lt;__main__.A at 0x20d23e95d30&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.name</span><br></pre></td></tr></table></figure>
+AttributeError: can&#39;t set attribute</code></pre>
+<p>用特殊方法定制类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">d = D()</span><br><span class="line"><span class="built_in">bool</span>(d)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;实例&#39;</code></pre>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 上述类的实例逻辑值检查为 True</span></span><br><span class="line"><span class="comment"># 定义为 False</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__bool__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">d = D()</span><br><span class="line"><span class="built_in">bool</span>(d)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 让数字字符串也可以相减</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mystr</span>(<span class="params"><span class="built_in">str</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__sub__</span>(<span class="params">self, other</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">float</span>(self) - <span class="built_in">float</span>(other))</span><br><span class="line">m = Mystr(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line">n = Mystr(<span class="string">&#x27;3.14&#x27;</span>)</span><br><span class="line">m, n, m - n</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;123&#39;, &#39;3.14&#39;, &#39;119.86&#39;)</code></pre>
 
       
     </div>
@@ -462,9 +456,6 @@ AttributeError: &#39;A&#39; object has no attribute &#39;name&#39;</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -555,7 +546,6 @@ AttributeError: &#39;A&#39; object has no attribute &#39;name&#39;</code></pre>
   
 
   
-
 
 </body>
 </html>

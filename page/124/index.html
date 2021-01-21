@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/09_operator/02_compare-ea4ee718e332/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/09_operator/04_special-c20014a80160/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/09_operator/02_compare-ea4ee718e332/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/09_operator/04_special-c20014a80160/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:34" itemprop="dateModified" datetime="2021-01-03T00:11:34+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:35" itemprop="dateModified" datetime="2021-01-03T00:11:35+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>1.8k</span>
+      <span>372</span>
     </span>
 </div>
 
@@ -347,195 +345,42 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><p>比较运算符有 <code>&lt;</code>，<code>&gt;</code>，<code>&lt;=</code>，<code>&gt;=</code>，<code>==</code>，<code>!=</code>，<code>in</code>，<code>not in</code>，<code>is</code>，<code>is not</code>。</p>
-<p>运算符 <code>&lt;</code>，<code>&gt;</code>，<code>&gt;=</code>，<code>&lt;=</code>，<code>==</code> 和 <code>!=</code> 比较两个对象的值，<code>&lt;</code>，<code>&gt;</code>，<code>&gt;=</code> 和 <code>&lt;=</code> 称为次序比较；<code>==</code> 和 <code>!=</code> 称为一致性比较。</p>
-<p>由于所有类型都是 object 的（直接或间接）子类型，它们都从 object 继承了默认的比较行为，一致性比较是默认的比较行为，因此可在任何对象之间进行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">False</span> == <span class="number">0</span> != <span class="string">&#x27;a&#x27;</span> != <span class="built_in">int</span> != &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<p>对象的值在 Python 中是一个相当抽象的概念：</p>
+          <h2 id="操作符特殊用法"><a href="#操作符特殊用法" class="headerlink" title="操作符特殊用法"></a>操作符特殊用法</h2><p>容器类的内置类型，通常对操作符定义了自己特有的的操作行为。</p>
 <ul>
-<li>对象的值并没有一个规范的访问方法；</li>
-<li>对象的值并不要求具有特定的构建方式，例如由其全部数据属性组成等；</li>
-<li>比较运算符实现了一个特定的对象的值概念，可以认为正是通过实现对象比较，间接地定义了对象的值。</li>
+<li><code>*</code> 操作符，除了数字运算的 乘，还可以用来将可迭代对象拆包。拆包之后置于元组，列表，集合中，或作为参数传递给函数：</li>
 </ul>
-<p>主要内置类型的比较行为：</p>
-<p>1，数字类型内部可跨类型比较，按数学（算法）规则正确进行比较且不会有精度损失。但复数不支持次序比较。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">True</span> == <span class="number">1</span> == <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;*&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.14</span> &lt; <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&#39;a&#39;, &#39;b&#39;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(*<span class="string">&#x27;abc&#x27;</span>, sep=<span class="string">&#x27;-&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
+<pre><code>a-b-c</code></pre>
+<ul>
+<li><code>+</code>，<code>+=</code>，<code>*</code>，<code>*=</code> 可用来对序列类型进行拼接，重复拼接或拼接并赋值（range 类型除外）。由于列表是可变对象，<code>+=</code> 和 <code>*=</code> 在操作列表时，是用来更新列表。具体详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/03_list/04_list_operator.ipynb">列表操作符</a>。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;d-&#x27;</span> + <span class="string">&#x27;abc&#x27;</span>*<span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 
 
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> &gt;= <span class="number">0j</span></span><br></pre></td></tr></table></figure>
 
+<pre><code>&#39;d-abcabc&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>]*<span class="number">2</span></span><br><span class="line">a += [<span class="number">2</span>]</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
 
-<pre><code>---------------------------------------------------------------------------
 
-TypeError                                 Traceback (most recent call last)
 
-&lt;ipython-input-6-df80cad0b1a4&gt; in &lt;module&gt;
-----&gt; 1 0 &gt;= 0j
 
-
-TypeError: &#39;&gt;=&#39; not supported between instances of &#39;int&#39; and &#39;complex&#39;</code></pre>
-<p>2，字符串使用其字符的 Unicode 码位数字值依次进行比较，某个字符比较出大小即停止。如果一个字符串包含另一个，较短的排前面。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>), <span class="built_in">ord</span>(<span class="string">&#x27;b&#x27;</span>), <span class="built_in">ord</span>(<span class="string">&#x27;c&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(97, 98, 99)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a&#x27;</span> == <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span> == <span class="string">&#x27;c&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(True, False)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ab&#x27;</span> &lt; <span class="string">&#x27;ac&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;abc&#x27;</span> &gt; <span class="string">&#x27;ab&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<p>3，序列（列表，元组，range 实例）只能进行类型内部比较。跨类型一致性比较结果将是不相等，跨类型次序比较将引发 TypeError。range 不支持次序比较。</p>
-<p>比较时按顺序对相应元素进行逐个比较，某个元素比较出大小即停止。如果一个序列元素包含另一个，较短的排前面。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>) == [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>] == [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">4</span>] &gt; [<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">4</span>] &lt; [<span class="number">1</span>,<span class="number">4</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>) &gt;= [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-22-cb12354bca8e&gt; in &lt;module&gt;
-----&gt; 1 (1,2) &gt;= [1,2]
-
-
-TypeError: &#39;&gt;=&#39; not supported between instances of &#39;tuple&#39; and &#39;list&#39;</code></pre>
-<p>4， 两个字典若要相等，必须当且仅当它们具有相同的 键值对。次序比较将引发 TypeError。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>:<span class="number">1</span>&#125; == &#123;<span class="literal">True</span>:<span class="number">1.0</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>:<span class="number">1</span>&#125; &lt;= &#123;<span class="literal">True</span>:<span class="number">1.0</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-24-a13e7674e543&gt; in &lt;module&gt;
-----&gt; 1 &#123;1:1&#125; &lt;= &#123;True:1.0&#125;
-
-
-TypeError: &#39;&lt;=&#39; not supported between instances of &#39;dict&#39; and &#39;dict&#39;</code></pre>
-<p>5，集合 (set 或 frozenset 的实例) 可进行类型内部和跨类型的比较。</p>
-<p>它们将比较运算符定义为子集和超集检测，具体详见集合知识点。这类关系没有定义完全排序。相应地，集合不适宜作为依赖于完全排序的函数的参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; == <span class="built_in">frozenset</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">3</span>,<span class="number">1</span>&#125; &gt; &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>([&#123;<span class="number">3</span>&#125;,&#123;<span class="number">1</span>&#125;,&#123;<span class="number">2</span>&#125;])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#123;3&#125;, &#123;1&#125;, &#123;2&#125;]</code></pre>
-<p>运算符 <code>in</code> 和 <code>not in</code> 用于成员检测。如果 x 是 s 的成员则 <code>x in s</code> 求值为 True，否则为 False。<code>x not in s</code> 返回 <code>x in s</code> 取反后的值。</p>
-<p>所有内置序列和集合类型以及字典都支持此运算，对于字典来说 in 检测其是否有给定的键。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a&#x27;</span> <span class="keyword">in</span> <span class="string">&#x27;abc&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;abc&#x27;</span> <span class="keyword">in</span> <span class="string">&#x27;abbc&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>] <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;a&#x27;</span> <span class="keyword">in</span> &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<p>运算符 <code>is</code> 和 <code>is not</code> 用于检测对象的标识号：当且仅当 x 和 y 是同一对象时 <code>x is y</code> 为真。一个对象的标识号可使用 id() 函数来确定。<code>x is not y</code> 会产生相反的逻辑值。 </p>
-<p>默认的一致性比较是基于对象的标识号。<code>x is y</code> 就意味着 <code>x == y</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">1</span></span><br><span class="line">a <span class="keyword">is</span> b, a == b</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(True, True)</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">b = (<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">a <span class="keyword">is</span> b, a == b</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(False, True)</code></pre>
+<pre><code>[1, 1, 2]</code></pre>
+<ul>
+<li><p>操作符 <code>**</code>，<code>|</code> 和 <code>|=</code> 可以用来操作字典。具体详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/07_dictionary/14_operator.ipynb">字典操作符</a>。</p>
+</li>
+<li><p>操作符 <code>&gt;</code>，<code>&lt;</code>，<code>&gt;=</code>，<code>&lt;=</code> 可对集合进行子集或超集比较；<code>|</code>，<code>&amp;</code>，<code>-</code>，<code>^</code> 可求集合的并集，交集，差集，对称差集；<code>|=</code>，<code>&amp;=</code>，<code>-=</code>，<code>^=</code> 可用来更新集合。具体详见集合知识点。</p>
+</li>
+<li><p>操作符 <code>%</code> 可以用来格式化字符串，而在<strong>格式化迷你语言</strong>中，定义了非常多的有特殊意义操作符。具体详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/02_string/25_str.format.ipynb">str.format 格式化</a> 和 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/02_string/28_string_operators.ipynb">字符串操作符</a>。</p>
+</li>
+</ul>
 
       
     </div>
@@ -594,9 +439,6 @@ TypeError: &#39;&lt;=&#39; not supported between instances of &#39;dict&#39; and
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -687,7 +529,6 @@ TypeError: &#39;&lt;=&#39; not supported between instances of &#39;dict&#39; and
   
 
   
-
 
 </body>
 </html>

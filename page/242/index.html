@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/statistics/statistics-75b685b84843/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/01_numeric/02_int-56540a230f9f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/statistics/statistics-75b685b84843/" class="post-title-link" itemprop="url">Python 数理统计和机器学习入门</a>
+            <a href="/python/01_numeric/02_int-56540a230f9f/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -319,10 +317,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表</span>
-      
 
-      <time title="创建时间：2021-01-02 14:38:55 / 修改时间：17:34:04" itemprop="dateCreated datePublished" datetime="2021-01-02T14:38:55+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新</span>
+        <time title="修改时间：2021-01-03 00:11:28" itemprop="dateModified" datetime="2021-01-03T00:11:28+08:00">2021-01-03</time>
+      </span>
 
   
     <span class="post-meta-item" title="字数">
@@ -330,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>70</span>
+      <span>706</span>
     </span>
 </div>
 
@@ -341,13 +345,122 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://billwuhao.com/" title="诗和远方都在脚下"><img src="/images/dbj.jpg"></a></p>
-<br>
+          <h2 id="整数及其位运算"><a href="#整数及其位运算" class="headerlink" title="整数及其位运算"></a>整数及其位运算</h2><p>整数具有无限精度。有四种整数表示法：十六进制整数（0x 或 0X 开头），十进制整数，八进制整数（0o 或 0O 开头）和二进制整数（0b 或 0B 开头）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 十六进制</span></span><br><span class="line"><span class="number">0x10</span></span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>内容主要来源：<strong>开课吧</strong>学习笔记整理。</p>
-</blockquote>
-<h2 id="⚫"><a href="#⚫" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics1-c52131cc9c3a/" title="&lt;font color&#x3D;#AE6011 &gt;描述统计&lt;&#x2F;font&gt;"><font color=#AE6011 >描述统计</font></a></h2><h2 id="⚫-1"><a href="#⚫-1" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics2-4cc5fc64703e/" title="&lt;font color&#x3D;#AE6011 &gt;推断统计&lt;&#x2F;font&gt;"><font color=#AE6011 >推断统计</font></a></h2><h2 id="⚫-2"><a href="#⚫-2" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics3-65786bb614a2/" title="&lt;font color&#x3D;#AE6011 &gt;线性回归&lt;&#x2F;font&gt;"><font color=#AE6011 >线性回归</font></a></h2><h2 id="⚫-3"><a href="#⚫-3" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics4-548ae340f960/" title="&lt;font color&#x3D;#AE6011 &gt;逻辑回归&lt;&#x2F;font&gt;"><font color=#AE6011 >逻辑回归</font></a></h2><h2 id="⚫-4"><a href="#⚫-4" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics5-718e604fdfd5/" title="&lt;font color&#x3D;#AE6011 &gt;分类模型评估&lt;&#x2F;font&gt;"><font color=#AE6011 >分类模型评估</font></a></h2><h2 id="⚫-5"><a href="#⚫-5" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics6-7e2ca84cd5fe/" title="&lt;font color&#x3D;#AE6011 &gt;KNN 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >KNN 算法</font></a></h2><h2 id="⚫-6"><a href="#⚫-6" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics7-c1988cb61792/" title="&lt;font color&#x3D;#AE6011 &gt;朴素贝叶斯&lt;&#x2F;font&gt;"><font color=#AE6011 >朴素贝叶斯</font></a></h2><h2 id="⚫-7"><a href="#⚫-7" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics8-144b84551481/" title="&lt;font color&#x3D;#AE6011 &gt;决策树&lt;&#x2F;font&gt;"><font color=#AE6011 >决策树</font></a></h2><h2 id="⚫-8"><a href="#⚫-8" class="headerlink" title="⚫ "></a>⚫ <a href="/statistics/statistics9-1d958e8e187b/" title="&lt;font color&#x3D;#AE6011 &gt;K-Means 算法&lt;&#x2F;font&gt;"><font color=#AE6011 >K-Means 算法</font></a></h2>
+
+
+
+<pre><code>16</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 十进制</span></span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>10</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 八进制</span></span><br><span class="line"><span class="number">0</span>O10</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>8</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二进制</span></span><br><span class="line"><span class="number">0b10</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2</code></pre>
+<p>数字之间或基数说明符（例如 0b）后，可以放一个下划线：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span>_456_789</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>123456789</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>b_1010</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>10</code></pre>
+<p>十进制整数不可以 0 开头：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">012</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>  File &quot;&lt;ipython-input-44-95f378563ada&gt;&quot;, line 1
+    012
+      ^
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers</code></pre>
+<h2 id="整数类型按位运算"><a href="#整数类型按位运算" class="headerlink" title="整数类型按位运算"></a>整数类型按位运算</h2><p>按位运算只对整数有意义。以优先级升序排序的按位运算:</p>
+<ul>
+<li><code>x | y</code> x 和 y 按位 或 运算</li>
+<li><code>x ^ y</code> x 和 y 按位 异或 运算</li>
+<li><code>x &amp; y</code> x 和 y 按位 与 运算</li>
+<li><code>x &lt;&lt; n</code> x 左移 n 位，相当于 <code>x*2**n</code></li>
+<li><code>x &gt;&gt; n</code> x 右移 n 位，相当于 <code>x//(2**n)</code></li>
+<li><code>~x</code> x 逐位取反</li>
+</ul>
+<p>下面以八位机为例，x 取 6，y 取 8，n 取 2：</p>
+<p>6 和 8 在内存中的储存分别为 00000110，00001000。</p>
+<p>按位 或 运算，规则如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>|<span class="number">0</span>, <span class="number">1</span>|<span class="number">0</span>, <span class="number">1</span>|<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(0, 1, 1)</code></pre>
+<p>6|8 逐位运算后结果为 00001110，十进制就是 14：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>|<span class="number">8</span>, <span class="number">0b00001110</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(14, 14)</code></pre>
+<p>同理可按下列计算规则，计算出 6^8, 6&amp;8:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>^<span class="number">0</span>, <span class="number">0</span>^<span class="number">1</span>, <span class="number">1</span>^<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(0, 1, 0)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>&amp;<span class="number">0</span>, <span class="number">0</span>&amp;<span class="number">1</span>, <span class="number">1</span>&amp;<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(0, 0, 1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>^<span class="number">8</span>, <span class="number">6</span>&amp;<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(14, 0)</code></pre>
+<p>6 左移 2 位结果为 00011000，十进制就是 24，相当于 <code>6*2**2</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>&lt;&lt;<span class="number">2</span>, <span class="number">0b00011000</span>, <span class="number">6</span>*<span class="number">2</span>**<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(24, 24, 24)</code></pre>
+<p>同理可计算出 6&gt;&gt;2，结果为 1:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>&gt;&gt;<span class="number">2</span>, <span class="number">6</span>//(<span class="number">2</span>**<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1, 1)</code></pre>
+<p>6 逐位取反为 11111001，因为我们是以八位机来举例的，八位机中 11111001 表示 -7，这是个天才设计，正负整数计算可以利用一种电路即可完成，有兴趣的可以查资料了解详情。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>-7</code></pre>
+<p>例如 8 + (-7) 如此计算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  00001000 </span><br><span class="line">+ 11111001 </span><br><span class="line">&#x3D;100000001</span><br></pre></td></tr></table></figure>
+
+<p>因为是八位机，结果有 9 位，所以第一个 1 溢出，结果就是 1。</p>
+
       
     </div>
 
@@ -405,9 +518,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -498,7 +608,6 @@
   
 
   
-
 
 </body>
 </html>

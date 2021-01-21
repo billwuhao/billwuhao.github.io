@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/24_getattr-86e7149a10dd/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/26_hasattr-2fe988f3f1f4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/24_getattr-86e7149a10dd/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/26_hasattr-2fe988f3f1f4/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>725</span>
+      <span>278</span>
     </span>
 </div>
 
@@ -347,54 +345,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="getattr-获取对象的属性"><a href="#getattr-获取对象的属性" class="headerlink" title="getattr() 获取对象的属性"></a>getattr() 获取对象的属性</h2><p>内置函数 getattr()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">getattr</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="hasattr-是对象的属性吗？"><a href="#hasattr-是对象的属性吗？" class="headerlink" title="hasattr() 是对象的属性吗？"></a>hasattr() 是对象的属性吗？</h2><p>内置函数 hasattr()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">hasattr</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function getattr in module builtins:
+<pre><code>Help on built-in function hasattr in module builtins:
 
-getattr(...)
-    getattr(object, name[, default]) -&gt; value
+hasattr(obj, name, /)
+    Return whether the object has an attribute with the given name.
 
-    Get a named attribute from an object; getattr(x, &#39;y&#39;) is equivalent to x.y.
-    When a default argument is given, it is returned when the attribute doesn&#39;t
-    exist; without it, an exception is raised in that case.</code></pre>
-<p>返回对象给定的属性名指向的值。name 必须是字符串。如果该字符串是对象的属性名称之一，则返回该属性的值。例如，<code>getattr(x, &#39;y&#39;)</code> 等同于 <code>x.y</code>。如果指定的属性不存在，且提供了 default 值，则返回它，否则触发 AttributeError。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">getattr</span>(<span class="number">1</span>,<span class="string">&#x27;imag&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">getattr</span>(<span class="number">1</span>,<span class="string">&#x27;bool&#x27;</span>,<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+    This is done by calling getattr(obj, name) and catching AttributeError.</code></pre>
+<p>该函数实参是一个对象和一个字符串。如果字符串是对象的属性之一的名称，则返回 True，否则返回 False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hasattr</span>(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;join&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">getattr</span>(<span class="number">1</span>,<span class="string">&#x27;bool&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-AttributeError                            Traceback (most recent call last)
-
-&lt;ipython-input-6-524bb2b35e58&gt; in &lt;module&gt;
-----&gt; 1 getattr(1,&#39;bool&#39;)
-
-
-AttributeError: &#39;int&#39; object has no attribute &#39;bool&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    y = <span class="number">1</span></span><br><span class="line">x = A()</span><br><span class="line">x.y</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    y = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">hasattr</span>(A, <span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">getattr</span>(x,<span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1</code></pre>
+<pre><code>True</code></pre>
 
       
     </div>
@@ -453,9 +425,6 @@ AttributeError: &#39;int&#39; object has no attribute &#39;bool&#39;</code></pre
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -546,7 +515,6 @@ AttributeError: &#39;int&#39; object has no attribute &#39;bool&#39;</code></pre
   
 
   
-
 
 </body>
 </html>

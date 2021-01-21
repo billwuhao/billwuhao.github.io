@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/01_set-50f7d8c12d6e/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/03_set.issubset-ac04e75aad34/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/06_set/01_set-50f7d8c12d6e/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/06_set/03_set.issubset-ac04e75aad34/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>574</span>
+      <span>217</span>
     </span>
 </div>
 
@@ -347,91 +345,45 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><p>集合是由具有唯一性的可哈希对象（一个对象的哈希值如果在其生命周期内绝不改变）组成的无序多项集。</p>
-<p>目前有两种内置集合类型，set 和 frozenset，前者是可变类型，后者是不可变类型。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(&#123;<span class="number">1</span>&#125;), <span class="built_in">type</span>(<span class="built_in">frozenset</span>())</span><br></pre></td></tr></table></figure>
+          <h2 id="set-issubset-是子集吗？"><a href="#set-issubset-是子集吗？" class="headerlink" title="set.issubset 是子集吗？"></a>set.issubset 是子集吗？</h2><p>集合方法 set.issubset()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.issubset)</span><br></pre></td></tr></table></figure>
 
+<pre><code>Help on method_descriptor:
 
-
-
-<pre><code>(set, frozenset)</code></pre>
-<p>因为一对花括号表示字典而非集合，所以创建空集合必须使用构造函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/54_set.ipynb">set()</a> 和 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/23_frozenset.ipynb">frozenset()</a> 来表示。两个内置函数还可将可迭代对象转换为集合：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(&#123;&#125;), <span class="built_in">set</span>(), <span class="built_in">frozenset</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(dict, set(), frozenset())</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(<span class="string">&#x27;121&#x27;</span>), <span class="built_in">frozenset</span>(<span class="string">&#x27;112&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(&#123;&#39;1&#39;, &#39;2&#39;&#125;, frozenset(&#123;&#39;1&#39;, &#39;2&#39;&#125;))</code></pre>
-<p>构造 set 集合还可以直接使用一对花括号包含元素，元素之间用逗号隔开：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;1, 2&#125;</code></pre>
-<p>集合的元素必须是可哈希的，例如字符串，元组（不能包含不可哈希对象，例如元组里有列表）；也是唯一的，同时存在多个哈希值相等的元素，只保留一个。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">hash</span>(<span class="literal">False</span>),<span class="built_in">hash</span>(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0 0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;12&#x27;</span>, (<span class="number">1</span>,<span class="number">2</span>), <span class="literal">False</span>, <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;(1, 2), &#39;12&#39;, False&#125;</code></pre>
-<p>set 类型集合是可变类型，没有哈希值，不可作为集合的元素或字典的键，而 frozenset 类型的集合可以：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="built_in">frozenset</span>([<span class="number">1</span>,<span class="number">2</span>])&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;frozenset(&#123;1, 2&#125;)&#125;</code></pre>
-<p>两种类型集合可进行比较，并集，交集，差集，对称差集操作：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; == <span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+issubset(...)
+    Report whether another set contains this set.</code></pre>
+<p>检查一个集合中的元素，是否都在另一个集合中。相当于 a &lt;= b（a，b 是两个集合），但方法中的参数可以是可迭代对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125;.issubset([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; | <span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;1, 2, 3&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;) ^ &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>frozenset(&#123;3&#125;)</code></pre>
-<p>set 类型是可变的，还可进行元素增、删、改，等操作，而 frozenset 类型不可以：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">set</span>()</span><br><span class="line">print(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="comment"># a 增加元素 1</span></span><br><span class="line">a.add(<span class="number">1</span>)</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br><span class="line"><span class="comment"># 将一个集合并入 a</span></span><br><span class="line">a |= <span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;)</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br><span class="line"><span class="comment"># 清空集合 a</span></span><br><span class="line">a.clear()</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br></pre></td></tr></table></figure>
-
-<pre><code>2029775797832
-2029775797832 &#123;1&#125;
-2029775797832 &#123;1, 2, 3&#125;
-2029775797832 set()</code></pre>
-<p>集合是按哈希值对元素进行储存，而不是按顺序，因此集合没有索引和切片操作。搜索元素时，由于是通过哈希值匹配，集合比序列类型效率高。</p>
-<p>由于集合仅定义了部分排序（子集关系），比较大小的排序并无定义。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>&#125; &gt; &#123;<span class="number">2</span>,<span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; &lt;= &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>&#125;,&#123;<span class="number">9</span>&#125;,&#123;<span class="number">6</span>&#125;,&#123;<span class="number">2</span>,<span class="number">5</span>&#125;]</span><br><span class="line">a.sort() </span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125;.issubset((<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#123;1, 2, 5&#125;, &#123;9&#125;, &#123;6&#125;, &#123;2, 5&#125;]</code></pre>
+<pre><code>True</code></pre>
+<p>该方法检查是否是子集，而对于真子集，可以使用 <code>&lt;</code> 进行检查：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; &lt; &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; &lt; &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
 
       
     </div>
@@ -490,9 +442,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -583,7 +532,6 @@
   
 
   
-
 
 </body>
 </html>

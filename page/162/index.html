@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/05_sequence/03_index_slice-64fd01cb1027/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/01_set-0ac8a008ad26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/05_sequence/03_index_slice-64fd01cb1027/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/06_set/01_set-0ac8a008ad26/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>488</span>
+      <span>574</span>
     </span>
 </div>
 
@@ -347,87 +345,91 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="序列索引和切片"><a href="#序列索引和切片" class="headerlink" title="序列索引和切片"></a>序列索引和切片</h2><p>序列类型都可以使用下标进行索引或切片取值，这是序列类型通用操作。可变序列类型比较特殊，例如列表，可以利用索引或切片进行元素增、删、改，详见 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/03_list/03_list_indexes_and_slices.ipynb">列表的索引和切片</a>。</p>
-<p>下标从前往后，则以 0 开始，从后往前，则从 -1 开始，双向索引：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)</span><br><span class="line">  0    1    2    3</span><br><span class="line"> -4   -3   -2   -1</span><br></pre></td></tr></table></figure>
-
-<p>下标索引，直接取出对应索引下的值，超出范围则报错：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">a[<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-IndexError                                Traceback (most recent call last)
-
-&lt;ipython-input-18-5680bb375980&gt; in &lt;module&gt;
-      1 a = [1,2,3,4]
-----&gt; 2 a[10]
-
-
-IndexError: list index out of range</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">a[<span class="number">0</span>], a[<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
+          <h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><p>集合是由具有唯一性的可哈希对象（一个对象的哈希值如果在其生命周期内绝不改变）组成的无序多项集。</p>
+<p>目前有两种内置集合类型，set 和 frozenset，前者是可变类型，后者是不可变类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(&#123;<span class="number">1</span>&#125;), <span class="built_in">type</span>(<span class="built_in">frozenset</span>())</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(1, 3)</code></pre>
-<p>下标切片取值规则：[起始:结束:步长]，不包含结束。</p>
-<ul>
-<li>没有指定起始，则默认为 0；</li>
-<li>没有指定结束则默认到最后一个元素结束；</li>
-<li>下标可以双向混合使用；</li>
-<li>没有指定步长，则默认为 1；</li>
-<li>步长为负数，则反向取值，-1 开始。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>(set, frozenset)</code></pre>
+<p>因为一对花括号表示字典而非集合，所以创建空集合必须使用构造函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/54_set.ipynb">set()</a> 和 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/23_frozenset.ipynb">frozenset()</a> 来表示。两个内置函数还可将可迭代对象转换为集合：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(&#123;&#125;), <span class="built_in">set</span>(), <span class="built_in">frozenset</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, 2, 3]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">3</span>:]</span><br></pre></td></tr></table></figure>
+<pre><code>(dict, set(), frozenset())</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(<span class="string">&#x27;121&#x27;</span>), <span class="built_in">frozenset</span>(<span class="string">&#x27;112&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[4, 5, 6, 7]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">1</span>:<span class="number">-3</span>], a[<span class="number">-6</span>:<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>(&#123;&#39;1&#39;, &#39;2&#39;&#125;, frozenset(&#123;&#39;1&#39;, &#39;2&#39;&#125;))</code></pre>
+<p>构造 set 集合还可以直接使用一对花括号包含元素，元素之间用逗号隔开：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>([2, 3, 4], [2, 3, 4])</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[::<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;1, 2&#125;</code></pre>
+<p>集合的元素必须是可哈希的，例如字符串，元组（不能包含不可哈希对象，例如元组里有列表）；也是唯一的，同时存在多个哈希值相等的元素，只保留一个。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">hash</span>(<span class="literal">False</span>),<span class="built_in">hash</span>(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0 0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;12&#x27;</span>, (<span class="number">1</span>,<span class="number">2</span>), <span class="literal">False</span>, <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[1, 3, 5, 7]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[::<span class="number">-2</span>] <span class="comment"># 默认 -1 开始取</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#123;(1, 2), &#39;12&#39;, False&#125;</code></pre>
+<p>set 类型集合是可变类型，没有哈希值，不可作为集合的元素或字典的键，而 frozenset 类型的集合可以：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="built_in">frozenset</span>([<span class="number">1</span>,<span class="number">2</span>])&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[7, 5, 3, 1]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">0</span>:<span class="number">7</span>:<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;frozenset(&#123;1, 2&#125;)&#125;</code></pre>
+<p>两种类型集合可进行比较，并集，交集，差集，对称差集操作：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; == <span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">-1</span>:<span class="number">0</span>:<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>&#125; | <span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[7, 5, 3]</code></pre>
-<p>切片范围可以无限大，范围内没有元素，则得到空的容器：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">a[<span class="number">5</span>:<span class="number">100</span>], a[<span class="number">1</span>:<span class="number">1</span>], a[<span class="number">5</span>:<span class="number">-10</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;1, 2, 3&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;) ^ &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>([6, 7], [], [])</code></pre>
+<pre><code>frozenset(&#123;3&#125;)</code></pre>
+<p>set 类型是可变的，还可进行元素增、删、改，等操作，而 frozenset 类型不可以：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">set</span>()</span><br><span class="line">print(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="comment"># a 增加元素 1</span></span><br><span class="line">a.add(<span class="number">1</span>)</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br><span class="line"><span class="comment"># 将一个集合并入 a</span></span><br><span class="line">a |= <span class="built_in">frozenset</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;)</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br><span class="line"><span class="comment"># 清空集合 a</span></span><br><span class="line">a.clear()</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br></pre></td></tr></table></figure>
+
+<pre><code>2029775797832
+2029775797832 &#123;1&#125;
+2029775797832 &#123;1, 2, 3&#125;
+2029775797832 set()</code></pre>
+<p>集合是按哈希值对元素进行储存，而不是按顺序，因此集合没有索引和切片操作。搜索元素时，由于是通过哈希值匹配，集合比序列类型效率高。</p>
+<p>由于集合仅定义了部分排序（子集关系），比较大小的排序并无定义。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>&#125; &gt; &#123;<span class="number">2</span>,<span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>&#125;,&#123;<span class="number">9</span>&#125;,&#123;<span class="number">6</span>&#125;,&#123;<span class="number">2</span>,<span class="number">5</span>&#125;]</span><br><span class="line">a.sort() </span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#123;1, 2, 5&#125;, &#123;9&#125;, &#123;6&#125;, &#123;2, 5&#125;]</code></pre>
 
       
     </div>
@@ -486,9 +488,6 @@ IndexError: list index out of range</code></pre>
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -579,7 +578,6 @@ IndexError: list index out of range</code></pre>
   
 
   
-
 
 </body>
 </html>

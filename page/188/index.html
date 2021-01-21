@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/48_str.isidentifier-2c58315acad7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/50_str.isspace-58a99289b944/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/48_str.isidentifier-2c58315acad7/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/50_str.isspace-58a99289b944/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>304</span>
+      <span>283</span>
     </span>
 </div>
 
@@ -347,59 +345,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-isidentifier-是有效标识符？"><a href="#str-isidentifier-是有效标识符？" class="headerlink" title="str.isidentifier 是有效标识符？"></a>str.isidentifier 是有效标识符？</h2><p>字符串方法 str.isidentifier()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isidentifier)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-isspace-是空白字符？"><a href="#str-isspace-是空白字符？" class="headerlink" title="str.isspace 是空白字符？"></a>str.isspace 是空白字符？</h2><p>字符串方法 str.isspace()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isspace)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-isidentifier(self, /)
-    Return True if the string is a valid Python identifier, False otherwise.
+isspace(self, /)
+    Return True if the string is a whitespace string, False otherwise.
 
-    Call keyword.iskeyword(s) to test whether string s is a reserved identifier,
-    such as &quot;def&quot; or &quot;class&quot;.</code></pre>
-<p>如果字符串是有效的标识符，返回 True，否则返回 False。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;1mycode&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
+    A string is whitespace if all characters in the string are whitespace and there
+    is at least one character in the string.</code></pre>
+<p>如果字符串中只有空白字符且至少有一个字符则返回 True，否则返回 False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;_mycode&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; &#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;123&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\n\t\r\f&#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; \\&#x27;</span>.isspace()</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;_123&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;变量名&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;for&#x27;</span>.isidentifier()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
 
       
     </div>
@@ -458,9 +438,6 @@ isidentifier(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -551,7 +528,6 @@ isidentifier(self, /)
   
 
   
-
 
 </body>
 </html>

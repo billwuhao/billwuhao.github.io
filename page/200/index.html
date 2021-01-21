@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/36_str.zfill-aa56cbd3c05d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/38_str.maketrans-6bb81f583c46/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/36_str.zfill-aa56cbd3c05d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/38_str.maketrans-6bb81f583c46/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>279</span>
+      <span>790</span>
     </span>
 </div>
 
@@ -347,34 +345,55 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-zfill-填充-0"><a href="#str-zfill-填充-0" class="headerlink" title="str.zfill 填充 0"></a>str.zfill 填充 0</h2><p>字符串方法 str.zfill()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.zfill)</span><br></pre></td></tr></table></figure>
+          <h2 id="str-maketrans-生成转换表"><a href="#str-maketrans-生成转换表" class="headerlink" title="str.maketrans 生成转换表"></a>str.maketrans 生成转换表</h2><p>字符串方法 str.maketrans()，该方法是一个静态方法（没有 self），Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.maketrans)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on method_descriptor:
+<pre><code>Help on built-in function maketrans:
 
-zfill(self, width, /)
-    Pad a numeric string with zeros on the left, to fill a field of the given width.
+maketrans(x, y=None, z=None, /)
+    Return a translation table usable for str.translate().
 
-    The string is never truncated.</code></pre>
-<p>返回原字符串的副本，在左边填充 ASCII ‘0’ 数码使其长度变为 width。正负值前缀 (‘+’/‘-‘) 的处理方式是在正负符号 之后填充而非在之前。如果 width 小于等于 len(str) 则返回原字符串的副本。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;42a&quot;</span>.zfill(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;0042a&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;-42&quot;</span>.zfill(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;-0042&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;-42&quot;</span>.zfill(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+    If there is only one argument, it must be a dictionary mapping Unicode
+    ordinals (integers) or characters to Unicode ordinals, strings or None.
+    Character keys will be then converted to ordinals.
+    If there are two arguments, they must be strings of equal length, and
+    in the resulting dictionary, each character in x will be mapped to the
+    character at the same position in y. If there is a third argument, it
+    must be a string, whose characters will be mapped to None in the result.</code></pre>
+<p>返回一个可供 str.translate() 使用的转换对照表。</p>
+<p>如果只有一个参数，则它必须是一个将 Unicode 码位序号（整数）或字符（长度为 1 的字符串）映射到 Unicode 码位序号、（任意长度的）字符串 或 None 的字典。字符键将会被转换为码位序号。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.maketrans(&#123;<span class="number">97</span>:<span class="string">&#x27;123&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;-42&#39;</code></pre>
+<pre><code>&#123;97: &#39;123&#39;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.maketrans(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">97</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;97: 97&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.maketrans(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="literal">None</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;97: None&#125;</code></pre>
+<p>如果有两个参数，则它们必须是两个长度相等的字符串，并且在结果字典中，x 中每个字符将被映射到 y 中相同位置的字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.maketrans(<span class="string">&#x27;abc&#x27;</span>,<span class="string">&#x27;123&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;97: 49, 98: 50, 99: 51&#125;</code></pre>
+<p>如果有第三个参数，它必须是一个字符串，其中的字符将在结果中被映<br>射到 None。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.maketrans(<span class="string">&#x27;ab&#x27;</span>,<span class="string">&#x27;12&#x27;</span>,<span class="string">&#x27;xy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;97: 49, 98: 50, 120: None, 121: None&#125;</code></pre>
 
       
     </div>
@@ -433,9 +452,6 @@ zfill(self, width, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -526,7 +542,6 @@ zfill(self, width, /)
   
 
   
-
 
 </body>
 </html>

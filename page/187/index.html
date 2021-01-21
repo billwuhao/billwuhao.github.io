@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/49_str.isprintable-9c39d67c0e22/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/51_str.removeprefix-1befcb25734c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/49_str.isprintable-9c39d67c0e22/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/02_string/51_str.removeprefix-1befcb25734c/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>431</span>
+      <span>137</span>
     </span>
 </div>
 
@@ -347,49 +345,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-isprintable-是可打印字符？"><a href="#str-isprintable-是可打印字符？" class="headerlink" title="str.isprintable 是可打印字符？"></a>str.isprintable 是可打印字符？</h2><p>字符串方法 str.isprintable()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">str</span>.isprintable)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on method_descriptor:
-
-isprintable(self, /)
-    Return True if the string is printable, False otherwise.
-
-    A string is printable if all of its characters are considered printable in
-    repr() or if it is empty.</code></pre>
-<p>如果字符串中所有字符均为可打印字符或字符串为空则返回 True，否则返回 False。</p>
-<p>不可打印字符是在 Unicode 字符数据库中被定义为 ”Other” 或 ”Separator” 的字符，例外情况是 ASCII 空格字符 (0x20) 被视作可打印字符。</p>
-<p>请注意在此语境下可打印字符是指当对一个字符串发起调用 repr() 时不必被转义的字符。它们与字符串写入 sys.stdout 或 sys.stderr 时所需的处理无关。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.isprintable()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; &#x27;</span>.isprintable()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\n&#x27;</span>.isprintable()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;\python&#x27;</span>.isprintable()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;py\thon&#x27;</span>.isprintable()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
+          <h2 id="str-removeprefix-移除前缀"><a href="#str-removeprefix-移除前缀" class="headerlink" title="str.removeprefix  移除前缀"></a>str.removeprefix  移除前缀</h2><p>字符串方法 str.removeprefix()。</p>
+<p>3.9 版本新功能。</p>
+<p>str.removeprefix(prefix, /)，如果字符串以 前缀字符串 prefix 开头，返回 string[len(prefix):]，否则，返回原始字符串的副本。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;TestHook&#x27;</span>.removeprefix(<span class="string">&#x27;Test&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;Hook&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;BaseTestCase&#x27;</span>.removeprefix(<span class="string">&#x27;Test&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;BaseTestCase&#x27;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -448,9 +407,6 @@ isprintable(self, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -541,7 +497,6 @@ isprintable(self, /)
   
 
   
-
 
 </body>
 </html>

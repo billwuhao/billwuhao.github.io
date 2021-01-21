@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/52_reversed-c6ef6fbcdcb4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/54_set-31861456f80a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/52_reversed-c6ef6fbcdcb4/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/54_set-31861456f80a/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>777</span>
+      <span>3k</span>
     </span>
 </div>
 
@@ -347,67 +345,204 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="reversed-序列逆置"><a href="#reversed-序列逆置" class="headerlink" title="reversed 序列逆置"></a>reversed 序列逆置</h2><p>内置函数（类）reversed，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">reversed</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="set-创建集合"><a href="#set-创建集合" class="headerlink" title="set 创建集合"></a>set 创建集合</h2><p>内置函数（类）set，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class reversed in module builtins:
+<pre><code>Help on class set in module builtins:
 
-class reversed(object)
- |  reversed(sequence, /)
+class set(object)
+ |  set() -&gt; new empty set object
+ |  set(iterable) -&gt; new set object
  |  
- |  Return a reverse iterator over the values of the given sequence.
+ |  Build an unordered collection of unique elements.
  |  
  |  Methods defined here:
+ |  
+ |  __and__(self, value, /)
+ |      Return self&amp;value.
+ |  
+ |  __contains__(...)
+ |      x.__contains__(y) &lt;==&gt; y in x.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
  |  
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
  |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __iand__(self, value, /)
+ |      Return self&amp;=value.
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __ior__(self, value, /)
+ |      Return self|=value.
+ |  
+ |  __isub__(self, value, /)
+ |      Return self-=value.
+ |  
  |  __iter__(self, /)
  |      Implement iter(self).
  |  
- |  __length_hint__(...)
- |      Private method returning an estimate of len(list(it)).
+ |  __ixor__(self, value, /)
+ |      Return self^=value.
  |  
- |  __next__(self, /)
- |      Implement next(self).
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __or__(self, value, /)
+ |      Return self|value.
+ |  
+ |  __rand__(self, value, /)
+ |      Return value&amp;self.
  |  
  |  __reduce__(...)
  |      Return state information for pickling.
  |  
- |  __setstate__(...)
- |      Set state information for unpickling.
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __ror__(self, value, /)
+ |      Return value|self.
+ |  
+ |  __rsub__(self, value, /)
+ |      Return value-self.
+ |  
+ |  __rxor__(self, value, /)
+ |      Return value^self.
+ |  
+ |  __sizeof__(...)
+ |      S.__sizeof__() -&gt; size of S in memory, in bytes
+ |  
+ |  __sub__(self, value, /)
+ |      Return self-value.
+ |  
+ |  __xor__(self, value, /)
+ |      Return self^value.
+ |  
+ |  add(...)
+ |      Add an element to a set.
+ |      
+ |      This has no effect if the element is already present.
+ |  
+ |  clear(...)
+ |      Remove all elements from this set.
+ |  
+ |  copy(...)
+ |      Return a shallow copy of a set.
+ |  
+ |  difference(...)
+ |      Return the difference of two or more sets as a new set.
+ |      
+ |      (i.e. all elements that are in this set but not the others.)
+ |  
+ |  difference_update(...)
+ |      Remove all elements of another set from this set.
+ |  
+ |  discard(...)
+ |      Remove an element from a set if it is a member.
+ |      
+ |      If the element is not a member, do nothing.
+ |  
+ |  intersection(...)
+ |      Return the intersection of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in both sets.)
+ |  
+ |  intersection_update(...)
+ |      Update a set with the intersection of itself and another.
+ |  
+ |  isdisjoint(...)
+ |      Return True if two sets have a null intersection.
+ |  
+ |  issubset(...)
+ |      Report whether another set contains this set.
+ |  
+ |  issuperset(...)
+ |      Report whether this set contains another set.
+ |  
+ |  pop(...)
+ |      Remove and return an arbitrary set element.
+ |      Raises KeyError if the set is empty.
+ |  
+ |  remove(...)
+ |      Remove an element from a set; it must be a member.
+ |      
+ |      If the element is not a member, raise a KeyError.
+ |  
+ |  symmetric_difference(...)
+ |      Return the symmetric difference of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in exactly one of the sets.)
+ |  
+ |  symmetric_difference_update(...)
+ |      Update a set with the symmetric difference of itself and another.
+ |  
+ |  union(...)
+ |      Return the union of sets as a new set.
+ |      
+ |      (i.e. all elements that are in either set.)
+ |  
+ |  update(...)
+ |      Update a set with the union of itself and others.
  |  
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
  |  
  |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.</code></pre>
-<p>返回给定的序列逆置之后的迭代器。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">reversed</span>)</span><br></pre></td></tr></table></figure>
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __hash__ = None</code></pre>
+<p>将一个可迭代对象转换为集合。可迭代对象为空，或不传参数，将得到空集合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">set</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">reversed</span>(<span class="string">&#x27;1234&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>([])</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;reversed at 0x14b684fe460&gt;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">reversed</span>(<span class="string">&#x27;1234&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>set()</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;4&#39;, &#39;3&#39;, &#39;2&#39;, &#39;1&#39;]</code></pre>
-<p>因为字典顺序会确保为插入顺序，字典和字典视图都是可逆的。3.8 新版可以返回一个逆序获取字典键的迭代器。 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="built_in">reversed</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>&#125;)</span><br><span class="line"><span class="built_in">list</span>(d)</span><br></pre></td></tr></table></figure>
+<pre><code>set()</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(<span class="string">&#x27;1231&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[&#39;c&#39;, &#39;b&#39;, &#39;a&#39;]</code></pre>
+<pre><code>&#123;&#39;1&#39;, &#39;2&#39;, &#39;3&#39;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(&#123;<span class="string">&#x27;1&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;2&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;3&#x27;</span>:<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;1&#39;, &#39;2&#39;, &#39;3&#39;&#125;</code></pre>
 
       
     </div>
@@ -466,9 +601,6 @@ class reversed(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -559,7 +691,6 @@ class reversed(object)
   
 
   
-
 
 </body>
 </html>

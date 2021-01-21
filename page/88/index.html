@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/14_dict-0fc2f5e04bc2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/16_divmod-090d4fef2340/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/14_dict-0fc2f5e04bc2/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/16_divmod-090d4fef2340/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>2.8k</span>
+      <span>205</span>
     </span>
 </div>
 
@@ -347,168 +345,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="dict-创建字典"><a href="#dict-创建字典" class="headerlink" title="dict 创建字典"></a>dict 创建字典</h2><p>内置函数（类）dict，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="divmod-求两个数的商和余"><a href="#divmod-求两个数的商和余" class="headerlink" title="divmod() 求两个数的商和余"></a>divmod() 求两个数的商和余</h2><p>内置函数 divmod()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">divmod</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on class dict in module builtins:
+<pre><code>Help on built-in function divmod in module builtins:
 
-class dict(object)
- |  dict() -&gt; new empty dictionary
- |  dict(mapping) -&gt; new dictionary initialized from a mapping object&#39;s
- |      (key, value) pairs
- |  dict(iterable) -&gt; new dictionary initialized as if via:
- |      d = &#123;&#125;
- |      for k, v in iterable:
- |          d[k] = v
- |  dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
- |      in the keyword argument list.  For example:  dict(one=1, two=2)
- |  
- |  Methods defined here:
- |  
- |  __contains__(self, key, /)
- |      True if the dictionary has the specified key, else False.
- |  
- |  __delitem__(self, key, /)
- |      Delete self[key].
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __getitem__(...)
- |      x.__getitem__(y) &lt;==&gt; x[y]
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __init__(self, /, *args, **kwargs)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __len__(self, /)
- |      Return len(self).
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
- |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __setitem__(self, key, value, /)
- |      Set self[key] to value.
- |  
- |  __sizeof__(...)
- |      D.__sizeof__() -&gt; size of D in memory, in bytes
- |  
- |  clear(...)
- |      D.clear() -&gt; None.  Remove all items from D.
- |  
- |  copy(...)
- |      D.copy() -&gt; a shallow copy of D
- |  
- |  get(self, key, default=None, /)
- |      Return the value for key if key is in the dictionary, else default.
- |  
- |  items(...)
- |      D.items() -&gt; a set-like object providing a view on D&#39;s items
- |  
- |  keys(...)
- |      D.keys() -&gt; a set-like object providing a view on D&#39;s keys
- |  
- |  pop(...)
- |      D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
- |      If key is not found, d is returned if given, otherwise KeyError is raised
- |  
- |  popitem(...)
- |      D.popitem() -&gt; (k, v), remove and return some (key, value) pair as a
- |      2-tuple; but raise KeyError if D is empty.
- |  
- |  setdefault(self, key, default=None, /)
- |      Insert key with a value of default if key is not in the dictionary.
- |      
- |      Return the value for key if key is in the dictionary, else default.
- |  
- |  update(...)
- |      D.update([E, ]**F) -&gt; None.  Update D from dict/iterable E and F.
- |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
- |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
- |      In either case, this is followed by: for k in F:  D[k] = F[k]
- |  
- |  values(...)
- |      D.values() -&gt; an object providing a view on D&#39;s values
- |  
- |  ----------------------------------------------------------------------
- |  Class methods defined here:
- |  
- |  fromkeys(iterable, value=None, /) from builtins.type
- |      Create a new dictionary with keys from iterable and values set to value.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data and other attributes defined here:
- |  
- |  __hash__ = None</code></pre>
-<p>创建一个新字典。参数说明：</p>
-<ul>
-<li>不传参数创建空字典；</li>
-<li>传递一个映射对象；</li>
-<li>传递一个可迭代对象；</li>
-<li>传递关键字参数。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="built_in">dict</span>)</span><br></pre></td></tr></table></figure>
+divmod(x, y, /)
+    Return the tuple (x//y, x%y).  Invariant: div*y + mod == x.</code></pre>
+<p>它将两个（非复数）数字作为实参，返回两个数字的（商,余数）元组。对于混合操作数类型，适用二元算术运算符的规则。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">divmod</span>(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>type</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+<pre><code>(0, 1)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">divmod</span>(<span class="number">3.14</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;&#39;a&#39;: 1&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="built_in">zip</span>(<span class="string">&#x27;abc&#x27;</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">dict</span>(d)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>([(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>)])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>(a=<span class="number">1</span>,b=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;</code></pre>
+<pre><code>(1.0, 1.1400000000000001)</code></pre>
 
       
     </div>
@@ -567,9 +423,6 @@ class dict(object)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -660,7 +513,6 @@ class dict(object)
   
 
   
-
 
 </body>
 </html>

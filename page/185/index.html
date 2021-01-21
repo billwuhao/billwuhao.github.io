@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/02_string/51_str.removeprefix-1b03459e71d9/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/03_list/01_list-9161859c273b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/02_string/51_str.removeprefix-1b03459e71d9/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/03_list/01_list-9161859c273b/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>137</span>
+      <span>243</span>
     </span>
 </div>
 
@@ -347,10 +345,72 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="str-removeprefix-移除前缀"><a href="#str-removeprefix-移除前缀" class="headerlink" title="str.removeprefix  移除前缀"></a>str.removeprefix  移除前缀</h2><p>字符串方法 str.removeprefix()。</p>
-<p>3.9 版本新功能。</p>
-<p>str.removeprefix(prefix, /)，如果字符串以 前缀字符串 prefix 开头，返回 string[len(prefix):]，否则，返回原始字符串的副本。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;TestHook&#x27;</span>.removeprefix(<span class="string">&#x27;Test&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;Hook&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;BaseTestCase&#x27;</span>.removeprefix(<span class="string">&#x27;Test&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;BaseTestCase&#x27;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="列表概述"><a href="#列表概述" class="headerlink" title="列表概述"></a>列表概述</h2><p>列表对象 list 是高级数据结构的一种，通过方括号括起、逗号分隔的一组值得到。类型是 list。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>list</code></pre>
+<p>列表是可变序列，通常用于存放同类项目的集合。但没做限制，可以存放任意对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="string">&#x27;a&#x27;</span>,<span class="built_in">int</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, &#39;a&#39;, int]</code></pre>
+<p>列表是可变的，分别创建两个值相同的列表，一定是不同的对象；而同一个列表对象中的元素是可以改变的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = [<span class="number">1</span>,<span class="number">2</span>], [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">a == b</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">id</span>(a), <span class="built_in">id</span>(b)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2004948061384, 2004947934152)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">0</span>] = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">a, <span class="built_in">id</span>(a)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([&#39;a&#39;, 2], 2004948061384)</code></pre>
+<p>列表创建方法有：直接用一对方括号表示；<a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/03_list/02_list_comprehension.ipynb">列表推导式</a>；或使用内建函数 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/11_built-in_function/37_list.ipynbb">list()</a>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[], [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([], [1, 2])</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[0, 1, 2]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="string">&#x27;abc&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<p>列表的所有切片都将得到一个新列表，这意味着以下切片操作会返回列表的一个浅拷贝:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list_1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list_2 = list_1[:]</span><br><span class="line"><span class="built_in">id</span>(list_1), <span class="built_in">id</span>(list_2)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2004947038600, 2004948064968)</code></pre>
+<p>然而，列表可以利用切片改变自身的内容，列表仍然是原来的列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list_1[:] = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line">list_1, <span class="built_in">id</span>(list_1)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], 2004947038600)</code></pre>
 
       
     </div>
@@ -409,9 +469,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -502,7 +559,6 @@
   
 
   
-
 
 </body>
 </html>

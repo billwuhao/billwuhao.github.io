@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/14_file/02_read-d02a7dabe446/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/15_module/01_module_summary-ee6e296c3ead/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/14_file/02_read-d02a7dabe446/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/15_module/01_module_summary-ee6e296c3ead/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:40" itemprop="dateModified" datetime="2021-01-03T00:11:40+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:41" itemprop="dateModified" datetime="2021-01-03T00:11:41+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>645</span>
+      <span>2.1k</span>
     </span>
 </div>
 
@@ -347,130 +345,111 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h2><p>打开方式不同，会创建不同类型的文件对象（流），不同类型的文件对象，可能有不同的属性或方法。</p>
-<p>下列检查或读取内容的属性或方法，是多数文件对象通用的：</p>
-<ul>
-<li>readable() 如果可以读取流，则返回 True 。否则为 False ，且 read() 将引发 OSError 错误。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">f.readable()</span><br></pre></td></tr></table></figure>
+          <h2 id="模块概述"><a href="#模块概述" class="headerlink" title="模块概述"></a>模块概述</h2><p>模块是 Python 代码的一种组织单位，也是一种对象。各模块具有独立的命名空间，可包含任意 Python 对象。</p>
+<p>一个 <code>.py</code> 文件是一个模块；一个文件夹是一个模块（包）；文件夹（包）中还可以再有 <code>.py</code> 文件（子模块）和文件夹（子包）。例如 内置模块 random，和第三方包 pandas。</p>
+<p>文件夹中包含一个 <code>__init__.py</code> 文件的包是常规包；无 <code>__init__.py</code> 文件的是命名空间包，仅被用作子包的容器。</p>
+<p>模块无论是用 Python、C 还是别的语言实现均可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random, pandas</span><br><span class="line"><span class="built_in">type</span>(random), <span class="built_in">type</span>(pandas)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>True</code></pre>
-<ul>
-<li><p>read(size=-1) 从对象中读取 size 个字节并将其返回。作为一个便捷选项，如果 size 未指定或为 -1，则返回所有字节直到 EOF。流的位置与读取内容同步，不重设流的位置，内容只能被读取一次。</p>
-</li>
-<li><p>tell() 返回当前流的位置。</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure>
+<pre><code>(module, module)</code></pre>
+<p>所有包都是模块，但并非所有模块都是包。或者换句话说，包只是一种特殊的模块。</p>
+<p>可以使用属性 <code>__packge__</code> 查看包名，如果只是模块不是包，该属性为空字符串。</p>
+<p><code>__name__</code> 属性是模块的名字。</p>
+<p>特别地，主模块（你正在运行代码的当前模块）的 <code>__packge__</code> 属性总是 None；<code>__name__</code> 属性总是 <code>&#39;__main__&#39;</code> （<code>__main__</code> 是一个在解释器启动时直接初始化的特殊模块），这可以控制当前模块能够执行，而导入到其他模块不能被执行的代码，然后用来测试当前模块。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.__package__, pandas.__package__</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;为什么一定要掌握自学能力？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.read(<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;&#39;, &#39;pandas&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__package__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>None</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.__name__, pandas.__name__</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;为什么一定要掌握自学能力&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.tell()</span><br></pre></td></tr></table></figure>
+<pre><code>(&#39;random&#39;, &#39;pandas&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__name__</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>36</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 再次读取，将读取剩下未读部分</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;__main__&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span> + <span class="number">2</span> - <span class="number">5</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>():</span></span><br><span class="line">    print(a+<span class="number">1</span>)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 以下代码导入其他模块不会执行</span></span><br><span class="line">    print(a == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0
+True</code></pre>
+<p>使用 import 语句将其他模块导入当前模块；使用属性表示法调用模块中的属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">pd.core</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 已经没有内容</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;module &#39;pandas.core&#39; from &#39;C:\\ProgramData\\Anaconda3\\lib\\site-packages\\pandas\\core\\__init__.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.core.series.Series</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#39;&#39;</code></pre>
-<ul>
-<li>seek(offset, whence=0) 将流位置修改到给定的字节 offset。返回新的绝对位置。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.seek(<span class="number">0</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>pandas.core.series.Series</code></pre>
+<p>还可以以脚本的方式执行不属于包的模块（此时 <code>__name__</code> 属性为 <code>&quot;__main__&quot;</code>）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> this</span><br><span class="line">this</span><br></pre></td></tr></table></figure>
+
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
 
 
 
 
-<pre><code>0</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment"># 从新位置读取</span></span><br></pre></td></tr></table></figure>
 
+&lt;module &#39;this&#39; from &#39;C:\\ProgramData\\Anaconda3\\lib\\this.py&#39;&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># %run 是 jupyter 的魔法命令，在终端使用 python 命令</span></span><br><span class="line"><span class="comment"># F:\anaconda\lib\this.py 根据自己电脑的路径调整</span></span><br><span class="line">%run F:\anaconda\lib\this.py</span><br></pre></td></tr></table></figure>
 
+<pre><code>The Zen of Python, by Tim Peters
 
-
-<pre><code>&#39;为什么一定要掌握自学能力？\n未来的日子还很长，\n这世界进步得太快，\n没有自学能力，\n没有未来。&#39;</code></pre>
-<ul>
-<li>readline(size=-1) 从流中读取并返回一行。如果指定了 size，将至多读取 size 个字节。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.readline()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;为什么一定要掌握自学能力？\n&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.readline(<span class="number">2</span>) <span class="comment"># 再次读取，将读取剩下未读部分</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#39;未来&#39;</code></pre>
-<ul>
-<li>readlines(hint=-1) 从流中读取并返回包含多行的列表。可以指定 hint 来控制要读取的行数。指定行数可以多于实际。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.readlines(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;为什么一定要掌握自学能力？\n&#39;]</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.readlines(<span class="number">10</span>) <span class="comment"># 再次读取，将读取剩下未读部分</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;未来的日子还很长，\n&#39;, &#39;这世界进步得太快，\n&#39;]</code></pre>
-<ul>
-<li>使用 <code>for line in file: ...</code> 就足够对文件对象进行迭代了，可以不必调用 file.readlines()。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">    print(line)</span><br></pre></td></tr></table></figure>
-
-<pre><code>为什么一定要掌握自学能力？
-
-未来的日子还很长，
-
-这世界进步得太快，
-
-没有自学能力，
-
-没有未来。</code></pre>
-<ul>
-<li>closed 如果流已关闭，则返回 True。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.closed</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>False</code></pre>
-<ul>
-<li>close() 刷新并关闭此流。无论读写操作，最后都应该关闭流。如果文件已经关闭，则此方法无效。文件关闭后，对文件的任何操作（例如读取或写入）都会引发 ValueError 。为方便起见，允许多次调用此方法。但是，只有第一个调用才会生效。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f.close()</span><br><span class="line">f.close()</span><br><span class="line">f.closed</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>True</code></pre>
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
 
       
     </div>
@@ -529,9 +508,6 @@
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -622,7 +598,6 @@
   
 
   
-
 
 </body>
 </html>

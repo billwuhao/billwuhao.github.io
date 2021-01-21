@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/07_set.difference-e730dc9ab76f/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/06_set/09_set.copy-fdfd1739b562/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/06_set/07_set.difference-e730dc9ab76f/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/06_set/09_set.copy-fdfd1739b562/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>257</span>
+      <span>169</span>
     </span>
 </div>
 
@@ -347,28 +345,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="set-difference-差集"><a href="#set-difference-差集" class="headerlink" title="set.difference 差集"></a>set.difference 差集</h2><p>集合方法 set.difference()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.difference)</span><br></pre></td></tr></table></figure>
+          <h2 id="set-copy-浅拷贝"><a href="#set-copy-浅拷贝" class="headerlink" title="set.copy 浅拷贝"></a>set.copy 浅拷贝</h2><p>集合方法 set.copy()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">set</span>.copy)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Help on method_descriptor:
 
-difference(...)
-    Return the difference of two or more sets as a new set.
+copy(...)
+    Return a shallow copy of a set.</code></pre>
+<p>返回集合的一个浅拷贝。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br><span class="line">print(<span class="built_in">id</span>(a),a)</span><br><span class="line">b = a.copy()</span><br><span class="line"><span class="built_in">id</span>(b),b</span><br></pre></td></tr></table></figure>
 
-    (i.e. all elements that are in this set but not the others.)</code></pre>
-<p>该方法接收任意的位置参数，返回一个集合在其他所有集合中都不存在的元素组成的新集合。相当于 a - b - … （a，b 是集合），但方法的参数可以是可迭代对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;.difference((<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>),&#123;<span class="number">6</span>,<span class="number">2</span>,<span class="number">4</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;3&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125; - &#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>&#125; - &#123;<span class="number">6</span>,<span class="number">2</span>,<span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>2091426558696 &#123;1, 2&#125;
 
 
 
 
-<pre><code>&#123;3&#125;</code></pre>
+
+(2091426559368, &#123;1, 2&#125;)</code></pre>
 
       
     </div>
@@ -427,9 +420,6 @@ difference(...)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -520,7 +510,6 @@ difference(...)
   
 
   
-
 
 </body>
 </html>

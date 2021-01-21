@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/29_hex-1b2a831f690f/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/11_built-in_function/31_input-b37f4564f79e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/11_built-in_function/29_hex-1b2a831f690f/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/11_built-in_function/31_input-b37f4564f79e/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,14 +318,14 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新</span>
-        <time title="修改时间：2021-01-03 00:11:37" itemprop="dateModified" datetime="2021-01-03T00:11:37+08:00">2021-01-03</time>
+        <time title="修改时间：2021-01-03 00:11:38" itemprop="dateModified" datetime="2021-01-03T00:11:38+08:00">2021-01-03</time>
       </span>
 
   
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>211</span>
+      <span>360</span>
     </span>
 </div>
 
@@ -347,29 +345,36 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="hex-整数的十六进制形式"><a href="#hex-整数的十六进制形式" class="headerlink" title="hex() 整数的十六进制形式"></a>hex() 整数的十六进制形式</h2><p>内置函数 hex()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">hex</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="input-接受输入返回字符串"><a href="#input-接受输入返回字符串" class="headerlink" title="input() 接受输入返回字符串"></a>input() 接受输入返回字符串</h2><p>内置函数 input()，Python 官方文档描述如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on built-in function hex in module builtins:
+<pre><code>Help on method raw_input in module ipykernel.kernelbase:
 
-hex(number, /)
-    Return the hexadecimal representation of an integer.
+raw_input(prompt=&#39;&#39;) method of ipykernel.ipkernel.IPythonKernel instance
+    Forward raw_input to frontends
 
-    &gt;&gt;&gt; hex(12648430)
-    &#39;0xc0ffee&#39;</code></pre>
-<p>将整数转换为以 <code>0x</code> 为前缀的小写十六进制整数的字符串形式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hex</span>(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+    Raises
+    ------
+    StdinNotImplentedError if active frontend doesn&#39;t support stdin.</code></pre>
+<p>如果存在 prompt 实参，则作为提示信息输出。接下来，该函数将输入转换为字符串并返回。无输入则返回空字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&#x27;输入提示：&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-
-
-
-<pre><code>&#39;0x7b&#39;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0x7b</span></span><br></pre></td></tr></table></figure>
+<pre><code>输入提示： 1+1
 
 
 
 
-<pre><code>123</code></pre>
+
+&#39;1+1&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&#x27;输入提示：&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>输入提示： 
+
+
+
+
+
+&#39;&#39;</code></pre>
 
       
     </div>
@@ -428,9 +433,6 @@ hex(number, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -521,7 +523,6 @@ hex(number, /)
   
 
   
-
 
 </body>
 </html>

@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/04_tuple/02_tuple.count-d3fb655d2f6d/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/04_tuple/04_operator-47a8e27ae1cd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/04_tuple/02_tuple.count-d3fb655d2f6d/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/04_tuple/04_operator-47a8e27ae1cd/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>150</span>
+      <span>231</span>
     </span>
 </div>
 
@@ -347,26 +345,64 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="tuple-count-统计元素出现次数"><a href="#tuple-count-统计元素出现次数" class="headerlink" title="tuple.count 统计元素出现次数"></a>tuple.count 统计元素出现次数</h2><p>元组方法 tuple.count()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">tuple</span>.count)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Help on method_descriptor:
-
-count(self, value, /)
-    Return number of occurrences of value.</code></pre>
-<p>返回值为 value 的元素在元组中的出现次数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>).count(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+          <h2 id="元组操作符"><a href="#元组操作符" class="headerlink" title="元组操作符"></a>元组操作符</h2><p>元组可以使用 <code>+</code> 拼接，拼接后按原来的顺序排列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>) + (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>2</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>).count(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(4, 5, 6, 1, 2, 3)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> + <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>0</code></pre>
+<pre><code>(1, 2, 7, 5, 6)</code></pre>
+<p><code>+</code> 操作符可以与 <code>=</code> 连用，拼接同时赋值，元组是不可变的，该操作是创建了一个新元组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line">print(<span class="built_in">id</span>(a))</span><br><span class="line">a += <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span></span><br><span class="line"><span class="built_in">id</span>(a), a</span><br></pre></td></tr></table></figure>
+
+<pre><code>2741588191344
+
+
+
+
+
+(2741587773864, (1, 2, 3, 4, 5, 6))</code></pre>
+<p>元组还可使用 <code>*</code> 进行 n 次重复拼接：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,)*<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1, 1, 1)</code></pre>
+<p>当 n 小于 1 时，得到空元组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)*<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>()</code></pre>
+<p>元组中的元素如果是可变对象，<code>*</code> 重复拼接后，可变对象的性质同 <a target="_blank" rel="noopener" href="https://xue.cn/hub/reader?bookId=64&path=xue_python_kp/03_list/04_list_operator.ipynb">列表操作符</a> 知识点一样，仍然是同一个对象的多次引用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = ([],)</span><br><span class="line">b = a*<span class="number">3</span></span><br><span class="line"><span class="comment"># 在元组 a 的第一个元素中加入 1</span></span><br><span class="line">a[<span class="number">0</span>].append(<span class="number">1</span>)</span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>([1], [1], [1])</code></pre>
+<p>同列表一样可以用 <code>*=</code>，重复拼接并赋值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>,</span><br><span class="line">a *= <span class="number">3</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1, 1, 1)</code></pre>
+<p>元组是可迭代对象，所以可以用 <code>*</code> 将元组拆包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;*(<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;1, 2, 3&#125;</code></pre>
 
       
     </div>
@@ -425,9 +461,6 @@ count(self, value, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -518,7 +551,6 @@ count(self, value, /)
   
 
   
-
 
 </body>
 </html>

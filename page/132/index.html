@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="msvalidate.01" content="10807BE8A369314ADD132603D6E6055C">
-  <meta name="baidu-site-verification" content="zzxKZjYogh">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -295,7 +293,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/11_dict.setdefault-5f0b89148dd0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/python/07_dictionary/13_loop_through-6dabf88bbee9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -309,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/07_dictionary/11_dict.setdefault-5f0b89148dd0/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/python/07_dictionary/13_loop_through-6dabf88bbee9/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -320,7 +318,7 @@
       </span>
       <span class="post-meta-item-text">发表</span>
 
-      <time title="创建时间：2021-01-02 20:20:12" itemprop="dateCreated datePublished" datetime="2021-01-02T20:20:12+08:00">2021-01-02</time>
+      <time title="创建时间：2021-01-21 12:56:49" itemprop="dateCreated datePublished" datetime="2021-01-21T12:56:49+08:00">2021-01-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -336,7 +334,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">字数：</span>
-      <span>287</span>
+      <span>143</span>
     </span>
 </div>
 
@@ -347,46 +345,52 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="dict-setdefault-获取或插入元素"><a href="#dict-setdefault-获取或插入元素" class="headerlink" title="dict.setdefault 获取或插入元素"></a>dict.setdefault 获取或插入元素</h2><p>字典方法 dict.setdefault()，Python 官方文档描述如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(<span class="built_in">dict</span>.setdefault)</span><br></pre></td></tr></table></figure>
+          <h2 id="字典遍历"><a href="#字典遍历" class="headerlink" title="字典遍历"></a>字典遍历</h2><p>字典是可迭代对象，可以遍历字典的元素。由于字典元素是 键值对，遍历比较特殊。</p>
+<p>如果未指定遍历对象，默认遍历字典的键。很多函数将字典作为可迭代对象处理时，也是如此。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> d:</span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Help on method_descriptor:
-
-setdefault(self, key, default=None, /)
-    Insert key with a value of default if key is not in the dictionary.
-
-    Return the value for key if key is in the dictionary, else default.</code></pre>
-<p>如果字典存在键 key，则返回它的值；如果 key 不存在，则插入 key，以 default（默认 None）作为它的值，并返回。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">d.setdefault(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>a
+c
+b</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(d)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>1</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.setdefault(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;a&#39;, &#39;c&#39;, &#39;b&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>(d)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>3</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">max</span>(d)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.setdefault(<span class="string">&#x27;c&#x27;</span>, <span class="number">4</span>) <span class="comment"># 如果存在，并不会再次设置</span></span><br></pre></td></tr></table></figure>
+<pre><code>&#39;c&#39;</code></pre>
+<p>可以利用字典的视图指定遍历字典的键（默认就是遍历键，可以省略），值 或是 键值对。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> d.keys(): <span class="comment"># 可以不用视图</span></span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure>
 
+<pre><code>a
+c
+b</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> d.values(): </span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure>
 
+<pre><code>1
+3
+2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> d.items(): </span><br><span class="line">    print(k,v)</span><br></pre></td></tr></table></figure>
 
+<pre><code>a 1
+c 3
+b 2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按值排序后再遍历</span></span><br><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> <span class="built_in">sorted</span>(d.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>]): </span><br><span class="line">    print(k,v)</span><br></pre></td></tr></table></figure>
 
-<pre><code>3</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;</code></pre>
+<pre><code>a 1
+b 2
+c 3</code></pre>
 
       
     </div>
@@ -445,9 +449,6 @@ setdefault(self, key, default=None, /)
       
 
       
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备20041225号 </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003010" rel="noopener" target="_blank">粤公网安备 44030702003010号 </a>
-  </div>
 
 <div class="copyright">
   
@@ -538,7 +539,6 @@ setdefault(self, key, default=None, /)
   
 
   
-
 
 </body>
 </html>
